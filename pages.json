@@ -1,0 +1,264 @@
+{
+	"pages": [{
+			"path": "pages/home/index",
+			"style": {
+				"navigationBarTitleText": "比特中心"
+			}
+		},
+		{
+			"path": "pages/home/channel",
+			"style": {
+				"navigationBarTitleText": "资讯频道"
+			}
+		},
+		{
+			"path": "pages/home/article_list",
+			"style": {
+				"navigationBarTitleText": "文章列表"
+			}
+		},
+		{
+			"path": "pages/home/article_view",
+			"style": {
+				"navigationBarTitleText": "文章详情"
+			}
+		},
+		{
+			"path": "pages/home/contact",
+			"style": {
+				"navigationBarTitleText": "联系客服"
+			}
+		},
+		{
+			"path": "pages/home/question_list",
+			"style": {
+				"navigationBarTitleText": "常见问题"
+			}
+		},
+		{
+			"path": "pages/home/question_view",
+			"style": {
+				"navigationBarTitleText": "问题解答"
+			}
+		},
+		{
+			"path": "pages/mall/index",
+			"style": {
+				"navigationBarTitleText": "商城"
+			}
+		},
+		{
+			"path": "pages/mall/category",
+			"style": {
+				"navigationBarTitleText": "产品类目"
+			}
+		},
+		{
+			"path": "pages/mall/product_list",
+			"style": {
+				"navigationBarTitleText": "产品列表"
+			}
+		},
+		{
+			"path": "pages/mall/product_view",
+			"style": {
+				"navigationBarTitleText": "产品详情"
+			}
+		},
+		{
+			"path": "pages/pay/ali",
+			"style": {
+				"navigationBarTitleText": "支付宝付款"
+			}
+		},
+		{
+			"path": "pages/pay/wechat",
+			"style": {
+				"navigationBarTitleText": "微信付款"
+			}
+		},
+		{
+			"path": "pages/pay/bitcoin",
+			"style": {
+				"navigationBarTitleText": "比特币付款"
+			}
+		},
+		{
+			"path": "pages/user/index",
+			"style": {
+				"navigationBarTitleText": "我"
+			}
+		},
+		{
+			"path": "pages/user/info",
+			"style": {
+				"navigationBarTitleText": "基本信息"
+			}
+		},
+		{
+			"path": "pages/user/setting",
+			"style": {
+				"navigationBarTitleText": "系统设置"
+			}
+		},
+		{
+			"path": "pages/user/assets_list",
+			"style": {
+				"navigationBarTitleText": "我的算力"
+			}
+		},
+		{
+			"path": "pages/user/assets_view",
+			"style": {
+				"navigationBarTitleText": "算力详情"
+			}
+		},
+		{
+			"path": "pages/user/market",
+			"style": {
+				"navigationBarTitleText": "交易市场"
+			}
+		},
+		{
+			"path": "pages/user/order_list",
+			"style": {
+				"navigationBarTitleText": "我的订单"
+			}
+		},
+		{
+			"path": "pages/user/order_view",
+			"style": {
+				"navigationBarTitleText": "订单详情"
+			}
+		},
+		{
+			"path": "pages/user/output_day",
+			"style": {
+				"navigationBarTitleText": "每日产出"
+			}
+		},
+		{
+			"path": "pages/user/output_item",
+			"style": {
+				"navigationBarTitleText": "每单产出"
+			}
+		},
+		{
+			"path": "pages/user/transaction_panel",
+			"style": {
+				"navigationBarTitleText": "发起交易"
+			}
+		},
+		{
+			"path": "pages/user/transaction_record",
+			"style": {
+				"navigationBarTitleText": "交易记录"
+			}
+		},
+		{
+			"path": "pages/user/withdraw_panel",
+			"style": {
+				"navigationBarTitleText": "申请提现"
+			}
+		},
+		{
+			"path": "pages/user/withdraw_record",
+			"style": {
+				"navigationBarTitleText": "提现记录"
+			}
+		},
+		{
+			"path": "pages/forum/index",
+			"style": {
+				"navigationBarTitleText": "社区"
+			}
+		},
+		{
+			"path": "pages/forum/channel",
+			"style": {
+				"navigationBarTitleText": "专题"
+			}
+		},
+		{
+			"path": "pages/forum/thread_list",
+			"style": {
+				"navigationBarTitleText": "主题帖"
+			}
+		},
+		{
+			"path": "pages/forum/thread_view",
+			"style": {
+				"navigationBarTitleText": "帖子详情"
+			}
+		},
+		{
+			"path": "pages/forum/thread_publish",
+			"style": {
+				"navigationBarTitleText": "发布帖子"
+			}
+		},
+		{
+			"path": "pages/forum/thread_reply",
+			"style": {
+				"navigationBarTitleText": "帖子回复"
+			}
+		},
+		{
+			"path": "pages/agent/index",
+			"style": {
+				"navigationBarTitleText": "我的代理"
+			}
+		},
+		{
+			"path": "pages/agent/member_list",
+			"style": {
+				"navigationBarTitleText": "我的成员"
+			}
+		},
+		{
+			"path": "pages/agent/order_list",
+			"style": {
+				"navigationBarTitleText": "成交订单"
+			}
+		},
+		{
+			"path": "pages/agent/order_view",
+			"style": {
+				"navigationBarTitleText": "订单详情"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color": "#333333",
+		"selectedColor": "#3cc51f",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [{
+			"pagePath": "pages/home/index",
+			"iconPath": "static/img/icon_home_a.svg",
+			"selectedIconPath": "static/img/icon_home_b.svg",
+			"text": "首页"
+		}, {
+			"pagePath": "pages/home/channel",
+			"iconPath": "static/img/icon_info_a.svg",
+			"selectedIconPath": "static/img/icon_info_b.svg",
+			"text": "资讯"
+		}, {
+			"pagePath": "pages/home/contact",
+			"iconPath": "static/img/icon_contact_a.svg",
+			"selectedIconPath": "static/img/icon_contact_b.svg",
+			"text": "客服"
+		}, {
+			"pagePath": "pages/user/index",
+			"iconPath": "static/img/icon_my_a.svg",
+			"selectedIconPath": "static/img/icon_my_b.svg",
+			"text": "我"
+		}]
+	}
+}

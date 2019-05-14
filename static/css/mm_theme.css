@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+/* 重置样式 */
+body { color: #333; }
+dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.title { color:#333; }
+
+/* ====== 公共样式 ====== */
+/* 背景 */
+.bg_white {background:#fff;color:#333;}
+.bg_black {background:#333;color:#fff;border-color:#333;}
+.bg_light { background:#ccc;color:#fff;border-color:#ccc;}
+.bg_dark {background:#666;color:#fff;border-color:#666;}
+.bg_grey,.bg_default {background:#999;color:#fff;border-color:#999;}
+.bg_red,.bg_warning {background: #FF0036;color:#fff;border-color:#FF0036;}
+.bg_yellow,.bg_danger {background:#fca216;color:#fff;border-color:#fca216;}
+.bg_green,.bg_success {background:#09BB07;color:#fff;border-color:#09BB07;}
+.bg_cyan,.bg_info {background:#00b2d2;color:#fff;border-color:#00b2d2;}
+.bg_blue,.bg_primary {background:#38f;color:#fff;border-color:#38f;}
+.bg_purple {background: #7f39e8; color:#fff;border-color:#7f39e8;}
+
+/* 字体颜色 */
+.font_black {color:#333;}
+.font_dark {color:#666;}
+.font_grey {color:#999;}
+.font_light {color:#ccc;}
+
+.font_warning {color:#E6A23C;}
+.font_green {color:#67C23A;}
+.font_blue {color:#409EFF;}
+.font_danger {color:#F56C6C;}
+.font_info {color:#909399;}
+
+/* 元素样式 */
+.desc, .tip { color:#666; }
+
+
+.btn:focus { -webkit-filter: contrast(2) brightness(0.9); filter: contrast(2) brightness(0.9); }
+.btn:hover { -webkit-filter: brightness(1.25); filter: brightness(1.25); }
+.btn:disabled { -webkit-filter: grayscale(0.5); filter: grayscale(0.5); }
+
+/* button.bg_white:focus {background:#fff;color:#333;}
+button.bg_black:focus {background:#333;color:#fff;}
+button.bg_light:focus { background:#ccc;color:#fff;}
+button.bg_dark:focus {background:#666;color:#fff;}
+button.bg_grey:focus,button.bg_default:focus {background:#999;color:#fff;}
+button.bg_red:focus,button.bg_warning:focus {background: #cc002c;color:#fff;}
+button.bg_yellow:focus,button.bg_danger:focus {background:#dd8a03;color:#fff;}
+button.bg_green:focus,button.bg_success:focus {background:#078a05;color:#fff;}
+button.bg_cyan:focus,button.bg_info:focus {background:#00869e;color:#fff;}
+button.bg_blue:focus,button.bg_primary:focus {background:#006aff;color:#fff;}
+button.bg_purple:focus {background: #6519d7; color:#fff;} */
