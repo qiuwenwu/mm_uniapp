@@ -1,6 +1,8 @@
 <template>
-	<view class="card_foot">
-		<solt></solt>
+	<view class="dl">
+		<solt>
+			
+		</solt>
 	</view>
 </template>
 

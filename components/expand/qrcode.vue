@@ -1,5 +1,5 @@
 <template>
-	<view class="card_foot">
+	<view class="qrcode">
 		<solt></solt>
 	</view>
 </template>

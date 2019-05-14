@@ -1,5 +1,5 @@
 <template>
-	<view class="card_foot">
+	<view class="swiper_banner">
 		<solt></solt>
 	</view>
 </template>

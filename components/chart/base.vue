@@ -1,5 +1,5 @@
 <template>
-	<view class="card_foot">
+	<view class="chart_base">
 		<solt></solt>
 	</view>
 </template>
