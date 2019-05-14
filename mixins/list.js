@@ -12,6 +12,11 @@ export default {
 			type: String,
 			default: "1"
 		},
+		// 显示隐藏
+		show: {
+			type: Boolean,
+			default: false
+		},
 		// 加载中
 		loading: {
 			type: Boolean,
@@ -105,18 +110,6 @@ export default {
 			type: Number,
 			default: 0
 		},
-		// 显示隐藏
-		show: {
-			type: Number,
-			default: 0
-		},
-		// 允许访问组
-		group: {
-			type: Array,
-			default: function() {
-				return []
-			}
-		},
 		// 主键
 		field: {
 			type: String,
@@ -127,17 +120,48 @@ export default {
 			type: String,
 			default: ""
 		},
-		// 数量
-		num: {
-			type: Number,
-			default: 0
-		},
 		// 选中项
 		selected: {
 			type: Array,
 			default: function() {
 				return []
 			}
+		},
+		// 允许访问的用户组
+		user_group: {
+			type: Array,
+			default: function() {
+				return []
+			}
+		},
+		// 允许访问的管理组
+		admin_group: {
+			type: Array,
+			default: function() {
+				return []
+			}
+		},
+		// 允许访问的用户级别需多少以上
+		vip: {
+			type: Number,
+			default: 0
+		},
+		// 允许访问的管理级别需多少以上
+		gm: {
+			type: Number,
+			default: 0
+		},
+		// 允许访问的角色
+		roles: {
+			type: Array,
+			default: function() {
+				return []
+			}
+		},
+		// 身份验证
+		oauth: {
+			type: Boolean,
+			default: false
 		}
 	},
 	data() {
@@ -208,4 +232,4 @@ export default {
 			this.run('goTo', page);
 		}
 	}
-};
+}

@@ -7,32 +7,68 @@ export default {
 				return null
 			}
 		},
-		// 显示方式
-		display: {
-			type: String,
-			default: "1"
-		},
 		// 显示隐藏
 		show: {
 			type: Boolean,
 			default: false
 		},
-		// 加载中
-		loading: {
-			type: Boolean,
-			default: false
+		// 标题
+		title: {
+			type: String,
+			default: ""
+		},
+		// 错误提示
+		tip: {
+			type: String,
+			default: ""
+		},
+		// 错误提示
+		tip: {
+			type: String,
+			default: ""
+		},
+		min: {
+			type: Number,
+			default: 0
+		},
+		max: {
+			type: Number,
+			default: 65535
+		},
+		// 描述
+		desc: {
+			type: String,
+			default: ""
 		},
 		// 主键
 		field: {
 			type: String,
 			default: "id"
 		},
-		// 对象
-		obj: {
-			type: Object,
-			default: function() {
-				return {}
-			}
+		// 主键序号
+		id: {
+			type: Number,
+			default: 0
+		},
+		// 标签
+		type: {
+			type: String,
+			default: "text"
+		},
+		// 数量
+		num: {
+			type: Number,
+			default: 0
+		},
+		// 文本
+		text: {
+			type: String,
+			default: ""
+		},
+		// 链接
+		url: {
+			type: String,
+			default: ""
 		},
 		// 允许访问的用户组
 		user_group: {
@@ -69,62 +105,6 @@ export default {
 		oauth: {
 			type: Boolean,
 			default: false
-		},
-		// 视图模型
-		vm: {
-			type: Object,
-			default: function() {
-				return {
-					// 当前ID
-					id: 'id',
-					// 上级ID
-					fid: 'fid',
-					// 图片
-					img: 'img',
-					// 图标
-					icon: 'icon',
-					// 标题
-					title: 'title',
-					// 描述
-					desc: 'desc',
-					// 内容
-					content: 'content',
-					// 时间
-					time: 'time',
-					// 链接
-					url: 'url',
-					// 方式
-					mode: 'mode',
-					// 来源
-					source: 'source',
-					// 来源地址
-					source_url: 'source_url',
-					// 标签
-					label: 'label',
-					// 名称
-					name: 'name',
-					// 值
-					value: 'value',
-					// 提示
-					tip: 'tip',
-					// 热度
-					hot: 'hot',
-					// 原价
-					price_old: 'price_old',
-					// 价格
-					price: 'price',
-					// 总价
-					total: 'total',
-					// 点赞数
-					zan: 'zan',
-					// 总量
-					count: 'count',
-					// 数量
-					num: 'num',
-					// 作者
-					author: 'author'
-				}
-			}
 		}
 	},
 	data() {
@@ -157,13 +137,20 @@ export default {
 			}
 			return null;
 		},
+		// 删除
+		/// query: 查询条件
+		del() {
+			var query = {};
+			query[this.field] = this.id;
+			this.run('del', query);
+		},
 		// 修改
 		/// query: 查询条件
 		/// obj: 修改的对象
-		set() {
+		set(obj) {
 			var query = {};
-			query[this.field] = this.oj[this.field];
-			this.run('set', query, this.oj);
+			query[this.field] = this.id;
+			this.run('set', query, obj);
 		}
 	}
 }

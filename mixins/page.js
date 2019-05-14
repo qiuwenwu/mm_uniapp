@@ -53,13 +53,9 @@ export default {
 			// 总计
 			count: 0,
 			// 显示隐藏
-			show: 0,
+			show: false,
 			// 验证模型
 			check_model: {},
-			// 允许访问用户组
-			group: [],
-			// 身份验证
-			oauth: false,
 			// 重定向
 			redirect: "/signIn",
 			// 状态组
@@ -156,7 +152,19 @@ export default {
 					validator: password_confirm_check,
 					trigger: 'blur'
 				}]
-			}
+			},
+			// 允许访问的用户组
+			user_group: [],
+			// 允许访问的管理组
+			admin_group: [],
+			// 允许访问的用户级别需多少以上
+			vip: 0,
+			// 允许访问的管理级别需多少以上
+			gm: 0,
+			// 允许访问的角色
+			roles: [],
+			// 身份验证
+			oauth: false
 		}
 	},
 	methods: {
@@ -260,7 +268,11 @@ export default {
 		/// 搜索
 		/// bl: 是否重置再搜索
 		search(bl) {
-
+			if(bl)
+			{
+				this.reset();
+			}
+			this.get();
 		},
 
 		/// 提交

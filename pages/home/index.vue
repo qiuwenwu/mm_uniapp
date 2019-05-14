@@ -1,11 +1,15 @@
 <template>
 	<view class="page home_index">
-		<swiper_banner>
-			<swiper-item v-for="(o, idx) in list_banner" :key="idx">
+		<group>
+			<input type="text"></input>
+			<button>提交</button>
+		</group>
+		<swiper_banner :list="list_banner">
+<!-- 			<swiper-item v-for="(o, idx) in list_banner" :key="idx">
 				<navigator :url="o.url">
 					<image :src="o.img" class="banner-image" mode="aspectFill" lazy-load></image>
 				</navigator>
-			</swiper-item>
+			</swiper-item> -->
 		</swiper_banner>
 		<view class="menu">
 			<navigator class="menu_item" url="/pages/home/article_list?title=关于我们">
@@ -92,10 +96,12 @@
 
 <script>
 	import swiper_banner from '@/components/swiper/banner'
-
+	import group from '@/components/container/group'
+	
 	export default {
 		components: {
-			swiper_banner
+			swiper_banner,
+			group
 		},
 		data() {
 			return {
