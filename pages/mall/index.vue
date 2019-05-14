@@ -1,4 +1,7 @@
 <template>
+	<view class="mall_index">
+		
+	</view>
 </template>
 
 <script>

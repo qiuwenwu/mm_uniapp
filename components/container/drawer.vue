@@ -1,5 +1,5 @@
 <template>
-	<view class="form_item">
+	<view class="side">
 		<slot></slot>
 	</view>
 </template>

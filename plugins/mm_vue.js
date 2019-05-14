@@ -29,6 +29,7 @@ mm.install = function(Vue, options) {
 
 	/* 注册全局函数 */
 	Vue.prototype.$echarts = echarts;
+	Vue.prototype.$obj = $.obj;
 
 	Vue.prototype.$get = function(url, fun) {
 		var token = $.cookie("token");
@@ -50,7 +51,7 @@ mm.install = function(Vue, options) {
 			"x-auth-token": token
 		});
 	};
-
+	
 	Vue.prototype.$float = function(num) {
 		return num.toFloor(8);
 	};

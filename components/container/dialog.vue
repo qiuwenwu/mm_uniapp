@@ -1,6 +1,6 @@
 <template>
 	<view class="dialog">
-		<solt></solt>
+		<slot></slot>
 	</view>
 </template>
 

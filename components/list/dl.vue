@@ -1,8 +1,6 @@
 <template>
 	<view class="dl">
-		<solt>
-			
-		</solt>
+		<slot></slot>
 	</view>
 </template>
 

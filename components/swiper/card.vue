@@ -1,6 +1,6 @@
 <template>
 	<view class="swiper_card">
-		<solt></solt>
+		<slot></slot>
 	</view>
 </template>
 

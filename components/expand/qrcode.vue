@@ -1,6 +1,6 @@
 <template>
 	<view class="qrcode">
-		<solt></solt>
+		<slot></slot>
 	</view>
 </template>
 

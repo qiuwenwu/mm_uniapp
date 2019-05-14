@@ -1,6 +1,6 @@
 <template>
 	<view class="message_item">
-		<solt></solt>
+		<slot></slot>
 	</view>
 </template>
 

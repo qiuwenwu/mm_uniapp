@@ -1,6 +1,6 @@
 <template>
 	<view class="actionsheet">
-		<solt></solt>
+		<slot></slot>
 	</view>
 </template>
 

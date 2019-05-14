@@ -1,6 +1,6 @@
 <template>
 	<view class="toast">
-		<solt></solt>
+		<slot></slot>
 	</view>
 </template>
 

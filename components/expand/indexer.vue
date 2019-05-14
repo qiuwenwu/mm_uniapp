@@ -1,6 +1,6 @@
 <template>
 	<view class="indexer">
-		<solt></solt>
+		<slot></slot>
 	</view>
 </template>
 

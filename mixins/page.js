@@ -1,5 +1,3 @@
-import $ from 'jquery';
-
 export default {
 	data() {
 		var password_check = (rule, value, callback) => {
@@ -57,9 +55,9 @@ export default {
 			// 显示隐藏
 			show: 0,
 			// 验证模型
-			cm: {},
-			// 权限
-			powers: [],
+			check_model: {},
+			// 允许访问用户组
+			group: [],
 			// 身份验证
 			oauth: false,
 			// 重定向
@@ -79,13 +77,12 @@ export default {
 				// 				state: 0
 			},
 			config: {
+				// 唯一主键
 				id: "",
 				// 页面
 				page: 1,
 				// 大小
-				size: 10,
-				// 状态
-				state: 0
+				size: 10
 			},
 			// 表单
 			form: {},
@@ -252,12 +249,12 @@ export default {
 		/// 重置
 		reset() {
 			// 重置查询条件
-			$.obj.clear(this.query);
-			$.obj.push(this.query, this.config);
+			this.$obj.clear(this.query);
+			this.$obj.push(this.query, this.config);
 
 			// 重置表单
-			$.obj.clear(this.form);
-			$.obj.push(this.form, this.obj);
+			this.$obj.clear(this.form);
+			this.$obj.push(this.form, this.obj);
 		},
 
 		/// 搜索

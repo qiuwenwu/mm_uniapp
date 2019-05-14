@@ -1,6 +1,6 @@
 <template>
 	<view class="card_foot">
-		<solt></solt>
+		<slot></slot>
 	</view>
 </template>
 

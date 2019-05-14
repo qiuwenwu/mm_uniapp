@@ -1,6 +1,6 @@
 <template>
 	<view class="ul">
-		<solt></solt>
+		<slot></slot>
 	</view>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
 	<view class="uploader">
-		<solt></solt>
+		<slot></slot>
 	</view>
 </template>
 

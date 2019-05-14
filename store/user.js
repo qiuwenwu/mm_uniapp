@@ -1,5 +1,6 @@
 const user = {
 	state: {
+		isLoad: false,
 		username: "qiuwenwu",
 		name: "邱文武",
 		nickName: "命天子",

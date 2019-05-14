@@ -1,6 +1,6 @@
 <template>
 	<view class="group">
-		<solt></solt>
+		<slot></slot>
 	</view>
 </template>
 

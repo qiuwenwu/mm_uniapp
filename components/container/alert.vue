@@ -1,6 +1,6 @@
 <template>
 	<view class="alert">
-		<solt></solt>
+		<slot></slot>
 	</view>
 </template>
 

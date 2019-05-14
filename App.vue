@@ -21,6 +21,7 @@
 </script>
 
 <style>
+	
 	/* ===  每个页面公共css  === */
 	.article_list .uni-list-item__container:after { left: 52px !important; }
 	
@@ -31,6 +32,6 @@
 	.page { padding-bottom: 50upx; }
 	.block { margin-top: 50upx;  }
 	
-	uni-swiper { height: 25vh; }
+
 	uni-image { width: 100%; height: 25vh; }
 </style>

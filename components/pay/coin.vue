@@ -1,6 +1,6 @@
 <template>
-	<view class="form_item">
-		<slot></slot>
+	<view class="pay_ali">
+		
 	</view>
 </template>
 

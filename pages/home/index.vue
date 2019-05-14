@@ -1,20 +1,12 @@
 <template>
 	<view class="page home_index">
-		<swiper class="banner-box" indicator-dots autoplay indicator-active-color="#169bd5" circular :interval="5000"
-		 :duration="300" indicator-color="rgba(0,0,0,.3)">
-			<swiper-item>
-				<image src="/static/img/banner1.jpg" class="banner-image" mode="aspectFill" lazy-load></image>
+		<swiper_banner>
+			<swiper-item v-for="(o, idx) in list_banner" :key="idx">
+				<navigator :url="o.url">
+					<image :src="o.img" class="banner-image" mode="aspectFill" lazy-load></image>
+				</navigator>
 			</swiper-item>
-			<swiper-item>
-				<image src="/static/img/banner2.jpg" class="banner-image" mode="aspectFill" lazy-load></image>
-			</swiper-item>
-			<swiper-item>
-				<image src="/static/img/banner3.jpg" class="banner-image" mode="aspectFill" lazy-load></image>
-			</swiper-item>
-			<swiper-item>
-				<image src="/static/img/banner4.jpg" class="banner-image" mode="aspectFill" lazy-load></image>
-			</swiper-item>
-		</swiper>
+		</swiper_banner>
 		<view class="menu">
 			<navigator class="menu_item" url="/pages/home/article_list?title=关于我们">
 				<view class="menu_icon" style="background-image: linear-gradient(135deg, rgb(252, 207, 49) 10%, rgb(245, 85, 85) 100%);">
@@ -80,7 +72,7 @@
 			<uni-badge text="1" type="error"></uni-badge>
 		</view> -->
 		<!-- <text class="fa fa-btc"></text> -->
-<!-- 		<view class="calculation">
+		<!-- 		<view class="calculation">
 			<view class="calculation_title">云算力套餐</view>
 			<uni-list>
 				<uni-list-item title="A套餐 (5500元)" note="360天 14T算力 预计收益10%" badge-text="已售 80%" badge-type="error" :show-badge="true"
@@ -99,10 +91,32 @@
 </template>
 
 <script>
+	import swiper_banner from '@/components/swiper/banner'
+
 	export default {
+		components: {
+			swiper_banner
+		},
 		data() {
 			return {
-				title: 'Hello'
+				title: 'Hello',
+				list_banner: [{
+						img: "/static/img/banner1.jpg",
+						url: "/pages/mall/product_list"
+					},
+					{
+						img: "/static/img/banner2.jpg",
+						url: "/pages/mall/product_list"
+					},
+					{
+						img: "/static/img/banner3.jpg",
+						url: "/pages/mall/product_list"
+					},
+					{
+						img: "/static/img/banner4.jpg",
+						url: "/pages/mall/product_list"
+					}
+				]
 			}
 		},
 		onLoad() {
@@ -216,7 +230,7 @@
 		color: #576B95;
 		font-size: 24upx;
 	}
-	
+
 	.calculation_title {
 		padding: 16upx 32upx;
 		font-size: 28upx;

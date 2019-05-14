@@ -1,8 +1,8 @@
 <template>
-	<view class="side">
-		<solt></solt>
+	<view class="pay_ali">
+		
 	</view>
-</template>
+</template>      
 
 <script>
 </script>
