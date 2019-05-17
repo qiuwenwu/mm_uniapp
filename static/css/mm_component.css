@@ -11,7 +11,7 @@
 }
 
 .normal input,
-input {
+.input {
 	font-size: 0.75rem;
 	padding: 0 0.5rem;
 }
@@ -40,7 +40,7 @@ input {
 }
 
 .normal button,
-button {
+.btn {
 	font-size: 0.75rem;
 	padding: 0 0.75rem;
 }
@@ -150,7 +150,7 @@ button {
 	float: left;
 }
 
-.group input[type="checkbox"] ~ span {
+.group input[type="checkbox"]~span {
 	margin-left: .5rem;
 }
 
@@ -267,23 +267,11 @@ button {
 	margin-top: 1.5rem;
 }
 
-.control>* {
-	width: 100%;
-}
-
 .tip {
 	position: absolute;
 	top: 100%;
 	right: 0;
 	font-size: 0.75rem;
-}
-
-.form_item {
-	position: relative;
-}
-
-.form_item~.form_item {
-	margin-top: 1.5rem;
 }
 
 .bg {
@@ -292,4 +280,85 @@ button {
 	background: -webkit-linear-gradient(top, #ffffff 0%, #f8f8f8 100%);
 	background: linear-gradient(to bottom, #ffffff 0%, #f8f8f8 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f8f8f8', GradientType=0);
+}
+
+.form_item {
+	position: relative;
+}
+
+.form_item:before,
+.form_item:after {
+	content: "";
+	display: block;
+	clear: both;
+	float: none;
+}
+
+.form_item~.form_item:before {
+	position: absolute;
+	content: "";
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	top: 0;
+	width: calc(100% - 1rem);
+	z-index: 1;
+	left: 1rem;
+}
+
+.form_title {
+	float: left;
+	padding-left: 1rem
+}
+
+.form_desc {
+	float: right;
+	z-index: 3;
+	margin-left: 0.5rem;
+}
+
+.form_desc button {
+	border-radius: 0;
+	border: none !important;
+}
+
+.form_desc button:after {
+	border-radius: 0;
+	border: none !important;
+	border-left: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+.form_input {
+	padding: 0.55rem 0.5rem 0.55rem 1rem;
+}
+
+.form_input input {
+	margin-right: 0.5rem;
+	font-size: 0.875rem;
+}
+
+.form_title,
+.form_desc button {
+	font-size: 0.875rem;
+	height: 2.5rem;
+	line-height: 2.5rem;
+}
+
+.form_icon {
+	margin-right: 0.5rem;
+}
+
+.form_desc switch, .form_desc checkbox {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translate(0, -50%);
+	margin-right: 1rem;
+	
+}
+
+.form_desc checkbox .uni-checkbox-input{
+	border: none;
+}
+
+.form_desc checkbox .uni-checkbox-input, .form_desc switch .uni-switch-input {
+	margin-right: 0;
 }

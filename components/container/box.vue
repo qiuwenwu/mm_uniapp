@@ -13,11 +13,11 @@
 			},
 			start: {
 				type: String,
-				default: "5EFCE8"
+				default: "#5EFCE8"
 			},
 			end: {
 				type: String,
-				default: "736EFE"
+				default: "#736EFE"
 			}
 		}
 	}

@@ -21,17 +21,13 @@
 </script>
 
 <style>
-	
+	html { line-height: 1.25; }
 	/* ===  每个页面公共css  === */
-	.article_list .uni-list-item__container:after { left: 52px !important; }
+	/* .article_list .uni-list-item__container:after { left: 52px !important; } */
 	
 	/* .uni-list-item__container[data-v-1623cbff]:after { left: 52px !important; }
 	.uni-icon-arrowright[data-v-29cd6af3]:before { content: none !important; } */
 	
 	/* 页面通用 */
-	.page { padding-bottom: 50upx; }
-	.block { margin-top: 50upx;  }
-	
-
-	uni-image { width: 100%; height: 25vh; }
+	.page { padding-bottom: 3.125rem; }
 </style>
