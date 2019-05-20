@@ -31,9 +31,12 @@
 		</view>
 		<view class="banner">
 			<view class="banner_title">务实进取 诚信共赢</view>
-			<image class="banner_image" src="/static/img/ad.jpg"></image>
+			<navigator url="../demo/index" hover-class="navigator-hover">
+				<image class="banner_image" src="/static/img/ad.jpg"></image>
+			</navigator>
 		</view>
-<!-- 		<view>
+		
+<!-- <view>
 			<text class="title">{{title}}</text>
 			<text class="fa fa-user-circle-o"></text>
 		</view> -->
@@ -60,7 +63,7 @@
 			</uni-list>
 		</view> -->
 		<view class="footer">
-			<navigator url="#" class="footer_link">比特中心</navigator>
+			<navigator url="../home/article_view?title=关于我们" class="footer_link">比特中心</navigator>
 			<text class="copyright">Copyright © 2019-2022 weui.io</text>
 		</view>
 	</view>

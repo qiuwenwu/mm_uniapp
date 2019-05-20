@@ -33,19 +33,16 @@ dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.title { color:#333; }
 /* 元素样式 */
 .desc, .tip { color:#666; }
 
-
 .btn:focus { -webkit-filter: contrast(2) brightness(0.9); filter: contrast(2) brightness(0.9); }
 .btn:hover { -webkit-filter: brightness(1.25); filter: brightness(1.25); }
 .btn:disabled { -webkit-filter: grayscale(0.5); filter: grayscale(0.5); }
 
-/* button.bg_white:focus {background:#fff;color:#333;}
-button.bg_black:focus {background:#333;color:#fff;}
-button.bg_light:focus { background:#ccc;color:#fff;}
-button.bg_dark:focus {background:#666;color:#fff;}
-button.bg_grey:focus,button.bg_default:focus {background:#999;color:#fff;}
-button.bg_red:focus,button.bg_warning:focus {background: #cc002c;color:#fff;}
-button.bg_yellow:focus,button.bg_danger:focus {background:#dd8a03;color:#fff;}
-button.bg_green:focus,button.bg_success:focus {background:#078a05;color:#fff;}
-button.bg_cyan:focus,button.bg_info:focus {background:#00869e;color:#fff;}
-button.bg_blue:focus,button.bg_primary:focus {background:#006aff;color:#fff;}
-button.bg_purple:focus {background: #6519d7; color:#fff;} */
+
+/* 默认配置 */
+.mm_modal .mm_warp { background: #fff; }
+.mm_mask { background:rgba(0,0,0,0.3); }
+
+/* 临时测试 */
+body { background: #ededed; }
+.mm_col,[class*=mm_col_] { background: #fff; }
+.mm_col { height: 200px; }

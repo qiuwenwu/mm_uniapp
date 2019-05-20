@@ -21,7 +21,6 @@
 </script>
 
 <style>
-	html { line-height: 1.25; }
 	/* ===  每个页面公共css  === */
 	/* .article_list .uni-list-item__container:after { left: 52px !important; } */
 	
