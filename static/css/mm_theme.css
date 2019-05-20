@@ -44,5 +44,5 @@ dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.title { color:#333; }
 
 /* 临时测试 */
 body { background: #ededed; }
-.mm_col,[class*=mm_col_] { background: #fff; }
-.mm_col { height: 200px; }
+.mm_col>*,[class*=mm_col_]>* { background: #fff; }
+.mm_col>* { height: 200px; }
