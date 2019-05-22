@@ -210,7 +210,7 @@ export default {
 
 		// 修改多条
 		set_list(query, arr) {
-
+			
 		},
 
 		// 查
@@ -225,7 +225,7 @@ export default {
 
 		// 查列表
 		get_list(query) {
-
+			this.$post(this.url_get)
 		},
 
 		/// 导入

@@ -1,6 +1,6 @@
 <template>
-	<view class="page_agent" id="agent_member_list">
-		<!--  -->
+	<view class="page" id="user_bill_view">
+		<!-- 用户账单详情 -->
 		
 	</view>
 </template>

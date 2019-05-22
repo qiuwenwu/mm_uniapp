@@ -1,6 +1,6 @@
 <template>
-	<view class="page_agent" id="agent_member_list">
-		<!--  -->
+	<view class="page" id="user_signout">
+		<!-- 退出提示 -->
 		
 	</view>
 </template>

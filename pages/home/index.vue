@@ -1,22 +1,21 @@
 <template>
-	<view class="page home_index">
-		<swiper_banner :list="list_banner">
-			<!-- <swiper-item v-for="(o, idx) in list_banner" :key="idx">
-				<navigator :url="o.url">
-					<image :src="o.img" class="banner-image" mode="aspectFill" lazy-load></image>
-				</navigator>
-			</swiper-item> -->
-		</swiper_banner>
+	<view class="page_home" id="home_index">
+		<!-- 轮播图 -->
+		<swiper_banner :list="list_banner"/>
+		
+		<!-- 菜单 -->
 		<list_menu/>
+		
+		<!-- 广告卡 -->
 		<view class="ad row">
-			<view class="col-50">
+			<view class="col_50">
 				<view class="ad_1">
 					<image src="/static/img/ad_1.png" class="ad_image_lg"></image>
 					<text class="ad_title" style="color: #f55555; margin-top: 36upx;">物超所值</text>
 					<text class="ad_desc">低费率服务平台</text>
 				</view>
 			</view>
-			<view class="col-50">
+			<view class="col_50">
 				<view class="ad_2">
 					<image src="/static/img/ad_2.png" class="ad_image"></image>
 					<text class="ad_title" style="color: #3cd500;">高效交易流程</text>
@@ -29,6 +28,8 @@
 				</view>
 			</view>
 		</view>
+		
+		<!-- 横幅广告 -->
 		<view class="banner">
 			<view class="banner_title">务实进取 诚信共赢</view>
 			<navigator url="../demo/index" hover-class="navigator-hover">
@@ -36,6 +37,7 @@
 			</navigator>
 		</view>
 		
+		<!-- 推荐产品列表 -->
 <!-- <view>
 			<text class="title">{{title}}</text>
 			<text class="fa fa-user-circle-o"></text>
@@ -62,6 +64,8 @@
 				 thumb="http://img-cdn-qiniu.dcloud.net.cn/new-page/hx.png"></uni-list-item>
 			</uni-list>
 		</view> -->
+		
+		<!-- 页脚 -->
 		<view class="footer">
 			<navigator url="../home/article_view?title=关于我们" class="footer_link">比特中心</navigator>
 			<text class="copyright">Copyright © 2019-2022 weui.io</text>

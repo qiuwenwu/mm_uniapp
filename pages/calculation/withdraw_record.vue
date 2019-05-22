@@ -1,5 +1,5 @@
 <template>
-	<view class="page_agent" id="agent_member_list">
+	<view class="page_calculation" id="calculation_withdraw_record">
 		<!--  -->
 		
 	</view>
