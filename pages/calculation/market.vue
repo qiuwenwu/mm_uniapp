@@ -1,14 +1,15 @@
 <template>
-	<view class="page_forum" id="forum_thread_reply">
-		<!-- 论坛回复富文本框 -->
-
-		<!-- 论坛回复提交按钮 -->
+	<view class="page" id="calculation_market">
+		<!-- 交易条件筛选面板 -->
+		
+		<!-- 交易物品列表 -->
+		
 	</view>
 </template>
 
 <script>
-	import mixin from '@/mixins/page'
-
+		import mixin from '@/mixins/page'
+	
 	export default {
 		mixins: [mixin],
 		components: {},

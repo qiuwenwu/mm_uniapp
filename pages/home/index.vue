@@ -1,11 +1,11 @@
 <template>
 	<view class="page_home" id="home_index">
 		<!-- 轮播图 -->
-		<swiper_banner :list="list_banner"/>
-		
+		<swiper_banner :list="list_banner" />
+
 		<!-- 菜单 -->
-		<list_menu/>
-		
+		<list_menu />
+
 		<!-- 广告卡 -->
 		<view class="ad row">
 			<view class="col_50">
@@ -28,7 +28,7 @@
 				</view>
 			</view>
 		</view>
-		
+
 		<!-- 横幅广告 -->
 		<view class="banner">
 			<view class="banner_title">务实进取 诚信共赢</view>
@@ -36,9 +36,9 @@
 				<image class="banner_image" src="/static/img/ad.jpg"></image>
 			</navigator>
 		</view>
-		
+
 		<!-- 推荐产品列表 -->
-<!-- <view>
+		<!-- <view>
 			<text class="title">{{title}}</text>
 			<text class="fa fa-user-circle-o"></text>
 		</view> -->
@@ -64,7 +64,7 @@
 				 thumb="http://img-cdn-qiniu.dcloud.net.cn/new-page/hx.png"></uni-list-item>
 			</uni-list>
 		</view> -->
-		
+
 		<!-- 页脚 -->
 		<view class="footer">
 			<navigator url="../home/article_view?title=关于我们" class="footer_link">比特中心</navigator>
@@ -77,7 +77,10 @@
 	import swiper_banner from '@/components/swiper/banner'
 	import list_menu from '@/components/menu'
 
+	import mixin from '@/mixins/page'
+
 	export default {
+		mixins: [mixin],
 		components: {
 			swiper_banner,
 			list_menu
@@ -127,7 +130,7 @@
 		width: 100%;
 		height: 8.75rem;
 	}
-	
+
 	.ad {
 		border-top: 1px solid #e3e3e3;
 		border-bottom: 1px solid #e3e3e3;

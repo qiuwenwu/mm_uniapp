@@ -17,10 +17,10 @@ export default {
 			type: Boolean,
 			default: false
 		},
-		// 加载中
+		// 加载进度, 小于100表示加载中，大于100表示加载完成
 		loading: {
-			type: Boolean,
-			default: false
+			type: Number,
+			default: 0
 		},
 		// 当前索引
 		index: {

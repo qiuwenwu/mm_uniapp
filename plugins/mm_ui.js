@@ -1,59 +1,64 @@
-import jquery from 'jquery';
+import Vue from 'vue'
 
-(function($) {
-	$.fn.extend({
-		"roll": function(sleep) {
-			var _this = this;
-			var ht = -_this.children("li").eq(0).height();
+// 内容容器
+import mm_title from '@/components/content/mm_title'
+import mm_desc from '@/components/content/mm_desc'
+import mm_icon from '@/components/content/mm_icon'
+import mm_tip from '@/components/content/mm_tip'
 
-			function action() {
-				var lis = _this.children("li");
-				if (lis.length > 1) {
-					//复制第一个li
-					var li = lis.eq(0);
-					var li_copy = li.clone();
-					//使用animate对li的外边距进行调整从而达到向上滚动的效果
-					li.animate({
-						marginTop: ht + "px"
-					}, "toggle", function() {
-						//对已经消失的li进行删除
-						li.remove();
-						//把复制后的li插入到最后
-						$(_this).append(li_copy);
-					});
-				}
-			}
+// 布局容器
+import mm_block from '@/components/layout/mm_block'
+import mm_body from '@/components/layout/mm_body'
+import mm_bodyer from '@/components/layout/mm_bodyer'
+import mm_box from '@/components/layout/mm_box'
+import mm_foot from '@/components/layout/mm_foot'
+import mm_footer from '@/components/layout/mm_footer'
+import mm_grid from '@/components/layout/mm_grid'
+import mm_group from '@/components/layout/mm_group'
+import mm_head from '@/components/layout/mm_head'
+import mm_header from '@/components/layout/mm_header'
+import mm_item from '@/components/layout/mm_item'
+import mm_list from '@/components/layout/mm_list'
+import mm_main from '@/components/layout/mm_main'
+import mm_mask from '@/components/layout/mm_mask'
+import mm_modal from '@/components/layout/mm_modal'
+import mm_page from '@/components/layout/mm_page'
+import mm_side from '@/components/layout/mm_side'
+import mm_warp from '@/components/layout/mm_warp'
 
-			//每隔两秒进行一次滚动
-			var timing = setInterval(action, sleep);
+let mm_ui = {
+	/// 安装
+	/// Vue: 框架
+	/// options: 配置参数
+	install(Vue, options) {
+		/* === 创建全局组件 === */
 
-			$(_this).hover(
-				// 鼠标经过清除滚动
-				function() {
-					clearInterval(timing);
-				},
-				// 鼠标移出重新滚动
-				function() {
-					timing = setInterval(action, sleep);
-				}
-			);
+		// 内容
+		Vue.component('mm_title', mm_title);
+		Vue.component('mm_desc', mm_desc);
+		Vue.component('mm_icon', mm_icon);
+		Vue.component('mm_tip', mm_tip);
 
-		}
-	});
-
-	$.autoSize = function(minWidth) {
-		function setSize() {
-			// 1920 / 16 = 120;
-			var win_w = $('html').width();
-			if(win_w >= minWidth)
-			{
-				var fontSize = win_w / 120;
-				//获取当前浏览器窗口宽度(这里的实质就是body宽度)
-				$('html').css('fontSize', fontSize + 'px');
-			}
-		}
-		setSize();
-		$(window).resize(setSize);
+		// 容器
+		Vue.component('mm_block', mm_block);
+		Vue.component('mm_body', mm_body);
+		Vue.component('mm_bodyer', mm_bodyer);
+		Vue.component('mm_box', mm_box);
+		Vue.component('mm_foot', mm_foot);
+		Vue.component('mm_footer', mm_footer);
+		Vue.component('mm_grid', mm_grid);
+		Vue.component('mm_group', mm_group);
+		Vue.component('mm_head', mm_head);
+		Vue.component('mm_header', mm_header);
+		Vue.component('mm_item', mm_item);
+		Vue.component('mm_list', mm_list);
+		Vue.component('mm_main', mm_main);
+		Vue.component('mm_mask', mm_mask);
+		Vue.component('mm_modal', mm_modal);
+		Vue.component('mm_page', mm_page);
+		Vue.component('mm_side', mm_side);
+		Vue.component('mm_warp', mm_warp);
 	}
-	
-})(jquery);
+}
+
+export default mm_ui;

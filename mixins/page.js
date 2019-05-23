@@ -1,157 +1,57 @@
 export default {
 	data() {
-		var password_check = (rule, value, callback) => {
-			if (value === '') {
-				callback(new Error('请输入密码'));
-			} else {
-				if (this.form.password !== '') {
-					this.$refs.form.validateField('password_check');
-				}
-				callback();
-			}
-		};
-
-		var password_confirm_check = (rule, value, callback) => {
-			if (value === '') {
-				callback(new Error('请再次输入密码'));
-			} else if (value !== this.form.password) {
-				callback(new Error('两次输入密码不一致!'));
-			} else {
-				callback();
-			}
-		};
-
 		return {
-			// 标签
-			label: "",
-			// 增加地址
-			url_add: "",
+			// 页标题
+			title: "",
 			// 删除地址
 			url_del: "",
-			// 修改地址
-			url_set: "",
-			// 查询地址
+			// 查询对象地址
 			url_get: "",
-			// 链接
+			// 查询列表地址
+			url_get_list: "",
+			// 导出地址
+			url_export: "",
+			// 导入地址
+			url_import: "",
+			// 默认访问链接, 当单独链接没有时，访问默认链接
 			url: "",
+			/* === 缓存 === */
 			// 显示方式
 			display: "",
-			// 加载中
-			loading: false,
+			// 加载进度, 小于100表示加载中，大于100表示加载完成
+			loading: 0,
 			// 当前索引
 			index: 0,
+			// 页数
+			page: 1,
 			// 列数
 			col: 4,
+			// 总计
+			count: 0,
+			// 显示隐藏
+			show: false,
 			// 对象
 			obj: {},
 			// 列表
 			list: [],
 			// 视图模型
 			vm: {},
-			// 页数
-			page: 1,
-			// 总计
-			count: 0,
-			// 显示隐藏
-			show: false,
-			// 验证模型
-			check_model: {},
 			// 重定向
-			redirect: "/signIn",
-			// 状态组
-			states: [],
+			redirect: "/account/signIn",
 			// 主键字段
 			field: "id",
 			// 查询
-			query: {
-				// 				id: "",
-				// 				// 页面
-				// 				page: 1,
-				// 				// 大小
-				// 				size: 10,
-				// 				// 状态
-				// 				state: 0
-			},
+			query: {},
+			// 配置
 			config: {
 				// 唯一主键
-				id: "",
+				id: 0,
 				// 页面
 				page: 1,
 				// 大小
-				size: 10
-			},
-			// 表单
-			form: {},
-			rules: {
-				account: [{
-					min: 6,
-					max: 26,
-					message: '长度在 6 到 26 个字符',
-					trigger: 'blur'
-				}],
-				email: [{
-					min: 6,
-					max: 26,
-					message: '长度在 6 到 26 个字符',
-					trigger: 'blur'
-				}],
-				phone: [{
-					min: 11,
-					max: 11,
-					message: '长度在 11 个字符',
-					trigger: 'blur'
-				}],
-				name: [{
-						required: true,
-						message: '请输入名称',
-						trigger: 'blur'
-					},
-					{
-						min: 2,
-						max: 8,
-						message: '长度在 2 到 8 个字符',
-						trigger: 'blur'
-					}
-				],
-				coin_address: [{
-						required: true,
-						message: '请输入收币地址',
-						trigger: 'blur'
-					},
-					{
-						min: 30,
-						max: 35,
-						message: '长度在 30 到 35 个字符',
-						trigger: 'blur'
-					}
-				],
-				date_min: [{
-					type: 'date',
-					required: true,
-					message: '请选择日期',
-					trigger: 'change'
-				}],
-				date_max: [{
-					type: 'date',
-					required: true,
-					message: '请选择时间',
-					trigger: 'change'
-				}],
-				password: [{
-						min: 6,
-						max: 11,
-						message: '长度在 6 到 11 个字符',
-						trigger: 'blur'
-					},
-					{
-						validator: password_check,
-						trigger: 'blur'
-					}
-				],
-				password_confirm: [{
-					validator: password_confirm_check,
-					trigger: 'blur'
-				}]
+				size: 10,
+				// 默认状态
+				state: 0
 			},
 			// 允许访问的用户组
 			user_group: [],
@@ -168,64 +68,72 @@ export default {
 		}
 	},
 	methods: {
-		// 添加
+		/// 添加
 		add(val) {
 
 		},
 
-		// 添加一条
-		add_one(obj) {
+		/// 添加一条
+		add_obj(obj) {
 
 		},
 
-		// 添加多条
+		/// 添加多条
 		add_list(obj) {
 
 		},
 
-		// 删
+		/// 删
 		del(query) {
 
 		},
 
-		// 删
-		del_one(query) {
-
-		},
-
-		// 删
-		del_list(query) {
-
-		},
-
-		// 修改
+		/// 修改
 		set(query, val) {
 
 		},
 
-		// 修改一条
-		set_one(query, obj) {
-
-		},
-
-		// 修改多条
-		set_list(query, arr) {
-			
-		},
-
-		// 查
+		/// 查
 		get(query) {
-			this.get_list();
+			this.get_list(query);
 		},
 
-		// 查一条
-		get_one(query) {
-
+		/// 查一条
+		get_obj(query) {
+			if (url) {
+				if (query) {
+					this.$obj.push(this.query, query);
+				}
+				var url = this.url_get ? this.url_get : this.url;
+				var _this = this;
+				this.$get(this.toUrl(url, this.query), function(json) {
+					if (json) {
+						if (json.data) {
+							$.obj.clear(_this.obj);
+							$.obj.push(_this.obj, json.data);
+						}
+					}
+				});
+			}
 		},
 
-		// 查列表
+		/// 查列表
 		get_list(query) {
-			this.$post(this.url_get)
+			if (url) {
+				if (query) {
+					this.$obj.push(this.query, query);
+				}
+				var url = this.url_get_list ? this.url_get_list : this.url;
+				var _this = this;
+				this.$get(this.toUrl(url, this.query), function(json) {
+					if (json) {
+						if (json.data) {
+							_this.list.clear();
+							_this.list.eachPush(json.data);
+						}
+					}
+				})
+			}
 		},
 
 		/// 导入
@@ -259,20 +167,20 @@ export default {
 			// 重置查询条件
 			this.$obj.clear(this.query);
 			this.$obj.push(this.query, this.config);
-
-			// 重置表单
-			this.$obj.clear(this.form);
-			this.$obj.push(this.form, this.obj);
 		},
 
 		/// 搜索
 		/// bl: 是否重置再搜索
 		search(bl) {
-			if(bl)
-			{
+			if (bl) {
 				this.reset();
 			}
-			this.get();
+			else if(this.$route.query.length > 0){
+				this.get(this.$route.query);
+			}
+			else {
+				this.get();
+			}
 		},
 
 		/// 提交
@@ -291,19 +199,23 @@ export default {
 		goTo(page) {
 			if (page < 1) {
 				page = 1;
-			} else if (page > this.count) {
-				page = this.count;
+			} else if (page > this.page_count) {
+				page = this.page_count;
 			}
 			this.page = page;
 			this.get_list();
 		},
 
 		/// 转查询参数
-		toUrl(obj, key, value) {
-
+		/// obj: 被转换的对象
+		/// url: 请求地址
+		/// 返回: url字符串
+		toUrl(obj, url) {
+			return $.toUrl(obj, url);
 		},
 
-		/* 非通用 */
+		/// 获取用户信息
+		/// fun: 回调函数
 		getUserInfo(fun) {
 			var _this = this;
 			var p = _this.$route.path;
@@ -315,7 +227,7 @@ export default {
 							json.data.isLoad = true;
 							_this.$store.dispatch('user/set', json.data);
 							if (p.indexOf('/sign') == 0 || p.indexOf('/forgot') == 0) {
-								_this.$router.push('/user/panel');
+								_this.$router.push('/user/index');
 								return;
 							}
 						}
@@ -330,12 +242,12 @@ export default {
 				}
 			}
 		},
-
+		/// 登录验证
 		login() {
 			if (this.oauth) {
-				var username = this.$store.state.user.username;
-				if (!username) {
-					this.$store.dispatch('web/set_redirectURL', this.$route.path + location.search);
+				var token = this.$store.state.user.token;
+				if (!token) {
+					this.$store.commit('web/set_redirect_url', this.$route.path + location.search);
 					this.$router.push(this.redirect);
 					return;
 				}
@@ -347,19 +259,25 @@ export default {
 		init() {
 			this.getUserInfo(this.login);
 		},
+
 		/// 验证参数
 		/// 返回: 验证通过空, 否则返回错误提示
 		check(param, dict) {
 			return null;
 		},
-		//	转换	, 将对象，变量名修改，转换成新对象
-		convert(obj, dict) {
 
+		/// 换入, 用于发送请求时
+		/// param: 请求参数
+		input(param) {
+			return param;
 		},
-		// 交换, 将对象或列表根据视图模型转换值，用于服务器通讯时，如加密变成非加密
-		exchange(val, mode) {
 
+		/// 换出, 用于取到请求结果时
+		/// ret: 响应结果
+		output(ret) {
+			return ret;
 		},
+
 		/// 事件管理, 用于管理函数
 		/// name: 事件名
 		/// tense: 状态名
@@ -374,6 +292,7 @@ export default {
 				return null;
 			}
 		},
+
 		/// 回调函数管理器
 		/// fun: 函数名
 		/// param1: 参数1
@@ -389,24 +308,26 @@ export default {
 					return funObj(param1)
 				} else if (param3 === undefined) {
 					return funObj(param1, param2)
-				} else if (param3 === undefined) {
+				} else {
 					return funObj(param1, param2, param3);
 				}
 			} else {
 				return null;
 			}
 		},
-		/// 加载状态设置函数
-		/// bl: true加载中, false已完成, undefined取反状态
-		load(bl) {
-			if (bl == undefined) {
-				this.loading = !this.loading;
+
+		/// 加载进度设置函数
+		/// progress: 加载进度, 小于100表示加载中，大于100表示加载完成
+		load(progress) {
+			if (progress == undefined) {
+				this.loading = 0;
 			} else {
-				this.loading = bl;
+				this.loading = progress;
 			}
 		}
 	},
 	compuetd: {
+		/// 分页数
 		page_count() {
 			return parseInt(this.count / this.size);
 		}

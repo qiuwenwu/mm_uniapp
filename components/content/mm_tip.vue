@@ -1,5 +1,5 @@
 <template>
-	<text class="mm_tip"><slot></slot></text>
+	<view class="mm_tip"><slot></slot></view>
 </template>
 
 <script>

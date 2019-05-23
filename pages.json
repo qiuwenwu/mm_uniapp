@@ -1,6 +1,5 @@
 {
-	"pages": [
-		{
+	"pages": [{
 			"path": "pages/demo/index",
 			"style": {
 				"navigationBarTitleText": "UI测试"
@@ -37,6 +36,18 @@
 			}
 		},
 		{
+			"path": "pages/home/news_list",
+			"style": {
+				"navigationBarTitleText": "新闻列表"
+			}
+		},
+		{
+			"path": "pages/home/news_view",
+			"style": {
+				"navigationBarTitleText": "新闻详情"
+			}
+		},
+		{
 			"path": "pages/home/question_list",
 			"style": {
 				"navigationBarTitleText": "常见问题"
@@ -46,6 +57,12 @@
 			"path": "pages/home/question_view",
 			"style": {
 				"navigationBarTitleText": "问题解答"
+			}
+		},
+		{
+			"path": "pages/home/search",
+			"style": {
+				"navigationBarTitleText": "搜索"
 			}
 		},
 		{
@@ -70,6 +87,18 @@
 			"path": "pages/mall/product_view",
 			"style": {
 				"navigationBarTitleText": "产品详情"
+			}
+		},
+		{
+			"path": "pages/mall/search",
+			"style": {
+				"navigationBarTitleText": "搜索"
+			}
+		},
+		{
+			"path": "pages/mall/shopping_cart",
+			"style": {
+				"navigationBarTitleText": "购物车"
 			}
 		},
 		{
@@ -109,27 +138,21 @@
 			}
 		},
 		{
-			"path": "pages/user/assets_list",
+			"path": "pages/user/bill_list",
 			"style": {
-				"navigationBarTitleText": "我的算力"
+				"navigationBarTitleText": "我的账单"
 			}
 		},
 		{
-			"path": "pages/user/assets_view",
+			"path": "pages/user/bill_view",
 			"style": {
-				"navigationBarTitleText": "算力详情"
-			}
-		},
-		{
-			"path": "pages/user/market",
-			"style": {
-				"navigationBarTitleText": "交易市场"
+				"navigationBarTitleText": "账单详情"
 			}
 		},
 		{
 			"path": "pages/user/order_list",
 			"style": {
-				"navigationBarTitleText": "我的订单"
+				"navigationBarTitleText": "订单列表"
 			}
 		},
 		{
@@ -139,37 +162,55 @@
 			}
 		},
 		{
-			"path": "pages/user/output_day",
+			"path": "pages/calculation/assets_list",
+			"style": {
+				"navigationBarTitleText": "我的算力"
+			}
+		},
+		{
+			"path": "pages/calculation/assets_view",
+			"style": {
+				"navigationBarTitleText": "算力详情"
+			}
+		},
+		{
+			"path": "pages/calculation/market",
+			"style": {
+				"navigationBarTitleText": "算力市场"
+			}
+		},
+		{
+			"path": "pages/calculation/output_day",
 			"style": {
 				"navigationBarTitleText": "每日产出"
 			}
 		},
 		{
-			"path": "pages/user/output_item",
+			"path": "pages/calculation/output_item",
 			"style": {
 				"navigationBarTitleText": "每单产出"
 			}
 		},
 		{
-			"path": "pages/user/transaction_panel",
+			"path": "pages/calculation/transaction_panel",
 			"style": {
 				"navigationBarTitleText": "发起交易"
 			}
 		},
 		{
-			"path": "pages/user/transaction_record",
+			"path": "pages/calculation/transaction_record",
 			"style": {
 				"navigationBarTitleText": "交易记录"
 			}
 		},
 		{
-			"path": "pages/user/withdraw_panel",
+			"path": "pages/calculation/withdraw_panel",
 			"style": {
 				"navigationBarTitleText": "申请提现"
 			}
 		},
 		{
-			"path": "pages/user/withdraw_record",
+			"path": "pages/calculation/withdraw_record",
 			"style": {
 				"navigationBarTitleText": "提现记录"
 			}
@@ -183,13 +224,13 @@
 		{
 			"path": "pages/forum/channel",
 			"style": {
-				"navigationBarTitleText": "专题"
+				"navigationBarTitleText": "专题板块"
 			}
 		},
 		{
 			"path": "pages/forum/thread_list",
 			"style": {
-				"navigationBarTitleText": "主题帖"
+				"navigationBarTitleText": "帖子列表"
 			}
 		},
 		{
@@ -225,7 +266,7 @@
 		{
 			"path": "pages/agent/order_list",
 			"style": {
-				"navigationBarTitleText": "成交订单"
+				"navigationBarTitleText": "订单列表"
 			}
 		},
 		{

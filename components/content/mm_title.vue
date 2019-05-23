@@ -1,5 +1,5 @@
 <template>
-	<text class="mm_desc"><slot></slot></text>
+	<view class="mm_desc"><slot></slot></view>
 </template>
 
 <script>

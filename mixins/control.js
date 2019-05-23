@@ -27,10 +27,12 @@ export default {
 			type: String,
 			default: ""
 		},
+		// 最小值
 		min: {
 			type: Number,
 			default: 0
 		},
+		// 最大值
 		max: {
 			type: Number,
 			default: 65535

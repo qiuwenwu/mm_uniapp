@@ -5,7 +5,8 @@
 </template>
 
 <script>
-	import mixin from '~/mixins/page';
+	import mixin from '@/mixins/page'
+	
 	export default {
 		mixins: [mixin],
 		data() {

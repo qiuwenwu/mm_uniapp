@@ -1,10 +1,10 @@
 import jquery from 'jquery';
 
-// 判断对象是否相似
-// obj：被判断对象
-// query：用作判断的对象
-// all：是否完全相同
-// 返回：相似返回true，否则返回false
+/// 判断对象是否相似
+/// obj: 被判断对象
+/// query: 用作判断的对象
+/// all: 是否完全相同
+/// 返回: 相似返回true，否则返回false
 function as(obj, query, all) {
 	var bl = true;
 	if (all) {
@@ -30,8 +30,8 @@ function newSort(key) {
 	var field = key;
 	return {
 		/// 升序
-		/// obj1：对象1
-		/// obj2：对象2
+		/// obj1: 对象1
+		/// obj2: 对象2
 		/// 返回顺序值
 		asc: function asc(obj1, obj2) {
 			var val1 = obj1[field];
@@ -52,8 +52,8 @@ function newSort(key) {
 			return obj1[field].localeCompare(obj2[field], 'zh-CN');
 		},
 		/// 倒序
-		/// obj1：对象1
-		/// obj2：对象2
+		/// obj1: 对象1
+		/// obj2: 对象2
 		/// 返回顺序值
 		desc: function desc(obj1, obj2) {
 			var val1 = obj1[field];
@@ -110,7 +110,9 @@ Number.prototype.toRound = function(len) {
 	return Math.round(this * n) / n;
 };
 
-/// 
+/// 数值转字符串, 保留尾数长度
+/// num: 保留长度
+/// 返回: 截取后字符串
 Number.prototype.toStr = function(num) {
 	var n = Math.pow(10, num);
 	var f = Math.round(this * n) / n;
@@ -230,10 +232,10 @@ Date.prototype.time = function() {
 };
 
 /// 计算时间差——时间间隔
-/// endTime：结束时间
-/// time_unit：时间单位（day天、hours小时、minutes分钟）
+/// endTime: 结束时间
+/// time_unit: 时间单位（day天、hours小时、minutes分钟）
 Date.prototype.interval = function(endTime, time_unit) {
-	var startTime = this; // startTime：开始时间
+	var startTime = this; // startTime: 开始时间
 	var stime = Date.parse(new Date(startTime));
 	var etime = Date.parse(new Date(endTime));
 	var usedTime = etime - stime; // 两个时间戳相差的毫秒数
@@ -254,12 +256,16 @@ Date.prototype.interval = function(endTime, time_unit) {
 };
 
 /// 时间添加天数
+/// days: 天数
+/// 返回: 时间对象
 Date.prototype.addDays = function(days) {
 	this.setDate(this.getDate() + days);
 	return this;
 };
 
 /// 时间添加秒数
+/// seconds: 秒数
+/// 返回: 时间对象
 Date.prototype.addSeconds = function(seconds) {
 	this.setSeconds(this.getSeconds() + seconds);
 	return this;
@@ -267,7 +273,7 @@ Date.prototype.addSeconds = function(seconds) {
 
 /* == 字符串拓展函数 == */
 /// 验证开头字符串
-/// 返回：验证成功返回true，失败返回false
+/// 返回: 验证成功返回true，失败返回false
 String.prototype.startWith = function(startStr) {
 	var d = this.length - startStr.length;
 	if (d >= 0 && this.indexOf(startStr) == 0) {
@@ -277,7 +283,8 @@ String.prototype.startWith = function(startStr) {
 };
 
 /// 验证结束字符串
-/// 返回：验证成功返回true，失败返回false
+/// endStr: 尾数字符串
+/// 返回: 验证成功返回true，失败返回false
 String.prototype.endWith = function(endStr) {
 	var d = this.length - endStr.length;
 	if (d >= 0 && this.lastIndexOf(endStr) == d) {
@@ -288,7 +295,7 @@ String.prototype.endWith = function(endStr) {
 
 /// 是否含字符串
 /// str: 判断的字符
-/// 返回：验证成功返回true，失败返回false
+/// 返回: 验证成功返回true，失败返回false
 String.prototype.has = function(str) {
 	return this.indexOf(str) != -1;
 };
@@ -296,6 +303,7 @@ String.prototype.has = function(str) {
 /// 取文本左边
 /// str: 索引的字符
 /// bl: 当索引字符不存在时是否保留左边
+/// 返回: 截取后的字符串
 String.prototype.left = function(str, bl) {
 	var i = this.indexOf(str);
 	if (i == -1) {
@@ -312,6 +320,7 @@ String.prototype.left = function(str, bl) {
 /// 取文本右边
 /// str: 索引的字符
 /// bl: 当索引字符不存在时是否保留右边
+/// 返回: 截取后的字符串
 String.prototype.right = function(str, bl) {
 	var i = this.indexOf(str);
 	if (i == -1) {
@@ -328,17 +337,18 @@ String.prototype.right = function(str, bl) {
 /// 取文本右边
 /// str: 索引的字符
 /// bl: 当索引字符不存在时是否保留右边
-String.prototype.betwen = function(str_l, str_r, bl) {
+/// 返回: 截取后的字符串
+String.prototype.between = function(str_l, str_r, bl) {
 	var str = this.right(str_l, bl);
 	str = str.left(str_r, bl);
 	return str;
 };
 
 /// 替换字符串——所有
-/// txt：被替换的文本
-/// oldStr：替换的字符串
-/// newStr：替换为字符串
-/// 返回：替换后的字符串
+/// txt: 被替换的文本
+/// oldStr: 替换的字符串
+/// newStr: 替换为字符串
+/// 返回: 替换后的字符串
 String.prototype.replaceAll = function(oldStr, newStr) {
 	var txt = this;
 	if (!newStr) {
@@ -351,10 +361,10 @@ String.prototype.replaceAll = function(oldStr, newStr) {
 };
 
 /// 替换字符串——所有
-/// txt：被替换的文本
-/// oldStr：替换的字符串
-/// newStr：替换为字符串
-/// 返回：替换后的字符串
+/// txt: 被替换的文本
+/// oldStr: 替换的字符串
+/// newStr: 替换为字符串
+/// 返回: 替换后的字符串
 String.prototype.toTime = function() {
 	var str = this.replace('T', ' ').replace('Z', '').replaceAll('.', '/').replaceAll('-', '/');
 	return new Date(str);
@@ -362,9 +372,9 @@ String.prototype.toTime = function() {
 
 /* == 字符串拓展函数 == */
 /// 获取值
-/// key：比较键名
-/// value：比较值
-/// 返回：返回对象或属性值
+/// key: 比较键名
+/// value: 比较值
+/// 返回: 返回对象或属性值
 Array.prototype.get = function(key, value) {
 	var obj;
 	var arr = this;
@@ -379,10 +389,10 @@ Array.prototype.get = function(key, value) {
 };
 
 /// 获取值
-/// key：比较键名
-/// value：比较值
-/// name：获取指定属性值,为空则返回对象
-/// 返回：返回对象或属性值
+/// key: 比较键名
+/// value: 比较值
+/// name: 获取指定属性值,为空则返回对象
+/// 返回: 返回对象或属性值
 Array.prototype.getVal = function(key, value, name) {
 	var val;
 	var obj = this.get(key, value);
@@ -393,9 +403,9 @@ Array.prototype.getVal = function(key, value, name) {
 };
 
 /// 遍历添加对象
-/// newArr：被添加的数组（对象型数组）
-/// key：附加属性
-/// value：附加属性值
+/// newArr: 被添加的数组（对象型数组）
+/// key: 附加属性
+/// value: 附加属性值
 /// 返回: 添加后的数组
 Array.prototype.eachPush = function(arr, key, value) {
 	if (arr) {
@@ -415,9 +425,9 @@ Array.prototype.eachPush = function(arr, key, value) {
 };
 
 /// 数组转字符串
-/// arr：对象数组
-/// splitStr：分隔符
-/// key：对象属性
+/// arr: 对象数组
+/// splitStr: 分隔符
+/// key: 对象属性
 /// 返回:字符串
 Array.prototype.toStr = function(splitStr, key) {
 	var arr = this;
@@ -446,9 +456,9 @@ Array.prototype.clear = function() {
 };
 
 /// 删除数组成员
-/// arr：被删除成员的数组
-/// key：搜索成员键
-/// value：搜索匹配值
+/// arr: 被删除成员的数组
+/// key: 搜索成员键
+/// value: 搜索匹配值
 /// all: 是否删除所有
 /// 返回: 删除后的数组
 Array.prototype.del = function(key, value, all) {
@@ -465,9 +475,9 @@ Array.prototype.del = function(key, value, all) {
 };
 
 /// 删除数组成员
-/// arr：被删除成员的数组
-/// key：搜索成员键
-/// value：搜索匹配值
+/// arr: 被删除成员的数组
+/// key: 搜索成员键
+/// value: 搜索匹配值
 /// all: 是否删除所有
 /// 返回: 删除后的数组
 Array.prototype.has = function(key, value) {
@@ -483,8 +493,8 @@ Array.prototype.has = function(key, value) {
 };
 
 /// 修改数组成员
-/// key：搜索成员键
-/// value：搜索匹配值
+/// key: 搜索成员键
+/// value: 搜索匹配值
 /// all: 是否删除所有
 /// 返回: 删除后的数组
 Array.prototype.set = function(query, obj) {
@@ -500,8 +510,8 @@ Array.prototype.set = function(query, obj) {
 };
 
 /// 对象列表排序
-/// key：用来判断排序的对象属性
-/// method：排序方式, asc升序, desc降序
+/// key: 用来判断排序的对象属性
+/// method: 排序方式, asc升序, desc降序
 Array.prototype.sortBy = function(method, key) {
 	if (key) {
 		var isCN = typeof this[0][key] == "string";
@@ -529,7 +539,10 @@ Array.prototype.sortBy = function(method, key) {
 	return this;
 };
 
-Array.prototype.toArr = function(key){
+/// 数组列表取数组
+/// key: 取的属性
+/// 返回: 截取的数组
+Array.prototype.toArr = function(key) {
 	var arr = [];
 	var lt = this;
 	for (var i = 0; i < lt.length; i++) {
@@ -540,12 +553,15 @@ Array.prototype.toArr = function(key){
 };
 
 (function($) {
+	// 插件类
 	$.plugins = {
+		// 复制插件
 		clipboard: {}
 	};
 	/* == 对象 == */
 	$.obj = {
-		/// 是否否点数
+		/// 是否浮点数
+		/// n: 数值
 		/// 返回: 是返回true,否返回false
 		isFloat: function isFloat(n) {
 			return n != parseInt(n);
@@ -553,6 +569,7 @@ Array.prototype.toArr = function(key){
 		/// 遍历赋值到对象
 		/// objA: 被赋值对象
 		/// objB: 来源对象
+		/// bl: 是否完全覆盖值
 		/// 返回: 新对象
 		push: function push(objA, objB, bl) {
 			if (!objA || !objB) {
@@ -569,6 +586,9 @@ Array.prototype.toArr = function(key){
 						var type = typeof(objA[k]);
 						if (type == "Number") {
 							objA[k] = value;
+						} else if (type == "Array" && typeof(value) == "Array") {
+							objA[k].clear();
+							objA[k].eachPush(value);
 						} else if (value == "true") {
 							objA[k] = true;
 						} else if (value == "false") {
@@ -582,7 +602,7 @@ Array.prototype.toArr = function(key){
 			return objA;
 		},
 		/// 清除空值
-		/// obj：对象
+		/// obj: 对象
 		/// 返回: 新对象
 		clear: function clear(obj) {
 			if (obj) {
@@ -615,20 +635,32 @@ Array.prototype.toArr = function(key){
 			return obj;
 		},
 		/// json对象转字符串
+		/// obj: 被转换的对象
+		/// url: 请求地址
 		/// 返回: url参数格式字符串
-		toUrl: function toUrl(obj) {
-			var url = "";
+		toUrl: function toUrl(obj, url) {
+			var queryStr = "";
 			for (var key in obj) {
 				var value = obj[key];
 				if (typeof value == 'number') {
 					if (value > 0) {
-						url += "&" + key + "=" + obj[key];
+						queryStr += "&" + key + "=" + obj[key];
 					}
 				} else if (value) {
-					url += "&" + key + "=" + encodeURI(obj[key]);
+					queryStr += "&" + key + "=" + encodeURI(obj[key]);
 				}
 			}
-			return url.replace('&', '');
+			if (url) {
+				if (url.endWith('?') || url.endWith('&')) {
+					return url + queryStr.replace('&', '');
+				} else if (url.indexOf('?') !== -1) {
+					return url + queryStr.replace('&', '?');
+				} else if (url.indexOf('?') != -1) {
+					return url + queryStr;
+				}
+			} else {
+				return queryStr.replace('&', '');
+			}
 		},
 		/// 判断对象是否相似
 		/// obj: 用作判断的对象
@@ -636,9 +668,9 @@ Array.prototype.toArr = function(key){
 		/// 返回: 相似返回true,否则返回false
 		as: as,
 		/// 拷贝对象
-		/// obj：被拷贝的对象（对象型）
-		/// has：是否非空拷贝，如果含有数据才拷贝，不含数据不拷贝
-		/// 返回：新对象
+		/// obj: 被拷贝的对象（对象型）
+		/// has: 是否非空拷贝，如果含有数据才拷贝，不含数据不拷贝
+		/// 返回: 新对象
 		copy: function copy(obj, has) {
 			var newObj = {};
 			if (has) {
@@ -681,8 +713,8 @@ Array.prototype.toArr = function(key){
 
 	/* == 拷贝数据 == */
 	/// 拷贝数据
-	/// obj：拷贝的对象
-	/// bl：是否格式化。格式化后的数据会以 "键：值（换行）"形式显示
+	/// obj: 拷贝的对象
+	/// bl: 是否格式化。格式化后的数据会以 "键: 值（换行）"形式显示
 	$.copy = function(obj, bl) {
 		var text = "";
 		if (bl) {
@@ -690,7 +722,7 @@ Array.prototype.toArr = function(key){
 				for (var k in obj) {
 					var name = k;
 					var value = obj[k];
-					text += "\n" + name + "：" + value;
+					text += "\n" + name + ": " + value;
 				}
 				text = text.replace("\n", "");
 			} else {
@@ -927,12 +959,11 @@ Array.prototype.toArr = function(key){
 			return ";path=/";
 		},
 		/// 设置缓存
-		/// key：缓存对象
-		/// value：缓存值
-		/// minutes: 缓存时长，单位：分钟
+		/// key: 缓存对象
+		/// value: 缓存值
+		/// minutes: 缓存时长，单位: 分钟
 		set: function set(name, value, minutes, domain) {
-			if(!domain)
-			{
+			if (!domain) {
 				domain = $.cookies.domain();
 			}
 			var time = new Date();
@@ -968,9 +999,9 @@ Array.prototype.toArr = function(key){
 	};
 
 	/// 设置缓存
-	/// key：缓存对象
-	/// value：缓存值
-	/// minutes: 缓存时长，单位：分钟
+	/// key: 缓存对象
+	/// value: 缓存值
+	/// minutes: 缓存时长，单位: 分钟
 	$.cookie = function(key, value, minutes) {
 		if (value != undefined) {
 			if (!minutes) {
@@ -986,18 +1017,18 @@ Array.prototype.toArr = function(key){
 		}
 	};
 
-	/* 多媒体 */
+	/* === 多媒体 === */
 	/// 上传文件
-	/// url：提交网址
-	/// dict：对象
-	/// func：函数
+	/// url: 提交网址
+	/// dict: 对象
+	/// func: 函数
 	$.file = {
 		upload: function upload(url, obj, func, headers) {
 			var formData = new FormData();
 			for (var k in obj) {
 				formData.append(k, obj[k]);
 			}
-			
+
 			//	formData.append("name", name);
 			//	formData.append("file", file);
 			var hp = {
@@ -1022,11 +1053,11 @@ Array.prototype.toArr = function(key){
 					XHR = null;
 				}
 			};
-			
+
 			if (headers) {
 				hp.headers = headers;
 			}
-			
+
 			$.ajax(hp);
 		}
 

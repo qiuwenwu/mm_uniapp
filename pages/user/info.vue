@@ -11,13 +11,15 @@
 </template>
 
 <script>
-	import container_group from '@/components/container/group'
-	import form_input from '@/components/form/input'
+	import mixin from '@/mixins/page'
 
 	export default {
-		components: {
-			container_group,
-			form_input
+		mixins: [mixin],
+		components: {},
+		data() {
+			return {
+				oauth: true
+			}
 		}
 	}
 </script>
