@@ -1,4 +1,4 @@
-import jquery from 'jquery';
+import jquery from 'jquery'
 
 /// 判断对象是否相似
 /// obj: 被判断对象

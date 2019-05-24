@@ -11,6 +11,7 @@ import mm_block from '@/components/layout/mm_block'
 import mm_body from '@/components/layout/mm_body'
 import mm_bodyer from '@/components/layout/mm_bodyer'
 import mm_box from '@/components/layout/mm_box'
+import mm_col from '@/components/layout/mm_col'
 import mm_foot from '@/components/layout/mm_foot'
 import mm_footer from '@/components/layout/mm_footer'
 import mm_grid from '@/components/layout/mm_grid'
@@ -32,7 +33,6 @@ let mm_ui = {
 	/// options: 配置参数
 	install(Vue, options) {
 		/* === 创建全局组件 === */
-
 		// 内容
 		Vue.component('mm_title', mm_title);
 		Vue.component('mm_desc', mm_desc);
@@ -44,6 +44,7 @@ let mm_ui = {
 		Vue.component('mm_body', mm_body);
 		Vue.component('mm_bodyer', mm_bodyer);
 		Vue.component('mm_box', mm_box);
+		Vue.component('mm_col', mm_col);
 		Vue.component('mm_foot', mm_foot);
 		Vue.component('mm_footer', mm_footer);
 		Vue.component('mm_grid', mm_grid);
