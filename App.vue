@@ -28,5 +28,4 @@
 	.uni-icon-arrowright[data-v-29cd6af3]:before { content: none !important; } */
 	
 	/* 页面通用 */
-	.page { padding-bottom: 3.125rem; }
 </style>

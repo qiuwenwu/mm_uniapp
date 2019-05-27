@@ -1,9 +1,8 @@
 <template>
-	<view class="mm_side"><slot></slot></view>
+	<text class="mm_badge"><slot></slot></text>
 </template>
 
 <script>
-	
 </script>
 
 <style>

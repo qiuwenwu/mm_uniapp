@@ -1,364 +1,55 @@
-@charset "utf-8";
+@charset "utf-8";/* ====== 布局 ====== *//* 输入框 */.small input,.input-s {font-size:0.5rem;height:1.75rem;line-height:1.75rem;padding:0 0.25rem;}
+.normal input,.input {font-size:0.75rem;padding:0 0.5rem;}
+.big input,.input-b {font-size:1rem;height:2.5rem;line-height:2.5rem;padding:0 0.75rem;}
+/* 按钮 */.btn {display:inline-block;padding:0 1rem;font-size:0.875rem;}
+.small button,.btn-s {font-size:0.5rem;height:1.75rem;line-height:1.75rem;padding:0 0.5rem;}
+.normal button,.btn {font-size:0.75rem;padding:0 0.75rem;}
+.big button,.btn-b {font-size:1rem;height:2.5rem;line-height:2.5rem;padding:0 1rem;}
+/* 间隔 */.small>span {font-size:0.75rem;height:1.75rem;line-height:1.75rem;padding:0 0.5rem;}
+.normal>span {font-size:1rem;height:2rem;line-height:2rem;padding:0 0.75rem;}
+.big>span {font-size:1.25rem;height:2.5rem;line-height:2.5rem;padding:0 1rem;}
+/* 组合 */.group {display:flex;position:relative;align-self:center;display:-webkit-box;display:-moz-box;display:-ms-flexbox;-webkit-align-self:center;-webkit-box-lines:single;-moz-box-lines:single;-webkit-flex-wrap:nowrap;flex-wrap:nowrap;}
+.group>select,.group>.btn {border-radius:0;}
+.group>input {float:left;box-flex:1;-moz-box-flex:1;-ms-flex:1;-webkit-box-flex:1;-o-box-flex:1;border-radius:0;width:100%;}
+.group:before,.group:after {content:" ";display:block;float:none;clear:both;}
+.group>span,.group>button {white-space:nowrap;white-space:-nowrap;white-space:-o-nowrap;white-space:-o-nowrap;white-space:-moz-nowrap;white-space:-hp-nowrap;white-space:-webkit-nowrap;}
+.group>*:first-child {border-top-left-radius:0.25rem;border-bottom-left-radius:0.25rem;border-right:none;}
+.group>*:last-child {border-top-right-radius:0.25rem;border-bottom-right-radius:0.25rem;border-left:none;}
+.group input {border:1px solid #dbdbdb !important;}
+.group>label {height:2rem;line-height:2rem;}
+.group>label>* {float:left;}
+.group input[type="checkbox"]~span {margin-left:.5rem;}
+/* 下拉菜单 */.dropdown,[class^="dropdown-"] {position:relative;}
+.dropdown a {position:relative;z-index:3;}
+.dropdown .box,[class^="dropdown-"] .box {position:absolute;min-width:6rem;overflow:hidden;display:none;z-index:3;}
+.dropdown-t .box {bottom:100%;left:50%;transform:translateX(-50%);padding-bottom:1rem;}
+.dropdown-b .box {top:100%;left:50%;transform:translateX(-50%);padding-top:1rem;}
+.dropdown-l .box {right:100%;top:50%;transform:translateY(-50%);padding-right:1rem;}
+.dropdown-r .box {left:100%;top:50%;transform:translateY(-50%);padding-left:1rem;}
+.box ul {padding:0.25rem 0;text-align:center;}
+.box a {display:block;height:2rem;line-height:2rem;}
+.box:before {content:"";display:block;position:absolute;width:0;height:0;}
+.dropdown-b .box:before {border-left:0.35rem solid transparent;border-right:0.35rem solid transparent;border-bottom:0.5rem solid #fff;top:0.5rem;left:50%;transform:translateX(-50%);}
+.dropdown-t .box::before {border-left:0.35rem solid transparent;border-right:0.35rem solid transparent;border-top:0.5rem solid #fff;bottom:0.5rem;left:50%;transform:translateX(-50%);}
+.dropdown .box>*,[class^="dropdown-"] .box>* {background:#fff;border-radius:.25rem;border:1px solid #f5f5f5;}
+.hover:hover .box,.focus:focus .box,.active .box {display:block;}
+/* 表单 */.btn-link {border:none;background:none;}
+.select:after {font:normal normal normal 14px/1 FontAwesome;content:"\f107";}
+.group~.group {margin-top:1.5rem;}
+.tip {position:absolute;top:100%;right:0;font-size:0.75rem;}
+.bg {background:#ffffff;background:-moz-linear-gradient(top,#ffffff 0%,#f8f8f8 100%);background:-webkit-linear-gradient(top,#ffffff 0%,#f8f8f8 100%);background:linear-gradient(to bottom,#ffffff 0%,#f8f8f8 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff',endColorstr='#f8f8f8',GradientType=0);}
+.form_item {position:relative;}
+.form_item:before,.form_item:after {content:"";display:block;clear:both;float:none;}
+.form_item~.form_item:before {position:absolute;content:"";border-top:1px solid rgba(0,0,0,0.1);top:0;width:calc(100% - 1rem);z-index:1;left:1rem;}
+.form_title {float:left;padding-left:1rem}
+.form_desc {float:right;z-index:3;margin-left:0.5rem;}
+.form_desc button {border-radius:0;border:none !important;}
+.form_desc button:after {border-radius:0;border:none !important;border-left:1px solid rgba(0,0,0,0.1) !important;}
+.form_input {padding:0.55rem 0.5rem 0.55rem 1rem;}
+.form_input input {margin-right:0.5rem;font-size:0.875rem;}
+.form_title,.form_desc button {font-size:0.875rem;height:2.5rem;line-height:2.5rem;}
+.form_icon {margin-right:0.5rem;}
+.form_desc switch,.form_desc checkbox {position:absolute;top:50%;right:0;transform:translate(0,-50%);margin-right:1rem;}
+.form_desc checkbox .uni-checkbox-input {border:none;}
+.form_desc checkbox .uni-checkbox-input,.form_desc switch .uni-switch-input {margin-right:0;}
 
-/* ====== 布局 ====== */
-/* 输入框 */
-.small input,
-.input-s {
-	font-size: 0.5rem;
-	height: 1.75rem;
-	line-height: 1.75rem;
-	padding: 0 0.25rem;
-}
-
-.normal input,
-.input {
-	font-size: 0.75rem;
-	padding: 0 0.5rem;
-}
-
-.big input,
-.input-b {
-	font-size: 1rem;
-	height: 2.5rem;
-	line-height: 2.5rem;
-	padding: 0 0.75rem;
-}
-
-/* 按钮 */
-.btn {
-	display: inline-block;
-	padding: 0 1rem;
-	font-size: 0.875rem;
-}
-
-.small button,
-.btn-s {
-	font-size: 0.5rem;
-	height: 1.75rem;
-	line-height: 1.75rem;
-	padding: 0 0.5rem;
-}
-
-.normal button,
-.btn {
-	font-size: 0.75rem;
-	padding: 0 0.75rem;
-}
-
-.big button,
-.btn-b {
-	font-size: 1rem;
-	height: 2.5rem;
-	line-height: 2.5rem;
-	padding: 0 1rem;
-}
-
-/* 间隔 */
-.small>span {
-	font-size: 0.75rem;
-	height: 1.75rem;
-	line-height: 1.75rem;
-	padding: 0 0.5rem;
-}
-
-.normal>span {
-	font-size: 1rem;
-	height: 2rem;
-	line-height: 2rem;
-	padding: 0 0.75rem;
-}
-
-.big>span {
-	font-size: 1.25rem;
-	height: 2.5rem;
-	line-height: 2.5rem;
-	padding: 0 1rem;
-}
-
-/* 组合 */
-.group {
-	display: flex;
-	position: relative;
-	align-self: center;
-	display: -webkit-box;
-	display: -moz-box;
-	display: -ms-flexbox;
-	-webkit-align-self: center;
-	-webkit-box-lines: single;
-	-moz-box-lines: single;
-	-webkit-flex-wrap: nowrap;
-	flex-wrap: nowrap;
-}
-
-.group>select,
-.group>.btn {
-	border-radius: 0;
-}
-
-.group>input {
-	float: left;
-	box-flex: 1;
-	-moz-box-flex: 1;
-	-ms-flex: 1;
-	-webkit-box-flex: 1;
-	-o-box-flex: 1;
-	border-radius: 0;
-	width: 100%;
-}
-
-.group:before,
-.group:after {
-	content: " ";
-	display: block;
-	float: none;
-	clear: both;
-}
-
-.group>span,
-.group>button {
-	white-space: nowrap;
-	white-space: -nowrap;
-	white-space: -o-nowrap;
-	white-space: -o-nowrap;
-	white-space: -moz-nowrap;
-	white-space: -hp-nowrap;
-	white-space: -webkit-nowrap;
-}
-
-.group>*:first-child {
-	border-top-left-radius: 0.25rem;
-	border-bottom-left-radius: 0.25rem;
-	border-right: none;
-}
-
-.group>*:last-child {
-	border-top-right-radius: 0.25rem;
-	border-bottom-right-radius: 0.25rem;
-	border-left: none;
-}
-
-.group input {
-	border: 1px solid #dbdbdb !important;
-}
-
-.group>label {
-	height: 2rem;
-	line-height: 2rem;
-}
-
-.group>label>* {
-	float: left;
-}
-
-.group input[type="checkbox"]~span {
-	margin-left: .5rem;
-}
-
-/* 下拉菜单 */
-.dropdown,
-[class^="dropdown-"] {
-	position: relative;
-}
-
-.dropdown a {
-	position: relative;
-	z-index: 3;
-}
-
-.dropdown .box,
-[class^="dropdown-"] .box {
-	position: absolute;
-	min-width: 6rem;
-	overflow: hidden;
-	display: none;
-	z-index: 3;
-}
-
-.dropdown-t .box {
-	bottom: 100%;
-	left: 50%;
-	transform: translateX(-50%);
-	padding-bottom: 1rem;
-}
-
-.dropdown-b .box {
-	top: 100%;
-	left: 50%;
-	transform: translateX(-50%);
-	padding-top: 1rem;
-}
-
-.dropdown-l .box {
-	right: 100%;
-	top: 50%;
-	transform: translateY(-50%);
-	padding-right: 1rem;
-}
-
-.dropdown-r .box {
-	left: 100%;
-	top: 50%;
-	transform: translateY(-50%);
-	padding-left: 1rem;
-}
-
-.box ul {
-	padding: 0.25rem 0;
-	text-align: center;
-}
-
-.box a {
-	display: block;
-	height: 2rem;
-	line-height: 2rem;
-}
-
-.box:before {
-	content: "";
-	display: block;
-	position: absolute;
-	width: 0;
-	height: 0;
-}
-
-.dropdown-b .box:before {
-	border-left: 0.35rem solid transparent;
-	border-right: 0.35rem solid transparent;
-	border-bottom: 0.5rem solid #fff;
-	top: 0.5rem;
-	left: 50%;
-	transform: translateX(-50%);
-}
-
-.dropdown-t .box::before {
-	border-left: 0.35rem solid transparent;
-	border-right: 0.35rem solid transparent;
-	border-top: 0.5rem solid #fff;
-	bottom: 0.5rem;
-	left: 50%;
-	transform: translateX(-50%);
-}
-
-.dropdown .box>*,
-[class^="dropdown-"] .box>* {
-	background: #fff;
-	border-radius: .25rem;
-	border: 1px solid #f5f5f5;
-}
-
-.hover:hover .box,
-.focus:focus .box,
-.active .box {
-	display: block;
-}
-
-/* 表单 */
-.btn-link {
-	border: none;
-	background: none;
-}
-
-.select:after {
-	font: normal normal normal 14px/1 FontAwesome;
-	content: "\f107";
-}
-
-.group~.group {
-	margin-top: 1.5rem;
-}
-
-.tip {
-	position: absolute;
-	top: 100%;
-	right: 0;
-	font-size: 0.75rem;
-}
-
-.bg {
-	background: #ffffff;
-	background: -moz-linear-gradient(top, #ffffff 0%, #f8f8f8 100%);
-	background: -webkit-linear-gradient(top, #ffffff 0%, #f8f8f8 100%);
-	background: linear-gradient(to bottom, #ffffff 0%, #f8f8f8 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f8f8f8', GradientType=0);
-}
-
-.form_item {
-	position: relative;
-}
-
-.form_item:before,
-.form_item:after {
-	content: "";
-	display: block;
-	clear: both;
-	float: none;
-}
-
-.form_item~.form_item:before {
-	position: absolute;
-	content: "";
-	border-top: 1px solid rgba(0, 0, 0, 0.1);
-	top: 0;
-	width: calc(100% - 1rem);
-	z-index: 1;
-	left: 1rem;
-}
-
-.form_title {
-	float: left;
-	padding-left: 1rem
-}
-
-.form_desc {
-	float: right;
-	z-index: 3;
-	margin-left: 0.5rem;
-}
-
-.form_desc button {
-	border-radius: 0;
-	border: none !important;
-}
-
-.form_desc button:after {
-	border-radius: 0;
-	border: none !important;
-	border-left: 1px solid rgba(0, 0, 0, 0.1) !important;
-}
-
-.form_input {
-	padding: 0.55rem 0.5rem 0.55rem 1rem;
-}
-
-.form_input input {
-	margin-right: 0.5rem;
-	font-size: 0.875rem;
-}
-
-.form_title,
-.form_desc button {
-	font-size: 0.875rem;
-	height: 2.5rem;
-	line-height: 2.5rem;
-}
-
-.form_icon {
-	margin-right: 0.5rem;
-}
-
-.form_desc switch, .form_desc checkbox {
-	position: absolute;
-	top: 50%;
-	right: 0;
-	transform: translate(0, -50%);
-	margin-right: 1rem;
-	
-}
-
-.form_desc checkbox .uni-checkbox-input{
-	border: none;
-}
-
-.form_desc checkbox .uni-checkbox-input, .form_desc switch .uni-switch-input {
-	margin-right: 0;
-}

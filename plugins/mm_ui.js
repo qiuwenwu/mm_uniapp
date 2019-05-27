@@ -5,6 +5,7 @@ import mm_title from '@/components/content/mm_title'
 import mm_desc from '@/components/content/mm_desc'
 import mm_icon from '@/components/content/mm_icon'
 import mm_tip from '@/components/content/mm_tip'
+import mm_badge from '@/components/content/mm_badge'
 
 // 布局容器
 import mm_block from '@/components/layout/mm_block'
@@ -26,6 +27,9 @@ import mm_modal from '@/components/layout/mm_modal'
 import mm_page from '@/components/layout/mm_page'
 import mm_side from '@/components/layout/mm_side'
 import mm_warp from '@/components/layout/mm_warp'
+import mm_div from '@/components/layout/mm_div'
+
+
 
 let mm_ui = {
 	/// 安装
@@ -59,6 +63,8 @@ let mm_ui = {
 		Vue.component('mm_page', mm_page);
 		Vue.component('mm_side', mm_side);
 		Vue.component('mm_warp', mm_warp);
+		Vue.component('mm_div', mm_div);
+		Vue.component('mm_badge', mm_badge);
 	}
 }
 
