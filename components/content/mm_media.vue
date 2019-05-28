@@ -1,5 +1,5 @@
 <template>
-	<view class="mm_icon"><slot></slot></view>
+	<view class="mm_media"><slot></slot></view>
 </template>
 
 <script>

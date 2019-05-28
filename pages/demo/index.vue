@@ -17,16 +17,22 @@
 						<!-- 块:卡片结构 -->
 						<mm_block class="card">
 							<!-- 块头 -->
-							<mm_head>123123</mm_head>
+							<mm_head>
+								<mm_title class="pa">标题</mm_title>
+							</mm_head>
 							<!-- 块主体 -->
 							<mm_body>
 								<!-- 列表 -->
-								<mm_list col="4">
+								<mm_list col="4" class="tb">
 									<!-- 项目 -->
 									<mm_item class="hover">
 										<mm_div>
 											<mm_side>侧边</mm_side>
-											<mm_main>主要</mm_main>
+											<mm_main>
+												<mm_title>标题</mm_title>
+												<mm_desc>描述</mm_desc>
+												<mm_keyword>关键词</mm_keyword>
+											</mm_main>
 										</mm_div>
 										<!-- 盒子 -->
 										<mm_box>
@@ -119,6 +125,18 @@
 							<mm_foot></mm_foot>
 						</mm_block>
 					</mm_col>
+					<!-- 格子 -->
+					<mm_col>
+						<!-- 块 -->
+						<mm_block>
+							<mm_head>网站</mm_head>
+							<mm_body>
+								<mm_side></mm_side>
+								<mm_main></mm_main>
+							</mm_body>
+							<mm_foot></mm_foot>
+						</mm_block>
+					</mm_col>
 				</mm_grid>
 			</mm_warp>
 			<!-- 遮罩 -->
@@ -128,12 +146,11 @@
 </template>
 
 <script>
-	
+
 </script>
 
 <style>
 	mm_warp {
 		height: 500px;
 	}
-
 </style>

@@ -39,13 +39,13 @@ dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.title {font-weight:500;}
 .right {text-align:right !important;}
 
 /* 填充 */
-.pa {padding:1rem !important;}
-.pb {padding-bottom:1rem !important;}
+.pa {padding: 0.5rem 1rem !important;}
+.pb {padding-bottom:0.5rem !important;}
 .pl {padding-left:1rem !important;}
 .plr {padding-left:1rem;padding-right:1rem !important;}
 .pr {padding-right:1rem !important;}
-.pt {padding-top:1rem !important;}
-.ptb {padding-top:1rem;padding-bottom:1rem !important;}
+.pt {padding-top:0.5rem !important;}
+.ptb {padding-top:0.5rem;padding-bottom:0.5rem !important;}
 .pn {padding:0 !important;}
 .pn-t {padding-top:0 !important;}
 .pn-b {padding-bottom:0 !important;}
@@ -129,10 +129,10 @@ dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.title {font-weight:500;}
 }
 
 /* 模态窗 */
-.mm_modal {display:block;position:fixed;z-index:5;top:0;left:0;right:0;bottom:0;width:100%;height:100%;}
+/* .mm_modal {display:block;position:fixed;z-index:5;top:0;left:0;right:0;bottom:0;width:100%;height:100%;}
 .mm_modal .mm_warp {position:absolute;z-index:7;top:50%;left:50%;transform:translate(-50%,-50%);width:calc(100% - 2rem);max-width:30rem;min-height: 7.5rem;}
 .mm_mask {display:block;position:absolute;z-index:6;top:0;left:0;right:0;bottom:0;width:100%;height:100%;}
-.mm_modal .mm_mask { transition: all 1s ease-in-out; }
+.mm_modal .mm_mask { transition: all 1s ease-in-out; } */
 
 /* 自动栅格 */
 .mm_grid,[class*=mm_grid_],.mm_row {display:-webkit-box;display:-moz-box;display:-webkit-flex;display:-moz-flex;display:-ms-flexbox;display:flex;flex-flow:row wrap; justify-content: space-between; align-items: stretch;}
@@ -187,7 +187,6 @@ dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.title {font-weight:500;}
 /* 栅格间距 */
 .space>* {padding:0.5rem;}
 .space_lg>* {padding:1rem;}
-
 .space_x {margin-left:-0.5rem;margin-right:-0.5rem;}
 .space_x>* {padding:0.5rem;}
 .space_x_lg {margin-left:-1rem;margin-right:-1rem;}
@@ -205,9 +204,29 @@ dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.title {font-weight:500;}
 .active:active .mm_box { display: block; }
 .current .mm_box { display: block; }
 
-
 /* === 内容组件  === */
 /* 徽章 */
-.mm_badge { display: inline-block; padding: 0.1rem 0.3rem 0.075rem 0.3rem; min-width: 1rem; border-radius: 1.5rem; background-color: #F43530; color: #FFFFFF; text-align: center; font-size: .625rem; vertical-align: middle; }
+.mm_badge { display: inline-block; padding: 0.1rem 0.3rem 0.075rem 0.3rem; min-width: 1.1rem; border-radius: 1.5rem; background-color: #F43530; color: #FFFFFF; text-align: center; font-size: .625rem; vertical-align: middle; }
+.btn, [class*=btn_] { display: inline-block; padding: 0.25rem .75rem; border: 1px solid #FFF; border-radius: .25rem; font-size: 0.75rem; cursor: pointer; line-height: 1; }
 
+/*== 媒体 ==*/
+/* 尺寸 */
+.mm_media { width:2.25rem;height:2.25rem; margin-right:0.5rem; position:relative; }
+.mini .mm_media{ width:1.5rem;height:1.5rem; margin-right:0.5rem; text-align: center; }
+.small .mm_media{width:2rem;height:2rem; margin-right:0.5rem;}
+.big .mm_media{width:3rem;height:3rem; margin-right:0.5rem;}
+.larger .mm_media{width:4rem;height:4rem; margin-right:0.5rem;}
+.jumbo .mm_media{width:6rem;height:6rem; margin-right:0.5rem;}
+.mm_media .icon { text-align: center; }
+.media img, .media image{ width:100%; }
 
+.mini .icon{ width: 1.5rem; height: 1.5rem; border-radius: .25rem; line-height: 1.5rem; font-size: .85rem; }
+.small .icon{width:2rem;height:2rem; line-height: 2rem; font-size: 1rem; }
+.big .icon{ width: 3rem; height: 3rem; line-height: 3rem; font-size: 1.25rem; }
+.larger .icon{ width: 4rem; height: 4rem; line-height: 4rem; font-size: 1.5rem; }
+.jumbo .icon{ width: 6rem; height: 6rem; line-height: 6rem; font-size: 2rem; }
+
+/* 排版方式 */
+.lr .mm_side { float:left; }
+.rl .mm_side { float:right; }
+.tb .mm_side { float:none; clear: both; height:auto; margin:0 auto; text-align:center; }

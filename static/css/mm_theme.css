@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 /* 重置样式 */
-body { color: #333; }
+body  { color: 333; background: #ededed; /* background: #efeff4; */ }
 dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.title { color:#333; }
 
 /* ====== 公共样式 ====== */
@@ -18,6 +18,11 @@ dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.title { color:#333; }
 .bg_blue,.bg_primary {background:#38f;color:#fff;border-color:#38f;}
 .bg_purple {background: #7f39e8; color:#fff;border-color:#7f39e8;}
 
+/* 按钮 */
+.btn:focus { -webkit-filter: contrast(2) brightness(0.9); filter: contrast(2) brightness(0.9); }
+.btn:hover { -webkit-filter: brightness(1.25); filter: brightness(1.25); }
+.btn:disabled { -webkit-filter: grayscale(0.5); filter: grayscale(0.5); }
+
 /* 字体颜色 */
 .font_black {color:#333;}
 .font_dark {color:#666;}
@@ -33,15 +38,15 @@ dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.title { color:#333; }
 /* 元素样式 */
 .desc, .tip { color:#666; }
 
-.btn:focus { -webkit-filter: contrast(2) brightness(0.9); filter: contrast(2) brightness(0.9); }
-.btn:hover { -webkit-filter: brightness(1.25); filter: brightness(1.25); }
-.btn:disabled { -webkit-filter: grayscale(0.5); filter: grayscale(0.5); }
-
 
 /* 默认配置 */
 .mm_mask { background:rgba(0,0,0,0.3); }
+.mm_header { background-color: #373737; color: #FFF; }
+.mm_footer { background-color: #FDFDFD; color: #333; }
+.mm_head { background: #F5f6FA; }
+ 
 
 /* 临时测试 */
-body { background: #ededed; }
+
 .mm_col>*,[class*=mm_col_]>* { background: #fff; }
 .mm_col>* { height: 200px; }
