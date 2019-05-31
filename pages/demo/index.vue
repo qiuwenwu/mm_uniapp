@@ -18,7 +18,7 @@
 						<mm_block class="card">
 							<!-- 块头 -->
 							<mm_head>
-								<mm_title class="pa">标题</mm_title>
+								<mm_title>标题</mm_title>
 							</mm_head>
 							<!-- 块主体 -->
 							<mm_body>
