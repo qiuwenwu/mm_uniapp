@@ -1,8 +1,8 @@
 <template>
-	<view class="pay_ali">
+	<view class="mm_radio">
 		
 	</view>
-</template>      
+</template>
 
 <script>
 </script>

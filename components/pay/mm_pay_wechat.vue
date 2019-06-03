@@ -1,5 +1,7 @@
 <template>
-	<view class="form_code"></view>
+	<view class="mm_pay_wechat">
+		
+	</view>
 </template>
 
 <script>

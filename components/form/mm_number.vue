@@ -1,5 +1,5 @@
 <template>
-	<view class="form_email"></view>
+	<view class="mm_number"></view>
 </template>
 
 <script>

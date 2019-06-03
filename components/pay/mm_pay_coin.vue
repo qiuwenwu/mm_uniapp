@@ -1,5 +1,5 @@
 <template>
-	<view class="pay_ali">
+	<view class="mm_pay_coin">
 		
 	</view>
 </template>

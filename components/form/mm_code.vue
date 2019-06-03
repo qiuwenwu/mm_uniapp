@@ -1,5 +1,5 @@
 <template>
-	<view class="form_radio"></view>
+	<view class="mm_code"></view>
 </template>
 
 <script>

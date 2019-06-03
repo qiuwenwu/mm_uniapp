@@ -1,4 +1,5 @@
 <template>
+	<!-- 栅格 -->
 	<view :class="'mm_grid' + cl"><slot></slot></view>
 </template>
 

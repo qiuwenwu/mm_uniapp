@@ -1,5 +1,5 @@
 <template>
-	<view class="form_checkbox"></view>
+	<view class="mm_email"></view>
 </template>
 
 <script>

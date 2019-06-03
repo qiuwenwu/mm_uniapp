@@ -1,4 +1,5 @@
 <template>
+	<!-- 模态窗 -->
 	<view class="mm_modal">
 		<!-- 外套 -->
 		<mm_warp>

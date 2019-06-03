@@ -1,4 +1,5 @@
 <template>
+	<!-- 格子 -->
 	<view :class="'mm_col' + this.wh"><slot></slot></view>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-	<view class="form_input" @click="setting()">
+	<view class="mm_input" @click="setting()">
 		<view class="form_desc">
 			<slot>
 				<switch v-if="type == 'switch'" @click="setting()" />

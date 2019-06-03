@@ -1,5 +1,5 @@
 <template>
-	<mm_block class="card">
+	<view class="mm_card">
 		<!-- 卡片头 -->
 		<mm_head>
 			<mm_title>标题</mm_title>
@@ -9,7 +9,7 @@
 		</mm_body>
 		<!-- 卡片脚 -->
 		<mm_foot>页脚</mm_foot>
-	</mm_block>
+	</view>
 </template>
 
 <script>

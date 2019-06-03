@@ -1,8 +1,8 @@
 <template>
-	<view class="form_radio">
+	<view class="mm_pay_ali">
 		
 	</view>
-</template>
+</template>      
 
 <script>
 </script>

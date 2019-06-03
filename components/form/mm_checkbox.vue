@@ -1,7 +1,5 @@
 <template>
-	<view class="pay_ali">
-		
-	</view>
+	<view class="mm_checkbox"></view>
 </template>
 
 <script>

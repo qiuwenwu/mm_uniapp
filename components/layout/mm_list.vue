@@ -1,4 +1,5 @@
 <template>
+	<!-- 列表 -->
 	<view :class="'mm_list' + cl">
 		<slot></slot>
 	</view>
