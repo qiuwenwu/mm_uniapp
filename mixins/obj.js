@@ -7,6 +7,11 @@ export default {
 				return null
 			}
 		},
+		// 主题
+		theme: {
+			type: String,
+			default: "primary"
+		},
 		// 显示方式
 		display: {
 			type: String,

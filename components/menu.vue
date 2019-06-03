@@ -1,5 +1,5 @@
 <template>
-	<view class="menu">
+	<mm_list class="menu">
 		<navigator class="menu_item" url="/pages/home/article_list?title=关于我们">
 			<view class="menu_icon" style="background-image: linear-gradient(135deg, rgb(252, 207, 49) 10%, rgb(245, 85, 85) 100%);">
 				<text class="fa fa-user-circle-o"></text>
@@ -24,7 +24,7 @@
 			</view>
 			<text class="menu_title">常见问题</text>
 		</navigator>
-	</view>
+	</mm_list>
 </template>
 
 <script>

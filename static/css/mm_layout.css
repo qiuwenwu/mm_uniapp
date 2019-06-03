@@ -193,8 +193,6 @@ dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.title {font-weight:500;}
 .space_x_lg>* {padding:1rem;}
 
 
-/* 卡片 */
-.card { border-radius: 0.5rem; overflow-x: hidden; }
 
 /* 盒子 */
 .mm_box { display: none; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.3); }
