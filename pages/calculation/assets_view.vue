@@ -1,4 +1,5 @@
 <template>
+	<!-- 算力详情页面 -->
 	<view class="page_calculation" id="calculation_assets_view">
 		<!--  -->
 		

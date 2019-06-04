@@ -37,7 +37,7 @@ export default {
 			// 视图模型
 			vm: {},
 			// 重定向
-			redirect: "/account/signIn",
+			redirect: "/account/signin",
 			// 主键字段
 			field: "id",
 			// 查询
@@ -221,7 +221,7 @@ export default {
 			var p = _this.$route.path;
 			var isLoad = this.$store.state.user.isLoad;
 			if (!isLoad) {
-				this.$get('~/user/user_info', function(json, state) {
+				this.$get('~/user/', function(json, state) {
 					if (json) {
 						if (json.data) {
 							json.data.isLoad = true;
@@ -247,7 +247,7 @@ export default {
 			if (this.oauth) {
 				var token = this.$store.state.user.token;
 				if (!token) {
-					this.$store.commit('web/set_redirect_url', this.$route.path + location.search);
+					this.$store.commit('set_redirect_url', this.$route.path + location.search);
 					this.$router.push(this.redirect);
 					return;
 				}
@@ -334,11 +334,5 @@ export default {
 	},
 	created() {
 		this.init();
-	},
-	watch: {
-		'$route.query': function(newVal, oldVal) {
-			$(window).scrollTop(0);
-			this.init();
-		}
 	}
 };

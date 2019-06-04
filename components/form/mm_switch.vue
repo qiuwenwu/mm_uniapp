@@ -1,7 +1,7 @@
 <template>
-	<!-- 组合框 -->
-	<view class="mm_group">
-		<slot></slot>
+	<!-- 开关 -->
+	<view class="mm_switch">
+		
 	</view>
 </template>
 

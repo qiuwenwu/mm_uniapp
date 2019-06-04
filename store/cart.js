@@ -2,7 +2,11 @@ export default {
 	state: {
 		list: []
 	},
-	mutations: {},
+	mutations: {
+		set_cart(state, data){
+			
+		}
+	},
 	actions: {},
 	getters: {}
 };

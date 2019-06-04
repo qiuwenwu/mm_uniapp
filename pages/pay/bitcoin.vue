@@ -1,4 +1,5 @@
 <template>
+	<!-- 数字货币付款页面 -->
 	<view class="page" id="pay_bitcoin">
 		<!-- 支付信息 -->
 

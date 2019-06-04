@@ -1,4 +1,5 @@
 <template>
+	<!-- 支付宝付款页面 -->
 	<view class="page" id="pay_ali">
 		<!-- 支付信息 -->
 		

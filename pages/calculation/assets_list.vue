@@ -1,7 +1,7 @@
 <template>
+	<!-- 算力列表页面 -->
 	<view class="page_calculation" id="calculation_assets_list">
 		<!--  -->
-		
 	</view>
 </template>
 

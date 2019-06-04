@@ -1,4 +1,5 @@
 <template>
+	<!-- 新闻列表页 -->
 	<view class="page_home" id="home_news_list">
 		<!-- 新闻筛选面板 -->
 

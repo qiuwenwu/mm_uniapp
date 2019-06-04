@@ -1,4 +1,5 @@
 <template>
+	<!-- 问题详情页 -->
 	<view class="page_home" id="home_question_view">
 		<!-- 文章问题 -->
 

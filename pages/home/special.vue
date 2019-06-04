@@ -1,18 +1,16 @@
 <template>
-	<!-- 找回密码页面 -->
-	<view class="page_account" id="account_forgot">
-	</view>
+	<!-- 专题页面 -->
+	<view class="page_home" id="home_special" v-html="obj.content"></view>
 </template>
 
 <script>
 	import mixin from '@/mixins/page'
-	
+
 	export default {
 		mixins: [mixin],
-		components: {},
 		data() {
 			return {
-				
+				url: "~/home/article?title="
 			}
 		}
 	}

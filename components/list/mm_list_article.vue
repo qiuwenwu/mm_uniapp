@@ -1,6 +1,6 @@
 <template>
-	<!-- 号码列表 -->
-	<mm_list col="4" class="tb">
+	<!-- 文章列表 -->
+	<view class="mm_list_article">
 		<!-- 列表项 -->
 		<mm_item class="hover">
 			<mm_div>
@@ -11,15 +11,8 @@
 					<mm_keyword>关键词</mm_keyword>
 				</mm_main>
 			</mm_div>
-			<!-- 盒子 -->
-			<mm_box>
-				<mm_group>
-					<button class="btn">测试</button>
-					<button class="btn">按钮</button>
-				</mm_group>
-			</mm_box>
 		</mm_item>
-	</mm_list>
+	</view>
 </template>
 
 <script>

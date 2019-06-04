@@ -1,4 +1,5 @@
 <template>
+	<!-- 警告框 -->
 	<view :class="'mm_alert' + te">
 		<slot></slot>
 	</view>

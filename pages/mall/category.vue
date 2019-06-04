@@ -1,4 +1,5 @@
 <template>
+	<!-- 商品类目页 -->
 	<view class="page_mall" id="mall_category">
 		<!-- 商品大类目列表 -->
 

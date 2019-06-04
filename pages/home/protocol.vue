@@ -1,5 +1,6 @@
 <template>
-	<div class="page_home" id="home_protocol">
+	<!-- 用户协议页 -->
+	<div class="page_home" id="home_protocol" v-html="obj.content">
 		<!-- 用户协议框 -->
 	</div>
 </template>
@@ -12,11 +13,6 @@
 		data() {
 			return {
 				url: "~/home/article?"
-			}
-		},
-		methods: {
-			get() {
-				
 			}
 		}
 	}

@@ -1,4 +1,5 @@
 <template>
+	<!-- 论坛首页 -->
 	<view class="page_forum" id="forum_index">
 		<!-- 轮播 -->
 

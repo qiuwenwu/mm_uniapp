@@ -1,4 +1,5 @@
 <template>
+	<!-- 购物车页面 -->
 	<view class="page_mall" id="mall_shopping_cart">
 		<!-- 产品基本信息 -->
 		

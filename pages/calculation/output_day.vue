@@ -1,4 +1,5 @@
 <template>
+	<!-- 每日产出页面 -->
 	<view class="page_calculation" id="calculation_output_day">
 		<!--  -->
 

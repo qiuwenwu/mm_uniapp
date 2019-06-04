@@ -1,7 +1,8 @@
 <template>
+	<!-- 门户页面 -->
 	<view class="page_home" id="home_index">
 		<!-- 轮播图 -->
-		<swiper_banner :list="list_banner" />
+		<mm_swiper_banner :list="list_banner" />
 
 		<!-- 菜单 -->
 		<list_menu />
@@ -74,7 +75,6 @@
 </template>
 
 <script>
-	import swiper_banner from '@/components/swiper/banner'
 	import list_menu from '@/components/menu'
 
 	import mixin from '@/mixins/page'
@@ -82,7 +82,6 @@
 	export default {
 		mixins: [mixin],
 		components: {
-			swiper_banner,
 			list_menu
 		},
 		data() {

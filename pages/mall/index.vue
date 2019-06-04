@@ -1,4 +1,5 @@
 <template>
+	<!-- 商城首页 -->
 	<view class="page_mall" id="mall_index">
 		<!-- 轮播 -->
 

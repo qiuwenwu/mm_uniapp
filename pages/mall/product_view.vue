@@ -1,4 +1,5 @@
 <template>
+	<!-- 专题页面 -->
 	<view class="page_mall" id="mall_product_view">
 		<!-- 产品基本信息 -->
 		

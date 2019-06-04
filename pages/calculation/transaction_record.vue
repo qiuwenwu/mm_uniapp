@@ -1,4 +1,5 @@
 <template>
+	<!-- 交易记录页面 -->
 	<view class="page_calculation" id="calculation_transaction_record">
 		<!--  -->
 

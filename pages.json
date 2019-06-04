@@ -48,6 +48,12 @@
 			}
 		},
 		{
+			"path": "pages/home/protocol",
+			"style": {
+				"navigationBarTitleText": "协议条款"
+			}
+		},
+		{
 			"path": "pages/home/question_list",
 			"style": {
 				"navigationBarTitleText": "常见问题"
@@ -63,6 +69,12 @@
 			"path": "pages/home/search",
 			"style": {
 				"navigationBarTitleText": "搜索"
+			}
+		},
+		{
+			"path": "pages/home/special",
+			"style": {
+				"navigationBarTitleText": "专题"
 			}
 		},
 		{
@@ -225,6 +237,12 @@
 			"path": "pages/forum/channel",
 			"style": {
 				"navigationBarTitleText": "专题板块"
+			}
+		},
+		{
+			"path": "pages/forum/search",
+			"style": {
+				"navigationBarTitleText": "主题搜索"
 			}
 		},
 		{

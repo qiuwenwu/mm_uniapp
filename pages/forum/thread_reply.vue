@@ -1,4 +1,5 @@
 <template>
+	<!-- 主题回复页面 -->
 	<view class="page_forum" id="forum_thread_reply">
 		<!-- 论坛回复富文本框 -->
 

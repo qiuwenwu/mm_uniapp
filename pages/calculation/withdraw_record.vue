@@ -1,4 +1,5 @@
 <template>
+	<!-- 提现记录页面 -->
 	<view class="page_calculation" id="calculation_withdraw_record">
 		<!--  -->
 

@@ -1,7 +1,7 @@
 <template>
+	<!-- 登录页面 -->
 	<view class="page_account" id="account_signin">
-		<!-- 登录表单 -->
-
+	
 	</view>
 </template>
 

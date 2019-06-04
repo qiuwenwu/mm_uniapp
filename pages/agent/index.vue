@@ -1,7 +1,6 @@
 <template>
+	<!-- 代理商后台首页 -->
 	<view class="page_agent" id="agent_index">
-		<!--  -->
-		
 	</view>
 </template>
 

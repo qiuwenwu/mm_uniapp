@@ -1,7 +1,6 @@
 <template>
-	<view class="mm_radio">
-		
-	</view>
+	<!-- 单选框 -->
+	<view class="mm_radio"></view>
 </template>
 
 <script>

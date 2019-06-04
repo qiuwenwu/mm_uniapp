@@ -1,4 +1,5 @@
 <template>
+	<!-- 新闻详情页 -->
 	<view class="page_home" id="home_news_view">
 		<!-- 新闻详情 -->
 		

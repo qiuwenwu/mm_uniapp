@@ -1,7 +1,8 @@
 <template>
-	<mm_list class="list_form">
+	<!-- 滑动卡 -->
+	<view class="mm_swiper_card">
 		<slot></slot>
-	</mm_list>
+	</view>
 </template>
 
 <script>

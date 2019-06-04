@@ -1,4 +1,5 @@
 <template>
+	<!-- 商城搜索页面 -->
 	<view class="page_mall" id="mall_search">
 		<!-- 搜索栏 -->
 		

@@ -1,6 +1,6 @@
 <template>
-	<!-- 邮箱输入框 -->
-	<view class="mm_email"></view>
+	<!-- 选择框 -->
+	<view class="mm_select"></view>
 </template>
 
 <script>

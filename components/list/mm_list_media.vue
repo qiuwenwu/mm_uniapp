@@ -1,7 +1,8 @@
 <template>
-	<mm_list class="list_news">
+	<!-- 媒体列表 -->
+	<view class="mm_list_media">
 		<slot></slot>
-	</mm_list>
+	</view>
 </template>
 
 <script>

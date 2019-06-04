@@ -1,12 +1,15 @@
-const web = {
+import $ from '@/plugins/mm_sdk'
+
+export default {
 	state: {
 		redirect_url: "/",
 		rate: 0,
 	},
 	mutations: {
-		set_redirect_url(state, data)
+		// 设置回来
+		set_web(state, data)
 		{
-			redirect_url = data;
+			$.obj.push(state, data);
 		}
 	},
 	actions: {
@@ -14,5 +17,3 @@ const web = {
 	},
 	getters: {}
 };
-
-export default web;

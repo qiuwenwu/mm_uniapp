@@ -1,4 +1,5 @@
 <template>
+	<!-- 订单详情页面 -->
 	<view class="page" id="user_order_view">
 		<!-- 订单详情 -->
 		

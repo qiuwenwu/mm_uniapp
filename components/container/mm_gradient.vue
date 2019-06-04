@@ -1,4 +1,5 @@
 <template>
+	<!-- 渐变框 -->
 	<view class="mm_gradient" :style="'background-image: linear-gradient(' + deg + 'deg, ' + start + ' 10%, ' + end + ' 100%);'">
 		<slot></slot>
 	</view>

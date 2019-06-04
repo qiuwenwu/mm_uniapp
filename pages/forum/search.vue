@@ -1,12 +1,11 @@
 <template>
-	<!-- 门户搜索页面 -->
-	<view class="page_home" id="home_search">
+	<!-- 论坛搜索页面 -->
+	<view class="page_forum" id="forum_search">
 		<!-- 搜索栏-->
 
 		<!-- 热门搜索 -->
 
 		<!-- 搜索记录-->
-
 	</view>
 </template>
 

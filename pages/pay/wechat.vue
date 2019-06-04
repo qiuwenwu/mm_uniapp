@@ -1,4 +1,5 @@
 <template>
+	<!-- 微信付款页面 -->
 	<view class="page" id="pay_wechat">
 		<!-- 支付信息 -->
 		

@@ -1,4 +1,5 @@
 <template>
+	<!-- 文章频道页面 -->
 	<view class="page_home" id="home_channel">
 		<!-- 门户频道 -->
 		<uni-list class="block">

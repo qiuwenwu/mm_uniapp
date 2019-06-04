@@ -1,4 +1,4 @@
-const user = {
+export default {
 	state: {
 		isLoad: false,
 		username: "qiuwenwu",
@@ -14,7 +14,7 @@ const user = {
 		/// 设置用户信息
 		/// state: 状态
 		/// data: 传递的参数, 用户信息模型
-		set(state, data) {
+		set_user(state, data) {
 			$.obj.push(state, data);
 			if (data.token) {
 				$.cookie("token", data.token);
@@ -28,4 +28,4 @@ const user = {
 	getters: {}
 };
 
-export default user;
+

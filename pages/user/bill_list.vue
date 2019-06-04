@@ -1,4 +1,5 @@
 <template>
+	<!-- 账单列表页面 -->
 	<view class="page" id="user_bill_list">
 		<!-- 账单筛选面板  -->
 

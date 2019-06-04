@@ -1,7 +1,7 @@
 <template>
+	<!-- 退出页面 -->
 	<view class="page_account" id="account_signout">
 		<!-- 退出提示 -->
-		
 	</view>
 </template>
 

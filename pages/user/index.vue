@@ -1,4 +1,5 @@
 <template>
+	<!-- 用户中心首页 -->
 	<view class="page" id="user_index">
 		<!-- 账户信息 -->
 

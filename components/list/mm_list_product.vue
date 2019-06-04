@@ -1,7 +1,8 @@
 <template>
-	<mm_list class="list_media">
+	<!-- 用户列表 -->
+	<view class="mm_list_product">
 		<slot></slot>
-	</mm_list>
+	</view>
 </template>
 
 <script>

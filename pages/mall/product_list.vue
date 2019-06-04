@@ -1,4 +1,5 @@
 <template>
+	<!-- 产品列表页面 -->
 	<view class="page_mall" id="mall_product_list">
 		<!-- 产品筛选面板 -->
 

@@ -1,16 +1,13 @@
 <template>
-	<view class="mm_media">
-		<slot>
-			<view class="menu_icon" v-if="obj[vm.icon]" v-html="obj[vm.icon]"></view>
-			<view class="menu_icon" v-else-if="obj[vm.img]">
-				<image :src="obj[vm.img]"></image>
-			</view>
-		</slot>
+	<!-- 媒体 -->
+	<view class="mm_media" v-if="obj[vm.icon]" v-html="obj[vm.icon]"></view>
+	<view class="mm_media" v-else-if="obj[vm.img]">
+		<image :src="obj[vm.img]"></image>
 	</view>
+	<view class="mm_media" v-else></view>
 </template>
 
 <script>
-	
 </script>
 
 <style>

@@ -1,4 +1,5 @@
 <template>
+	<!-- 问题列表页 -->
 	<view class="page_home" id="home_question_list">
 		<!-- 问题筛选面板 -->
 		

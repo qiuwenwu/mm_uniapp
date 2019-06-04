@@ -1,4 +1,5 @@
 <template>
+	<!-- 文章列表页面 -->
 	<view class="page_home" id="home_article_list">
 		<!-- 文章筛选面板 -->
 

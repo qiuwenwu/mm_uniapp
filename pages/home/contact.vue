@@ -1,4 +1,5 @@
 <template>
+	<!-- 联系方式页面 -->
 	<view class="page_home" id="home_contact">
 		<!-- 联系方式 -->
 

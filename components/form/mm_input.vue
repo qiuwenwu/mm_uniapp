@@ -1,4 +1,5 @@
 <template>
+	<!-- 输入框 -->
 	<view class="mm_input" @click="setting()">
 		<view class="form_desc">
 			<slot>

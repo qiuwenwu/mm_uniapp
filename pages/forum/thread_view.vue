@@ -1,4 +1,5 @@
 <template>
+	<!-- 主题详情页 -->
 	<view class="page_forum" id="forum_thread_view">
 		<!-- 主题详情 -->
 

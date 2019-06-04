@@ -1,7 +1,8 @@
 <template>
-	<mm_list class="list_message">
+	<!-- 表单列表 -->
+	<view class="mm_list_form">
 		<slot></slot>
-	</mm_list>
+	</view>
 </template>
 
 <script>

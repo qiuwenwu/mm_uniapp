@@ -1,4 +1,5 @@
 <template>
+	<!-- 用户信息页面 -->
 	<view class="page" id="user_info">
 		<!-- 用户信息表单 -->
 		<view class="form">

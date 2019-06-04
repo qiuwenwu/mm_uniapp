@@ -1,4 +1,5 @@
 <template>
+	<!-- 论坛板块页面 -->
 	<view class="page_forum" id="forum_channel">
 		<!-- 论坛频道 -->
 
