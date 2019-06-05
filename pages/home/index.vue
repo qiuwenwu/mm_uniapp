@@ -86,6 +86,7 @@
 		},
 		data() {
 			return {
+				auto: false,
 				title: 'Hello',
 				list_banner: [{
 						img: "/static/img/banner1.jpg",

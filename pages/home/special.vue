@@ -8,13 +8,16 @@
 
 	export default {
 		mixins: [mixin],
+		components: {},
 		data() {
 			return {
-				url: "~/home/article?title="
+				oauth: false,
+				url: "~/home/article?"
 			}
 		}
 	}
 </script>
 
 <style>
+
 </style>

@@ -16,7 +16,8 @@
 		components: {},
 		data() {
 			return {
-				
+				oauth: false,
+				url: "~/mall/category?"
 			}
 		}
 	}

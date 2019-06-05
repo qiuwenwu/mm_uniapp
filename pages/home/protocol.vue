@@ -10,8 +10,10 @@
 	
 	export default {
 		mixins: [mixin],
+		components: {},
 		data() {
 			return {
+				oauth: false,
 				url: "~/home/article?"
 			}
 		}

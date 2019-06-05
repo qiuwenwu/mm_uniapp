@@ -653,9 +653,9 @@ Array.prototype.toArr = function(key) {
 			if (url) {
 				if (url.endWith('?') || url.endWith('&')) {
 					return url + queryStr.replace('&', '');
-				} else if (url.indexOf('?') !== -1) {
+				} else if (url.indexOf('?') === -1) {
 					return url + queryStr.replace('&', '?');
-				} else if (url.indexOf('?') != -1) {
+				} else {
 					return url + queryStr;
 				}
 			} else {

@@ -12,13 +12,14 @@
 
 <script>
 	import mixin from '@/mixins/page'
-	
+
 	export default {
 		mixins: [mixin],
 		components: {},
 		data() {
 			return {
-				oauth: true
+				oauth: false,
+				url: "~/mall/shopping_cart?"
 			}
 		}
 	}

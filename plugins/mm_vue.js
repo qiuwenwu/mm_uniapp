@@ -14,7 +14,7 @@ let mm = {
 		// 请求服务器地址
 		var host = 'http://192.168.18.100/';
 		// var host = 'https://admin.btcjag.com/';
-		
+
 		// 判断配置是否存在
 		if (options) {
 			// 配置主机地址
@@ -31,10 +31,10 @@ let mm = {
 		/* === 注册全局函数 === */
 		// 引入echarts
 		Vue.prototype.$echarts = echarts;
-		
+
 		// 引入mm_sdk的对象处理类
 		Vue.prototype.$obj = $.obj;
-
+		
 		/// 引入get请求函数
 		/// url: 请求地址
 		/// fun: 回调函数
@@ -44,7 +44,7 @@ let mm = {
 				"x-auth-token": token
 			});
 		}
-		
+
 		/// 引入post请求
 		/// url: 请求地址
 		/// param: 请求参数
@@ -95,7 +95,7 @@ let mm = {
 
 
 		/* === 注册过滤器, 备注：过滤器在uni-app中无法使用 === */
-		
+
 		/// 转双精度小数字符串
 		/// value: 被转换的数值
 		/// 返回: 返回双精度数字符串

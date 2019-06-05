@@ -3,7 +3,7 @@ import Vue from 'vue'
 // 内容容器
 import mm_title from '@/components/content/mm_title'
 import mm_desc from '@/components/content/mm_desc'
-import mm_media from '@/components/content/mm_media'
+import mm_icon from '@/components/content/mm_icon'
 import mm_tip from '@/components/content/mm_tip'
 import mm_badge from '@/components/content/mm_badge'
 import mm_keyword from '@/components/content/mm_keyword'
@@ -41,7 +41,7 @@ let mm_ui = {
 		// 内容
 		Vue.component('mm_title', mm_title);
 		Vue.component('mm_desc', mm_desc);
-		Vue.component('mm_media', mm_media);
+		Vue.component('mm_icon', mm_icon);
 		Vue.component('mm_tip', mm_tip);
 		Vue.component('mm_keyword', mm_keyword);
 

@@ -6,6 +6,12 @@
 </template>
 
 <script>
+	import mixin from '@/mixins/list'
+
+	export default {
+		mixins: [mixin],
+		data() {}
+	}
 </script>
 
 <style>

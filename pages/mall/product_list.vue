@@ -18,7 +18,8 @@
 		components: {},
 		data() {
 			return {
-
+				oauth: false,
+				url: "~/mall/product_list?"
 			}
 		}
 	}

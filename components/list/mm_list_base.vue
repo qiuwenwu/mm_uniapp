@@ -12,12 +12,11 @@
 </template>
 
 <script>
+	import mixin from '@/mixins/list'
+
 	export default {
-		props: {
-			icon: {
-				type: String,
-				default: ""
-			}
+		mixins: [mixin],
+		data() {
 		}
 	}
 </script>

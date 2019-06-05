@@ -1,6 +1,6 @@
 <template>
 	<!-- 警告框 -->
-	<view :class="'mm_alert' + te">
+	<view class="mm_alert">
 		<slot></slot>
 	</view>
 </template>
@@ -8,22 +8,22 @@
 <script>
 	export default {
 		props: {
-			theme: {
+			// 显示方式
+			display: {
 				type: String,
-				default: "primary"
+				default: "1"
+			},
+			// 显示隐藏
+			show: {
+				type: Boolean,
+				default: false
 			}
 		},
 		data() {
-			return {
-				te: this.theme
-			}
+			
 		},
-		created() {
-			if (this.te) {
-				if (this.te.indexOf("_") == -1) {
-					this.te = "_" + this.te;
-				}
-			}
+		created(){
+			
 		}
 	}
 </script>

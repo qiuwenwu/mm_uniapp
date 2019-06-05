@@ -6,7 +6,7 @@
 		<!-- 上下篇文章 -->
 
 		<!-- 文章评论 -->
-
+		
 	</view>
 </template>
 
@@ -18,7 +18,8 @@
 		components: {},
 		data() {
 			return {
-				oauth: true
+				oauth: false,
+				url: "~/paper/all"
 			}
 		}
 	}

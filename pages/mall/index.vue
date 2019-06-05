@@ -22,7 +22,7 @@
 		components: {},
 		data() {
 			return {
-				
+				oauth: false
 			}
 		}
 	}

@@ -1,148 +1,170 @@
 export default {
+	model: {
+		prop: 'value',
+		event: 'input'
+	},
+	props: {
+		// 标题
+		value: {
+			type: [String, Number],
+			default: ""
+		},
+		// 回调函数
+		func: {
+			type: Object,
+			default: function(fun, param1, param2) {
+				return null
+			}
+		},
+		// 显示方式
+		display: {
+			type: String,
+			default: "1"
+		},
+		// 显示隐藏
+		show: {
+			type: Boolean,
+			default: false
+		},
+		// 标题
+		title: {
+			type: String,
+			default: ""
+		},
+		// 图标
+		icon: {
+			type: String,
+			default: '<text class="fa fa-user"></text>'
+		},
+		// 描述
+		desc: {
+			type: String,
+			default: ""
+		},
+		// 错误提示
+		tip: {
+			type: String,
+			default: ""
+		},
+		// 最小值
+		min: {
+			type: Number,
+			default: 0
+		},
+		// 最大值
+		max: {
+			type: Number,
+			default: 65535
+		},
+		// 主键
+		field: {
+			type: String,
+			default: "id"
+		},
+		// 主键序号
+		id: {
+			type: Number,
+			default: 0
+		},
+		// 标签
+		type: {
+			type: String,
+			default: "text"
+		},
+		// 数量
+		num: {
+			type: Number,
+			default: 0
+		},
+		// 文本
+		text: {
+			type: String,
+			default: ""
+		},
+		// 链接
+		url: {
+			type: String,
+			default: ""
+		},
+		// 允许访问的用户组
+		user_group: {
+			type: Array,
+			default: function() {
+				return []
+			}
+		},
+		// 允许访问的管理组
+		admin_group: {
+			type: Array,
+			default: function() {
+				return []
+			}
+		},
+		// 允许访问的用户级别需多少以上
+		vip: {
+			type: Number,
+			default: 0
+		},
+		// 允许访问的管理级别需多少以上
+		gm: {
+			type: Number,
+			default: 0
+		},
+		// 允许访问的角色
+		roles: {
+			type: Array,
+			default: function() {
+				return []
+			}
+		},
+		// 身份验证
+		oauth: {
+			type: Boolean,
+			default: false
+		}
+	},
 	data() {
-		var password_check = (rule, value, callback) => {
-			if (value === '') {
-				callback(new Error('请输入密码'));
-			} else {
-				if (this.form.password !== '') {
-					this.$refs.form.validateField('password_check');
-				}
-				callback();
-			}
-		};
-
-		var password_confirm_check = (rule, value, callback) => {
-			if (value === '') {
-				callback(new Error('请再次输入密码'));
-			} else if (value !== this.form.password) {
-				callback(new Error('两次输入密码不一致!'));
-			} else {
-				callback();
-			}
-		};
-
 		return {
-			// 增加地址
-			url_add: "",
-			// 修改地址
-			url_set: "",
-			// 查询
-			query: {},
-			// 对象
-			obj: {},
-			// 表单
-			form: {},
-			// 默认访问链接
-			url: "",
-			rules: {
-				account: [{
-					min: 6,
-					max: 26,
-					message: '长度在 6 到 26 个字符',
-					trigger: 'blur'
-				}],
-				email: [{
-					min: 6,
-					max: 26,
-					message: '长度在 6 到 26 个字符',
-					trigger: 'blur'
-				}],
-				phone: [{
-					min: 11,
-					max: 11,
-					message: '长度在 11 个字符',
-					trigger: 'blur'
-				}],
-				name: [{
-						required: true,
-						message: '请输入名称',
-						trigger: 'blur'
-					},
-					{
-						min: 2,
-						max: 8,
-						message: '长度在 2 到 8 个字符',
-						trigger: 'blur'
-					}
-				],
-				coin_address: [{
-						required: true,
-						message: '请输入收币地址',
-						trigger: 'blur'
-					},
-					{
-						min: 30,
-						max: 35,
-						message: '长度在 30 到 35 个字符',
-						trigger: 'blur'
-					}
-				],
-				date_min: [{
-					type: 'date',
-					required: true,
-					message: '请选择日期',
-					trigger: 'change'
-				}],
-				date_max: [{
-					type: 'date',
-					required: true,
-					message: '请选择时间',
-					trigger: 'change'
-				}],
-				password: [{
-						min: 6,
-						max: 11,
-						message: '长度在 6 到 11 个字符',
-						trigger: 'blur'
-					},
-					{
-						validator: password_check,
-						trigger: 'blur'
-					}
-				],
-				password_confirm: [{
-					validator: password_confirm_check,
-					trigger: 'blur'
-				}]
-			}
+			// 显示方式
+			dy: this.display,
+			// 显示隐藏
+			sw: this.show,
+			// 加载中
+			load: this.loading,
+			// 列表
+			oj: this.obj,
+			// 数量
+			nm: this.num,
+			// 文本
+			txt: this.text
 		}
 	},
 	methods: {
-		// 添加
-		add(val) {
-
-		},
-
-		// 添加一条
-		add_one(obj) {
-
-		},
-
-		// 修改
-		set(query, val) {
-
-		},
-
-		// 修改一条
-		set_one(query, obj) {
-
-		},
-
-		/// 重置
-		reset() {
-			// 重置查询条件
-			this.$obj.clear(this.query);
-			this.$obj.push(this.query, this.config);
-
-			// 重置表单
-			this.$obj.clear(this.form);
-			this.$obj.push(this.form, this.obj);
-		},
-		
-		/// 验证参数
-		/// 返回: 验证通过空, 否则返回错误提示
-		check(param, dict) {
+		/// 可更改其他属性，默认绑定回调函数
+		/// fun: 函数名
+		/// param1: 参数1
+		/// param2: 参数2
+		/// param3: 参数3
+		run(fun, param1, param2, param3) {
+			if (this.func) {
+				return this.func(param1, param2, param3)
+			}
 			return null;
+		},
+		// 删除
+		/// query: 查询条件
+		del() {
+			var query = {};
+			query[this.field] = this.id;
+			this.run('del', query);
+		},
+		// 修改
+		/// query: 查询条件
+		/// obj: 修改的对象
+		set(obj) {
+			var query = {};
+			query[this.field] = this.id;
+			this.run('set', query, obj);
 		}
 	}
-};
+}

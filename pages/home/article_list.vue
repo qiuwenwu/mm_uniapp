@@ -6,7 +6,8 @@
 		<!-- 文章排序条件 -->
 
 		<!-- 文章列表 -->
-
+		<!-- <mm_list_article :list="list"></mm_list_article> -->
+		{{ list }}
 	</view>
 </template>
 
@@ -18,7 +19,16 @@
 		components: {},
 		data() {
 			return {
-				oauth: true
+				oauth: false,
+				url: "~/paper/all"
+			}
+		},
+		methods: {
+			input(param) {
+				var pm = this.$obj.copy(param);
+				pm.index = (param.page - 1) + "";
+				delete pm.page;
+				return pm;
 			}
 		}
 	}

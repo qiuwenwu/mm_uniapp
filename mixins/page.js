@@ -22,8 +22,6 @@ export default {
 			loading: 0,
 			// 当前索引
 			index: 0,
-			// 页数
-			page: 1,
 			// 列数
 			col: 4,
 			// 总计
@@ -41,7 +39,12 @@ export default {
 			// 主键字段
 			field: "id",
 			// 查询
-			query: {},
+			query: {
+				// 页数
+				page: 1,
+				// 大小
+				size: 10
+			},
 			// 配置
 			config: {
 				// 唯一主键
@@ -100,39 +103,31 @@ export default {
 
 		/// 查一条
 		get_obj(query) {
+			var url = this.url_get ? this.url_get : this.url;
 			if (url) {
 				if (query) {
 					this.$obj.push(this.query, query);
 				}
-				var url = this.url_get ? this.url_get : this.url;
 				var _this = this;
-				this.$get(this.toUrl(url, this.query), function(json) {
-					if (json) {
-						if (json.data) {
-							$.obj.clear(_this.obj);
-							$.obj.push(_this.obj, json.data);
-						}
-					}
+				this.$get(this.toUrl(this.input(this.query), url), function(json) {
+					$.obj.clear(_this.obj);
+					var ret = _this.output(json);
+					$.obj.push(_this.obj, ret);
 				});
 			}
 		},
 
 		/// 查列表
 		get_list(query) {
+			var url = this.url_get_list ? this.url_get_list : this.url;
 			if (url) {
 				if (query) {
 					this.$obj.push(this.query, query);
 				}
-				var url = this.url_get_list ? this.url_get_list : this.url;
 				var _this = this;
-				this.$get(this.toUrl(url, this.query), function(json) {
-					if (json) {
-						if (json.data) {
-							_this.list.clear();
-							_this.list.eachPush(json.data);
-						}
-					}
-				})
+				this.$get(this.toUrl(this.input(this.query), url), function(json) {
+					_this.output(json);
+				});
 			}
 		},
 
@@ -174,11 +169,9 @@ export default {
 		search(bl) {
 			if (bl) {
 				this.reset();
-			}
-			else if(this.$route.query.length > 0){
+			} else if (this.$route.query.length > 0) {
 				this.get(this.$route.query);
-			}
-			else {
+			} else {
 				this.get();
 			}
 		},
@@ -211,12 +204,12 @@ export default {
 		/// url: 请求地址
 		/// 返回: url字符串
 		toUrl(obj, url) {
-			return $.toUrl(obj, url);
+			return this.$obj.toUrl(obj, url);
 		},
 
 		/// 获取用户信息
 		/// fun: 回调函数
-		getUserInfo(fun) {
+		get_user(fun) {
 			var _this = this;
 			var p = _this.$route.path;
 			var isLoad = this.$store.state.user.isLoad;
@@ -257,7 +250,7 @@ export default {
 
 		/// 初始化
 		init() {
-			this.getUserInfo(this.login);
+			this.get_user(this.login);
 		},
 
 		/// 验证参数
@@ -267,25 +260,37 @@ export default {
 		},
 
 		/// 换入, 用于发送请求时
-		/// param: 请求参数
-		input(param) {
-			return param;
+		/// req: 请求参数
+		/// 返回: 转换后的结果
+		input(req) {
+			return req;
 		},
 
 		/// 换出, 用于取到请求结果时
-		/// ret: 响应结果
-		output(ret) {
-			return ret;
+		/// res: 响应结果
+		/// 返回: 转换后的结果
+		output(res) {
+			if (res) {
+				if(res.error){
+					this.alert(res);
+				}
+				else if (res.result) {
+					return res.result;
+				}
+			}
+			return res;
 		},
-
+		/// 警告
+		alert(res){
+			console.log(res)
+		},
 		/// 事件管理, 用于管理函数
 		/// name: 事件名
-		/// tense: 状态名
 		/// param1: 参数1
 		/// param2: 参数2
 		/// 返回: 特定值
-		events(name, tense, param1, param2) {
-			var funObj = this[name + '_' + tense];
+		events(name, param1, param2) {
+			var funObj = this[name];
 			if (funObj) {
 				return funObj(param1, param2);
 			} else {
