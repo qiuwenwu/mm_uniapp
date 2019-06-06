@@ -11,6 +11,7 @@ import mm_group from '@/components/container/mm_group'
 import mm_price from '@/components/container/mm_price'
 import mm_toast from '@/components/container/mm_toast'
 
+
 // 拓展组件
 import mm_chart from '@/components/expand/mm_chart'
 import mm_editor from '@/components/expand/mm_editor'
@@ -18,6 +19,7 @@ import mm_indexer from '@/components/expand/mm_indexer'
 import mm_keyboard from '@/components/expand/mm_keyboard'
 import mm_qrcode from '@/components/expand/mm_qrcode'
 import mm_uploader from '@/components/expand/mm_uploader'
+import mm_picker from '@/components/expand/mm_picker'
 
 // 表单组件
 import mm_checkbox from '@/components/form/mm_checkbox'
@@ -28,6 +30,7 @@ import mm_phone from '@/components/form/mm_phone'
 import mm_radio from '@/components/form/mm_radio'
 import mm_select from '@/components/form/mm_select'
 import mm_switch from '@/components/form/mm_switch'
+import mm_slider from '@/components/form/mm_slider'
 
 // 列表组件
 import mm_list_article from '@/components/list/mm_list_article'
@@ -69,7 +72,7 @@ let mm_ui = {
 		Vue.component('mm_group', mm_group);
 		Vue.component('mm_price', mm_price);
 		Vue.component('mm_toast', mm_toast);
-
+		
 		// 拓展组件
 		Vue.component('mm_chart', mm_chart);
 		Vue.component('mm_editor', mm_editor);
@@ -77,7 +80,8 @@ let mm_ui = {
 		Vue.component('mm_keyboard', mm_keyboard);
 		Vue.component('mm_qrcode', mm_qrcode);
 		Vue.component('mm_uploader', mm_uploader);
-
+		Vue.component('mm_picker', mm_picker);
+		
 		// 表单组件
 		Vue.component('mm_checkbox', mm_checkbox);
 		Vue.component('mm_email', mm_email);
@@ -87,6 +91,7 @@ let mm_ui = {
 		Vue.component('mm_radio', mm_radio);
 		Vue.component('mm_select', mm_select);
 		Vue.component('mm_switch', mm_switch);
+		Vue.component('mm_slider', mm_slider);
 
 		// 列表组件
 		Vue.component('mm_list_article', mm_list_article);

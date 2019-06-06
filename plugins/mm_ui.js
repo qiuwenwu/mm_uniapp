@@ -26,6 +26,7 @@ import mm_list from '@/components/layout/mm_list'
 import mm_main from '@/components/layout/mm_main'
 import mm_mask from '@/components/layout/mm_mask'
 import mm_modal from '@/components/layout/mm_modal'
+import mm_movable from '@/components/layout/mm_movable'
 import mm_page from '@/components/layout/mm_page'
 import mm_side from '@/components/layout/mm_side'
 import mm_warp from '@/components/layout/mm_warp'
@@ -62,6 +63,7 @@ let mm_ui = {
 		Vue.component('mm_main', mm_main);
 		Vue.component('mm_mask', mm_mask);
 		Vue.component('mm_modal', mm_modal);
+		Vue.component('mm_movable', mm_movable);
 		Vue.component('mm_page', mm_page);
 		Vue.component('mm_side', mm_side);
 		Vue.component('mm_warp', mm_warp);

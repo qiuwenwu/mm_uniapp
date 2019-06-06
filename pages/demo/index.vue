@@ -11,76 +11,37 @@
 			<!-- 外套 -->
 			<mm_warp>
 				<!-- 栅格 -->
-				<mm_grid col="4" class="space_x">
+				<mm_grid class="space_x">
 					<!-- 格子 -->
-					<mm_col width="50">
-						<mm_block></mm_block>
-					</mm_col>
-					<!-- 格子 -->
-					<mm_col width="50">
-						<!-- 块 -->
+					<mm_col>
 						<mm_block>
-							<!-- 块头 -->
-							<mm_head></mm_head>
-							<!-- 块主体 -->
+							<mm_head><mm_title class="font_small">A</mm_title></mm_head>
 							<mm_body>
-								<!-- 次内容 -->
-								<mm_side>
-									<text class="fa fa-map"></text>
-									<mm_badge>9</mm_badge>
-								</mm_side>
-								<!-- 主内容 -->
-								<mm_main>
-									<text class="title"></text>
-									<text class="desc"></text>
-								</mm_main>
+								<mm_list col="1" class="lr">
+									<mm_item url="http://www.elins.cn" class="mini">
+										<mm_side>
+											<mm_icon src="http://img.sccnn.com/bimg/334/0957.jpg"></mm_icon>
+										</mm_side>
+										<mm_main>
+											<mm_title>菜单项</mm_title>
+										</mm_main>
+									</mm_item>
+									<mm_item url="http://www.elins.cn" class="mini">
+										<mm_side>
+											<mm_icon src="http://img.sccnn.com/bimg/334/0957.jpg"></mm_icon>
+										</mm_side>
+										<mm_main>
+											<mm_title>菜单项</mm_title>
+										</mm_main>
+									</mm_item>
+								</mm_list>
 							</mm_body>
-							<!-- 块脚 -->
 							<mm_foot></mm_foot>
 						</mm_block>
 					</mm_col>
-					<!-- 格子 -->
-					<mm_col width="25"></mm_col>
-					<!-- 格子 -->
-					<mm_col width="75"></mm_col>
 				</mm_grid>
 			</mm_warp>
 		</mm_bodyer>
-		<!-- 页脚 -->
-		<mm_footer>
-			<!-- 外套 -->
-			<mm_warp></mm_warp>
-		</mm_footer>
-		<!-- 模态窗 -->
-		<mm_modal>
-			<!-- 栅格 -->
-			<mm_grid col="2">
-				<!-- 格子 -->
-				<mm_col>
-					<!-- 块 -->
-					<mm_block>
-						<mm_head>网站</mm_head>
-						<mm_body>
-							<mm_side></mm_side>
-							<mm_main></mm_main>
-						</mm_body>
-						<mm_foot></mm_foot>
-					</mm_block>
-				</mm_col>
-				<!-- 格子 -->
-				<mm_col>
-					<!-- 块 -->
-					<mm_block>
-						<mm_head>网站</mm_head>
-						<mm_body>
-							<mm_side></mm_side>
-							<mm_main></mm_main>
-						</mm_body>
-						<mm_foot></mm_foot>
-					</mm_block>
-				</mm_col>
-			</mm_grid>
-		</mm_modal>
 	</mm_page>
 </template>
 

@@ -28,4 +28,8 @@
 	.uni-icon-arrowright[data-v-29cd6af3]:before { content: none !important; } */
 	
 	/* 页面通用 */
+	
+	/* 临时测试 */
+	.mm_col>*,[class*=mm_col_]>* { background: #fff; }
+	.mm_col>*,[class*=mm_col_]>* { height: 200px; }
 </style>

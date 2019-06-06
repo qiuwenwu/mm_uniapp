@@ -6,7 +6,7 @@
 			<slot></slot>
 		</mm_warp>
 		<!-- 遮罩 -->
-		<mm_mask v-if="display != ''"></mm_mask>
+		<mm_mask v-if="display"></mm_mask>
 	</view>
 </template>
 
@@ -15,7 +15,7 @@
 		props: {
 			display: {
 				type: String,
-				default: ""
+				default: "true"
 			}
 		}
 	}

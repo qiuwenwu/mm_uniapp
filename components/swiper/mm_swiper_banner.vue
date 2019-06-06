@@ -4,7 +4,7 @@
 	 :duration="300" indicator-color="rgba(0,0,0,.3)">
 		<swiper-item v-for="(o, idx) in list" :key="idx">
 			<navigator :url="o[vm.url]">
-				<image :src="o[vm.img]" class="mm_swiper_banner_img" mode="aspectFill" lazy-load></image>
+				<image :src="o[vm.img]" class="mm_img" mode="aspectFill" lazy-load></image>
 			</navigator>
 		</swiper-item>
 		<slot></slot>
@@ -25,9 +25,4 @@
 	.mm_swiper_banner {
 		height: 8.75rem;
 	}
-	
-	.mm_swiper_banner_img {
-		width: 100%;
-	}
-	/* 	uni-swiper { height: 25vh; } */
 </style>
