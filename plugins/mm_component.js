@@ -3,11 +3,9 @@ import Vue from 'vue'
 // 容器组件
 import mm_actionsheet from '@/components/container/mm_actionsheet'
 import mm_alert from '@/components/container/mm_alert'
-import mm_card from '@/components/container/mm_card'
 import mm_dialog from '@/components/container/mm_dialog'
 import mm_drawer from '@/components/container/mm_drawer'
 import mm_gradient from '@/components/container/mm_gradient'
-import mm_group from '@/components/container/mm_group'
 import mm_price from '@/components/container/mm_price'
 import mm_toast from '@/components/container/mm_toast'
 
@@ -65,11 +63,9 @@ let mm_ui = {
 		// 容器组件
 		Vue.component('mm_actionsheet', mm_actionsheet);
 		Vue.component('mm_alert', mm_alert);
-		Vue.component('mm_card', mm_card);
 		Vue.component('mm_dialog', mm_dialog);
 		Vue.component('mm_drawer', mm_drawer);
 		Vue.component('mm_gradient', mm_gradient);
-		Vue.component('mm_group', mm_group);
 		Vue.component('mm_price', mm_price);
 		Vue.component('mm_toast', mm_toast);
 		

@@ -4,6 +4,9 @@
 body  { color: 333; background: #ededed; /* background: #efeff4; */ }
 dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.title { color:#333; }
 
+/* 元素样式 */
+.desc, .tip { color:#666; }
+
 /* ====== 公共样式 ====== */
 /* 背景 */
 .bg_white {background:#fff;color:#333;}
@@ -19,24 +22,20 @@ dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.title { color:#333; }
 .bg_purple {background: #7f39e8; color:#fff;border-color:#7f39e8;}
 
 /* 按钮 */
-.btn:focus { -webkit-filter: contrast(2) brightness(0.9); filter: contrast(2) brightness(0.9); }
-.btn:hover { -webkit-filter: brightness(1.25); filter: brightness(1.25); }
-.btn:disabled { -webkit-filter: grayscale(0.5); filter: grayscale(0.5); }
+.mm_btn:focus { -webkit-filter: contrast(2) brightness(0.9); filter: contrast(2) brightness(0.9); }
+.mm_btn:hover { -webkit-filter: brightness(1.25); filter: brightness(1.25); }
+.mm_btn:disabled { -webkit-filter: grayscale(0.5); filter: grayscale(0.5); }
 
 /* 字体颜色 */
-.font_black {color:#333;}
-.font_dark {color:#666;}
-.font_grey {color:#999;}
-.font_light {color:#ccc;}
-
-.font_warning {color:#E6A23C;}
-.font_green {color:#67C23A;}
-.font_blue {color:#409EFF;}
-.font_danger {color:#F56C6C;}
-.font_info {color:#909399;}
-
-/* 元素样式 */
-.desc, .tip { color:#666; }
+.font_black {color:#333 !important;}
+.font_dark {color:#666 !important;}
+.font_grey {color:#999 !important;}
+.font_light {color:#ccc !important;}
+.font_red, .font_warning {color:#E6A23C !important;}
+.font_green, .font_success {color:#67C23A !important;}
+.font_blue,.font_primary {color:#409EFF !important;}
+.font_yellow,.font_danger {color:#F56C6C !important;}
+.font_info,.bg_cyan {color:#909399 !important;}
 
 
 /* 默认配置 */

@@ -7,6 +7,7 @@ import mm_icon from '@/components/content/mm_icon'
 import mm_tip from '@/components/content/mm_tip'
 import mm_badge from '@/components/content/mm_badge'
 import mm_keyword from '@/components/content/mm_keyword'
+import mm_btn from '@/components/content/mm_btn'
 
 
 // 布局容器
@@ -45,6 +46,7 @@ let mm_ui = {
 		Vue.component('mm_icon', mm_icon);
 		Vue.component('mm_tip', mm_tip);
 		Vue.component('mm_keyword', mm_keyword);
+		Vue.component('mm_btn', mm_btn);
 
 		// 容器
 		Vue.component('mm_block', mm_block);

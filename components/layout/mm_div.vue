@@ -1,5 +1,5 @@
 <template>
-	<!-- 项目块 -->
+	<!-- 块 -->
 	<view class="mm_div" v-if="!url">
 		<slot></slot>
 	</view>

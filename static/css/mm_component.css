@@ -4,8 +4,9 @@
 .small input,.input-s {font-size:0.5rem;height:1.75rem;line-height:1.75rem;padding:0 0.25rem;}
 .normal input,.input {font-size:0.75rem;padding:0 0.5rem;}
 .big input,.input-b {font-size:1rem;height:2.5rem;line-height:2.5rem;padding:0 0.75rem;}
+
 /* 按钮 */
-.btn {display:inline-block;padding:0 1rem;font-size:0.875rem;}
+.mm_btn {display:inline-block;padding:0 1rem;font-size:0.875rem;}
 .small button,.btn-s {font-size:0.5rem;height:1.75rem;line-height:1.75rem;padding:0 0.5rem;}
 .normal button,.btn {font-size:0.75rem;padding:0 0.75rem;}
 .big button,.btn-b {font-size:1rem;height:2.5rem;line-height:2.5rem;padding:0 1rem;}
@@ -15,18 +16,6 @@
 .normal>span {font-size:1rem;height:2rem;line-height:2rem;padding:0 0.75rem;}
 .big>span {font-size:1.25rem;height:2.5rem;line-height:2.5rem;padding:0 1rem;}
 
-/* 组合 */
-.group {display:flex;position:relative;align-self:center;display:-webkit-box;display:-moz-box;display:-ms-flexbox;-webkit-align-self:center;-webkit-box-lines:single;-moz-box-lines:single;-webkit-flex-wrap:nowrap;flex-wrap:nowrap;}
-.group>select,.group>.btn {border-radius:0;}
-.group>input {float:left;box-flex:1;-moz-box-flex:1;-ms-flex:1;-webkit-box-flex:1;-o-box-flex:1;border-radius:0;width:100%;}
-.group:before,.group:after {content:" ";display:block;float:none;clear:both;}
-.group>span,.group>button {white-space:nowrap;white-space:-nowrap;white-space:-o-nowrap;white-space:-o-nowrap;white-space:-moz-nowrap;white-space:-hp-nowrap;white-space:-webkit-nowrap;}
-.group>*:first-child {border-top-left-radius:0.25rem;border-bottom-left-radius:0.25rem;border-right:none;}
-.group>*:last-child {border-top-right-radius:0.25rem;border-bottom-right-radius:0.25rem;border-left:none;}
-.group input {border:1px solid #dbdbdb !important;}
-.group>label {height:2rem;line-height:2rem;}
-.group>label>* {float:left;}
-.group input[type="checkbox"]~span {margin-left:.5rem;}
 
 /* 下拉菜单 */
 .dropdown,[class^="dropdown-"] {position:relative;}
@@ -67,4 +56,8 @@
 
 
 /* 卡片 */
-.card { border-radius: 0.5rem; overflow-x: hidden; }
+.card { border-radius: 0.5rem; overflow-x: hidden; min-height: 12.5rem; background: #fff; }
+.card .mm_head .mm_item { padding: 0.5rem 1rem; }
+.card .mm_body .mm_desc, .card .mm_body .mm_icon { margin-bottom: .5rem; }
+.card .mm_foot .mm_group { border-top: 1px solid rgba(0,0,0,.1); }
+
