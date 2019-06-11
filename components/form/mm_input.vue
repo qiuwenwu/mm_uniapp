@@ -1,14 +1,17 @@
 <template>
 	<!-- 输入框 -->
-	<view class="mm_input" @click="setting()">
-		<mm_side :style="'width:' + width" v-if="icon || title">
+	<view class="mm_input">
+		<mm_side v-if="icon">
 			<text class="form_icon" v-html="icon"></text>
-			<text class="form_title">{{ title }}</text>
 		</mm_side>
 		<mm_main v-if="type == 'text' || type == 'number' || type == 'password'">
-			<input type="text" v-model="val" :placeholder="desc" v-if="type == 'text'"></input>
-			<input type="number" v-model="val" :placeholder="desc" v-else-if="type == 'number'"></input>
-			<input type="password" v-model="val" :placeholder="desc" v-else-if="type == 'password'"></input>
+			<mm_title>{{ title }}</mm_title>
+			<mm_desc>
+				<input type="text" :value="value" :placeholder="desc" v-if="type == 'text'" @input="$emit('input', $event.target.value)"></input>
+				<input type="number" :value="value" :placeholder="desc" v-else-if="type == 'number'" @input="$emit('input', $event.target.value)"></input>
+				<input type="password" :value="value" :placeholder="desc" v-else-if="type == 'password'" @input="$emit('input', $event.target.value)"></input>
+			</mm_desc>
+			<mm_tip><slot></slot></mm_tip>
 		</mm_main>
 	</view>
 </template>

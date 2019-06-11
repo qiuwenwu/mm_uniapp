@@ -1,7 +1,8 @@
 <template>
 	<!-- 找回密码页面 -->
-	<view class="page_account" id="account_forgot">
-	</view>
+	<mm_page class="page_account" id="account_forgot">
+		
+	</mm_page>
 </template>
 
 <script>

@@ -28,6 +28,8 @@ export default {
 			count: 0,
 			// 显示隐藏
 			show: false,
+			// 表单
+			form: {},
 			// 对象
 			obj: {},
 			// 列表

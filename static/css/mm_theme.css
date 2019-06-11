@@ -25,6 +25,7 @@ dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.title { color:#333; }
 .mm_btn:focus { -webkit-filter: contrast(2) brightness(0.9); filter: contrast(2) brightness(0.9); }
 .mm_btn:hover { -webkit-filter: brightness(1.25); filter: brightness(1.25); }
 .mm_btn:disabled { -webkit-filter: grayscale(0.5); filter: grayscale(0.5); }
+.button-hover { background-color: #dcdcdc; }
 
 /* 字体颜色 */
 .font_black {color:#333 !important;}
@@ -35,8 +36,7 @@ dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.title { color:#333; }
 .font_green, .font_success {color:#67C23A !important;}
 .font_blue,.font_primary {color:#409EFF !important;}
 .font_yellow,.font_danger {color:#F56C6C !important;}
-.font_info,.bg_cyan {color:#909399 !important;}
-
+.font_cyan,.font_info {color:#909399 !important;}
 
 /* 默认配置 */
 .mm_mask { background:rgba(0,0,0,0.3); }
@@ -44,4 +44,10 @@ dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.title { color:#333; }
 .mm_footer { background-color: #FDFDFD; color: #333; }
 .mm_head { background: #F5f6FA; }
 .mm_desc { color: #888888; }
+
+.mm_btn_warning {color:#E6A23C;}
+.mm_btn_success {color:#67C23A;}
+.mm_btn_primary {color:#409EFF;}
+.mm_btn_danger {color:#F56C6C;}
+.mm_btn_info {color:#909399;}
 

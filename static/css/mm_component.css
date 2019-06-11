@@ -6,7 +6,6 @@
 .big input,.input-b {font-size:1rem;height:2.5rem;line-height:2.5rem;padding:0 0.75rem;}
 
 /* 按钮 */
-.mm_btn {display:inline-block;padding:0 1rem;font-size:0.875rem;}
 .small button,.btn-s {font-size:0.5rem;height:1.75rem;line-height:1.75rem;padding:0 0.5rem;}
 .normal button,.btn {font-size:0.75rem;padding:0 0.75rem;}
 .big button,.btn-b {font-size:1rem;height:2.5rem;line-height:2.5rem;padding:0 1rem;}
@@ -15,7 +14,6 @@
 .small>span {font-size:0.75rem;height:1.75rem;line-height:1.75rem;padding:0 0.5rem;}
 .normal>span {font-size:1rem;height:2rem;line-height:2rem;padding:0 0.75rem;}
 .big>span {font-size:1.25rem;height:2.5rem;line-height:2.5rem;padding:0 1rem;}
-
 
 /* 下拉菜单 */
 .dropdown,[class^="dropdown-"] {position:relative;}
@@ -53,7 +51,6 @@
 .form_desc switch,.form_desc checkbox {position:absolute;top:50%;right:0;transform:translate(0,-50%);margin-right:1rem;}
 .form_desc checkbox .uni-checkbox-input {border:none;}
 .form_desc checkbox .uni-checkbox-input,.form_desc switch .uni-switch-input {margin-right:0;}
-
 
 /* 卡片 */
 .card { border-radius: 0.5rem; overflow-x: hidden; min-height: 12.5rem; background: #fff; }

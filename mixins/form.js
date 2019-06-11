@@ -6,7 +6,7 @@ export default {
 	props: {
 		// 标题
 		value: {
-			type: [String, Number],
+			type: String,
 			default: ""
 		},
 		// 回调函数
@@ -34,7 +34,7 @@ export default {
 		// 图标
 		icon: {
 			type: String,
-			default: '<text class="fa fa-user"></text>'
+			default: ''
 		},
 		// 描述
 		desc: {
@@ -136,7 +136,9 @@ export default {
 			// 数量
 			nm: this.num,
 			// 文本
-			txt: this.text
+			txt: this.text,
+			// 值
+			val: this.value
 		}
 	},
 	methods: {

@@ -288,9 +288,27 @@
 			}
 		},
 		{
-			"path": "pages/agent/order_view",
+			"path": "pages/account/forgot",
 			"style": {
-				"navigationBarTitleText": "订单详情"
+				"navigationBarTitleText": "找回密码"
+			}
+		},
+		{
+			"path": "pages/account/signin",
+			"style": {
+				"navigationBarTitleText": "登录"
+			}
+		},
+		{
+			"path": "pages/account/signout",
+			"style": {
+				"navigationBarTitleText": "退出"
+			}
+		},
+		{
+			"path": "pages/account/signup",
+			"style": {
+				"navigationBarTitleText": "注册"
 			}
 		}
 	],

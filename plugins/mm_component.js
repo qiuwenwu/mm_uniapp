@@ -24,7 +24,6 @@ import mm_checkbox from '@/components/form/mm_checkbox'
 import mm_email from '@/components/form/mm_email'
 import mm_input from '@/components/form/mm_input'
 import mm_number from '@/components/form/mm_number'
-import mm_phone from '@/components/form/mm_phone'
 import mm_radio from '@/components/form/mm_radio'
 import mm_select from '@/components/form/mm_select'
 import mm_switch from '@/components/form/mm_switch'
@@ -83,7 +82,6 @@ let mm_ui = {
 		Vue.component('mm_email', mm_email);
 		Vue.component('mm_input', mm_input);
 		Vue.component('mm_number', mm_number);
-		Vue.component('mm_phone', mm_phone);
 		Vue.component('mm_radio', mm_radio);
 		Vue.component('mm_select', mm_select);
 		Vue.component('mm_switch', mm_switch);
