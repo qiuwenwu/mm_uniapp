@@ -6,13 +6,15 @@ export default {
 			// 删除地址
 			url_del: "",
 			// 查询对象地址
-			url_get: "",
+			url_get_obj: "",
 			// 查询列表地址
 			url_get_list: "",
 			// 导出地址
 			url_export: "",
 			// 导入地址
 			url_import: "",
+			// 表单提交地址
+			url_submit: "",
 			// 默认访问链接, 当单独链接没有时，访问默认链接
 			url: "",
 			/* === 缓存 === */
@@ -34,8 +36,8 @@ export default {
 			obj: {},
 			// 列表
 			list: [],
-			// 视图模型
-			vm: {},
+			// 验证模型
+			check_model: {},
 			// 重定向
 			redirect: "/account/signin",
 			// 主键字段
@@ -100,21 +102,22 @@ export default {
 
 		/// 查
 		get(query) {
+			if (this.url) {
+				this.get();
+			}
 			this.get_list(query);
 		},
 
 		/// 查一条
 		get_obj(query) {
-			var url = this.url_get ? this.url_get : this.url;
+			var url = this.url_get_obj ? this.url_get_obj : this.url;
 			if (url) {
 				if (query) {
 					this.$obj.push(this.query, query);
 				}
 				var _this = this;
-				this.$get(this.toUrl(this.input(this.query), url), function(json) {
-					$.obj.clear(_this.obj);
-					var ret = _this.output(json);
-					$.obj.push(_this.obj, ret);
+				this.$get(this.toUrl(events('get_obj_before', this.query), url), function(json, status) {
+					events('get_obj_after', json, status);
 				});
 			}
 		},
@@ -127,8 +130,8 @@ export default {
 					this.$obj.push(this.query, query);
 				}
 				var _this = this;
-				this.$get(this.toUrl(this.input(this.query), url), function(json) {
-					_this.output(json);
+				this.$get(this.toUrl(events('get_list_before', this.query), url), function(json, status) {
+					events('get_list_after', json, status);
 				});
 			}
 		},
@@ -144,19 +147,18 @@ export default {
 		},
 
 		/// 回调函数
-		/// fun: 函数名
+		/// name: 函数名
 		/// param1: 参数1
 		/// param2: 参数2
 		/// param3: 参数3
 		/// 返回: 任意类型
-		func(fun, param1, param2, param3) {
-			return null;
-		},
-
-		/// 设置状态
-		/// id: 状态ID
-		set_state(id) {
-
+		func(name, param1, param2, param3) {
+			var fun = this[name];
+			if (fun) {
+				return fun(param1, param2);
+			} else {
+				return null;
+			}
 		},
 
 		/// 重置
@@ -180,7 +182,15 @@ export default {
 
 		/// 提交
 		submit() {
-
+			var url = this.url_submit;
+			if (url) {
+				var pass = this.events('submit_check', this.form);
+				if (pass) {
+					this.$post(url, this.events('submit_before', this.form), function(json, status) {
+						events('submit_after', json, status);
+					});
+				}
+			}
 		},
 
 		/// 上下翻页
@@ -216,7 +226,7 @@ export default {
 			var p = _this.$route.path;
 			var isLoad = this.$store.state.user.isLoad;
 			if (!isLoad) {
-				this.$get('~/user/', function(json, state) {
+				this.$get('~/user/', function(json, status) {
 					if (json) {
 						if (json.data) {
 							json.data.isLoad = true;
@@ -258,32 +268,10 @@ export default {
 		/// 验证参数
 		/// 返回: 验证通过空, 否则返回错误提示
 		check(param, dict) {
-			return null;
-		},
-
-		/// 换入, 用于发送请求时
-		/// req: 请求参数
-		/// 返回: 转换后的结果
-		input(req) {
-			return req;
-		},
-
-		/// 换出, 用于取到请求结果时
-		/// res: 响应结果
-		/// 返回: 转换后的结果
-		output(res) {
-			if (res) {
-				if(res.error){
-					this.alert(res);
-				}
-				else if (res.result) {
-					return res.result;
-				}
-			}
-			return res;
+			return true;
 		},
 		/// 警告
-		alert(res){
+		alert(res) {
 			console.log(res)
 		},
 		/// 事件管理, 用于管理函数
@@ -292,9 +280,9 @@ export default {
 		/// param2: 参数2
 		/// 返回: 特定值
 		events(name, param1, param2) {
-			var funObj = this[name];
-			if (funObj) {
-				return funObj(param1, param2);
+			var func = this[name];
+			if (func) {
+				return func(param1, param2);
 			} else {
 				return null;
 			}
@@ -330,6 +318,62 @@ export default {
 				this.loading = 0;
 			} else {
 				this.loading = progress;
+			}
+		},
+		/// 提交前验证事件
+		/// form: 请求参数
+		/// 返回: 转换后的结果
+		submit_check(form) {
+			return this.check(form, this.check_model);
+		},
+		/// 提交前验证事件
+		/// req: 请求参数
+		/// 返回: 转换后的结果
+		submit_before(req) {
+			return req;
+		},
+		/// 获取到对象后事件
+		/// json: 响应结果
+		/// status: 服务器状态码
+		/// 返回: 转换后的结果
+		submit_after(json, status) {
+			this.alert(json);
+		},
+		/// 请求对象事件
+		/// req: 请求参数
+		/// 返回: 转换后的结果
+		get_obj_before(req) {
+			return req;
+		},
+		/// 获取到对象后事件
+		/// json: 响应结果
+		/// status: 服务器状态码
+		/// 返回: 转换后的结果
+		get_obj_after(json, status) {
+			if (json.error) {
+				this.alert(json);
+			} else if (json.data) {
+				this.$obj.clear(this.obj);
+				this.$obj.push(this.obj, json.data.obj);
+			}
+		},
+		/// 请求列表前事件
+		/// req: 请求参数
+		/// 返回: 转换后的结果
+		get_list_before(req) {
+			return req;
+		},
+		/// 获取到列表事件
+		/// json: 响应结果
+		/// status: 服务器状态码
+		/// 返回: 转换后的结果
+		get_list_after(json, status) {
+			if (json) {
+				if (json.error) {
+					this.alert(json);
+				} else if (json.data) {
+					this.list.eachPush(json.data.list);
+				}
 			}
 		}
 	},

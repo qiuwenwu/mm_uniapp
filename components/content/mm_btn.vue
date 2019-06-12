@@ -1,6 +1,6 @@
 <template>
 	<!-- 按钮 -->
-	<button :class="'mm_btn' + te" v-if="!url">
+	<button :class="'mm_btn' + te" v-if="!url" @click="click_down()">
 		<slot></slot>
 	</button>
 	<button :class="'mm_btn' + te" @click="openBrowser()" v-else-if="url.indexOf('//') !== -1">
@@ -21,6 +21,10 @@
 			type: {
 				type: String,
 				default: ""
+			},
+			fun: {
+				type: Function,
+				default: function(){}
 			}
 		},
 		data() {
@@ -32,6 +36,12 @@
 			openBrowser() {
 				if (window) {
 					window.open(this.url);
+				}
+			},
+			click_down(){
+				if(this.fun)
+				{
+					this.fun();
 				}
 			}
 		},

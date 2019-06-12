@@ -1,15 +1,17 @@
 <template>
 	<!-- 验证码 -->
-	<view class="mm_code">
+	<mm_item class="mm_code">
 		<mm_side v-if="icon">
 			<mm_icon :icon="icon"></mm_icon>
 		</mm_side>
 		<mm_main>
+			<mm_group><input type="text" :value="value" :placeholder="desc" v-if="type == 'text'" @input="$emit('input', $event.target.value)"></input><mm_btn :fun="fun">发送验证码</mm_btn></mm_group>
 			<mm_title>{{ title }}</mm_title>
-			<input type="number" v-model="val" :placeholder="desc"></input>
-			<mm_tip><slot></slot></mm_tip>
+			<mm_tip>
+				<slot></slot>
+			</mm_tip>
 		</mm_main>
-	</view>
+	</mm_item>
 </template>
 
 <script>

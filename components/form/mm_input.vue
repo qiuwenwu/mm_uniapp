@@ -1,8 +1,8 @@
 <template>
 	<!-- 输入框 -->
-	<view class="mm_input">
+	<mm_item class="mm_input">
 		<mm_side v-if="icon">
-			<text class="form_icon" v-html="icon"></text>
+			<mm_icon :icon="icon"></mm_icon>
 		</mm_side>
 		<mm_main v-if="type == 'text' || type == 'number' || type == 'password'">
 			<mm_title>{{ title }}</mm_title>
@@ -13,7 +13,7 @@
 			</mm_desc>
 			<mm_tip><slot></slot></mm_tip>
 		</mm_main>
-	</view>
+	</mm_item>
 </template>
 
 <script>

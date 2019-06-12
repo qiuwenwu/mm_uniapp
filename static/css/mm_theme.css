@@ -45,9 +45,13 @@ dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.title { color:#333; }
 .mm_head { background: #F5f6FA; }
 .mm_desc { color: #888888; }
 
-.mm_btn_warning {color:#E6A23C;}
-.mm_btn_success {color:#67C23A;}
-.mm_btn_primary {color:#409EFF;}
-.mm_btn_danger {color:#F56C6C;}
-.mm_btn_info {color:#909399;}
-
+.mm_btn_warning_x {background-color:#E6A23C; color: #fff}
+.mm_btn_success_x {background-color:#67C23A; color: #fff}
+.mm_btn_primary_x {background-color:#409EFF; color: #fff}
+.mm_btn_danger_x {background-color:#F56C6C; color: #fff}
+.mm_btn_info_x {background-color:#909399; color: #fff}
+.mm_btn_warning {background-color:#E6A23C; color: #fff}
+.mm_btn_success {background-color:#67C23A; color: #fff}
+.mm_btn_primary {background-color:#409EFF; color: #fff}
+.mm_btn_danger {background-color:#F56C6C; color: #fff}
+.mm_btn_info {background-color:#909399; color: #fff}

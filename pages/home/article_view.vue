@@ -19,7 +19,9 @@
 		data() {
 			return {
 				oauth: false,
-				url: "~/paper/all"
+				url: "~/paper/all",
+				obj: {},
+				comment: []
 			}
 		}
 	}

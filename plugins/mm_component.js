@@ -9,7 +9,6 @@ import mm_gradient from '@/components/container/mm_gradient'
 import mm_price from '@/components/container/mm_price'
 import mm_toast from '@/components/container/mm_toast'
 
-
 // 拓展组件
 import mm_chart from '@/components/expand/mm_chart'
 import mm_editor from '@/components/expand/mm_editor'
@@ -28,6 +27,7 @@ import mm_radio from '@/components/form/mm_radio'
 import mm_select from '@/components/form/mm_select'
 import mm_switch from '@/components/form/mm_switch'
 import mm_slider from '@/components/form/mm_slider'
+import mm_code from '@/components/form/mm_code'
 
 // 列表组件
 import mm_list_article from '@/components/list/mm_list_article'
@@ -79,6 +79,7 @@ let mm_ui = {
 		
 		// 表单组件
 		Vue.component('mm_checkbox', mm_checkbox);
+		Vue.component('mm_code', mm_code);
 		Vue.component('mm_email', mm_email);
 		Vue.component('mm_input', mm_input);
 		Vue.component('mm_number', mm_number);
@@ -86,6 +87,7 @@ let mm_ui = {
 		Vue.component('mm_select', mm_select);
 		Vue.component('mm_switch', mm_switch);
 		Vue.component('mm_slider', mm_slider);
+		
 
 		// 列表组件
 		Vue.component('mm_list_article', mm_list_article);
