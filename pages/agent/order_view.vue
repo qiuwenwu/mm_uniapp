@@ -2,7 +2,7 @@
 	<!-- 完成订单详情页面 -->
 	<view class="page_agent" id="agent_order_view">
 		<!--  -->
-
+		
 	</view>
 </template>
 

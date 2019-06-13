@@ -48,7 +48,8 @@ import mm_pay_coin from '@/components/pay/mm_pay_coin'
 import mm_pay_wechat from '@/components/pay/mm_pay_wechat'
 
 // 滑动组件
-import mm_swiper_banner from '@/components/swiper/mm_swiper_banner'
+import mm_swiper_img from '@/components/swiper/mm_swiper_img'
+import mm_swiper_text from '@/components/swiper/mm_swiper_text'
 import mm_swiper_box from '@/components/swiper/mm_swiper_box'
 import mm_swiper_card from '@/components/swiper/mm_swiper_card'
 
@@ -107,7 +108,8 @@ let mm_ui = {
 		Vue.component('mm_pay_wechat', mm_pay_wechat);
 
 		// 滑动组件
-		Vue.component('mm_swiper_banner', mm_swiper_banner);
+		Vue.component('mm_swiper_img', mm_swiper_img);
+		Vue.component('mm_swiper_text', mm_swiper_text);
 		Vue.component('mm_swiper_box', mm_swiper_box);
 		Vue.component('mm_swiper_card', mm_swiper_card);
 	}

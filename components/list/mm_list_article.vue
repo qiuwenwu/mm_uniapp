@@ -1,20 +1,16 @@
 <template>
 	<!-- 文章列表 -->
-	<view class="mm_list_article">
-		<!-- 列表项 -->
-		<mm_item class="hover" v-for="(o, k) in list" :key="k">
-			<mm_div>
-				<mm_side>
-					<mm_icon :icon="o[vm.icon]"></mm_icon>
-				</mm_side>
-				<mm_main>
-					<mm_title>标题</mm_title>
-					<mm_desc>描述</mm_desc>
-					<mm_keyword>关键词</mm_keyword>
-				</mm_main>
-			</mm_div>
+	<mm_list col="1">
+		<mm_item url="http://www.elins.cn" class="hover" v-for="(o, k) in list" :key="k">
+			<mm_side>
+				<mm_icon :src="o[vm.icon]"></mm_icon>
+			</mm_side>
+			<mm_main>
+				<mm_title>{{ o[vm.title] }}</mm_title>
+				<mm_desc>{{ o[vm.desc] }}</mm_desc>
+			</mm_main>
 		</mm_item>
-	</view>
+	</mm_list>
 </template>
 
 <script>

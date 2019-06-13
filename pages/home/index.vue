@@ -2,7 +2,7 @@
 	<!-- 门户页面 -->
 	<view class="page_home" id="home_index">
 		<!-- 轮播图 -->
-		<mm_swiper_banner :list="list_banner" />
+		<mm_swiper_img :list="list_img" />
 
 		<!-- 菜单 -->
 		<list_menu />
@@ -88,7 +88,7 @@
 			return {
 				auto: false,
 				title: 'Hello',
-				list_banner: [{
+				list_img: [{
 						img: "/static/img/banner1.jpg",
 						url: "/pages/mall/product_list"
 					},
