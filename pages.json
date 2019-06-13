@@ -12,6 +12,12 @@
 			}
 		},
 		{
+			"path": "pages/home/contact",
+			"style": {
+				"navigationBarTitleText": "联系客服"
+			}
+		},
+		{
 			"path": "pages/home/channel",
 			"style": {
 				"navigationBarTitleText": "资讯频道"
@@ -27,12 +33,6 @@
 			"path": "pages/home/article_view",
 			"style": {
 				"navigationBarTitleText": "文章详情"
-			}
-		},
-		{
-			"path": "pages/home/contact",
-			"style": {
-				"navigationBarTitleText": "联系客服"
 			}
 		},
 		{
@@ -129,6 +129,12 @@
 			"path": "pages/pay/bitcoin",
 			"style": {
 				"navigationBarTitleText": "比特币付款"
+			}
+		},
+		{
+			"path": "pages/user/contact_list",
+			"style": {
+				"navigationBarTitleText": "联系人"
 			}
 		},
 		{

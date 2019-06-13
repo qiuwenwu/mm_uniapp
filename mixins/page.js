@@ -218,35 +218,6 @@ export default {
 		toUrl(obj, url) {
 			return this.$obj.toUrl(obj, url);
 		},
-
-		/// 获取用户信息
-		/// fun: 回调函数
-		get_user(fun) {
-			var _this = this;
-			var p = _this.$route.path;
-			var isLoad = this.$store.state.user.isLoad;
-			if (!isLoad) {
-				this.$get('~/user/', function(json, status) {
-					if (json) {
-						if (json.data) {
-							json.data.isLoad = true;
-							_this.$store.dispatch('user/set', json.data);
-							if (p.indexOf('/sign') == 0 || p.indexOf('/forgot') == 0) {
-								_this.$router.push('/user/index');
-								return;
-							}
-						}
-					}
-					if (fun) {
-						fun();
-					}
-				});
-			} else {
-				if (fun) {
-					fun();
-				}
-			}
-		},
 		/// 登录验证
 		login() {
 			if (this.oauth) {
@@ -259,10 +230,9 @@ export default {
 			}
 			this.get();
 		},
-
 		/// 初始化
 		init() {
-			this.get_user(this.login);
+			this.$get_user(this.login);
 		},
 
 		/// 验证参数

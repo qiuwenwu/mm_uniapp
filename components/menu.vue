@@ -34,7 +34,7 @@
 <style>
 	.menu {
 		text-align: center;
-		padding: 1.5rem 0.75rem 1.25rem 0.75rem;
+		padding: 1rem 0.75rem .75rem 0.75rem;
 		overflow: hidden;
 	}
 	

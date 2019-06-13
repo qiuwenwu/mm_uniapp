@@ -6,33 +6,36 @@
 			<!-- 栅格 -->
 			<mm_grid col="1" class="space_x">
 				<!-- 格子 -->
-				<mm_col>
+				<mm_col class="pn-b">
 					<!-- 热点文章 —— 图片轮播 -->
 					<mm_block>
 						<mm_swiper_img :list="list_img" />
 					</mm_block>
-					<!-- 公告 ——文字轮播 -->
+				</mm_col>
+				<!-- 格子 -->
+				<mm_col class="pn-t">
+					<!-- 热点文章 —— 图片轮播 -->
 					<mm_block>
 						<mm_swiper_text :list="list_text" />
 					</mm_block>
 				</mm_col>
+				<!-- 格子 -->
 				<mm_col>
 					<!-- 文章筛选面板 -->
-					<mm_block>
-					</mm_block>
+					<mm_block>  </mm_block>
 				</mm_col>
-					
+				<!-- 格子 -->
 				<mm_col>
 					<!-- 文章排序条件 -->
-					<mm_block>
-						
-					</mm_block>
+					<mm_block></mm_block>
 				</mm_col>
-				
+				<!-- 格子 -->
 				<mm_col>
 					<!-- 文章列表 -->
 					<mm_block>
-						<mm_list_article :list="list" class="big" id="mm_list_article"></mm_list_article>
+						<mm_body class="lr">
+							<mm_list_article :list="list" class="big" id="mm_list_article"></mm_list_article>
+						</mm_body>
 					</mm_block>
 				</mm_col>
 			</mm_grid>
@@ -108,5 +111,4 @@
 </script>
 
 <style>
-
 </style>

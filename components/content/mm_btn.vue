@@ -22,7 +22,7 @@
 				type: String,
 				default: ""
 			},
-			fun: {
+			func: {
 				type: Function,
 				default: function(){}
 			}
@@ -39,9 +39,9 @@
 				}
 			},
 			click_down(){
-				if(this.fun)
+				if(this.func)
 				{
-					this.fun();
+					this.func();
 				}
 			}
 		},

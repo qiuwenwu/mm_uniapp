@@ -95,7 +95,6 @@ let mm = {
 
 
 		/* === 注册过滤器, 备注：过滤器在uni-app中无法使用 === */
-
 		/// 转双精度小数字符串
 		/// value: 被转换的数值
 		/// 返回: 返回双精度数字符串
@@ -133,6 +132,34 @@ Vue.mixin(Vue.extend({
 		// 返回: 货币数值
 		$coin: function(money) {
 			return parseFloat(money / this.$store.state.web.rate).toFloor(8)
+		},
+		/// 获取用户信息
+		/// fun: 回调函数
+		$get_user:function(fun) {
+			var _this = this;
+			var p = _this.$route.path;
+			var isLoad = this.$store.state.user.isLoad;
+			if (!isLoad) {
+				this.$get('~/user/', function(json, status) {
+					if (json) {
+						if (json.data) {
+							json.data.isLoad = true;
+							_this.$store.dispatch('user/set', json.data);
+							if (p.indexOf('/sign') == 0 || p.indexOf('/forgot') == 0) {
+								_this.$router.push('/user/index');
+								return;
+							}
+						}
+					}
+					if (fun) {
+						fun();
+					}
+				});
+			} else {
+				if (fun) {
+					fun();
+				}
+			}
 		}
 	}
 }));

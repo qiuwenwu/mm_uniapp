@@ -1,6 +1,31 @@
 <template>
 	<!-- 门户页面 -->
 	<view class="page_home" id="home_index">
+		<!-- 页头 -->
+		<mm_header>
+			<!-- 外套 -->
+			<mm_warp></mm_warp>
+		</mm_header>
+		<!-- 页主体 -->
+		<mm_bodyer>
+			<!-- 外套 -->
+			<mm_warp>
+				<!-- 栅格 -->
+				<mm_grid col="1" class="space_x">
+					<!-- 格子 -->
+					<mm_col>
+						<!-- 首页 -->
+						<mm_block>
+							<mm_head>
+								<mm_title class="font_small">简约</mm_title>
+							</mm_head>
+							<mm_body class="lr"></mm_body>
+							<mm_foot></mm_foot>
+						</mm_block>
+					</mm_col>
+				</mm_grid>
+			</mm_warp>
+		</mm_bodyer>
 		<!-- 轮播图 -->
 		<mm_swiper_img :list="list_img" />
 
@@ -130,55 +155,7 @@
 		width: 100%;
 		height: 8.75rem;
 	}
-
-	.ad {
-		border-top: 1px solid #e3e3e3;
-		border-bottom: 1px solid #e3e3e3;
-	}
-
-	.ad_image {
-		float: right;
-		width: 2.5rem;
-		height: 2.5rem;
-	}
-
-	.ad_image_lg {
-		float: right;
-		width: 4.25rem;
-		height: 4.25rem;
-	}
-
-	.ad_title {
-		font-size: 0.75rem;
-		display: block;
-		margin-top: 0.25rem;
-	}
-
-	.ad_desc {
-		font-size: 0.625rem;
-		color: #999;
-	}
-
-	.ad_1 {
-		overflow: hidden;
-		padding: 1.25rem 0.5rem;
-	}
-
-	.ad_2,
-	.ad_3 {
-		overflow: hidden;
-		padding: 0.5rem;
-	}
-
-	.ad_2 {
-		border-left: 1px solid #e3e3e3;
-		border-bottom: 1px solid #e3e3e3;
-	}
-
-	.ad_3 {
-		border-left: 1px solid #e3e3e3;
-	}
-
+	
 	.copyright {
 		color: rgba(0, 0, 0, 0.3);
 		font-size: 18upx;

@@ -376,6 +376,31 @@ String.prototype.toTime = function() {
 /// value: 比较值
 /// 返回: 返回对象或属性值
 Array.prototype.get = function(key, value) {
+	var list = [];
+	if (typeof(value) == "function") {
+		var fun = value;
+		for (var i = 0; i < this.length; i++) {
+			var o = this[i];
+			if (fun(o[key])) {
+				list.push(o)
+			}
+		}
+	} else {
+		for (var i = 0; i < this.length; i++) {
+			var o = this[i];
+			if (o[key] == value) {
+				list.push(o)
+			}
+		}
+	}
+	return list;
+};
+
+/// 获取值
+/// key: 比较键名
+/// value: 比较值
+/// 返回: 返回对象或属性值
+Array.prototype.get_obj = function(key, value) {
 	var obj;
 	var arr = this;
 	for (var i = 0; i < arr.length; i++) {
@@ -474,19 +499,28 @@ Array.prototype.del = function(key, value, all) {
 	return this;
 };
 
-/// 删除数组成员
-/// arr: 被删除成员的数组
+/// 判断数组成员是否存在
 /// key: 搜索成员键
-/// value: 搜索匹配值
-/// all: 是否删除所有
-/// 返回: 删除后的数组
+/// value: 搜索匹配值或函数
+/// 返回: 存在返回true,不存在返回false
 Array.prototype.has = function(key, value) {
 	var bl = false;
-	for (var i = 0; i < this.length; i++) {
-		var o = this[i];
-		if (o[key] == value) {
-			bl = true;
-			break;
+	if (typeof(value) == "function") {
+		var fun = value;
+		for (var i = 0; i < this.length; i++) {
+			var o = this[i];
+			if (fun(o[key])) {
+				bl = true;
+				break;
+			}
+		}
+	} else {
+		for (var i = 0; i < this.length; i++) {
+			var o = this[i];
+			if (o[key] == value) {
+				bl = true;
+				break;
+			}
 		}
 	}
 	return bl;

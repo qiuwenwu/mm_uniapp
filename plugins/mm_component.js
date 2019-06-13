@@ -40,7 +40,7 @@ import mm_list_news from '@/components/list/mm_list_news'
 import mm_list_number from '@/components/list/mm_list_number'
 import mm_list_product from '@/components/list/mm_list_product'
 import mm_list_user from '@/components/list/mm_list_user'
-
+import mm_list_contact from '@/components/list/mm_list_contact'
 
 // 支付组件
 import mm_pay_ali from '@/components/pay/mm_pay_ali'
@@ -88,7 +88,6 @@ let mm_ui = {
 		Vue.component('mm_select', mm_select);
 		Vue.component('mm_switch', mm_switch);
 		Vue.component('mm_slider', mm_slider);
-		
 
 		// 列表组件
 		Vue.component('mm_list_article', mm_list_article);
@@ -101,6 +100,7 @@ let mm_ui = {
 		Vue.component('mm_list_number', mm_list_number);
 		Vue.component('mm_list_product', mm_list_product);
 		Vue.component('mm_list_user', mm_list_user);
+		Vue.component('mm_list_contact', mm_list_contact);
 
 		// 支付组件
 		Vue.component('mm_pay_ali', mm_pay_ali);

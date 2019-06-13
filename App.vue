@@ -22,6 +22,8 @@
 
 <style>
 	/* ===  每个页面公共css  === */
+	.uni-page-head-btn { top: 0.25rem }
+	.navigator-hover { background: #e5e5e5; z-index:2; }
 	/* .article_list .uni-list-item__container:after { left: 52px !important; } */
 	
 	/* .uni-list-item__container[data-v-1623cbff]:after { left: 52px !important; }

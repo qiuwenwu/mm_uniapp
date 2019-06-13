@@ -5,7 +5,7 @@
 			<mm_icon :icon="icon"></mm_icon>
 		</mm_side>
 		<mm_main v-if="type == 'text' || type == 'number' || type == 'password'">
-			<mm_title>{{ title }}</mm_title>
+			<mm_title v-if="title">{{ title }}</mm_title>
 			<mm_desc>
 				<input type="text" :value="value" :placeholder="desc" v-if="type == 'text'" @input="$emit('input', $event.target.value)"></input>
 				<input type="number" :value="value" :placeholder="desc" v-else-if="type == 'number'" @input="$emit('input', $event.target.value)"></input>

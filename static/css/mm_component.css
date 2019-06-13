@@ -58,3 +58,7 @@
 .card .mm_body .mm_desc, .card .mm_body .mm_icon { margin-bottom: .5rem; }
 .card .mm_foot .mm_group { border-top: 1px solid rgba(0,0,0,.1); }
 
+/* 验证码组件 */
+.mm_code .mm_group { float: right; border-top: 1px solid #EDEDED; border-left: 1px solid #EDEDED; position: relative; z-index: 2; }
+
+/* .mm_input { border-top: 1px solid #e5e5e5 ; } */
