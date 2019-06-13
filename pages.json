@@ -78,12 +78,6 @@
 			}
 		},
 		{
-			"path": "pages/mall/index",
-			"style": {
-				"navigationBarTitleText": "商城"
-			}
-		},
-		{
 			"path": "pages/mall/category",
 			"style": {
 				"navigationBarTitleText": "产品类目"
@@ -177,6 +171,18 @@
 			"path": "pages/user/order_view",
 			"style": {
 				"navigationBarTitleText": "订单详情"
+			}
+		},
+		{
+			"path": "pages/user/dbd_list",
+			"style": {
+				"navigationBarTitleText": "我的礼包"
+			}
+		},
+		{
+			"path": "pages/user/dbd_view",
+			"style": {
+				"navigationBarTitleText": "礼包详情"
 			}
 		},
 		{

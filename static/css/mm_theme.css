@@ -1,8 +1,8 @@
 @charset "utf-8";
 
 /* 重置样式 */
-body  { color: 333; background: #ededed; /* background: #efeff4; */ }
-dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.title { color:#333; }
+body  { color: #333; background: #ededed; /* background: #efeff4; */ }
+dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.mm_title { color:#333; }
 input { color: #333; }
 
 /* 元素样式 */

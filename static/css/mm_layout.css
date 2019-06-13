@@ -18,8 +18,8 @@ h3,.h3 {font-size:1.75rem;}
 h4,.h4 {font-size:1.5rem;}
 h5,.h5 {font-size:1.25rem;}
 h6,.h6 {font-size:1rem;}
-small,.font_small {font-size:75%;}
-big,.font_big {font-size:125%;}
+small,.font_small {font-size:80%;}
+big,.font_big {font-size:120%;}
 dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.title {font-weight:500;}
 
 /* ====== 通用布局 ====== */
@@ -174,7 +174,7 @@ dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.title {font-weight:500;}
 .mm_col_100 {width:100%;-ms-flex:0 0 100%;flex:0 0 100%;}
 
 /* 列表 */
-.mm_list:before,.mm_list:after {display:block;content:"";clear:both;float:none;}
+.mm_list:before,.mm_list:after,[class*=mm_list_]:before,[class*=mm_list_]:after {display:block;content:"";clear:both;float:none;}
 .mm_list,[class*=mm_list_] {over-webkit-flex-direction:row;-moz-flex-direction:row;-ms-flex-direction:row;-o-flex-direction:row;flex-direction:row;-webkit-flex-wrap:wrap;-moz-flex-wrap:wrap;-ms-flex-wrap:wrap;-o-flex-wrap:wrap;flex-wrap:wrap;-webkit-justify-content:space-between;-moz-justify-content:space-between;-ms-justify-content:space-between;-o-justify-content:space-between;justify-content:space-between;}
 .mm_list ~ [class*=mm_list_], [class*=mm_list_] ~ .mm_list, [class*=mm_list_] ~ [class*=mm_list_] { border-top: 1px solid #e5e5e5; }
 .mm_list .mm_item,[class*=mm_list_] .mm_item {-ms-flex-preferred-size:0;-webkit-box-flex:1;-ms-flex-positive:1;float:left;list-style:none;}

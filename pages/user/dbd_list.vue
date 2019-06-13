@@ -1,0 +1,177 @@
+<template>
+	<view class="page_account" id="account_signin">
+		<mm_bodyer>
+			<mm_warp>
+				<mm_grid>
+					<mm_col>
+						<mm_block>
+							<mm_body>
+								<mm_list id="tabs" col="5" class="space">
+									<mm_item :class="{'active': state === 0 }" @click.native="set_state(0)">未开启</mm_item>
+									<mm_item :class="{'active': state === 1 }" @click.native="set_state(1)">已生效</mm_item>
+									<mm_item :class="{'active': state === 2 }" @click.native="set_state(2)">已过期</mm_item>
+									<mm_item :class="{'active': state === 3 }" @click.native="set_state(3)">带回购</mm_item>
+									<mm_item :class="{'active': state === 4 }" @click.native="set_state(4)">已回购</mm_item>
+								</mm_list>
+							</mm_body>
+						</mm_block>
+					</mm_col>
+					<mm_col>
+						<mm_block>
+							<mm_head class="dbd_count">
+								<mm_title>DBD数量：88</mm_title>
+							</mm_head>
+						</mm_block>
+					</mm_col>
+				</mm_grid>
+				<mm_grid id="dbd_grid" class="space_x">
+					<mm_col>
+						<mm_block url="./dbd_view?did=1">
+							<mm_head class="lr">
+								<mm_div>
+									<mm_main class="font_small">
+										<mm_title>20190520112121</mm_title>
+										<mm_desc>未开启</mm_desc>
+									</mm_main>
+								</mm_div>
+							</mm_head>
+							<mm_body class="lr">
+								<mm_list col="1" class="dbd_item">
+									<mm_item class="big">
+										<mm_side>
+											<mm_icon src="http://img.sccnn.com/bimg/334/0957.jpg"></mm_icon>
+										</mm_side>
+										<mm_main class="introduce">
+											<mm_title>DBD礼包</mm_title>
+											<mm_desc><text class="price">298.00</text></mm_desc>
+											<mm_desc>
+												<text class="num">数量：10.33</text>
+												<text class="days">有效天数：289</text>
+											</mm_desc>
+										</mm_main>
+									</mm_item>
+								</mm_list>
+							</mm_body>
+						</mm_block>
+					</mm_col>
+					<mm_col>
+						<mm_block url="./dbd_view?did=1">
+							<mm_head class="lr">
+								<mm_div>
+									<mm_main class="font_small">
+										<mm_title>20190520112121</mm_title>
+										<mm_desc>未开启</mm_desc>
+									</mm_main>
+								</mm_div>
+							</mm_head>
+							<mm_body class="lr">
+								<mm_list col="1" class="dbd_item">
+									<mm_item class="big">
+										<mm_side>
+											<mm_icon src="http://img.sccnn.com/bimg/334/0957.jpg"></mm_icon>
+										</mm_side>
+										<mm_main class="introduce">
+											<mm_title>DBD礼包</mm_title>
+											<mm_desc><text class="price">298.00</text></mm_desc>
+											<mm_desc>
+												<text class="num">数量：10.33</text>
+												<text class="days">有效天数：289</text>
+											</mm_desc>
+										</mm_main>
+									</mm_item>
+								</mm_list>
+							</mm_body>
+						</mm_block>
+					</mm_col>
+				</mm_grid>
+			</mm_warp>
+		</mm_bodyer>
+	</view>
+</template>
+
+<script>
+	import mixin from '@/mixins/page'
+	export default {
+		mixins: [mixin],
+		data() {
+			return {
+				state: 0
+			}
+		},
+		onLoad() {
+
+		},
+		methods: {
+			set_state(state) {
+				this.state = state;
+				console.log(this.state)
+			}
+		}
+	}
+</script>
+
+<style>
+	#tabs {
+		font-size: 0.875rem;
+		line-height: 2;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+		text-align: center;
+	}
+
+	#tabs .active:after {
+		content: "";
+		display: block;
+		position: absolute;
+		left: 0;
+		right: 0;
+		width: 100%;
+		bottom: 0;
+		border-bottom: 2px solid #38f;
+	}
+
+	#dbd_grid {
+		margin-top: 0.5rem;
+	}
+
+	#dbd_grid .mm_block {
+		border-top: 1px solid rgba(0, 0, 0, 0.1);
+		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	}
+
+	#dbd_grid .mm_div .mm_main {
+		padding-top: 0.5rem;
+		padding-bottom: 0.5rem;
+	}
+
+	#dbd_grid .mm_head {
+		background: #fff;
+	}
+
+	#dbd_grid .mm_head .mm_main {
+		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	}
+
+	#dbd_grid .mm_icon {
+		width: 5.625rem;
+		height: 4.625rem;
+	}
+
+	.introduce .mm_title {
+		font-size: 1.25rem;
+	}
+
+	.introduce .price {
+		color: #E6A23C;
+		font-weight: 600;
+		font-size: 1rem;
+	}
+
+	.introduce .price:before {
+		content: "￥";
+		font-size: .75rem;
+	}
+
+	.introduce .days {
+		float: right;
+	}
+</style>
