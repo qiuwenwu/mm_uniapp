@@ -34,7 +34,7 @@ let mm = {
 
 		// 引入mm_sdk的对象处理类
 		Vue.prototype.$obj = $.obj;
-		
+
 		/// 引入get请求函数
 		/// url: 请求地址
 		/// fun: 回调函数
@@ -135,7 +135,7 @@ Vue.mixin(Vue.extend({
 		},
 		/// 获取用户信息
 		/// fun: 回调函数
-		$get_user:function(fun) {
+		$get_user: function(fun) {
 			var _this = this;
 			var p = _this.$route.path;
 			var isLoad = this.$store.state.user.isLoad;
@@ -155,10 +155,8 @@ Vue.mixin(Vue.extend({
 						fun();
 					}
 				});
-			} else {
-				if (fun) {
-					fun();
-				}
+			} else if (fun) {
+				fun();
 			}
 		}
 	}

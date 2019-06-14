@@ -874,6 +874,16 @@ Array.prototype.toArr = function(key) {
 						};
 					}
 				},
+				error: function error(data, status) {
+					if (fun) {
+						fun(data, status);
+					} else {
+						json = {
+							data: data,
+							status: status
+						};
+					}
+				},
 				complete: function complete(XHR, TS) {
 					XHR = null;
 				}
@@ -895,6 +905,16 @@ Array.prototype.toArr = function(key) {
 				},
 				crossDomain: true,
 				success: function success(data, status) {
+					if (fun) {
+						fun(data, status);
+					} else {
+						json = {
+							data: data,
+							status: status
+						};
+					}
+				},
+				error: function error(data, status) {
 					if (fun) {
 						fun(data, status);
 					} else {
@@ -937,6 +957,16 @@ Array.prototype.toArr = function(key) {
 						};
 					}
 				},
+				error: function error(data, status) {
+					if (fun) {
+						fun(data, status);
+					} else {
+						json = {
+							data: data,
+							status: status
+						};
+					}
+				},
 				complete: function complete(XHR, TS) {
 					XHR = null;
 				}
@@ -961,6 +991,16 @@ Array.prototype.toArr = function(key) {
 				dataType: "json",
 				contentType: "application/x-www-form-urlencoded; charset=utf-8;",
 				success: function success(data, status) {
+					if (fun) {
+						fun(data, status);
+					} else {
+						json = {
+							data: data,
+							status: status
+						};
+					}
+				},
+				error: function error(data, status) {
 					if (fun) {
 						fun(data, status);
 					} else {

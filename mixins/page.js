@@ -3,8 +3,12 @@ export default {
 		return {
 			// 页标题
 			title: "",
+			// 添加地址
+			url_add: "",
 			// 删除地址
 			url_del: "",
+			// 修改地址
+			url_set: "",
 			// 查询对象地址
 			url_get_obj: "",
 			// 查询列表地址
@@ -80,16 +84,6 @@ export default {
 
 		},
 
-		/// 添加一条
-		add_obj(obj) {
-
-		},
-
-		/// 添加多条
-		add_list(obj) {
-
-		},
-
 		/// 删
 		del(query) {
 
@@ -102,22 +96,23 @@ export default {
 
 		/// 查
 		get(query) {
-			if (this.url) {
-				this.get();
+			if (this.url_get_obj) {
+				this.get(query);
+			} else {
+				this.get_list(query);
 			}
-			this.get_list(query);
 		},
 
 		/// 查一条
 		get_obj(query) {
-			var url = this.url_get_obj ? this.url_get_obj : this.url;
+			var url = this.url_get_obj;
 			if (url) {
 				if (query) {
 					this.$obj.push(this.query, query);
 				}
 				var _this = this;
-				this.$get(this.toUrl(events('get_obj_before', this.query), url), function(json, status) {
-					events('get_obj_after', json, status);
+				this.$get(this.toUrl(this.events('get_obj_before', this.query), url), function(json, status) {
+					_this.events('get_obj_after', json, status);
 				});
 			}
 		},
@@ -130,8 +125,8 @@ export default {
 					this.$obj.push(this.query, query);
 				}
 				var _this = this;
-				this.$get(this.toUrl(events('get_list_before', this.query), url), function(json, status) {
-					events('get_list_after', json, status);
+				this.$get(this.toUrl(this.events('get_list_before', this.query), url), function(json, status) {
+					_this.events('get_list_after', json, status);
 				});
 			}
 		},
@@ -173,11 +168,9 @@ export default {
 		search(bl) {
 			if (bl) {
 				this.reset();
-			} else if (this.$route.query.length > 0) {
-				this.get(this.$route.query);
-			} else {
-				this.get();
 			}
+			var url = this.toUrl(this.query, this.url);
+			this.push(url);
 		},
 
 		/// 提交
@@ -186,8 +179,9 @@ export default {
 			if (url) {
 				var pass = this.events('submit_check', this.form);
 				if (pass) {
+					var _this = this;
 					this.$post(url, this.events('submit_before', this.form), function(json, status) {
-						events('submit_after', json, status);
+						_this.events('submit_after', json, status);
 					});
 				}
 			}
@@ -232,6 +226,7 @@ export default {
 		},
 		/// 初始化
 		init() {
+			this.$obj.push(this.query, this.$route.query);
 			this.$get_user(this.login);
 		},
 
@@ -326,6 +321,9 @@ export default {
 				this.$obj.clear(this.obj);
 				this.$obj.push(this.obj, json.data.obj);
 			}
+			if (this.url_get_list || this.url) {
+				this.get_list();
+			}
 		},
 		/// 请求列表前事件
 		/// req: 请求参数
@@ -353,7 +351,7 @@ export default {
 			return parseInt(this.count / this.size);
 		}
 	},
-	created() {
+	onLoad() {
 		this.init();
 	}
 };

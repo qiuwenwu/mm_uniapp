@@ -7,11 +7,11 @@
 						<mm_block>
 							<mm_body>
 								<mm_list id="tabs" col="5" class="space">
-									<mm_item :class="{'active': state === 0 }" @click.native="set_state(0)">未开启</mm_item>
-									<mm_item :class="{'active': state === 1 }" @click.native="set_state(1)">已生效</mm_item>
-									<mm_item :class="{'active': state === 2 }" @click.native="set_state(2)">已过期</mm_item>
-									<mm_item :class="{'active': state === 3 }" @click.native="set_state(3)">带回购</mm_item>
-									<mm_item :class="{'active': state === 4 }" @click.native="set_state(4)">已回购</mm_item>
+									<mm_item :class="{'active': query.state === '0' }" url="./dbd_list?state=0">未开启</mm_item>
+									<mm_item :class="{'active': query.state === '1' }" url="./dbd_list?state=1">已生效</mm_item>
+									<mm_item :class="{'active': query.state === '2' }" url="./dbd_list?state=2">已过期</mm_item>
+									<mm_item :class="{'active': query.state === '3' }" url="./dbd_list?state=3">带回购</mm_item>
+									<mm_item :class="{'active': query.state === '4' }" url="./dbd_list?state=4">已回购</mm_item>
 								</mm_list>
 							</mm_body>
 						</mm_block>
@@ -95,17 +95,13 @@
 		mixins: [mixin],
 		data() {
 			return {
-				state: 0
+				url: "~/api/user/dbd_list",
+				query: {
+					state: ""
+				}
 			}
-		},
-		onLoad() {
-
 		},
 		methods: {
-			set_state(state) {
-				this.state = state;
-				console.log(this.state)
-			}
 		}
 	}
 </script>
