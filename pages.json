@@ -246,6 +246,12 @@
 			}
 		},
 		{
+			"path": "pages/calculation/withdraw_tip",
+			"style": {
+				"navigationBarTitleText": "操作提示"
+			}
+		},
+		{
 			"path": "pages/forum/index",
 			"style": {
 				"navigationBarTitleText": "社区"

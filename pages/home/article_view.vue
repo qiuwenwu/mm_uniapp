@@ -23,7 +23,6 @@
 							<mm_foot></mm_foot>
 						</mm_block>
 					</mm_col>
-					
 					<!-- 格子 -->
 					<mm_col>
 						<!-- 评论列表 -->

@@ -7,22 +7,49 @@
 			<mm_grid col="1" class="space-x">
 				<!-- 格子 -->
 				<mm_col class="pn-b">
+					<!-- 文章频道 -->
+					<mm_block>
+						<mm_body>
+							<mm_list col="3" id="tabs" class="space">
+								<mm_item :class="{'active': query.cid === '0' }" url="./article_list?cid=0">新闻快讯</mm_item>
+								<mm_item :class="{'active': query.cid === '1' }" url="./article_list?cid=1">培训课程</mm_item>
+								<mm_item :class="{'active': query.cid === '2' }" url="./article_list?cid=2">常见问题</mm_item>
+							</mm_list>
+						</mm_body>
+					</mm_block>
+				</mm_col>
+				<!-- 格子 -->
+				<mm_col class="pn-tb">
 					<!-- 热点文章 —— 图片轮播 -->
 					<mm_block>
-						<mm_swiper_img :list="list_img" />
+						<mm_body>
+							<mm_swiper_img :list="list_img" />
+						</mm_body>
 					</mm_block>
 				</mm_col>
 				<!-- 格子 -->
 				<mm_col class="pn-t">
 					<!-- 热点文章 —— 图片轮播 -->
-					<mm_block>
-						<mm_swiper_text :list="list_text" />
+					<mm_block class="lr">
+						<mm_side class="hot_icon">
+							<i class="fa fa-bullhorn" aria-hidden="true"></i>
+						</mm_side>
+						<mm_main class="pn">
+							<mm_swiper_text :list="list_text" />
+						</mm_main>
 					</mm_block>
 				</mm_col>
-				<!-- 格子 -->
 				<mm_col>
 					<!-- 文章筛选面板 -->
-					<mm_block>  </mm_block>
+					<mm_block>
+						<mm_col>
+							<mm_block>
+								<mm_body>
+
+								</mm_body>
+							</mm_block>
+						</mm_col>
+					</mm_block>
 				</mm_col>
 				<!-- 格子 -->
 				<mm_col>
@@ -53,6 +80,9 @@
 			return {
 				oauth: false,
 				url: "~/paper/all",
+				query: {
+					cid: ""
+				},
 				list_img: [{
 						img: "/static/img/banner1.jpg",
 						url: "/pages/mall/product_list"
@@ -111,4 +141,5 @@
 </script>
 
 <style>
+	.hot_icon { padding-top: 0; padding-bottom: 0; height: 2.5rem; line-height: 2.5rem; color: #C60A0A; }
 </style>

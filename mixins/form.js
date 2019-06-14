@@ -11,7 +11,7 @@ export default {
 		},
 		// 回调函数
 		func: {
-			type: Object,
+			type: Function,
 			default: function(fun, param1, param2) {
 				return null
 			}

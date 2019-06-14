@@ -98,7 +98,6 @@ dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.title {font-weight:500;}
 
 /* ====== 元素 ====== */
 /* 块 */
-.mm_foot { border-top: 1px solid rgba(0,0,0,0.1); }
 .mm_block:before,.mm_block:after {display:block;content:"";clear:both;float:none;}
 .mm_head:before,.mm_head:after {display:block;content:"";clear:both;float:none;}
 .mm_body:before,.mm_body:after {display:block;content:"";clear:both;float:none;}
@@ -123,6 +122,7 @@ dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.title {font-weight:500;}
 /* ===  布局  === */
 /* 容器 */
 .mm_page {display:block;}
+.mm_footer { position: fixed; left:0; right:0; width: 100%; bottom: 2rem; }
 .mm_header:before,.mm_header:after {display:block;content:"";clear:both;float:none;}
 .mm_bodyer:before,.mm_bodyer:after {display:block;content:"";clear:both;float:none;}
 .mm_footer:before,.mm_footer:after {display:block;content:"";clear:both;float:none;}
@@ -177,7 +177,7 @@ dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.title {font-weight:500;}
 /* 列表 */
 .mm_list:before,.mm_list:after,[class*=mm_list_]:before,[class*=mm_list_]:after {display:block;content:"";clear:both;float:none;}
 .mm_list,[class*=mm_list_] {over-webkit-flex-direction:row;-moz-flex-direction:row;-ms-flex-direction:row;-o-flex-direction:row;flex-direction:row;-webkit-flex-wrap:wrap;-moz-flex-wrap:wrap;-ms-flex-wrap:wrap;-o-flex-wrap:wrap;flex-wrap:wrap;-webkit-justify-content:space-between;-moz-justify-content:space-between;-ms-justify-content:space-between;-o-justify-content:space-between;justify-content:space-between;}
-.mm_list ~ [class*=mm_list_], [class*=mm_list_] ~ .mm_list, [class*=mm_list_] ~ [class*=mm_list_] { border-top: 1px solid #e5e5e5; }
+.mm_list ~ [class*=mm_list_], [class*=mm_list_] ~ .mm_list, [class*=mm_list_] ~ [class*=mm_list_] { border-top: 1px solid rgba(0,0,0,0.1); }
 .mm_list .mm_item,[class*=mm_list_] .mm_item {-ms-flex-preferred-size:0;-webkit-box-flex:1;-ms-flex-positive:1;float:left;list-style:none;}
 .mm_list_1 .mm_item {width:100%;}
 .mm_list_2 .mm_item {width:50%;}
@@ -219,8 +219,9 @@ dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.title {font-weight:500;}
 
 /* 项目主要 */
 .mm_main { position: relative; z-index: 1; padding:  0.625rem 1rem; padding-left: 0; margin-left: 1rem; overflow: hidden; }
-.mm_item .mm_main { border-bottom: 1px solid #e5e5e5; }
+.mm_item .mm_main { border-bottom: 1px solid rgba(0,0,0,0.1); }
 .mm_item:last-child .mm_main { border-bottom: none; }
+.mm_item:active .mm_main{ border-color: rgba(0,0,0,0); }
 
 /* 标题 */
 .lr .mm_title { float: left; }
@@ -257,7 +258,7 @@ dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.title {font-weight:500;}
 
 /* 特殊块 */
 .mm_div { position: relative; }
-.mm_div.arrow, .mm_div.center { font-size: 75%; border-top: 1px solid rgba(0, 0, 0, 0.1); color: #888888; }
+.mm_div.arrow, .mm_div.center { font-size: 0.75rem; color: #888888; }
 .mm_foot .mm_div { padding: 0.5rem 1rem; }
 
 /* 栅格间距 */
@@ -282,12 +283,13 @@ dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.title {font-weight:500;}
 /* 按钮 */
 .mm_btn, [class*=mm_btn_] { text-align: center;border-radius: .25rem; display: inline-block; padding: 0.625rem 1rem; font-size: 1rem; line-height:1.5; cursor: pointer; background: #fff; }
 .mm_btn:after, [class*=mm_btn_]:after { display: none; }
+.mm_btn.full, [class*=mm_btn_].full { width: calc(100% - 2rem); display: block; margin-left: auto; margin-right: auto; }
 .mm_group .mm_btn,.mm_group [class*=mm_btn_] { border-right: 1px solid rgba(0,0,0,.1); }
 .mm_group .mm_btn:last-child, .mm_group [class*=mm_btn_]:last-child { border-right: none; }
 
-.small button,.small .mm_btn,.small [class*=mm_btn_],.btn-s {font-size:0.5rem;height:1.75rem;line-height:1.75rem;padding:0 0.5rem;}
-.normal button,.normal .mm_btn,.normal [class*=mm_btn_],.btn {font-size:0.75rem;padding:0 0.75rem;}
-.big button,.big .mm_btn,.big [class*=mm_btn_],.btn-b {font-size:1rem;height:2.5rem;line-height:2.5rem;padding:0 1rem;}
+.small button,.small .mm_btn,.small [class*=mm_btn_],.btn-s {font-size:0.75rem;height:2rem;line-height:2rem;padding:0 1rem;}
+.normal button,.normal .mm_btn,.normal [class*=mm_btn_],.btn {font-size:0.875rem;padding:0 1rem;}
+.big button,.big .mm_btn,.big [class*=mm_btn_],.btn-b {font-size:1rem;height:2.5rem;line-height:2.5rem;padding:0 1.5rem;}
 
 /*== 媒体 ==*/
 /* 图片尺寸 */

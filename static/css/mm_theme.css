@@ -2,7 +2,7 @@
 
 /* 重置样式 */
 body  { color: #333; background: #ededed; /* background: #efeff4; */ }
-dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.mm_title { color:#333; }
+/* dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.mm_title { color:#333; } */
 input { color: #333; }
 
 /* 元素样式 */
@@ -21,6 +21,7 @@ input { color: #333; }
 .bg_cyan,.bg_info {background:#00b2d2;color:#fff;border-color:#00b2d2;}
 .bg_blue,.bg_primary {background:#38f;color:#fff;border-color:#38f;}
 .bg_purple {background: #7f39e8; color:#fff;border-color:#7f39e8;}
+.bg_no { background: none !important; }
 
 /* 按钮 */
 /* .mm_btn:focus { -webkit-filter: contrast(2) brightness(0.9); filter: contrast(2) brightness(0.9); } */
@@ -60,14 +61,14 @@ input { color: #333; }
 .mm_btn_danger-x:active { color:#ff5000; }
 .mm_btn_info-x:active { color:#15baf8; }
 
-.mm_btn_default {background-color:#999; color: #fff}
+.mm_btn_default {background-color:#666; color: #fff}
 .mm_btn_warning {background-color:#f12f04; color: #fff}
 .mm_btn_success {background-color:#44b549; color: #fff}
 .mm_btn_primary {background-color:#38f; color: #fff}
 .mm_btn_danger {background-color:#ff9000; color: #fff}
 .mm_btn_info {background-color:#26d2ff; color: #fff}
 
-.mm_btn_default:active { background-color:#666; color: #fff}
+.mm_btn_default:active { background-color:#333; color: #fff}
 .mm_btn_warning:active {background-color:#C60A0A; color: #fff}
 .mm_btn_success:active {background-color:#2F9833; color: #fff}
 .mm_btn_primary:active {background-color:#317EF3; color: #fff}
@@ -75,3 +76,4 @@ input { color: #333; }
 .mm_btn_info:active {background-color:#15baf8; color: #fff}
 
 .price { color: #ff9000; font-weight: 600; }
+
