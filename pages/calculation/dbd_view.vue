@@ -1,28 +1,7 @@
 <template>
-	<mm_page class="page_account" id="account_signin">
+	<mm_page class="page_calculation" id="calculation_dbd_view">
 		<mm_bodyer>
 			<mm_warp>
-				<mm_grid col="1">
-					<mm_col>
-						<mm_block>
-							<mm_body>
-								<mm_list id="tabs" col="4" class="space">
-									<mm_item :class="{'active': query.state === '0' }" url="./dbd_list?state=0">未开启</mm_item>
-									<mm_item :class="{'active': query.state === '1' }" url="./dbd_list?state=1">已生效</mm_item>
-									<mm_item :class="{'active': query.state === '3' }" url="./dbd_list?state=3">待回购</mm_item>
-									<mm_item :class="{'active': query.state === '4' }" url="./dbd_list?state=4">已回购</mm_item>
-								</mm_list>
-							</mm_body>
-						</mm_block>
-					</mm_col>
-					<mm_col>
-						<mm_block>
-							<mm_head class="dbd_count">
-								<mm_title>DBD数量：88</mm_title>
-							</mm_head>
-						</mm_block>
-					</mm_col>
-				</mm_grid>
 				<mm_grid id="dbd_grid" class="space-x">
 					<mm_col>
 						<mm_block url="./dbd_view?did=1">
@@ -93,78 +72,105 @@
 	export default {
 		mixins: [mixin],
 		data() {
-			return {
-				url: "~/api/user/dbd_list",
-				query: {
-					state: ""
-				}
-			}
+			return {}
+		},
+		onLoad() {
+
 		},
 		methods: {
+			clickTest() {
+				console.log(1)
+			}
 		}
 	}
 </script>
 
 <style>
-	#tabs {
-		font-size: 0.875rem;
-		line-height: 2;
-		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	.mian {
+		background: rgb(237, 237, 237);
+		font-size: .8rem
+	}
+
+	.tab_list {
+		height: 2.5rem;
+		background: #ffffff;
+	}
+
+	.tab_list .mm_div {
+		height: 2.3rem;
+		line-height: 2.3rem;
 		text-align: center;
+		font-size: .8rem;
+		border-bottom: 1px solid #09BB07;
 	}
 
-	#tabs .active:after {
-		content: "";
-		display: block;
-		position: absolute;
-		left: 0;
-		right: 0;
+	.num {
+		padding: .5rem;
+	}
+
+	#dbd_list .mm_item {
+		background: #ffffff;
+		margin-bottom: .2rem;
+	}
+
+	/* 
+	#dbd_list .mm_item>.mm_desc {
+		padding: .3rem 0rem;
+		margin: 0rem .5rem;
+		display: flex;
+		justify-content: space-between;
+		border-bottom: 1px solid #b9b9b9;
+	} */
+
+	.info {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin: 0 .5rem;
+		padding: 1rem 0;
+	}
+
+	.info .img {
+		flex: 1;
+		background: #dbdbdb;
+	}
+
+	.img>image {
 		width: 100%;
-		bottom: 0;
-		border-bottom: 2px solid #38f;
+		height: 14vh;
+		padding: .5rem;
 	}
 
-	#dbd_grid {
-		margin-top: 0.5rem;
+	.introduce {
+		flex: 2;
+		padding-left: .5rem;
+		height: 14vh;
+		display: flex;
+		align-content: space-between;
+		flex-wrap: wrap
 	}
 
-	#dbd_grid .mm_block {
-		border-top: 1px solid rgba(0, 0, 0, 0.1);
-		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-	}
-
-	#dbd_grid .mm_div .mm_main {
-		padding-top: 0.5rem;
-		padding-bottom: 0.5rem;
-	}
-
-	#dbd_grid .mm_head {
-		background: #fff;
-	}
-
-	#dbd_grid .mm_head .mm_main {
-		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-	}
-
-	#dbd_grid .mm_icon {
-		width: 5.625rem;
-		height: 4.625rem;
-	}
-
-	.introduce .mm_title {
-		font-size: 1.25rem;
-	}
-
-	.introduce .price {
+	.introduce h3 {
 		font-size: 1rem;
+		font-weight: 400;
+		width: 100%;
 	}
 
-	.introduce .price:before {
+	.introduce p {
+		width: 100%;
+	}
+
+	.introduce p:first-of-type {
+		font-size: 1.4rem
+	}
+
+	.introduce p:first-of-type:before {
 		content: "￥";
-		font-size: .75rem;
+		font-size: .8rem
 	}
 
-	.introduce .days {
-		float: right;
+	.introduce p:last-of-type {
+		display: flex;
+		justify-content: space-between;
 	}
 </style>

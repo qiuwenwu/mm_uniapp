@@ -174,18 +174,6 @@
 			}
 		},
 		{
-			"path": "pages/user/dbd_list",
-			"style": {
-				"navigationBarTitleText": "我的礼包"
-			}
-		},
-		{
-			"path": "pages/user/dbd_view",
-			"style": {
-				"navigationBarTitleText": "礼包详情"
-			}
-		},
-		{
 			"path": "pages/calculation/assets_list",
 			"style": {
 				"navigationBarTitleText": "我的算力"
@@ -195,6 +183,24 @@
 			"path": "pages/calculation/assets_view",
 			"style": {
 				"navigationBarTitleText": "算力详情"
+			}
+		},
+		{
+			"path": "pages/calculation/dbd_list",
+			"style": {
+				"navigationBarTitleText": "我的礼包"
+			}
+		},
+		{
+			"path": "pages/calculation/dbd_record",
+			"style": {
+				"navigationBarTitleText": "DBD流水单"
+			}
+		},
+		{
+			"path": "pages/calculation/dbd_view",
+			"style": {
+				"navigationBarTitleText": "礼包详情"
 			}
 		},
 		{

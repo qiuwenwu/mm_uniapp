@@ -1,6 +1,6 @@
 <template>
 	<!-- DBD流水页面 -->
-	<mm_page class="page_account" id="bill_list">
+	<mm_page class="page_calculation" id="calculation_dbd_record">
 		<mm_bodyer>
 			<mm_warp>
 				<mm_grid>
