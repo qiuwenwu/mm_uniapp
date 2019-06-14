@@ -95,6 +95,40 @@
 							</mm_foot>
 						</mm_block>
 					</mm_col>
+					<mm_col>
+						<mm_block url="./order_view?oid=1">
+							<mm_head class="lr">
+								<mm_div>
+									<mm_main class="font_small">
+										<mm_title>20190520112121</mm_title>
+										<mm_desc>未开启</mm_desc>
+									</mm_main>
+								</mm_div>
+							</mm_head>
+							<mm_body class="lr">
+								<mm_list col="1" class="dbd_item">
+									<mm_item class="big">
+										<mm_side>
+											<mm_icon src="http://img.sccnn.com/bimg/334/0957.jpg"></mm_icon>
+										</mm_side>
+										<mm_main class="introduce">
+											<mm_title>DBD礼包</mm_title>
+											<mm_desc><text class="price">298.00</text></mm_desc>
+											<mm_desc>
+												<text class="num">数量：10.33</text>
+												<text class="days">有效天数：289</text>
+											</mm_desc>
+										</mm_main>
+									</mm_item>
+								</mm_list>
+							</mm_body>
+							<mm_foot>
+								<mm_group class="small">
+									<mm_btn url="">立即支付</mm_btn>
+								</mm_group>
+							</mm_foot>
+						</mm_block>
+					</mm_col>
 				</mm_grid>
 			</mm_warp>
 		</mm_bodyer>
@@ -175,8 +209,6 @@
 	}
 
 	.introduce .price {
-		color: #ff9000;
-		font-weight: 600;
 		font-size: 1rem;
 	}
 

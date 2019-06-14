@@ -4,7 +4,7 @@
 		<!-- 退出提示 -->
 		<mm_bodyer>
 			<mm_warp>
-				<mm_grid>
+				<mm_grid col="1">
 					<mm_col>
 						您已退出，稍后将跳转到登录页面
 					</mm_col>

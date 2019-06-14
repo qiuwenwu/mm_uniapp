@@ -3,7 +3,7 @@
 	<mm_page class="page_account" id="account_signup">
 		<mm_bodyer>
 			<mm_warp>
-				<mm_grid>
+				<mm_grid col="1">
 					<mm_col>
 						<!-- 注册表单 -->
 						<mm_block>

@@ -3,7 +3,7 @@
 	<mm_page class="page_account" id="account_forgot">
 		<mm_bodyer>
 			<mm_warp>
-				<mm_grid>
+				<mm_grid col="1">
 					<mm_col>
 						<mm_block v-show="step == 1">
 							<mm_head>

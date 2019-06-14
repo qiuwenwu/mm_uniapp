@@ -2,7 +2,7 @@
 	<view class="page_account" id="account_signin">
 		<mm_bodyer>
 			<mm_warp>
-				<mm_grid>
+				<mm_grid col="1">
 					<mm_col>
 						<mm_list id="dbd_list">
 							<mm_item url="./dbd_view?did=1">

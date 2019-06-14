@@ -73,3 +73,5 @@ input { color: #333; }
 .mm_btn_primary:active {background-color:#317EF3; color: #fff}
 .mm_btn_danger:active {background-color:#ff5000; color: #fff}
 .mm_btn_info:active {background-color:#15baf8; color: #fff}
+
+.price { color: #ff9000; font-weight: 600; }

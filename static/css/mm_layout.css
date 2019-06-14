@@ -279,10 +279,15 @@ dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.title {font-weight:500;}
 
 
 /* === 内容组件  === */
+/* 按钮 */
 .mm_btn, [class*=mm_btn_] { text-align: center;border-radius: .25rem; display: inline-block; padding: 0.625rem 1rem; font-size: 1rem; line-height:1.5; cursor: pointer; background: #fff; }
 .mm_btn:after, [class*=mm_btn_]:after { display: none; }
 .mm_group .mm_btn,.mm_group [class*=mm_btn_] { border-right: 1px solid rgba(0,0,0,.1); }
 .mm_group .mm_btn:last-child, .mm_group [class*=mm_btn_]:last-child { border-right: none; }
+
+.small button,.small .mm_btn,.small [class*=mm_btn_],.btn-s {font-size:0.5rem;height:1.75rem;line-height:1.75rem;padding:0 0.5rem;}
+.normal button,.normal .mm_btn,.normal [class*=mm_btn_],.btn {font-size:0.75rem;padding:0 0.75rem;}
+.big button,.big .mm_btn,.big [class*=mm_btn_],.btn-b {font-size:1rem;height:2.5rem;line-height:2.5rem;padding:0 1rem;}
 
 /*== 媒体 ==*/
 /* 图片尺寸 */
