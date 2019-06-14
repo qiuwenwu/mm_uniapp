@@ -23,21 +23,21 @@ input { color: #333; }
 .bg_purple {background: #7f39e8; color:#fff;border-color:#7f39e8;}
 
 /* 按钮 */
-.mm_btn:focus { -webkit-filter: contrast(2) brightness(0.9); filter: contrast(2) brightness(0.9); }
-.mm_btn:hover { -webkit-filter: brightness(1.25); filter: brightness(1.25); }
-.mm_btn:disabled { -webkit-filter: grayscale(0.5); filter: grayscale(0.5); }
-.button-hover { background-color: #dcdcdc; }
+/* .mm_btn:focus { -webkit-filter: contrast(2) brightness(0.9); filter: contrast(2) brightness(0.9); } */
+/* .mm_btn:hover, [class*=mm_btn_]:hover { -webkit-filter: brightness(1.25); filter: brightness(1.25); }
+.mm_btn:disabled, [class*=mm_btn_]:disabled { -webkit-filter: grayscale(0.5); filter: grayscale(0.5); } */
+.button-hover { background-color: rgba(0,0,0,0.1); }
 
 /* 字体颜色 */
-.font_black {color:#333 !important;}
-.font_dark {color:#666 !important;}
-.font_grey {color:#999 !important;}
-.font_light {color:#ccc !important;}
-.font_red, .font_warning {color:#E6A23C !important;}
-.font_green, .font_success {color:#67C23A !important;}
-.font_blue,.font_primary {color:#409EFF !important;}
-.font_yellow,.font_danger {color:#F56C6C !important;}
-.font_cyan,.font_info {color:#909399 !important;}
+.font_black {color:#333;}
+.font_dark, .font_default {color:#666;}
+.font_grey {color:#999;}
+.font_light {color:#ccc;}
+.font_red, .font_warning {color:#f12f04;}
+.font_green, .font_success {color:#44b549;}
+.font_blue,.font_primary {color:#38f;}
+.font_yellow,.font_danger {color:#ff9000;}
+.font_cyan,.font_info {color:#26d2ff;}
 
 /* 默认配置 */
 .mm_mask { background:rgba(0,0,0,0.3); }
@@ -46,13 +46,30 @@ input { color: #333; }
 .mm_head { background: #F5f6FA; }
 .mm_desc { color: #888888; }
 
-.mm_btn_warning_x {background-color:#E6A23C; color: #fff}
-.mm_btn_success_x {background-color:#67C23A; color: #fff}
-.mm_btn_primary_x {background-color:#409EFF; color: #fff}
-.mm_btn_danger_x {background-color:#F56C6C; color: #fff}
-.mm_btn_info_x {background-color:#909399; color: #fff}
-.mm_btn_warning {background-color:#E6A23C; color: #fff}
-.mm_btn_success {background-color:#67C23A; color: #fff}
-.mm_btn_primary {background-color:#409EFF; color: #fff}
-.mm_btn_danger {background-color:#F56C6C; color: #fff}
-.mm_btn_info {background-color:#909399; color: #fff}
+.mm_btn_default-x { color:#999; }
+.mm_btn_warning-x { color:#f12f04; }
+.mm_btn_success-x { color:#44b549; }
+.mm_btn_primary-x { color:#38f; }
+.mm_btn_danger-x { color:#ff9000; }
+.mm_btn_info-x { color:#26d2ff; }
+
+.mm_btn_default-x:active { color:#666; }
+.mm_btn_warning-x:active { color:#C60A0A; }
+.mm_btn_success-x:active { color:#2F9833; }
+.mm_btn_primary-x:active { color:#317EF3; }
+.mm_btn_danger-x:active { color:#ff5000; }
+.mm_btn_info-x:active { color:#15baf8; }
+
+.mm_btn_default {background-color:#999; color: #fff}
+.mm_btn_warning {background-color:#f12f04; color: #fff}
+.mm_btn_success {background-color:#44b549; color: #fff}
+.mm_btn_primary {background-color:#38f; color: #fff}
+.mm_btn_danger {background-color:#ff9000; color: #fff}
+.mm_btn_info {background-color:#26d2ff; color: #fff}
+
+.mm_btn_default:active { background-color:#666; color: #fff}
+.mm_btn_warning:active {background-color:#C60A0A; color: #fff}
+.mm_btn_success:active {background-color:#2F9833; color: #fff}
+.mm_btn_primary:active {background-color:#317EF3; color: #fff}
+.mm_btn_danger:active {background-color:#ff5000; color: #fff}
+.mm_btn_info:active {background-color:#15baf8; color: #fff}

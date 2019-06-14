@@ -11,7 +11,7 @@
 			<!-- 外套 -->
 			<mm_warp>
 				<!-- 栅格 -->
-				<mm_grid col="4" class="space_x">
+				<mm_grid col="4" class="space-x">
 					<!-- 格子 -->
 					<mm_col width="50">
 						<mm_block></mm_block>

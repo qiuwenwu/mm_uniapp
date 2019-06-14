@@ -98,6 +98,7 @@ dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.title {font-weight:500;}
 
 /* ====== 元素 ====== */
 /* 块 */
+.mm_foot { border-top: 1px solid rgba(0,0,0,0.1); }
 .mm_block:before,.mm_block:after {display:block;content:"";clear:both;float:none;}
 .mm_head:before,.mm_head:after {display:block;content:"";clear:both;float:none;}
 .mm_body:before,.mm_body:after {display:block;content:"";clear:both;float:none;}
@@ -217,7 +218,8 @@ dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.title {font-weight:500;}
 .rl .mm_side { float: right; }
 
 /* 项目主要 */
-.mm_main { position: relative; z-index: 1; padding:  0.625rem 1rem; padding-left: 0; margin-left: 1rem; overflow: hidden; border-bottom: 1px solid #e5e5e5; }
+.mm_main { position: relative; z-index: 1; padding:  0.625rem 1rem; padding-left: 0; margin-left: 1rem; overflow: hidden; }
+.mm_item .mm_main { border-bottom: 1px solid #e5e5e5; }
 .mm_item:last-child .mm_main { border-bottom: none; }
 
 /* 标题 */
@@ -261,10 +263,10 @@ dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.title {font-weight:500;}
 /* 栅格间距 */
 .space>* {padding:0.5rem;}
 .space_lg>* {padding:1rem;}
-.space_x {margin:-0.5rem;}
-.space_x>* {padding:0.5rem;}
-.space_x_lg {margin:-1rem;}
-.space_x_lg>* {padding:1rem;}
+.space-x {margin:-0.5rem;}
+.space-x>* {padding:0.5rem;}
+.space_lg-x {margin:-1rem;}
+.space_lg-x>* {padding:1rem;}
 
 
 /* 盒子 */

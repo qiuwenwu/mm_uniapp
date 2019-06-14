@@ -1,5 +1,5 @@
 <template>
-	<view class="page_account" id="account_signin">
+	<mm_page class="page_account" id="account_signin">
 		<mm_bodyer>
 			<mm_warp>
 				<mm_grid>
@@ -10,7 +10,7 @@
 									<mm_item :class="{'active': query.state === '0' }" url="./dbd_list?state=0">未开启</mm_item>
 									<mm_item :class="{'active': query.state === '1' }" url="./dbd_list?state=1">已生效</mm_item>
 									<mm_item :class="{'active': query.state === '2' }" url="./dbd_list?state=2">已过期</mm_item>
-									<mm_item :class="{'active': query.state === '3' }" url="./dbd_list?state=3">带回购</mm_item>
+									<mm_item :class="{'active': query.state === '3' }" url="./dbd_list?state=3">待回购</mm_item>
 									<mm_item :class="{'active': query.state === '4' }" url="./dbd_list?state=4">已回购</mm_item>
 								</mm_list>
 							</mm_body>
@@ -24,7 +24,7 @@
 						</mm_block>
 					</mm_col>
 				</mm_grid>
-				<mm_grid id="dbd_grid" class="space_x">
+				<mm_grid id="dbd_grid" class="space-x">
 					<mm_col>
 						<mm_block url="./dbd_view?did=1">
 							<mm_head class="lr">
@@ -86,7 +86,7 @@
 				</mm_grid>
 			</mm_warp>
 		</mm_bodyer>
-	</view>
+	</mm_page>
 </template>
 
 <script>

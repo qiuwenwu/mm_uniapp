@@ -11,7 +11,7 @@
 			<!-- 外套 -->
 			<view class="mm_warp">
 				<!-- 栅格 -->
-				<view class="mm_grid space_x">
+				<view class="mm_grid space-x">
 					<!-- 格子 -->
 					<view class="mm_col_50">
 						<!-- 块:卡片结构 -->
