@@ -61,7 +61,7 @@
 						</mm_block>
 					</mm_col>
 					<mm_col>
-						<mm_block url="./order_view?oid=1">
+						<mm_block url="./order_view?oid=2">
 							<mm_head class="lr">
 								<mm_div>
 									<mm_main class="font_small">
@@ -96,7 +96,7 @@
 						</mm_block>
 					</mm_col>
 					<mm_col>
-						<mm_block url="./order_view?oid=1">
+						<mm_block url="./order_view?oid=3">
 							<mm_head class="lr">
 								<mm_div>
 									<mm_main class="font_small">
@@ -124,7 +124,7 @@
 							</mm_body>
 							<mm_foot>
 								<mm_group class="small">
-									<mm_btn url="">立即支付</mm_btn>
+									<mm_btn url="./order_view?oid=3">查看详情</mm_btn>
 								</mm_group>
 							</mm_foot>
 						</mm_block>
