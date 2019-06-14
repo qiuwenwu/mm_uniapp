@@ -53,25 +53,28 @@
 				</mm_grid>
 			</mm_warp>
 		</mm_bodyer>
-		<mm_modal v-show="show">
-			<mm_grid>
-				<mm_col>
-					<mm_block>
-						<mm_head>
-							<mm_title>身份验证</mm_title>
-							<text @click="show = false">X</text>
-						</mm_head>
-						<mm_body>
-							<mm_list class="ba">
-								<mm_code type="success-x" desc="请输入手机验证码" :func="send_msg"></mm_code>
-							</mm_list>
-						</mm_body>
-						<mm_foot style="margin-top: 1.5rem;">
-							<mm_btn class="full" @click.native="show = false">确定</mm_btn>
-						</mm_foot>
-					</mm_block>
-				</mm_col>
-			</mm_grid>
+		<mm_modal v-model="show">
+			<!-- 外套 -->
+			<mm_warp>
+				<mm_grid>
+					<mm_col>
+						<mm_block>
+							<mm_head>
+								<mm_title>身份验证</mm_title>
+								<text @click="show = false">X</text>
+							</mm_head>
+							<mm_body>
+								<mm_list class="ba">
+									<mm_code type="success-x" desc="请输入手机验证码" :func="send_msg"></mm_code>
+								</mm_list>
+							</mm_body>
+							<mm_foot style="margin-top: 1.5rem;">
+								<mm_btn class="full" @click.native="show = false">确定</mm_btn>
+							</mm_foot>
+						</mm_block>
+					</mm_col>
+				</mm_grid>
+			</mm_warp>
 		</mm_modal>
 	</mm_page>
 </template>
@@ -82,11 +85,9 @@
 		mixins: [mixin],
 		data() {
 			return {
-				state: 0
+				state: 0,
+				show: false
 			}
-		},
-		onLoad() {
-
 		},
 		methods: {
 			set_state(state) {
@@ -100,11 +101,22 @@
 </script>
 
 <style>
-	.mm_modal .mm_warp { padding: 0; top:initial; height: 12rem; bottom: 0; transform: initial;
-		transition: margin 0.5s; }
-		
+	.mm_modal .mm_warp {
+		padding: 0;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		transform: none;
+	}
+
 	.mm_modal .mm_block {
+		position: absolute;
 		padding: 1rem;
+		height: 12rem;
+		bottom: 0;
+		transition: margin 0.5s;
 	}
 
 	.avtive {
