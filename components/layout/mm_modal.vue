@@ -1,9 +1,9 @@
 <template>
 	<!-- 模态窗 -->
-	<view class="mm_modal" v-show="sw">
+	<view class="mm_modal" v-bind:class="{ 'show' : show }">
 		<slot></slot>
 		<!-- 遮罩 -->
-		<mm_mask v-if="display" @click="close()"></mm_mask>
+		<mm_mask v-if="display" @click.native="close()"></mm_mask>
 	</view>
 </template>
 
@@ -11,7 +11,7 @@
 	export default {
 		model: {
 			prop: 'show',
-			event: 'input'
+			event: 'input' // 设置$emit通知，当为input时发起通知v-model
 		},
 		props: {
 			display: {
@@ -20,18 +20,12 @@
 			},
 			show: {
 				type: Boolean,
-				default: true
-			}
-		},
-		data() {
-			return {
-				sw: this.show
+				default: false
 			}
 		},
 		methods: {
 			close() {
-				this.sw = false;
-				this.$emit('input', this.sw);
+				this.$emit('input', false);
 			}
 		}
 	}

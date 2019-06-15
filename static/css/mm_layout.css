@@ -20,7 +20,7 @@ h5,.h5 {font-size:1.25rem;}
 h6,.h6 {font-size:1rem;}
 small,.font_small {font-size:80%;}
 big,.font_big {font-size:120%;}
-dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.title {font-weight:500;}
+dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.mm_title {font-weight:500;}
 
 /* ====== 通用布局 ====== */
 /* 对齐 */
@@ -128,16 +128,17 @@ dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.title {font-weight:500;}
 .mm_footer:before,.mm_footer:after {display:block;content:"";clear:both;float:none;}
 .mm_warp:before,.mm_warp:after {display:block;content:"";clear:both;float:none;}
 .mm_warp { display:block;width:100%;max-width:77rem;margin:0 auto;position:relative; }
-@media (min-width: 415px) {
-	html { font-size: 16px !important; }
-	.mm_warp { padding:0 1rem; }
+@media (min-width:415px) {
+	html {font-size:16px !important;}
+	.mm_warp {padding:0 1rem;}
 }
 
 /* 模态窗 */
-.mm_modal {display:block;position:fixed;z-index:30;top:0;left:0;right:0;bottom:0;width:100%;height:100%;}
+.mm_modal {display:none;position:fixed;z-index:30;top:0;left:0;right:0;bottom:0;width:100%;height:100%;}
 .mm_modal .mm_warp {position:absolute;z-index:40;top:50%;left:50%;transform:translate(-50%,-50%);width:calc(100% - 1rem);max-width:30rem;min-height: 7.5rem;}
 .mm_mask {display:block;position:absolute;z-index:31;top:0;left:0;right:0;bottom:0;width:100%;height:100%;}
 .mm_modal .mm_mask { transition: all 1s ease-in-out; }
+.show { display: block; }
 
 /* 拖动容器 */
 .mm_movable { position: fixed; z-index: 20; bottom: 4rem; right: 1rem; min-height: 1rem; min-width: 1rem; }
@@ -194,22 +195,7 @@ dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.title {font-weight:500;}
 
 /* 箭头 */
 .arrow { padding-right: 2rem !important; }
-.arrow:before {
-	content: " ";
-    display: inline-block;
-    height: 0.625rem;
-    width: 0.625rem;
-    border-width: 0.125rem 0.125rem 0 0;
-    border-color: #B2B2B2;
-    border-style: solid;
-    -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0) translate(0, -50%);
-    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0) translate(0, -50%);
-    position: absolute;
-    top: 50%;
-    right: 1.25rem;
-	margin-top: -0.1rem;
-}
-
+.arrow:before {content:" ";display:inline-block;height:0.625rem;width:0.625rem;border-width:0.125rem 0.125rem 0 0;border-color:#B2B2B2;border-style:solid;-webkit-transform:matrix(0.71,0.71,-0.71,0.71,0,0) translate(0,-50%);transform:matrix(0.71,0.71,-0.71,0.71,0,0) translate(0,-50%);position:absolute;top:50%;right:1.25rem;margin-top:-0.1rem;}
 .mm_foot .arrow:before { width: 0.5rem; height: 0.5rem; border-width: 0.0625rem 0.0625rem 0 0; }
 
 /* 项目侧栏 */
@@ -229,18 +215,7 @@ dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.title {font-weight:500;}
 .lr .small .mm_title,.rl .small .mm_title { padding: 0.25rem 0; }
 
 /* 徽章 */
-.mm_badge { 
-	display: inline-block;
-    padding: .15em .4em;
-    min-width: 1.1rem;
-    border-radius: 1.125rem;
-    background-color: #FA5151;
-    color: #FFFFFF;
-    line-height: 1.2;
-    text-align: center;
-    font-size: 0.75rem;
-    vertical-align: middle;
-}
+.mm_badge {display:inline-block;padding:.15em .4em;min-width:1.1rem;border-radius:1.125rem;background-color:#FA5151;color:#FFFFFF;line-height:1.2;text-align:center;font-size:0.75rem;vertical-align:middle;}
 .mm_side .mm_badge { position: absolute; right: 0.7rem; top: 0.4rem; }
 .mm_desc .mm_badge { margin-left: .5rem; position: relative; top: -0.05rem; }
 .arrow .mm_badge { margin-right: .5rem; }
@@ -254,7 +229,6 @@ dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.title {font-weight:500;}
 .lr .mm_desc { float: right; }
 .lr .small .mm_desc { padding: .25rem 0; }
 .big .mm_desc { padding-top: 0.125rem; font-size: 0.875rem; color: #999; float: none; clear: left; }
-
 
 /* 特殊块 */
 .mm_div { position: relative; }
@@ -327,4 +301,4 @@ dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.title {font-weight:500;}
 /* 组合框 */
 .mm_group,[class*=mm_group_] {display:-webkit-box;display:-moz-box;display:-webkit-flex;display:-moz-flex;display:-ms-flexbox;display:flex;flex-flow:row wrap; justify-content: space-between; align-items: stretch;}
 .mm_group>*,[class*=mm_group_]>* {-ms-flex-preferred-size:0;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;float:left; border-radius: 0; }
-
+.mm_code .mm_group { float: right; border-top: 1px solid #EDEDED; border-left: 1px solid #EDEDED; position: relative; z-index: 2; }

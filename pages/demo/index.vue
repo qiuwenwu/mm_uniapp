@@ -42,7 +42,7 @@
 									</mm_item>
 								</mm_list>
 							</mm_body>
-							<mm_foot>
+							<mm_foot class="bt">
 								<mm_div class="center">
 									622位联系人
 								</mm_div>
@@ -97,7 +97,7 @@
 									</mm_item>
 								</mm_list>
 							</mm_body>
-							<mm_foot>
+							<mm_foot class="bt">
 								<mm_div class="arrow" url="http://www.baidu.com">
 									<mm_title>更多应用</mm_title>
 								</mm_div>

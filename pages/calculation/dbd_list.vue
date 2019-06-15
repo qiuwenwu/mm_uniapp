@@ -23,7 +23,7 @@
 						</mm_block>
 					</mm_col>
 					<mm_col>
-						<mm_block class="dbd" url="./dbd_view?did=1">
+						<mm_block class="dbd">
 							<mm_body class="lr">
 								<mm_list col="1" class="dbd_item">
 									<mm_item>
@@ -32,7 +32,7 @@
 											<mm_desc>未开启</mm_desc>
 										</mm_main>
 									</mm_item>
-									<mm_item class="big">
+									<mm_item class="big" url="./dbd_view?did=1">
 										<mm_side>
 											<mm_icon src="http://img.sccnn.com/bimg/334/0957.jpg"></mm_icon>
 										</mm_side>
@@ -50,7 +50,7 @@
 						</mm_block>
 					</mm_col>
 					<mm_col>
-						<mm_block class="dbd" url="./dbd_view?did=1">
+						<mm_block class="dbd">
 							<mm_body class="lr">
 								<mm_list col="1" class="dbd_item">
 									<mm_item>
@@ -59,7 +59,7 @@
 											<mm_desc>未开启</mm_desc>
 										</mm_main>
 									</mm_item>
-									<mm_item class="big">
+									<mm_item class="big" url="./dbd_view?did=1">
 										<mm_side>
 											<mm_icon src="http://img.sccnn.com/bimg/334/0957.jpg"></mm_icon>
 										</mm_side>

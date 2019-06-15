@@ -53,6 +53,7 @@
 				</mm_grid>
 			</mm_warp>
 		</mm_bodyer>
+			{{ show }}
 		<mm_modal v-model="show">
 			<!-- 外套 -->
 			<mm_warp>
@@ -61,7 +62,7 @@
 						<mm_block>
 							<mm_head>
 								<mm_title>身份验证</mm_title>
-								<text @click="show = false">X</text>
+								<text class="close" @click="show = false">X</text>
 							</mm_head>
 							<mm_body>
 								<mm_list class="ba">
@@ -69,7 +70,7 @@
 								</mm_list>
 							</mm_body>
 							<mm_foot style="margin-top: 1.5rem;">
-								<mm_btn class="full" @click.native="show = false">确定</mm_btn>
+								<mm_btn type="default" class="full" @click.native="show = false">确定</mm_btn>
 							</mm_foot>
 						</mm_block>
 					</mm_col>
@@ -103,20 +104,23 @@
 <style>
 	.mm_modal .mm_warp {
 		padding: 0;
-		top: 0;
+		top: initial;
 		bottom: 0;
 		left: 0;
 		right: 0;
+		height: 0;
 		width: 100%;
-		transform: none;
+		transform: translate(0, 0);
 	}
 
 	.mm_modal .mm_block {
-		position: absolute;
 		padding: 1rem;
 		height: 12rem;
-		bottom: 0;
 		transition: margin 0.5s;
+	}
+	
+	.show .mm_warp {
+		transform: translate(0, -12rem);
 	}
 
 	.avtive {
@@ -130,7 +134,7 @@
 		background: #FFFFFF;
 	}
 
-	.mm_modal text {
+	.mm_modal .close {
 		position: absolute;
 		right: 0.5rem;
 		top: 0.5rem;
@@ -144,14 +148,5 @@
 		cursor: pointer;
 	}
 
-	.mm_modal .mm_tip {
-		font-size: .8rem;
-		color: #999999;
-		padding: .3rem 0;
-	}
 
-	.mm_modal .mm_foot>button {
-		background: #717171;
-		color: #ffffff;
-	}
 </style>
