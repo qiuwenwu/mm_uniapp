@@ -14,25 +14,56 @@
 				<mm_grid col="1" class="space-x">
 					<!-- 格子 -->
 					<mm_col>
-						<!--  -->
 						<mm_block>
-							<mm_head>
-								<mm_title class="font_small">简约</mm_title>
-							</mm_head>
-							<mm_body class="lr"></mm_body>
-							<mm_foot></mm_foot>
+							<mm_body class="lr">
+								<mm_list col="1" class="mini">
+									<mm_item class="big" url="/">
+										<mm_side>
+											<image class="mm_icon" src="/static/img/ad.jpg" mode="widthfix"></image>
+										</mm_side>
+										<mm_main class="arrow">
+											<mm_title>昵称</mm_title>
+											<mm_desc>账号:15817188815</mm_desc>
+										</mm_main>
+									</mm_item>
+								</mm_list>
+							</mm_body>
 						</mm_block>
+					</mm_col>
+					<mm_col>
+						<mm_block>
+							<mm_body class="lr">
+								<mm_list col="1" class="mini">
+									<mm_item>
+										<mm_main>
+											<mm_title>手机</mm_title>
+											<mm_desc>19925301011</mm_desc>
+										</mm_main>
+									</mm_item>
+									<mm_item>
+										<mm_main class="arrow">
+											<mm_title>邮箱</mm_title>
+											<mm_desc>绑定</mm_desc>
+										</mm_main>
+									</mm_item>
+									<mm_item url="/pages/news/reset">
+										<mm_main class="arrow">
+											<mm_title>登陆密码</mm_title>
+											<mm_desc>修改</mm_desc>
+										</mm_main>
+									</mm_item>
+								</mm_list>
+							</mm_body>
+						</mm_block>
+					</mm_col>
+					<mm_col>
+						<mm_div>
+							<mm_btn type="warning-x" class="full">切换账号</mm_btn>
+						</mm_div>
 					</mm_col>
 				</mm_grid>
 			</mm_warp>
 		</mm_bodyer>
-		<!-- 用户信息表单 -->
-		<view class="form">
-			<form_input><button type="primary" plain="true" @click="submit()">发送验证码</button></form_input>
-			<form_input type="switch"></form_input>
-			<form_input type="checkbox" :checked="true" value="123123" />
-			<form_input type="password" />
-		</view>
 	</view>
 </template>
 
@@ -44,7 +75,7 @@
 		components: {},
 		data() {
 			return {
-				oauth: true
+				oauth: false
 			}
 		}
 	}

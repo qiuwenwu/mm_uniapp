@@ -128,7 +128,6 @@
 		color: #999;
 	}
 
-
 	#calculation_withdraw_panel .balance_show_symbol {
 		float: left;
 		height: 100%;

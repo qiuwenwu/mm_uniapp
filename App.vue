@@ -46,6 +46,5 @@
 	.send_sms .close {position:absolute;right:0.5rem;top:0.5rem;width:1.5rem;height:1.5rem;line-height:1.5rem;text-align:center;background:rgba(0,0,0,0.1);color:#fff;border-radius:0.125rem;cursor:pointer;}
 
 	/* 临时测试 */
-
 	/* .mm_col>*,[class*=mm_col_]>* { min-height: 200px; } */
 </style>
