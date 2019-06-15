@@ -46,17 +46,16 @@
 						</mm_block>
 					</mm_col>
 					<mm_col>
-						<mm_block class="bg_no">
-							<mm_btn type="default" class="full" @click.native="show = true">确定</mm_btn>
-						</mm_block>
+						<mm_div>
+							<mm_btn type="default" class="full" @click.native="show = true">开启</mm_btn>
+						</mm_div>
 					</mm_col>
 				</mm_grid>
 			</mm_warp>
 		</mm_bodyer>
-			{{ show }}
 		<mm_modal v-model="show">
 			<!-- 外套 -->
-			<mm_warp>
+			<mm_warp class="send_sms">
 				<mm_grid>
 					<mm_col>
 						<mm_block>
@@ -86,14 +85,10 @@
 		mixins: [mixin],
 		data() {
 			return {
-				state: 0,
-				show: false
+				state: 0
 			}
 		},
 		methods: {
-			set_state(state) {
-				this.state = state;
-			},
 			send_msg() {
 				console.log(0);
 			}
@@ -102,51 +97,5 @@
 </script>
 
 <style>
-	.mm_modal .mm_warp {
-		padding: 0;
-		top: initial;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		height: 0;
-		width: 100%;
-		transform: translate(0, 0);
-	}
-
-	.mm_modal .mm_block {
-		padding: 1rem;
-		height: 12rem;
-		transition: margin 0.5s;
-	}
 	
-	.show .mm_warp {
-		transform: translate(0, -12rem);
-	}
-
-	.avtive {
-		margin-bottom: 0 !important;
-	}
-
-	.mm_modal .mm_title {
-		text-align: center;
-		font-size: 1.2rem;
-		padding-bottom: .5rem;
-		background: #FFFFFF;
-	}
-
-	.mm_modal .close {
-		position: absolute;
-		right: 0.5rem;
-		top: 0.5rem;
-		width: 1.5rem;
-		height: 1.5rem;
-		line-height: 1.5rem;
-		text-align: center;
-		background: rgba(0, 0, 0, 0.1);
-		color: #fff;
-		border-radius: 0.125rem;
-		cursor: pointer;
-	}
-
-
 </style>

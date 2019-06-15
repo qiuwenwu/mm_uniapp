@@ -7,6 +7,7 @@ input { color: #333; }
 
 /* 元素样式 */
 .desc, .tip { color:#666; }
+.mm_col>.mm_block,[class*=mm_col_]>.mm_block { background: #fff; }
 
 /* ====== 公共样式 ====== */
 /* 背景 */
