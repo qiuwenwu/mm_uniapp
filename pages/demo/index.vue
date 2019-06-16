@@ -271,7 +271,5 @@
 </script>
 
 <style>
-	mm_warp {
-		height: 500px;
-	}
+	
 </style>

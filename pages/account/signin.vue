@@ -13,7 +13,7 @@
 								<mm_input v-model="form.phone" desc="请输入手机"></mm_input>
 								<mm_input v-model="form.password" desc="请设置登录密码（6-12位）"></mm_input>
 								<mm_group>
-									<mm_btn type="info">登录</mm_btn>
+									<mm_btn type="default">登录</mm_btn>
 								</mm_group>
 							</mm_body>
 							<mm_foot>

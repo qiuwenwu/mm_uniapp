@@ -16,7 +16,7 @@
 								<mm_input v-model="form.password" type="password" desc="请设置登录密码（6-12位）"></mm_input>
 								<mm_input v-model="form.invitation_code" desc="请输入邀请码"></mm_input>
 								<mm_group>
-									<mm_btn type="info">确定</mm_btn>
+									<mm_btn type="default">确定</mm_btn>
 								</mm_group>
 							</mm_body>
 							<mm_foot></mm_foot>

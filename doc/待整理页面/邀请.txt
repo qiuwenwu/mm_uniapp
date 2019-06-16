@@ -1,0 +1,152 @@
+<template>
+	<view class="page_account" id="account_signin">
+		<mm_bodyer>
+			<mm_warp>
+				<mm_grid id="invitation">
+					<mm_col>
+						<mm_block>
+							<mm_div>
+								<text>99</text>
+								<mm_desc>直推人数</mm_desc>
+							</mm_div>
+							<mm_div>
+								<text>999</text>
+								<mm_desc>二级推荐人数</mm_desc>
+							</mm_div>
+						</mm_block>
+					</mm_col>
+				</mm_grid>
+				<mm_grid id="info">
+					<mm_col>
+						<mm_block>
+							<mm_list col="1" class="space">
+								<mm_item>
+									<mm_main>
+										<mm_title>邀请码</mm_title>
+										<mm_desc>
+											<text id="#copyObj">123456</text>
+											<text @click=copy>复制</text>
+										</mm_desc>
+									</mm_main>
+								</mm_item>
+								<mm_item>
+									<mm_main>
+										<mm_title>邀请链接</mm_title>
+										<text>复制链接</text>
+									</mm_main>
+								</mm_item>
+								<mm_item>
+									<mm_div>
+										<mm_title>邀请二维码</mm_title>
+										<image src="/static/img/erweima.png" mode=""></image>
+										<text>保存到相册</text>
+									</mm_div>
+								</mm_item>
+							</mm_list>
+						</mm_block>
+					</mm_col>
+				</mm_grid>
+			</mm_warp>
+		</mm_bodyer>
+	</view>
+</template>
+
+<script>
+	import mixin from '@/mixins/page'
+	export default {
+		mixins: [mixin],
+		data() {
+			return {
+				state: 0
+			}
+		},
+		onLoad() {
+
+		},
+		methods: {
+			copy(){
+				
+			}
+		}
+	}
+</script>
+
+<style>
+	#invitation .mm_block {
+		display: flex;
+		padding: .8rem;
+	}
+
+	#invitation .mm_div {
+		flex: 1;
+		text-align: center;
+		padding: .8rem 0;
+	}
+
+	#invitation .mm_div:first-of-type {
+		border-right: 1px solid #999999;
+	}
+
+	#invitation text {
+		font-size: 1rem
+	}
+
+	#invitation .mm_desc {
+		font-size: .8rem;
+		padding: .5rem 0;
+	}
+
+	#info .mm_item:first-of-type {
+		border-top: 1px solid #999999;
+	}
+
+	#info .mm_item {
+		padding-top: .8rem;
+		padding-bottom: .8rem;
+		border-bottom: 1px solid #999999;
+	}
+	#info .mm_item:last-of-type{
+		border-bottom:none
+	}
+	#info .mm_main {
+		display: flex;
+		justify-content: space-between;
+		margin: 0;
+		padding: 0;
+		border: none
+	}
+
+	#info input {
+		text-align: right;
+	}
+
+	#info .mm_desc {
+		font-size: .8rem;
+		line-height: 1.7;
+	}
+
+	#info .mm_desc text:first-of-type {
+		margin-right: 1rem;
+		color: #000000;
+	}
+
+	#info text {
+		color: #339999;
+	}
+	#info .mm_div{
+		text-align: center;
+	}
+	#info .mm_div .mm_title {
+		text-align: center;
+	}
+	#info .mm_div image {
+		width: 8rem;
+		height: 8rem;
+		margin: auto;
+		margin: 1rem 0;
+	}
+	#info .mm_div text{
+		display: block;
+		font-size: .8rem
+	}
+</style>

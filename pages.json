@@ -114,6 +114,18 @@
 			}
 		},
 		{
+			"path": "pages/mall/order_list",
+			"style": {
+				"navigationBarTitleText": "订单列表"
+			}
+		},
+		{
+			"path": "pages/mall/order_view",
+			"style": {
+				"navigationBarTitleText": "订单详情"
+			}
+		},
+		{
 			"path": "pages/pay/wechat",
 			"style": {
 				"navigationBarTitleText": "微信付款"
@@ -159,18 +171,6 @@
 			"path": "pages/user/bill_view",
 			"style": {
 				"navigationBarTitleText": "账单详情"
-			}
-		},
-		{
-			"path": "pages/user/order_list",
-			"style": {
-				"navigationBarTitleText": "订单列表"
-			}
-		},
-		{
-			"path": "pages/user/order_view",
-			"style": {
-				"navigationBarTitleText": "订单详情"
 			}
 		},
 		{
@@ -309,6 +309,12 @@
 			"path": "pages/agent/order_list",
 			"style": {
 				"navigationBarTitleText": "订单列表"
+			}
+		},
+		{
+			"path": "pages/agent/invitation_panel",
+			"style": {
+				"navigationBarTitleText": "邀请面板"
 			}
 		},
 		{
