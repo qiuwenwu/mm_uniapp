@@ -1,0 +1,234 @@
+<template>
+	<view class="page_account" id="account_signin">
+		<mm_bodyer>
+			<mm_warp>
+				<mm_grid id="dengji">
+					<mm_col>
+						<mm_block>
+							<mm_head class="dbd_count">
+								<mm_title>当前等级</mm_title>
+							</mm_head>
+						</mm_block>
+					</mm_col>
+					<mm_col>
+						<mm_block>
+							<mm_head>
+								<mm_div class="jindutiao">
+									<mm_div><text></text><text></text></mm_div>
+									<text>等级5</text>
+								</mm_div>
+							</mm_head>
+							<mm_body>
+								<mm_list col="1">
+									<mm_item>
+										<mm_main class="arrow">
+											<mm_title>持有DBD数量</mm_title>
+											<mm_desc>201/200</mm_desc>
+										</mm_main>
+									</mm_item>
+									<mm_item>
+										<mm_main class="arrow">
+											<mm_title>下级直推人数</mm_title>
+											<mm_desc>201/200</mm_desc>
+										</mm_main>
+									</mm_item>
+									<mm_item>
+										<mm_main class="arrow">
+											<mm_title>下级DBD总数</mm_title>
+											<mm_desc>201/200</mm_desc>
+										</mm_main>
+									</mm_item>
+									<mm_item>
+										<mm_main class="arrow">
+											<mm_title>下两级直推人数</mm_title>
+											<mm_desc>201/200</mm_desc>
+										</mm_main>
+									</mm_item>
+									<mm_item>
+										<mm_main class="arrow">
+											<mm_title>下两级DBD总数</mm_title>
+											<mm_desc>201/200</mm_desc>
+										</mm_main>
+									</mm_item>
+								</mm_list>
+							</mm_body>
+							<mm_foot>
+								<mm_div class="center">
+									<mm_title>等级评估周期 2019.05.01~2019.05.31</mm_title>
+								</mm_div>
+							</mm_foot>
+						</mm_block>
+					</mm_col>
+				</mm_grid>
+				<mm_grid id="dengjijiesao">
+					<mm_col>
+						<mm_block>
+							<mm_head>
+								<mm_title>等级介绍</mm_title>
+							</mm_head>
+							<mm_body class="rl">
+								<mm_list col="1" class="mini">
+									<mm_item url="http://www.elins.cn">
+										<mm_main>
+											<mm_title>会员</mm_title>
+										</mm_main>
+									</mm_item>
+									<mm_item url="http://www.elins.cn">
+										<mm_main>
+											<mm_title>达成条件:</mm_title>
+											<mm_desc></mm_desc>
+										</mm_main>
+									</mm_item>
+									<mm_item url="http://www.elins.cn">
+										<mm_main>
+											<mm_title>获得权益:</mm_title>
+											<mm_desc></mm_desc>
+										</mm_main>
+									</mm_item>
+								</mm_list>
+								<mm_list col="1" class="mini">
+									<mm_item url="http://www.elins.cn">
+										<mm_main>
+											<mm_title>等级1</mm_title>
+										</mm_main>
+									</mm_item>
+									<mm_item url="http://www.elins.cn">
+										<mm_main>
+											<mm_title>达成条件:</mm_title>
+											<mm_desc></mm_desc>
+										</mm_main>
+									</mm_item>
+									<mm_item url="http://www.elins.cn">
+										<mm_main>
+											<mm_title>获得权益:</mm_title>
+											<mm_desc></mm_desc>
+										</mm_main>
+									</mm_item>
+								</mm_list>
+							</mm_body>
+						</mm_block>
+					</mm_col>
+				</mm_grid>
+			</mm_warp>
+		</mm_bodyer>
+	</view>
+</template>
+
+<script>
+	import mixin from '@/mixins/page'
+	export default {
+		mixins: [mixin],
+		data() {
+			return {
+				value: 8.888888888888,
+				value1: 0.123123123123,
+			}
+		},
+		filters: {
+			addZero: function(data) {
+				return data.toFixed(8)
+			}
+		},
+		onLoad() {
+
+		},
+		methods: {
+			copy() {
+
+			}
+		}
+	}
+</script>
+
+<style>
+	#dengji .mm_item {
+		padding: 0 .5rem;
+	}
+
+	#dengji .mm_main {
+		display: flex;
+		justify-content: space-between;
+		font-size: .8rem;
+		margin: 0;
+		padding: .5rem;
+	}
+
+	#dengji .center {
+		color: red;
+		font-size: .6rem;
+		padding: .5rem 0;
+	}
+
+	#dengji .jindutiao {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-top: 1rem;
+	}
+
+	#dengji .jindutiao>.mm_div {
+		flex: 4;
+		background: #999999;
+		height: .2rem;
+		padding: 0;
+		display: flex;
+	}
+
+	#dengji .jindutiao>.mm_div>text:nth-child(1) {
+		background: red;
+		height: .2rem;
+		width: 50%;
+		display: inline-block;
+
+	}
+
+	#dengji .jindutiao>.mm_div>text:nth-child(2) {
+		font-size: .5rem;
+		margin-top: -1.8rem;
+		margin-left: -1.5rem;
+		position: relative;
+		width: 0;
+	}
+
+	#dengji .jindutiao>.mm_div>text:nth-child(2):before {
+		content: "";
+		display: inline-block;
+		width: 0;
+		height: 0;
+		border-right: .3rem solid transparent;
+		border-top: .5rem solid red;
+		border-left: .3rem solid transparent;
+		position: absolute;
+		top: 1rem;
+		left: 1.2rem;
+	}
+	#dengji .jindutiao>.mm_div>text:nth-child(2):after {
+		content: "当前进度";
+		display: inline-block;;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width:4rem;
+	}
+
+	#dengji .jindutiao>text {
+		flex: 1;
+		text-align: center;
+		font-size: .8rem;
+		height: 2rem;
+		line-height: 2rem;
+	}
+
+	#dengjijiesao .mm_body .mm_title {
+		font-size: .8rem
+	}
+
+	#dengjijiesao .mm_body .mm_main {
+		padding: .3rem 0;
+		border: none;
+	}
+	#dengjijiesao .mm_body .mm_item:last-of-type {
+		margin-bottom:.5rem;
+	}
+	
+</style>

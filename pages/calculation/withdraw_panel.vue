@@ -20,7 +20,7 @@
 								<mm_title class="font_small"><text class="font_success">请确认提现的微信收款二维码</text></mm_title>
 							</mm_head>
 							<!-- 二维码展示 -->
-							<mm_body class="lr">
+							<mm_body class="tb">
 								<mm_list col="1">
 									<mm_item>
 										<mm_side class="qrcode">

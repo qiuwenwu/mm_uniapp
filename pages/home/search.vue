@@ -15,35 +15,68 @@
 					<!-- 格子 -->
 					<mm_col>
 						<!-- 搜索栏 -->
-						<mm_block>
-							<mm_head>
-								<mm_title class="font_small">简约</mm_title>
-							</mm_head>
-							<mm_body class="lr"></mm_body>
-							<mm_foot></mm_foot>
+						<mm_block class="bg_no">
+							<mm_body class="lr">
+								<mm_main class="search_main">
+									<mm_div class="search_div">
+										<input v-model="form.keywords" desc="search_input" class="mm_col_100" placeholder="搜索" @input="input"></input>
+										<mm_icon src="/static/img/cancel.png" class="cancel_icon" @click="clear" v-show="!showList"></mm_icon>
+									</mm_div>
+									<mm_desc class="ptb"><text class="font_primary">取消</text></mm_desc>
+								</mm_main>
+							</mm_body>
 						</mm_block>
 					</mm_col>
-					<!-- 格子 -->
-					<mm_col>
-						<!-- 热门关键词 -->
-						<mm_block>
-							<mm_head>
-								<mm_title class="font_small">简约</mm_title>
-							</mm_head>
-							<mm_body class="lr"></mm_body>
-							<mm_foot></mm_foot>
+					<mm_col v-show="showList">
+						<mm_block class="bg_no">
+							<mm_body class="center">
+								<mm_desc class="ptb">搜索指定内容</mm_desc>
+							</mm_body>
 						</mm_block>
 					</mm_col>
-
-					<!-- 格子 -->
-					<mm_col>
-						<!-- 历史搜索关键词 -->
-						<mm_block>
-							<mm_head>
-								<mm_title class="font_small">简约</mm_title>
-							</mm_head>
-							<mm_body class="lr"></mm_body>
-							<mm_foot></mm_foot>
+					<mm_col class="font_primary" v-show="showList">
+						<mm_block class="bg_no">
+							<mm_body class="center">
+								<mm_div class="mm_col_33">朋友圈</mm_div>
+								<mm_div class="mm_col_33">文章</mm_div>
+								<mm_div class="mm_col_33">公众号</mm_div>
+								<mm_div class="mm_col_33">小程序</mm_div>
+								<mm_div class="mm_col_33">音乐</mm_div>
+								<mm_div class="mm_col_33">表情</mm_div>
+							</mm_body>
+						</mm_block>
+					</mm_col>
+					<!-- 搜索页面列表部分，输入文字显示 -->
+					<mm_col v-show="!showList" class="search_list_col">
+						<mm_block class="bg_no">
+							<mm_body class="lr">
+								<mm_list col="1" class="mini">
+									<mm_item class="bg_white">
+										<mm_main class="search_item">
+											<mm_title>搜索结果</mm_title>
+											<mm_desc><mm_icon src="/static/img/arrow-up-left.png"></mm_icon></mm_desc>
+										</mm_main>
+									</mm_item>
+									<mm_item class="bg_white">
+										<mm_main class="search_item">
+											<mm_title>搜索结果1</mm_title>
+											<mm_desc><mm_icon src="/static/img/arrow-up-left.png"></mm_icon></mm_desc>
+										</mm_main>
+									</mm_item>
+									<mm_item class="bg_white">
+										<mm_main class="search_item">
+											<mm_title>搜索结果2</mm_title>
+											<mm_desc><mm_icon src="/static/img/arrow-up-left.png"></mm_icon></mm_desc>
+										</mm_main>
+									</mm_item>
+									<mm_item class="bg_white">
+										<mm_main class="search_item">
+											<mm_title>搜索结果3</mm_title>
+											<mm_desc><mm_icon src="/static/img/arrow-up-left.png"></mm_icon></mm_desc>
+										</mm_main>
+									</mm_item>
+								</mm_list>
+							</mm_body>
 						</mm_block>
 					</mm_col>
 				</mm_grid>

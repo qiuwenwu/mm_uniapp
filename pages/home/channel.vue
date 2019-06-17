@@ -1,11 +1,6 @@
 <template>
 	<!-- 文章频道页面 -->
 	<view class="page_home" id="home_channel">
-		<!-- 页头 -->
-		<mm_header>
-			<!-- 外套 -->
-			<mm_warp></mm_warp>
-		</mm_header>
 		<!-- 页主体 -->
 		<mm_bodyer>
 			<!-- 外套 -->
@@ -17,33 +12,72 @@
 						<!-- 资讯频道 -->
 						<mm_block>
 							<mm_head>
-								<mm_title class="font_small">简约</mm_title>
+								<mm_title class="font_small">频道</mm_title>
 							</mm_head>
-							<mm_body class="lr"></mm_body>
-							<mm_foot></mm_foot>
+							<mm_body class="lr">
+								<mm_list col="1" class="mini">
+									<mm_item url="./article_list">
+										<mm_side>
+											<mm_icon src="http://img.sccnn.com/bimg/334/0957.jpg"></mm_icon>
+										</mm_side>
+										<mm_main class="arrow">
+											<mm_title>培训课程</mm_title>
+										</mm_main>
+									</mm_item>
+									<mm_item url="./question_list">
+										<mm_side>
+											<mm_icon src="http://img.sccnn.com/bimg/334/0957.jpg"></mm_icon>
+										</mm_side>
+										<mm_main class="arrow">
+											<mm_title>常见问题</mm_title>
+										</mm_main>
+									</mm_item>
+									<mm_item url="./bulletin_list">
+										<mm_side>
+											<mm_icon src="http://img.sccnn.com/bimg/334/0957.jpg"></mm_icon>
+										</mm_side>
+										<mm_main class="arrow">
+											<mm_title>站内公告</mm_title>
+										</mm_main>
+									</mm_item>
+								</mm_list>
+							</mm_body>
 						</mm_block>
 					</mm_col>
-
 					<!-- 格子 -->
-					<mm_col>
+					<mm_col v-if="channel_sub.length > 0">
 						<!-- 资讯子频道 -->
 						<mm_block>
 							<mm_head>
-								<mm_title class="font_small">简约</mm_title>
+								<mm_title class="font_small">子频道</mm_title>
 							</mm_head>
 							<mm_body class="lr"></mm_body>
 							<mm_foot></mm_foot>
 						</mm_block>
 					</mm_col>
-
 					<!-- 格子 -->
 					<mm_col>
 						<!-- 频道相关资讯 -->
 						<mm_block>
 							<mm_head>
-								<mm_title class="font_small">简约</mm_title>
+								<mm_title class="font_small">最新课程</mm_title>
 							</mm_head>
-							<mm_body class="lr"></mm_body>
+							<mm_body class="lr">
+								<mm_list_article class="big" :list="list"></mm_list_article>
+							</mm_body>
+							<mm_foot></mm_foot>
+						</mm_block>
+					</mm_col>
+					<!-- 格子 -->
+					<mm_col>
+						<!-- 频道相关资讯 -->
+						<mm_block>
+							<mm_head>
+								<mm_title class="font_small">热门课程</mm_title>
+							</mm_head>
+							<mm_body class="lr">
+								<mm_list_article class="big" :list="list"></mm_list_article>
+							</mm_body>
 							<mm_foot></mm_foot>
 						</mm_block>
 					</mm_col>
@@ -72,7 +106,27 @@
 		components: {},
 		data() {
 			return {
-				oauth: false
+				oauth: false,
+				channel: [],
+				channel_sub: [],
+				list: [{
+						title: "这是一文章",
+						desc: "测试",
+						icon: "/static/img/banner3.jpg",
+						url: "/pages/mall/product_list"
+					},
+					{
+						title: "这是一文章",
+						desc: "测试",
+						icon: "/static/img/banner3.jpg",
+						url: "/pages/mall/product_list"
+					}, {
+						title: "这是一文章",
+						desc: "测试",
+						icon: "/static/img/banner3.jpg",
+						url: "/pages/mall/product_list"
+					}
+				]
 			}
 		}
 	}

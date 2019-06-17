@@ -31,15 +31,15 @@ input { color: #333; }
 .button-hover { background-color: rgba(0,0,0,0.1); }
 
 /* 字体颜色 */
-.font_black {color:#333;}
-.font_dark, .font_default {color:#666;}
-.font_grey {color:#999;}
-.font_light {color:#ccc;}
-.font_red, .font_warning {color:#f12f04;}
-.font_green, .font_success {color:#44b549;}
-.font_blue,.font_primary {color:#38f;}
-.font_yellow,.font_danger {color:#ff9000;}
-.font_cyan,.font_info {color:#26d2ff;}
+.font_black {color:#333 !important;}
+.font_dark, .font_default {color:#666 !important;}
+.font_grey {color:#999 !important;}
+.font_light {color:#ccc !important;}
+.font_red, .font_warning {color:#f12f04 !important;}
+.font_green, .font_success {color:#44b549 !important;}
+.font_blue,.font_primary {color:#38f !important;}
+.font_yellow,.font_danger {color:#ff9000 !important;}
+.font_cyan,.font_info {color:#26d2ff !important;}
 
 /* 默认配置 */
 .mm_mask { background:rgba(0,0,0,0.3); }

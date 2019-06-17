@@ -12,6 +12,12 @@
 			}
 		},
 		{
+			"path": "pages/home/bulletin_list",
+			"style": {
+				"navigationBarTitleText": "公告"
+			}
+		},
+		{
 			"path": "pages/home/contact",
 			"style": {
 				"navigationBarTitleText": "联系客服"
@@ -33,6 +39,12 @@
 			"path": "pages/home/article_view",
 			"style": {
 				"navigationBarTitleText": "文章详情"
+			}
+		},
+		{
+			"path": "pages/home/collect",
+			"style": {
+				"navigationBarTitleText": "收藏"
 			}
 		},
 		{
@@ -78,6 +90,48 @@
 			}
 		},
 		{
+			"path": "pages/info/index",
+			"style": {
+				"navigationBarTitleText": "账号管理"
+			}
+		},
+		{
+			"path": "pages/info/nickname",
+			"style": {
+				"navigationBarTitleText": "修改昵称"
+			}
+		},
+		{
+			"path": "pages/info/headimg",
+			"style": {
+				"navigationBarTitleText": "修改头像"
+			}
+		},
+		{
+			"path": "pages/info/email",
+			"style": {
+				"navigationBarTitleText": "绑定邮箱"
+			}
+		},
+		{
+			"path": "pages/info/password",
+			"style": {
+				"navigationBarTitleText": "修改密码"
+			}
+		},
+		{
+			"path": "pages/info/phone",
+			"style": {
+				"navigationBarTitleText": "绑定手机"
+			}
+		},
+		{
+			"path": "pages/info/verified",
+			"style": {
+				"navigationBarTitleText": "实名认证"
+			}
+		},
+		{
 			"path": "pages/mall/category",
 			"style": {
 				"navigationBarTitleText": "产品类目"
@@ -108,21 +162,27 @@
 			}
 		},
 		{
-			"path": "pages/pay/ali",
+			"path": "pages/mall/dbd_view",
 			"style": {
-				"navigationBarTitleText": "支付宝付款"
+				"navigationBarTitleText": "订单详情"
 			}
 		},
 		{
 			"path": "pages/mall/order_list",
 			"style": {
-				"navigationBarTitleText": "订单列表"
+				"navigationBarTitleText": "我的订单"
 			}
 		},
 		{
 			"path": "pages/mall/order_view",
 			"style": {
 				"navigationBarTitleText": "订单详情"
+			}
+		},
+		{
+			"path": "pages/pay/ali",
+			"style": {
+				"navigationBarTitleText": "支付宝付款"
 			}
 		},
 		{
@@ -138,6 +198,12 @@
 			}
 		},
 		{
+			"path": "pages/user/assets",
+			"style": {
+				"navigationBarTitleText": "我的资产"
+			}
+		},
+		{
 			"path": "pages/user/contact_list",
 			"style": {
 				"navigationBarTitleText": "联系人"
@@ -147,12 +213,6 @@
 			"path": "pages/user/index",
 			"style": {
 				"navigationBarTitleText": "我"
-			}
-		},
-		{
-			"path": "pages/user/info",
-			"style": {
-				"navigationBarTitleText": "基本信息"
 			}
 		},
 		{
@@ -171,6 +231,12 @@
 			"path": "pages/user/bill_view",
 			"style": {
 				"navigationBarTitleText": "账单详情"
+			}
+		},
+		{
+			"path": "pages/user/check_in",
+			"style": {
+				"navigationBarTitleText": "签到"
 			}
 		},
 		{
@@ -344,9 +410,9 @@
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"navigationBarTitleText": "比特中心",
+		"navigationBarBackgroundColor": "#eeeeee",
+		"backgroundColor": "#ededed"
 	},
 	"tabBar": {
 		"color": "#333333",
@@ -359,15 +425,15 @@
 			"selectedIconPath": "static/img/icon_home_b.svg",
 			"text": "首页"
 		}, {
-			"pagePath": "pages/home/channel",
-			"iconPath": "static/img/icon_info_a.svg",
-			"selectedIconPath": "static/img/icon_info_b.svg",
-			"text": "资讯"
-		}, {
 			"pagePath": "pages/home/contact",
 			"iconPath": "static/img/icon_contact_a.svg",
 			"selectedIconPath": "static/img/icon_contact_b.svg",
 			"text": "客服"
+		}, {
+			"pagePath": "pages/home/channel",
+			"iconPath": "static/img/icon_info_a.svg",
+			"selectedIconPath": "static/img/icon_info_b.svg",
+			"text": "发现"
 		}, {
 			"pagePath": "pages/user/index",
 			"iconPath": "static/img/icon_my_a.svg",

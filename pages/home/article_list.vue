@@ -6,19 +6,6 @@
 			<!-- 栅格 -->
 			<mm_grid col="1" class="space-x">
 				<!-- 格子 -->
-				<mm_col class="pn-b">
-					<!-- 文章频道 -->
-					<mm_block>
-						<mm_body>
-							<mm_list col="3" id="tabs" class="space">
-								<mm_item :class="{'active': query.cid === '0' }" url="./article_list?cid=0">新闻快讯</mm_item>
-								<mm_item :class="{'active': query.cid === '1' }" url="./article_list?cid=1">培训课程</mm_item>
-								<mm_item :class="{'active': query.cid === '2' }" url="./article_list?cid=2">常见问题</mm_item>
-							</mm_list>
-						</mm_body>
-					</mm_block>
-				</mm_col>
-				<!-- 格子 -->
 				<mm_col class="pn-tb">
 					<!-- 热点文章 —— 图片轮播 -->
 					<mm_block>
@@ -100,15 +87,6 @@
 						url: "/pages/mall/product_list"
 					}
 				],
-				list_text: [{
-						title: "这是一条公告，轮播公告",
-						url: "/pages/mall/product_list"
-					},
-					{
-						title: "这是一条公告，轮播公告",
-						url: "/pages/mall/product_list"
-					}
-				],
 				list: [{
 						title: "这是一文章",
 						desc: "测试",
@@ -141,5 +119,5 @@
 </script>
 
 <style>
-	.hot_icon { padding-top: 0; padding-bottom: 0; height: 2.5rem; line-height: 2.5rem; color: #C60A0A; }
+
 </style>

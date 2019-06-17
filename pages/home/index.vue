@@ -1,11 +1,6 @@
 <template>
 	<!-- 门户页面 -->
 	<view class="page_home" id="home_index">
-		<!-- 页头 -->
-		<mm_header>
-			<!-- 外套 -->
-			<mm_warp></mm_warp>
-		</mm_header>
 		<!-- 页主体 -->
 		<mm_bodyer>
 			<!-- 外套 -->
@@ -13,24 +8,30 @@
 				<!-- 栅格 -->
 				<mm_grid col="1" class="space-x">
 					<!-- 格子 -->
-					<mm_col>
-						<!-- 首页 -->
+					<mm_col class="pn-b">
+						<!-- 轮播图 -->
+						<mm_swiper_img :list="list_img" />
+					</mm_col>
+					<mm_col class="pn-t">
+						<!-- 热点文章 —— 图片轮播 -->
+						<mm_block class="lr">
+							<mm_side class="hot_icon">
+								<i class="fa fa-bullhorn" aria-hidden="true"></i>
+							</mm_side>
+							<mm_main class="pn">
+								<mm_swiper_text :list="list_text" />
+							</mm_main>
+						</mm_block>
+					</mm_col>
+					<mm_col class="pn-t">
 						<mm_block>
-							<mm_head>
-								<mm_title class="font_small">简约</mm_title>
-							</mm_head>
-							<mm_body class="lr"></mm_body>
-							<mm_foot></mm_foot>
+							<!-- 菜单 -->
+							<list_menu />
 						</mm_block>
 					</mm_col>
 				</mm_grid>
 			</mm_warp>
 		</mm_bodyer>
-		<!-- 轮播图 -->
-		<mm_swiper_img :list="list_img" />
-
-		<!-- 菜单 -->
-		<list_menu />
 
 		<!-- 广告卡 -->
 		<view class="ad row">
@@ -129,6 +130,15 @@
 						img: "/static/img/banner4.jpg",
 						url: "/pages/mall/product_list"
 					}
+				],
+				list_text: [{
+						title: "这是一条公告，轮播公告",
+						url: "/pages/mall/product_list"
+					},
+					{
+						title: "这是一条公告，轮播公告",
+						url: "/pages/mall/product_list"
+					}
 				]
 			}
 		},
@@ -155,7 +165,7 @@
 		width: 100%;
 		height: 8.75rem;
 	}
-	
+
 	.copyright {
 		color: rgba(0, 0, 0, 0.3);
 		font-size: 18upx;
@@ -174,5 +184,13 @@
 	.calculation_title {
 		padding: 16upx 32upx;
 		font-size: 28upx;
+	}
+
+	.hot_icon {
+		padding-top: 0;
+		padding-bottom: 0;
+		height: 2.5rem;
+		line-height: 2.5rem;
+		color: #C60A0A;
 	}
 </style>

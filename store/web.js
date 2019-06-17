@@ -10,6 +10,9 @@ export default {
 		set_web(state, data)
 		{
 			$.obj.push(state, data);
+		},
+		set_redirect_url(state, url){
+			state.redirect_url = url
 		}
 	},
 	actions: {
