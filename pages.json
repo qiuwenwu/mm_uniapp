@@ -162,12 +162,6 @@
 			}
 		},
 		{
-			"path": "pages/mall/dbd_view",
-			"style": {
-				"navigationBarTitleText": "订单详情"
-			}
-		},
-		{
 			"path": "pages/mall/order_list",
 			"style": {
 				"navigationBarTitleText": "我的订单"
@@ -254,7 +248,13 @@
 		{
 			"path": "pages/calculation/dbd_list",
 			"style": {
-				"navigationBarTitleText": "我的礼包"
+				"navigationBarTitleText": "我的DBD"
+			}
+		},
+		{
+			"path": "pages/calculation/dbd_view",
+			"style": {
+				"navigationBarTitleText": "DBD详情"
 			}
 		},
 		{
@@ -264,9 +264,9 @@
 			}
 		},
 		{
-			"path": "pages/calculation/dbd_view",
+			"path": "pages/calculation/dbd_panel",
 			"style": {
-				"navigationBarTitleText": "礼包详情"
+				"navigationBarTitleText": "DBD管理"
 			}
 		},
 		{

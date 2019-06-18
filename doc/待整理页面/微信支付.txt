@@ -45,20 +45,25 @@
 									<mm_desc>微信红包</mm_desc>
 									<h5 class="ptb">￥0.01</h5>
 								</mm_item>
+								<mm_item class="pay_type_div" @click.native="showPayType()">
+									<mm_div class="balance_div"><mm_icon src="/static/img/balance.png" class="balance_icon"></mm_icon></mm_div>
+									<mm_div class="balance_select_text"><mm_desc>余额</mm_desc></mm_div>
+									<mm_div class="balance_div"><mm_icon src="/static/img/arrow-right.png" class="arrow-right"></mm_icon></mm_div>
+								</mm_item>
 								<mm_div class="password_input">
-									<mm_item class="password_input_word"><mm_div class="password_dot" v-if="passwordNum > 0"></mm_div></mm_item>
-									<mm_item class="password_input_word"><mm_div class="password_dot" v-if="passwordNum > 1"></mm_div></mm_item>
-									<mm_item class="password_input_word"><mm_div class="password_dot" v-if="passwordNum > 2"></mm_div></mm_item>
-									<mm_item class="password_input_word"><mm_div class="password_dot" v-if="passwordNum > 3"></mm_div></mm_item>
-									<mm_item class="password_input_word"><mm_div class="password_dot" v-if="passwordNum > 4"></mm_div></mm_item>
-									<mm_item class="password_input_word"><mm_div class="password_dot" v-if="passwordNum > 5"></mm_div></mm_item>
+									<mm_item class="password_input_word" @click.native="showNum()"><mm_div class="password_dot" v-if="passwordNum > 0"></mm_div></mm_item>
+									<mm_item class="password_input_word" @click.native="showNum()"><mm_div class="password_dot" v-if="passwordNum > 1"></mm_div></mm_item>
+									<mm_item class="password_input_word" @click.native="showNum()"><mm_div class="password_dot" v-if="passwordNum > 2"></mm_div></mm_item>
+									<mm_item class="password_input_word" @click.native="showNum()"><mm_div class="password_dot" v-if="passwordNum > 3"></mm_div></mm_item>
+									<mm_item class="password_input_word" @click.native="showNum()"><mm_div class="password_dot" v-if="passwordNum > 4"></mm_div></mm_item>
+									<mm_item class="password_input_word" @click.native="showNum()"><mm_div class="password_dot" v-if="passwordNum > 5"></mm_div></mm_item>
 								</mm_div>
 							</mm_body>
 						</mm_block>
 					</mm_col>
 				</mm_grid>
 			</mm_warp>
-			<mm_warp class="send_sms">
+			<mm_warp class="send_sms" v-show="numBlock">
 				<mm_grid>
 					<mm_col>
 						<mm_block class="number_block">
@@ -80,6 +85,27 @@
 					</mm_col>
 				</mm_grid>
 			</mm_warp>
+			<mm_warp class="send_sms" v-show="payTypeBlock">
+				<mm_grid>
+					<mm_col>
+						<mm_block class="number_block">
+							<mm_head class="pay_head">
+								<mm_title class="center">选择支付方式</mm_title>
+							</mm_head>
+							<mm_body class="center">
+								<mm_item class="pay_type_div_select">
+									<mm_div class="balance_div"><mm_icon src="/static/img/balance.png" class="balance_icon"></mm_icon></mm_div>
+									<mm_div class="balance_select_text"><mm_desc>余额</mm_desc></mm_div>
+								</mm_item>
+								<mm_item class="pay_type_div_select">
+									<mm_div class="balance_div"><mm_icon src="/static/img/balance.png" class="balance_icon"></mm_icon></mm_div>
+									<mm_div class="balance_select_text"><mm_desc>BTC</mm_desc></mm_div>
+								</mm_item>
+							</mm_body>
+						</mm_block>
+					</mm_col>
+				</mm_grid>
+			</mm_warp>
 		</mm_modal>
 	</view>
 </template>
@@ -94,11 +120,14 @@
 			return {
 				oauth: false,
 				show:true,
-				passwordNum:0
+				passwordNum:0,
+				numBlock:false,
+				payTypeBlock:true
 			}
 		},
 		methods: {
 			inputNumber(num) {
+				console.log(2222);
 				if(num > 0){
 					if(this.passwordNum < 6){
 						this.passwordNum++
@@ -108,32 +137,64 @@
 						this.passwordNum--
 					}
 				};
+			},
+			showPayType(){
+				console.log(1111);
+				this.payTypeBlock = true;
+				this.numBlock = false;
+			},
+			showNum(){
+				this.payTypeBlock = false;
+				this.numBlock = true;
 			}
 		},
 	}
 </script>
 
 <style>
-	.send_sms{height: unset;}
-	.number_block{padding: 0;height: unset;}
-	.number_dialog{position: fixed;left: 0;bottom: 0;}
-	.number{width: 100%;height: 100%;display: flex;align-items: center;justify-content: center;}
-	.number_gray{width: 100%;height: 100%;display: flex;align-items: center;justify-content: center;background-color: #ECECEC;}
-	.mm_col_33{height: 3rem;display: flex;align-items: center;justify-content: center;border-right: 1px solid #F3F3F3;border-bottom: 1px solid #F3F3F3;}
-	.mm_col_33:nth-child(3n){border-right: none;}
-	.backspace{height: 2rem;width: 2rem;}
-	.pay_warp{width: 80%;top: 36%}
-	.pay_head{position: relative;}
-	.close{position: absolute;top: .4rem;left: .5rem;}
-	.pay_body{padding: 1rem;}
-	.password_input{display: flex;align-items: center;width: 100%;height: 2.5rem;border: 1px solid #AAAAAA;box-sizing: border-box;}
-	.password_input_word{flex: 1;height: 100%;border-right: 1px solid #EDEDED;display: flex;align-items: center;justify-content: center;}
-	.password_input_word:last-child{border-right:none}
-	.password_dot{
+	#pay_wechat .send_sms{height: unset;}
+	#pay_wechat .number_block{padding: 0;height: unset;}
+	#pay_wechat .number_dialog{position: fixed;left: 0;bottom: 0;}
+	#pay_wechat .number{width: 100%;height: 100%;display: flex;align-items: center;justify-content: center;}
+	#pay_wechat .number_gray{width: 100%;height: 100%;display: flex;align-items: center;justify-content: center;background-color: #ECECEC;}
+	#pay_wechat .mm_col_33{height: 3rem;display: flex;align-items: center;justify-content: center;border-right: 1px solid #F3F3F3;border-bottom: 1px solid #F3F3F3;}
+	#pay_wechat .mm_col_33:nth-child(3n){border-right: none;}
+	#pay_wechat .backspace{height: 2rem;width: 2rem;}
+	#pay_wechat .pay_warp{width: 80%;top: 36%}
+	#pay_wechat .pay_head{position: relative;}
+	#pay_wechat .close{position: absolute;top: .4rem;left: .5rem;}
+	#pay_wechat .pay_body{padding: 1rem;}
+	#pay_wechat .password_input{display: flex;align-items: center;width: 100%;height: 2.5rem;border: 1px solid #AAAAAA;box-sizing: border-box;}
+	#pay_wechat .password_input_word{flex: 1;height: 100%;border-right: 1px solid #EDEDED;display: flex;align-items: center;justify-content: center;}
+	#pay_wechat .password_input_word:last-child{border-right:none}
+	#pay_wechat .password_dot{
 		height: 1rem;
 		width: 1rem;
 		background-color: #000000;
 		border-radius: 1rem;
 	}
+	#pay_wechat .pay_type_div{
+		height: 2.5rem;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin: .5rem 0;
+		border-bottom: 1px solid #EAEAEA;
+		border-top: 1px solid #EAEAEA;
+	}
+	#pay_wechat .pay_type_div_select{
+		height: 2.6rem;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		border-bottom: 1px solid #EAEAEA;
+	}
+	#pay_wechat .pay_type_div_select:last-child{border-bottom: none;}
+	#pay_wechat .balance_icon{
+		width: 1.3rem;
+		height: 1.3rem;
+	}
+	#pay_wechat .arrow-right{width: 1rem;height: 1rem;}
+	#pay_wechat .balance_div{width: 2rem;height: 100%;display: flex;align-items: center;justify-content: center;}
+	#pay_wechat .balance_select_text{height: 100%;flex:1;display: flex;align-items: center;}
 </style>
-#EDEDED
