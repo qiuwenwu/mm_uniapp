@@ -88,6 +88,54 @@
 			"style": {
 				"navigationBarTitleText": "专题"
 			}
+		}, 
+		{
+			"path": "pages/account/forgot",
+			"style": {
+				"navigationBarTitleText": "找回密码"
+			}
+		},
+		{
+			"path": "pages/account/signin",
+			"style": {
+				"navigationBarTitleText": "登录"
+			}
+		},
+		{
+			"path": "pages/account/signout",
+			"style": {
+				"navigationBarTitleText": "退出"
+			}
+		},
+		{
+			"path": "pages/account/signup",
+			"style": {
+				"navigationBarTitleText": "注册"
+			}
+		},
+		{
+			"path": "pages/agent/index",
+			"style": {
+				"navigationBarTitleText": "我的代理"
+			}
+		},
+		{
+			"path": "pages/agent/member_list",
+			"style": {
+				"navigationBarTitleText": "我的成员"
+			}
+		},
+		{
+			"path": "pages/agent/order_list",
+			"style": {
+				"navigationBarTitleText": "订单列表"
+			}
+		},
+		{
+			"path": "pages/agent/invitation_panel",
+			"style": {
+				"navigationBarTitleText": "邀请面板"
+			}
 		},
 		{
 			"path": "pages/info/index",
@@ -357,54 +405,6 @@
 			"path": "pages/forum/thread_reply",
 			"style": {
 				"navigationBarTitleText": "帖子回复"
-			}
-		},
-		{
-			"path": "pages/agent/index",
-			"style": {
-				"navigationBarTitleText": "我的代理"
-			}
-		},
-		{
-			"path": "pages/agent/member_list",
-			"style": {
-				"navigationBarTitleText": "我的成员"
-			}
-		},
-		{
-			"path": "pages/agent/order_list",
-			"style": {
-				"navigationBarTitleText": "订单列表"
-			}
-		},
-		{
-			"path": "pages/agent/invitation_panel",
-			"style": {
-				"navigationBarTitleText": "邀请面板"
-			}
-		},
-		{
-			"path": "pages/account/forgot",
-			"style": {
-				"navigationBarTitleText": "找回密码"
-			}
-		},
-		{
-			"path": "pages/account/signin",
-			"style": {
-				"navigationBarTitleText": "登录"
-			}
-		},
-		{
-			"path": "pages/account/signout",
-			"style": {
-				"navigationBarTitleText": "退出"
-			}
-		},
-		{
-			"path": "pages/account/signup",
-			"style": {
-				"navigationBarTitleText": "注册"
 			}
 		}
 	],
