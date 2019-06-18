@@ -12,6 +12,18 @@
 			}
 		},
 		{
+			"path": "pages/home/article_list",
+			"style": {
+				"navigationBarTitleText": "文章列表"
+			}
+		},
+		{
+			"path": "pages/home/article_view",
+			"style": {
+				"navigationBarTitleText": "文章详情"
+			}
+		},
+		{
 			"path": "pages/home/bulletin_list",
 			"style": {
 				"navigationBarTitleText": "公告"
@@ -30,21 +42,15 @@
 			}
 		},
 		{
-			"path": "pages/home/article_list",
-			"style": {
-				"navigationBarTitleText": "文章列表"
-			}
-		},
-		{
-			"path": "pages/home/article_view",
-			"style": {
-				"navigationBarTitleText": "文章详情"
-			}
-		},
-		{
 			"path": "pages/home/collect",
 			"style": {
 				"navigationBarTitleText": "收藏"
+			}
+		},
+		{
+			"path": "pages/home/contact",
+			"style": {
+				"navigationBarTitleText": "联系客服"
 			}
 		},
 		{
@@ -88,7 +94,7 @@
 			"style": {
 				"navigationBarTitleText": "专题"
 			}
-		}, 
+		},
 		{
 			"path": "pages/account/forgot",
 			"style": {
@@ -120,9 +126,21 @@
 			}
 		},
 		{
+			"path": "pages/agent/invitation_panel",
+			"style": {
+				"navigationBarTitleText": "邀请面板"
+			}
+		},
+		{
+			"path": "pages/agent/invitation_record",
+			"style": {
+				"navigationBarTitleText": "邀请奖励"
+			}
+		},
+		{
 			"path": "pages/agent/member_list",
 			"style": {
-				"navigationBarTitleText": "我的成员"
+				"navigationBarTitleText": "下级代理"
 			}
 		},
 		{
@@ -132,9 +150,123 @@
 			}
 		},
 		{
-			"path": "pages/agent/invitation_panel",
+			"path": "pages/calculation/dbd_list",
 			"style": {
-				"navigationBarTitleText": "邀请面板"
+				"navigationBarTitleText": "我的DBD"
+			}
+		},
+		{
+			"path": "pages/calculation/dbd_panel",
+			"style": {
+				"navigationBarTitleText": "DBD管理"
+			}
+		},
+		{
+			"path": "pages/calculation/dbd_record",
+			"style": {
+				"navigationBarTitleText": "DBD流水单"
+			}
+		},
+		{
+			"path": "pages/calculation/dbd_view",
+			"style": {
+				"navigationBarTitleText": "DBD详情"
+			}
+		},
+		{
+			"path": "pages/calculation/market",
+			"style": {
+				"navigationBarTitleText": "算力市场"
+			}
+		},
+		{
+			"path": "pages/calculation/output_day",
+			"style": {
+				"navigationBarTitleText": "每日产出"
+			}
+		},
+		{
+			"path": "pages/calculation/output_item",
+			"style": {
+				"navigationBarTitleText": "每单产出"
+			}
+		},
+		{
+			"path": "pages/calculation/repo_panel",
+			"style": {
+				"navigationBarTitleText": "申请回购"
+			}
+		},
+		{
+			"path": "pages/calculation/repo_record",
+			"style": {
+				"navigationBarTitleText": "回购记录"
+			}
+		},
+		{
+			"path": "pages/calculation/repo_tip",
+			"style": {
+				"navigationBarTitleText": "回购提示"
+			}
+		},
+		{
+			"path": "pages/forum/channel",
+			"style": {
+				"navigationBarTitleText": "专题板块"
+			}
+		},
+		{
+			"path": "pages/forum/index",
+			"style": {
+				"navigationBarTitleText": "社区"
+			}
+		},
+		{
+			"path": "pages/forum/channel",
+			"style": {
+				"navigationBarTitleText": "话题专区"
+			}
+		},
+		{
+			"path": "pages/forum/search",
+			"style": {
+				"navigationBarTitleText": "主题搜索"
+			}
+		},
+		{
+			"path": "pages/forum/thread_list",
+			"style": {
+				"navigationBarTitleText": "帖子列表"
+			}
+		},
+		{
+			"path": "pages/forum/thread_publish",
+			"style": {
+				"navigationBarTitleText": "发布帖子"
+			}
+		},
+		{
+			"path": "pages/forum/thread_reply",
+			"style": {
+				"navigationBarTitleText": "帖子回复"
+			}
+		},
+		{
+			"path": "pages/forum/thread_view",
+			"style": {
+				"navigationBarTitleText": "帖子详情"
+			}
+		},
+		{
+			"path": "pages/info/email",
+			"style": {
+				"navigationBarTitleText": "绑定邮箱"
+			}
+		},
+		{
+			"path": "pages/info/headimg",
+			"style": {
+				"navigationBarTitleText": "修改头像"
 			}
 		},
 		{
@@ -147,18 +279,6 @@
 			"path": "pages/info/nickname",
 			"style": {
 				"navigationBarTitleText": "修改昵称"
-			}
-		},
-		{
-			"path": "pages/info/headimg",
-			"style": {
-				"navigationBarTitleText": "修改头像"
-			}
-		},
-		{
-			"path": "pages/info/email",
-			"style": {
-				"navigationBarTitleText": "绑定邮箱"
 			}
 		},
 		{
@@ -186,6 +306,24 @@
 			}
 		},
 		{
+			"path": "pages/mall/index",
+			"style": {
+				"navigationBarTitleText": "商城"
+			}
+		},
+		{
+			"path": "pages/mall/order_list",
+			"style": {
+				"navigationBarTitleText": "我的订单"
+			}
+		},
+		{
+			"path": "pages/mall/order_view",
+			"style": {
+				"navigationBarTitleText": "订单详情"
+			}
+		},
+		{
 			"path": "pages/mall/product_list",
 			"style": {
 				"navigationBarTitleText": "产品列表"
@@ -210,45 +348,51 @@
 			}
 		},
 		{
-			"path": "pages/mall/order_list",
-			"style": {
-				"navigationBarTitleText": "我的订单"
-			}
-		},
-		{
-			"path": "pages/mall/order_view",
-			"style": {
-				"navigationBarTitleText": "订单详情"
-			}
-		},
-		{
 			"path": "pages/pay/ali",
 			"style": {
-				"navigationBarTitleText": "支付宝付款"
+				"navigationBarTitleText": "支付宝支付"
 			}
 		},
 		{
-			"path": "pages/pay/wechat",
+			"path": "pages/pay/balance_btc",
 			"style": {
-				"navigationBarTitleText": "微信付款"
+				"navigationBarTitleText": "BTC余额支付"
+			}
+		},
+		{
+			"path": "pages/pay/balance_cny",
+			"style": {
+				"navigationBarTitleText": "现金余额支付"
 			}
 		},
 		{
 			"path": "pages/pay/bitcoin",
 			"style": {
-				"navigationBarTitleText": "比特币付款"
+				"navigationBarTitleText": "比特币支付"
 			}
 		},
 		{
-			"path": "pages/user/assets",
+			"path": "pages/pay/wechat",
 			"style": {
-				"navigationBarTitleText": "我的资产"
+				"navigationBarTitleText": "微信支付"
+			}
+		},
+		{
+			"path": "pages/user/check_in",
+			"style": {
+				"navigationBarTitleText": "签到"
 			}
 		},
 		{
 			"path": "pages/user/contact_list",
 			"style": {
 				"navigationBarTitleText": "联系人"
+			}
+		},
+		{
+			"path": "pages/user/contact_view",
+			"style": {
+				"navigationBarTitleText": "联系人信息"
 			}
 		},
 		{
@@ -261,150 +405,6 @@
 			"path": "pages/user/setting",
 			"style": {
 				"navigationBarTitleText": "系统设置"
-			}
-		},
-		{
-			"path": "pages/user/bill_list",
-			"style": {
-				"navigationBarTitleText": "我的账单"
-			}
-		},
-		{
-			"path": "pages/user/bill_view",
-			"style": {
-				"navigationBarTitleText": "账单详情"
-			}
-		},
-		{
-			"path": "pages/user/check_in",
-			"style": {
-				"navigationBarTitleText": "签到"
-			}
-		},
-		{
-			"path": "pages/calculation/assets_list",
-			"style": {
-				"navigationBarTitleText": "我的算力"
-			}
-		},
-		{
-			"path": "pages/calculation/assets_view",
-			"style": {
-				"navigationBarTitleText": "算力详情"
-			}
-		},
-		{
-			"path": "pages/calculation/dbd_list",
-			"style": {
-				"navigationBarTitleText": "我的DBD"
-			}
-		},
-		{
-			"path": "pages/calculation/dbd_view",
-			"style": {
-				"navigationBarTitleText": "DBD详情"
-			}
-		},
-		{
-			"path": "pages/calculation/dbd_record",
-			"style": {
-				"navigationBarTitleText": "DBD流水单"
-			}
-		},
-		{
-			"path": "pages/calculation/dbd_panel",
-			"style": {
-				"navigationBarTitleText": "DBD管理"
-			}
-		},
-		{
-			"path": "pages/calculation/market",
-			"style": {
-				"navigationBarTitleText": "算力市场"
-			}
-		},
-		{
-			"path": "pages/calculation/output_day",
-			"style": {
-				"navigationBarTitleText": "每日产出"
-			}
-		},
-		{
-			"path": "pages/calculation/output_item",
-			"style": {
-				"navigationBarTitleText": "每单产出"
-			}
-		},
-		{
-			"path": "pages/calculation/transaction_panel",
-			"style": {
-				"navigationBarTitleText": "发起交易"
-			}
-		},
-		{
-			"path": "pages/calculation/transaction_record",
-			"style": {
-				"navigationBarTitleText": "交易记录"
-			}
-		},
-		{
-			"path": "pages/calculation/withdraw_panel",
-			"style": {
-				"navigationBarTitleText": "申请提现"
-			}
-		},
-		{
-			"path": "pages/calculation/withdraw_record",
-			"style": {
-				"navigationBarTitleText": "提现记录"
-			}
-		},
-		{
-			"path": "pages/calculation/withdraw_tip",
-			"style": {
-				"navigationBarTitleText": "操作提示"
-			}
-		},
-		{
-			"path": "pages/forum/index",
-			"style": {
-				"navigationBarTitleText": "社区"
-			}
-		},
-		{
-			"path": "pages/forum/channel",
-			"style": {
-				"navigationBarTitleText": "专题板块"
-			}
-		},
-		{
-			"path": "pages/forum/search",
-			"style": {
-				"navigationBarTitleText": "主题搜索"
-			}
-		},
-		{
-			"path": "pages/forum/thread_list",
-			"style": {
-				"navigationBarTitleText": "帖子列表"
-			}
-		},
-		{
-			"path": "pages/forum/thread_view",
-			"style": {
-				"navigationBarTitleText": "帖子详情"
-			}
-		},
-		{
-			"path": "pages/forum/thread_publish",
-			"style": {
-				"navigationBarTitleText": "发布帖子"
-			}
-		},
-		{
-			"path": "pages/forum/thread_reply",
-			"style": {
-				"navigationBarTitleText": "帖子回复"
 			}
 		}
 	],

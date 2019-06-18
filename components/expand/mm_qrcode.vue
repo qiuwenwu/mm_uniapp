@@ -25,7 +25,8 @@
 		created() {
 
 		}
-	}</script>
+	}
+</script>
 
 <style>
 </style>

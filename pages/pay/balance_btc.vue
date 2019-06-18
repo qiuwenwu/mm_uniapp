@@ -1,6 +1,11 @@
 <template>
-	<!-- 下级代理页面 -->
-	<view class="page_agent" id="agent_member_list">
+	<!-- 数字货币付款页面 -->
+	<view class="page" id="pay_bitcoin">
+		<!-- 页头 -->
+		<mm_header>
+			<!-- 外套 -->
+			<mm_warp></mm_warp>
+		</mm_header>
 		<!-- 页主体 -->
 		<mm_bodyer>
 			<!-- 外套 -->
@@ -9,18 +14,7 @@
 				<mm_grid col="1" class="space-x">
 					<!-- 格子 -->
 					<mm_col>
-						<!-- 下级代理汇总 -->
-						<mm_block>
-							<mm_head>
-								<mm_title class="font_small">简约</mm_title>
-							</mm_head>
-							<mm_body class="lr"></mm_body>
-							<mm_foot></mm_foot>
-						</mm_block>
-					</mm_col>
-					<!-- 格子 -->
-					<mm_col>
-						<!-- 下级代理列表  -->
+						<!--  -->
 						<mm_block>
 							<mm_head>
 								<mm_title class="font_small">简约</mm_title>
@@ -32,6 +26,12 @@
 				</mm_grid>
 			</mm_warp>
 		</mm_bodyer>
+		<!-- 支付信息 -->
+
+		<!-- 支付表单 -->
+
+		<!-- 数字键盘 -->
+
 	</view>
 </template>
 
@@ -43,7 +43,7 @@
 		components: {},
 		data() {
 			return {
-				oauth: false
+				oauth: true
 			}
 		}
 	}
