@@ -24,6 +24,12 @@
 			}
 		},
 		{
+			"path": "pages/home/bulletin_view",
+			"style": {
+				"navigationBarTitleText": "公告详情"
+			}
+		},
+		{
 			"path": "pages/home/contact",
 			"style": {
 				"navigationBarTitleText": "联系客服"

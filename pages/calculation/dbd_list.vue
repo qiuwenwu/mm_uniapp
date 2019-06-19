@@ -40,7 +40,7 @@
 											<mm_title>DBD礼包</mm_title>
 											<mm_desc><text class="price">298.00</text></mm_desc>
 											<mm_desc>
-												<text class="num">数量：10.33</text>
+												<text class="count">数量：10.33</text>
 												<text class="days">有效天数：289</text>
 											</mm_desc>
 										</mm_main>
@@ -67,7 +67,7 @@
 											<mm_title>DBD礼包</mm_title>
 											<mm_desc><text class="price">298.00</text></mm_desc>
 											<mm_desc>
-												<text class="num">数量：10.33</text>
+												<text class="count">数量：10.33</text>
 												<text class="days">有效天数：289</text>
 											</mm_desc>
 										</mm_main>

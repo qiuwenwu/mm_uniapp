@@ -23,11 +23,6 @@
 							</mm_body>
 						</mm_block>
 					</mm_col>
-					<mm_col>
-						<mm_div>
-							<mm_btn type="default" class="full" @click.native="show = true">开启</mm_btn>
-						</mm_div>
-					</mm_col>
 				</mm_grid>
 			</mm_warp>
 		</mm_bodyer>
@@ -35,9 +30,11 @@
 			<mm_warp>
 				<mm_grid>
 					<mm_col>
-						<mm_div @click.native="buy()">
-							立即购买
-						</mm_div>
+						<mm_group>
+							<mm_btn type="default" @click.native="buy()">
+								立即购买
+							</mm_btn>
+						</mm_group>
 					</mm_col>
 				</mm_grid>
 			</mm_warp>

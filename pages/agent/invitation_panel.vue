@@ -106,7 +106,7 @@
 	.mm_progress {
 		padding: 1.5rem 1rem 2rem 1rem;
 	}
-	
+
 	.invitation_qrcode {
 		padding-top: 1.5rem;
 		padding-bottom: 0.725rem;

@@ -35,12 +35,12 @@
 				list_text: [{
 						title: "这是一条公告，轮播公告",
 						desc: "2019年6月20日",
-						url: "/pages/mall/product_list"
+						url: "/pages/home/bulletin_view"
 					},
 					{
-						title: "这是一条公告，轮播公告",
+						title: "关于币价上涨，引起的矿机限购的公告",
 						desc: "2019年6月20日",
-						url: "/pages/mall/product_list"
+						url: "/pages/home/bulletin_view"
 					}
 				]
 			}

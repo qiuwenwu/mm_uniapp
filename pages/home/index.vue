@@ -16,7 +16,7 @@
 						<!-- 热点文章 —— 图片轮播 -->
 						<mm_block class="lr">
 							<mm_side class="hot_icon">
-								<mm_div url="./bulletin_list"><i class="fa fa-bullhorn" aria-hidden="true"></i></mm_div>
+								<mm_div class="font_warning" url="./bulletin_list"><text class="fa fa-bullhorn"></text></mm_div>
 							</mm_side>
 							<mm_main class="pn">
 								<mm_swiper_text :list="list_text" />
@@ -133,11 +133,11 @@
 				],
 				list_text: [{
 						title: "这是一条公告，轮播公告",
-						url: "/pages/home/article_view"
+						url: "/pages/home/bulletin_view"
 					},
 					{
 						title: "这是一条公告，轮播公告",
-						url: "/pages/home/article_view"
+						url: "/pages/home/bulletin_view"
 					}
 				]
 			}
@@ -185,6 +185,5 @@
 		padding-bottom: 0;
 		height: 2.5rem;
 		line-height: 2.5rem;
-		color: #C60A0A;
 	}
 </style>

@@ -34,7 +34,7 @@
 									</mm_item>
 									<mm_item url="./bulletin_list">
 										<mm_side>
-											<mm_icon src="http://img.sccnn.com/bimg/334/0957.jpg"></mm_icon>
+											<mm_icon class="font_warning" src="<i class='fa fa-bullhorn'></i>"></mm_icon>
 										</mm_side>
 										<mm_main class="arrow">
 											<mm_title>站内公告</mm_title>
@@ -45,8 +45,7 @@
 						</mm_block>
 					</mm_col>
 					<!-- 格子 -->
-					<mm_col v-if="channel_sub.length > 0">
-						<!-- 资讯子频道 -->
+				<!-- 	<mm_col v-if="channel_sub.length > 0">
 						<mm_block>
 							<mm_head>
 								<mm_title class="font_small">子频道</mm_title>
@@ -55,9 +54,7 @@
 							<mm_foot></mm_foot>
 						</mm_block>
 					</mm_col>
-					<!-- 格子 -->
 					<mm_col>
-						<!-- 频道相关资讯 -->
 						<mm_block>
 							<mm_head>
 								<mm_title class="font_small">最新课程</mm_title>
@@ -67,16 +64,26 @@
 							</mm_body>
 							<mm_foot></mm_foot>
 						</mm_block>
-					</mm_col>
+					</mm_col> -->
 					<!-- 格子 -->
 					<mm_col>
-						<!-- 频道相关资讯 -->
+						<!-- 频道相关热门文章 -->
 						<mm_block>
 							<mm_head>
 								<mm_title class="font_small">热门课程</mm_title>
 							</mm_head>
 							<mm_body class="lr">
-								<mm_list_article class="big" :list="list"></mm_list_article>
+								<mm_list col="1" class="big">
+									<mm_item v-for="(o, k) in list" :key="k">
+										<mm_side>
+											<mm_icon src="http://img.sccnn.com/bimg/334/0957.jpg"></mm_icon>
+										</mm_side>
+										<mm_main>
+											<mm_title>菜单项</mm_title>
+											<mm_desc><text class="fa fa-heart-o"></text>&nbsp;<text class="collect"> {{ o.collect }}</text></mm_desc>
+										</mm_main>
+									</mm_item>
+								</mm_list>
 							</mm_body>
 							<mm_foot></mm_foot>
 						</mm_block>
@@ -84,17 +91,6 @@
 				</mm_grid>
 			</mm_warp>
 		</mm_bodyer>
-		<!-- 门户频道 -->
-		<uni-list class="block">
-			<uni-list-item class="list-item" title="新闻动态" :show-extra-icon="true" :extra-icon="{color: '#4cd964',size: '22',type: 'spinner'}"></uni-list-item>
-			<uni-list-item class="list-item" title="常见问题" :show-extra-icon="true" :extra-icon="{color: '#4cd964',size: '22',type: 'spinner'}"></uni-list-item>
-			<uni-list-item class="list-item" title="服务条款" :show-extra-icon="true" :extra-icon="{color: '#4cd964',size: '22',type: 'spinner'}"></uni-list-item>
-		</uni-list>
-
-		<!-- 子频道列表 -->
-
-		<!-- 频道推荐文章列表 -->
-
 	</view>
 </template>
 
@@ -113,18 +109,21 @@
 						title: "这是一文章",
 						desc: "测试",
 						icon: "/static/img/banner3.jpg",
-						url: "/pages/mall/product_list"
+						url: "/pages/mall/product_list",
+						collect: 680
 					},
 					{
 						title: "这是一文章",
 						desc: "测试",
 						icon: "/static/img/banner3.jpg",
-						url: "/pages/mall/product_list"
+						url: "/pages/mall/product_list",
+						collect: 936
 					}, {
 						title: "这是一文章",
 						desc: "测试",
 						icon: "/static/img/banner3.jpg",
-						url: "/pages/mall/product_list"
+						url: "/pages/mall/product_list",
+						collect: 50
 					}
 				]
 			}
@@ -133,4 +132,8 @@
 </script>
 
 <style>
+	.fa-heart { color: #F12F04; }
+	.fa-heart-o { color: #F12F04; }
+	.fa-bullhorn { color: #f12f04; }
+	.collect { margin-left: 0.5rem; }
 </style>

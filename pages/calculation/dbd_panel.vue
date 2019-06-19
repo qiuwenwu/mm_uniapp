@@ -21,7 +21,7 @@
 											<mm_title>DBD礼包</mm_title>
 											<mm_desc><text class="price">298.00</text></mm_desc>
 											<mm_desc>
-												<text class="num">数量：10.33</text>
+												<text class="count">数量：10.33</text>
 												<text class="days">有效天数：289</text>
 											</mm_desc>
 										</mm_main>
@@ -32,15 +32,18 @@
 					</mm_col>
 					<mm_col>
 						<mm_block>
-							<mm_body class="lr">
+							<mm_head>
+								<mm_title class="font_small">开启数量</mm_title>
+							</mm_head>
+							<mm_body>
 								<mm_list col="1" class="mini">
-									<mm_input type="number" style="text-align: right;" title="开启数量" desc="请填写开启DBD数量"></mm_input>
-									<mm_item>
+									<mm_input type="number" desc="请填写开启DBD数量"></mm_input>
+							<!-- 		<mm_item>
 										<mm_main>
 											<mm_title>开启时间</mm_title>
 											<mm_desc>2019-05-21 10:20</mm_desc>
 										</mm_main>
-									</mm_item>
+									</mm_item> -->
 								</mm_list>
 							</mm_body>
 						</mm_block>
