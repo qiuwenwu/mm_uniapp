@@ -15,17 +15,6 @@
 					</mm_block>
 				</mm_col>
 				<!-- 格子 -->
-				<mm_col class="pn-t">
-					<!-- 热点文章 —— 图片轮播 -->
-					<mm_block class="lr">
-						<mm_side class="hot_icon">
-							<i class="fa fa-bullhorn" aria-hidden="true"></i>
-						</mm_side>
-						<mm_main class="pn">
-							<mm_swiper_text :list="list_text" />
-						</mm_main>
-					</mm_block>
-				</mm_col>
 				<mm_col>
 					<!-- 文章筛选面板 -->
 					<mm_block>

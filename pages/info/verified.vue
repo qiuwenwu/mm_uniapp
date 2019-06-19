@@ -11,16 +11,32 @@
 						<mm_block>
 							<!-- 提示 -->
 							<mm_head>
-								<mm_title class="font_small"><text>头像</text></mm_title>
+								<mm_title class="font_small"><text class="font_danger">实名认证后不可更改，请勿使用别人的身份证</text></mm_title>
 							</mm_head>
 							<!-- 头像 -->
 							<mm_body class="tb">
-								<mm_item class="headimg">
+								<mm_item class="pic">
 									<mm_side>
 										<mm_icon src="/static/img/headimg.jpg"></mm_icon>
 									</mm_side>
 									<mm_desc>
-										<text class="font_small font_info">点击修改头像</text>
+										<text class="font_small">身份证正面</text>
+									</mm_desc>
+								</mm_item>
+								<mm_item class="pic">
+									<mm_side>
+										<mm_icon src="/static/img/headimg.jpg"></mm_icon>
+									</mm_side>
+									<mm_desc>
+										<text class="font_small">身份证反面</text>
+									</mm_desc>
+								</mm_item>
+								<mm_item class="pic">
+									<mm_side>
+										<mm_icon src="/static/img/headimg.jpg"></mm_icon>
+									</mm_side>
+									<mm_desc>
+										<text class="font_small">手持身份证</text>
 									</mm_desc>
 								</mm_item>
 							</mm_body>
@@ -28,8 +44,13 @@
 					</mm_col>
 					<mm_col>
 						<mm_div>
-							<mm_btn type="default" class="full">保存</mm_btn>
+							<mm_btn type="default" class="full">提交</mm_btn>
 						</mm_div>
+						<checkbox-group>
+							<label>
+								<checkbox value="cb" checked="true" />同意《实名认证协议》
+							</label>
+						</checkbox-group>
 					</mm_col>
 				</mm_grid>
 			</mm_warp>
@@ -52,19 +73,23 @@
 </script>
 
 <style>
-	.headimg {
-		padding: 2rem;
+	.pic:active {
+		background: none;
+	}
+
+	.pic {
+		padding: 1.5rem 2rem;
 		float: none;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 	}
 
-	.headimg .mm_icon {
-		width: 8rem;
-		height: 8rem;
-		border-radius: 1rem;
+	.pic .mm_icon {
+		height: 10rem;
 		margin: auto !important;
+		border-radius: 0.35rem;
 	}
 
-	.headimg .mm_desc {
+	.pic .mm_desc {
 		clear: both;
 		text-align: center;
 	}

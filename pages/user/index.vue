@@ -29,7 +29,7 @@
 						<mm_block>
 							<mm_body class="lr">
 								<mm_list col="1" class="mini">
-									<mm_item url="./assets">
+									<mm_item url="/pages/assets/index">
 										<mm_side>
 											<mm_icon src="http://img.sccnn.com/bimg/334/0957.jpg"></mm_icon>
 										</mm_side>
@@ -43,14 +43,6 @@
 										</mm_side>
 										<mm_main class="arrow">
 											<mm_title>订单</mm_title>
-										</mm_main>
-									</mm_item>
-									<mm_item url="/pages/agent/member_list">
-										<mm_side>
-											<mm_icon src="http://img.sccnn.com/bimg/334/0957.jpg"></mm_icon>
-										</mm_side>
-										<mm_main class="arrow">
-											<mm_title>代理</mm_title>
 										</mm_main>
 									</mm_item>
 									<mm_item url="/pages/home/collect">
@@ -116,7 +108,7 @@
 
 <style>
 	.check_in { margin-left: 0.5rem; }
-	#user_index .account {
+	.account .mm_item {
 		padding: 1rem 0;
 	}
 

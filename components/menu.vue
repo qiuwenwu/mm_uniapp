@@ -1,18 +1,18 @@
 <template>
 	<mm_list class="menu">
-		<navigator class="menu_item" url="/pages/home/article_list?title=关于我们">
+		<navigator class="menu_item" url="/pages/home/article_view?title=关于我们">
 			<view class="menu_icon" style="background-image: linear-gradient(135deg, rgb(252, 207, 49) 10%, rgb(245, 85, 85) 100%);">
 				<text class="fa fa-user-circle-o"></text>
 			</view>
 			<text class="menu_title">关于我们</text>
 		</navigator>
-		<navigator class="menu_item" url="/pages/mall/product_list">
+		<navigator class="menu_item" url="/pages/mall/dbd_view">
 			<view class="menu_icon" style="background-image: linear-gradient(135deg, #FFF720 10%, #3CD500 100%);">
 				<text class="fa fa-cloud"></text>
 			</view>
-			<text class="menu_title">产品介绍</text>
+			<text class="menu_title">DBD介绍</text>
 		</navigator>
-		<navigator class="menu_item" url="/pages/mall/product_list">
+		<navigator class="menu_item" url="/pages/home/news_list">
 			<view class="menu_icon" style="background-image: linear-gradient(135deg, #5EFCE8 10%, #736EFE 100%);">
 				<text class="fa fa-send"></text>
 			</view>

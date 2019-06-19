@@ -11,41 +11,41 @@
 						<mm_block>
 							<mm_body class="lr">
 								<mm_list col="1" class="mini">
-									<mm_item>
-										<mm_main class="arrow" url="./headimg">
+									<mm_item url="./headimg">
+										<mm_main class="arrow">
 											<mm_title>头像</mm_title>
 											<mm_desc>
 												<mm_icon src="/static/img/headimg.jpg"></mm_icon>
 											</mm_desc>
 										</mm_main>
 									</mm_item>
-									<mm_item>
-										<mm_main class="arrow" url="./verified">
+									<mm_item url="./verified">
+										<mm_main class="arrow">
 											<mm_title>昵称</mm_title>
 											<mm_desc>A雷帝A</mm_desc>
 										</mm_main>
 									</mm_item>
-									<mm_item>
-										<mm_main class="arrow" url="./phone">
+									<mm_item url="./phone">
+										<mm_main class="arrow">
 											<mm_title>手机</mm_title>
 											<mm_desc>15817188815</mm_desc>
 										</mm_main>
 									</mm_item>
-									<mm_item>
-										<mm_main class="arrow" url="./email">
+									<mm_item url="./email">
+										<mm_main class="arrow">
 											<mm_title>邮箱</mm_title>
 											<mm_desc>573242395@qq.com</mm_desc>
 										</mm_main>
 									</mm_item>
-									<mm_item>
-										<mm_main class="arrow" url="./verified">
+									<mm_item url="./verified">
+										<mm_main class="arrow">
 											<mm_title>实名认证</mm_title>
 											<mm_desc>
 												<mm_desc class="font_danger">未认证</mm_desc>
 											</mm_desc>
 										</mm_main>
 									</mm_item>
-									<mm_item url="/password">
+									<mm_item url="./password">
 										<mm_main class="arrow">
 											<mm_title>登陆密码</mm_title>
 											<mm_desc class="font_info">修改</mm_desc>

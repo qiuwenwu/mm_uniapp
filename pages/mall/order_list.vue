@@ -23,16 +23,16 @@
 						</mm_block>
 					</mm_col>
 					<mm_col>
-						<mm_block class="dbd" url="./dbd_view?did=1">
+						<mm_block class="dbd">
 							<mm_body class="lr">
 								<mm_list col="1" class="dbd_item">
-									<mm_item>
+									<mm_item url="./order_view?oid=1">
 										<mm_main class="font_small">
 											<mm_title>20190520112121</mm_title>
 											<mm_desc>待付款</mm_desc>
 										</mm_main>
 									</mm_item>
-									<mm_item class="big">
+									<mm_item class="big" url="./order_view?oid=1">
 										<mm_side>
 											<mm_icon src="http://img.sccnn.com/bimg/334/0957.jpg"></mm_icon>
 										</mm_side>
@@ -40,26 +40,32 @@
 											<mm_title>DBD礼包</mm_title>
 											<mm_desc><text class="price">298.00</text></mm_desc>
 											<mm_desc>
-												<text class="num">数量：10.33</text>
+												<text>数量：10.33</text>
 												<text class="days">有效天数：289</text>
 											</mm_desc>
 										</mm_main>
 									</mm_item>
 								</mm_list>
 							</mm_body>
+							<mm_foot class="bt">
+								<mm_group class="small">
+									<mm_btn type="default-x">取消订单</mm_btn>
+									<mm_btn type="warning-x">继续支付</mm_btn>
+								</mm_group>
+							</mm_foot>
 						</mm_block>
 					</mm_col>
 					<mm_col>
-						<mm_block class="dbd" url="./dbd_view?did=1">
+						<mm_block class="dbd">
 							<mm_body class="lr">
 								<mm_list col="1" class="dbd_item">
-									<mm_item>
+									<mm_item url="./order_view?oid=1">
 										<mm_main class="font_small">
 											<mm_title>20190520112121</mm_title>
 											<mm_desc>已付款</mm_desc>
 										</mm_main>
 									</mm_item>
-									<mm_item class="big">
+									<mm_item class="big" url="./order_view?oid=1">
 										<mm_side>
 											<mm_icon src="http://img.sccnn.com/bimg/334/0957.jpg"></mm_icon>
 										</mm_side>
@@ -67,13 +73,18 @@
 											<mm_title>DBD礼包</mm_title>
 											<mm_desc><text class="price">298.00</text></mm_desc>
 											<mm_desc>
-												<text class="num">数量：10.33</text>
+												<text>数量：10.33</text>
 												<text class="days">有效天数：289</text>
 											</mm_desc>
 										</mm_main>
 									</mm_item>
 								</mm_list>
 							</mm_body>
+							<mm_foot class="bt">
+								<mm_group class="small">
+									<mm_btn type="info-x">查看详情</mm_btn>
+								</mm_group>
+							</mm_foot>
 						</mm_block>
 					</mm_col>
 				</mm_grid>

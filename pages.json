@@ -1,11 +1,5 @@
 {
 	"pages": [{
-			"path": "pages/demo/index",
-			"style": {
-				"navigationBarTitleText": "UI测试"
-			}
-		},
-		{
 			"path": "pages/home/index",
 			"style": {
 				"navigationBarTitleText": "比特中心"
@@ -138,6 +132,12 @@
 			}
 		},
 		{
+			"path": "pages/agent/level_desc",
+			"style": {
+				"navigationBarTitleText": "等级说明"
+			}
+		},
+		{
 			"path": "pages/agent/member_list",
 			"style": {
 				"navigationBarTitleText": "下级代理"
@@ -147,6 +147,42 @@
 			"path": "pages/agent/order_list",
 			"style": {
 				"navigationBarTitleText": "订单列表"
+			}
+		},
+		{
+			"path": "pages/assets/bill_list",
+			"style": {
+				"navigationBarTitleText": "我的账单"
+			}
+		},
+		{
+			"path": "pages/assets/bill_view",
+			"style": {
+				"navigationBarTitleText": "账单明细"
+			}
+		},
+		{
+			"path": "pages/assets/index",
+			"style": {
+				"navigationBarTitleText": "我的资产"
+			}
+		},
+		{
+			"path": "pages/assets/withdraw_panel",
+			"style": {
+				"navigationBarTitleText": "申请提现"
+			}
+		},
+		{
+			"path": "pages/assets/withdraw_record",
+			"style": {
+				"navigationBarTitleText": "提现记录"
+			}
+		},
+		{
+			"path": "pages/assets/withdraw_tip",
+			"style": {
+				"navigationBarTitleText": "提现提示"
 			}
 		},
 		{

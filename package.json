@@ -11,8 +11,9 @@
 	"license": "ISC",
 	"dependencies": {
 		"@dcloudio/uni-ui": "0.0.8",
-		"jquery": "^3.4.1",
 		"echarts": "^4.2.1",
+		"jquery": "^3.4.1",
+		"tki-qrcode": "^0.1.5",
 		"vue-ba": "^1.2.5"
 	}
 }

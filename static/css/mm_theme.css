@@ -41,6 +41,8 @@ input { color: #333; }
 .font_yellow,.font_danger {color:#ff9000 !important;}
 .font_cyan,.font_info {color:#26d2ff !important;}
 
+[class*=font_]:active { -webkit-filter: contrast(2) brightness(0.9); filter: contrast(2) brightness(0.9); }
+
 /* 默认配置 */
 .mm_mask { background:rgba(0,0,0,0.3); }
 .mm_header { background-color: #373737; color: #FFF; }
@@ -77,4 +79,5 @@ input { color: #333; }
 .mm_btn_info:active {background-color:#15baf8; color: #fff}
 
 .price { color: #ff9000; font-weight: 600; }
-
+.num { color: #38f; font-weight: 600; }
+.arrow:active { background: #E5E5E5; }

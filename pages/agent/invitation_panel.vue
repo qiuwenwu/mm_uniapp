@@ -11,59 +11,61 @@
 			<!-- 外套 -->
 			<mm_warp>
 				<!-- 栅格 -->
-				<mm_grid id="invitation">
-					<mm_col>
+				<mm_grid col="2" class="jiugong">
+					<mm_col width="100" class="bb">
 						<mm_block>
-							<mm_div>
-								<text>99</text>
-								<mm_desc>直推人数</mm_desc>
-							</mm_div>
-							<mm_div>
-								<text>999</text>
-								<mm_desc>二级推荐人数<text class=""></text></mm_desc>
-							</mm_div>
+							<mm_head>
+								<mm_title class="font_small">我</mm_title>
+							</mm_head>
+							<mm_body>
+								<mm_div url="./level_desc">
+									<mm_progress :num="23">等级2</mm_progress>
+								</mm_div>
+							</mm_body>
 						</mm_block>
 					</mm_col>
 					<mm_col>
-						<mm_block>
-							<mm_div>
-								<text>99</text>
-								<mm_desc>直推人数</mm_desc>
-							</mm_div>
-							<mm_div>
-								<text>999</text>
-								<mm_desc>二级推荐人数<text class=""></text></mm_desc>
-							</mm_div>
-						</mm_block>
+						<mm_div class="pa" url="./member_list">
+							<mm_title>邀请人数</mm_title>
+							<mm_desc class="num">80</mm_desc>
+						</mm_div>
+					</mm_col>
+					<mm_col class="bl">
+						<mm_div class="pa" url="./invitation_record">
+							<mm_title>邀请奖励</mm_title>
+							<mm_desc class="price"><text class="unit">￥</text>8000</mm_desc>
+						</mm_div>
 					</mm_col>
 				</mm_grid>
-				<mm_grid id="info">
-					<mm_col>
+				<mm_grid col="1" class="space-x">
+					<mm_col class="pn-b">
 						<mm_block>
-							<mm_list col="1" class="space">
-								<mm_item>
-									<mm_main>
-										<mm_title>邀请码</mm_title>
-										<mm_desc>
-											<text id="#copyObj">123456</text>
-											<text @click="copy">复制</text>
-										</mm_desc>
-									</mm_main>
-								</mm_item>
-								<mm_item>
-									<mm_main>
-										<mm_title>邀请链接</mm_title>
-										<text>复制链接</text>
-									</mm_main>
-								</mm_item>
-								<mm_item>
-									<mm_div>
-										<mm_title>邀请二维码</mm_title>
-										<image src="/static/img/qrcode.png"></image>
-										<text>保存到相册</text>
-									</mm_div>
-								</mm_item>
-							</mm_list>
+							<mm_body class="lr">
+								<mm_list col="1">
+									<mm_item>
+										<mm_main>
+											<mm_title>邀请码</mm_title>
+											<mm_desc>
+												<text class="code">123456</text>
+												<text class="font_success" @click="copy_code()">复制</text>
+											</mm_desc>
+										</mm_main>
+									</mm_item>
+									<mm_item>
+										<mm_main>
+											<mm_title>邀请链接</mm_title>
+											<mm_desc>
+												<text class="font_info" @click="copy">复制链接</text>
+											</mm_desc>
+										</mm_main>
+									</mm_item>
+								</mm_list>
+							</mm_body>
+						</mm_block>
+					</mm_col>
+					<mm_col class="pn-t">
+						<mm_block class="bt">
+							<mm_qrcode display="2" class="invitation_qrcode" value="http://www.baidu.com"></mm_qrcode>
 						</mm_block>
 					</mm_col>
 				</mm_grid>
@@ -80,29 +82,40 @@
 		components: {},
 		data() {
 			return {
-				oauth: true
+				oauth: false
+			}
+		},
+		methods: {
+			copy_code() {
+
+			},
+			save_img() {
+
 			}
 		}
 	}
 </script>
 
 <style>
-	#invitation .mm_block {
-		display: flex;
-		padding: .8rem;
+	#agent_invitation_panel .code {
+		margin-right: 0.5rem;
+		padding-right: 0.5rem;
+		border-right: 1px solid rgba(0, 0, 0, 0.1);
 	}
 
-	#invitation .mm_div {
-		flex: 1;
+	.mm_progress {
+		padding: 1.5rem 1rem 2rem 1rem;
+	}
+	
+	.invitation_qrcode {
+		padding-top: 1.5rem;
+		padding-bottom: 0.725rem;
+	}
+
+	.jiugong {
 		text-align: center;
-		padding: .8rem 0;
-	}
-
-	#invitation .mm_div:first-of-type {
-		border-right: 1px solid #999999;
-	}
-
-	#invitation .mm_desc {
-		padding: .5rem 0;
+		background: #fff;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+		margin-bottom: 1rem;
 	}
 </style>

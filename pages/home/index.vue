@@ -16,7 +16,7 @@
 						<!-- 热点文章 —— 图片轮播 -->
 						<mm_block class="lr">
 							<mm_side class="hot_icon">
-								<i class="fa fa-bullhorn" aria-hidden="true"></i>
+								<mm_div url="./bulletin_list"><i class="fa fa-bullhorn" aria-hidden="true"></i></mm_div>
 							</mm_side>
 							<mm_main class="pn">
 								<mm_swiper_text :list="list_text" />
@@ -116,37 +116,31 @@
 				title: 'Hello',
 				list_img: [{
 						img: "/static/img/banner1.jpg",
-						url: "/pages/mall/product_list"
+						url: "/pages/home/article_view"
 					},
 					{
 						img: "/static/img/banner2.jpg",
-						url: "/pages/mall/product_list"
+						url: "/pages/home/article_view"
 					},
 					{
 						img: "/static/img/banner3.jpg",
-						url: "/pages/mall/product_list"
+						url: "/pages/home/article_view"
 					},
 					{
 						img: "/static/img/banner4.jpg",
-						url: "/pages/mall/product_list"
+						url: "/pages/home/article_view"
 					}
 				],
 				list_text: [{
 						title: "这是一条公告，轮播公告",
-						url: "/pages/mall/product_list"
+						url: "/pages/home/article_view"
 					},
 					{
 						title: "这是一条公告，轮播公告",
-						url: "/pages/mall/product_list"
+						url: "/pages/home/article_view"
 					}
 				]
 			}
-		},
-		onLoad() {
-
-		},
-		methods: {
-
 		}
 	}
 </script>

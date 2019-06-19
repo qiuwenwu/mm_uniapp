@@ -13,30 +13,6 @@
 				<!-- 栅格 -->
 				<mm_grid col="1" class="space-x">
 					<!-- 格子 -->
-					<mm_col class="pn-b">
-						<!-- 热点文章 —— 图片轮播 -->
-						<mm_block>
-							<mm_swiper_img :list="list_img" />
-						</mm_block>
-					</mm_col>
-					<!-- 格子 -->
-					<mm_col class="pn-t">
-						<!-- 热点文章 —— 图片轮播 -->
-						<mm_block>
-							<mm_swiper_text :list="list_text" />
-						</mm_block>
-					</mm_col>
-					<!-- 格子 -->
-					<mm_col>
-						<!-- 文章筛选面板 -->
-						<mm_block> </mm_block>
-					</mm_col>
-					<!-- 格子 -->
-					<mm_col>
-						<!-- 文章排序条件 -->
-						<mm_block></mm_block>
-					</mm_col>
-					<!-- 格子 -->
 					<mm_col>
 						<!-- 文章列表 -->
 						<mm_block>
@@ -65,7 +41,25 @@
 		components: {},
 		data() {
 			return {
-				oauth: false
+				oauth: false,
+				list: [{
+						title: "这是一文章",
+						desc: "测试",
+						icon: "/static/img/banner3.jpg",
+						url: "/pages/mall/product_list"
+					},
+					{
+						title: "这是一文章",
+						desc: "测试",
+						icon: "/static/img/banner3.jpg",
+						url: "/pages/mall/product_list"
+					}, {
+						title: "这是一文章",
+						desc: "测试",
+						icon: "/static/img/banner3.jpg",
+						url: "/pages/mall/product_list"
+					}
+				]
 			}
 		}
 	}

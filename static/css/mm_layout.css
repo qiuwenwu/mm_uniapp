@@ -18,8 +18,8 @@ h3,.h3 {font-size:1.75rem;}
 h4,.h4 {font-size:1.5rem;}
 h5,.h5 {font-size:1.25rem;}
 h6,.h6 {font-size:1rem;}
-small,.font_small {font-size:80%;}
-big,.font_big {font-size:120%;}
+small,.font_small {font-size:80% !important;}
+big,.font_big {font-size:120% !important;}
 dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.mm_title {font-weight:500;}
 
 /* ====== 通用布局 ====== */
@@ -191,7 +191,7 @@ dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.mm_title {font-weight:500;}
 
 /* 列表项 */
 .mm_item { position: relative; margin-top: -1px; z-index: 1; opacity: 1 !important; }
-.mm_item:active { background-color: #e5e5e5; z-index: 2; }
+.mm_list .mm_item:active, .mm_list [class*=mm_list_]:active { background-color: #e5e5e5; z-index: 2; }
 
 /* 箭头 */
 .arrow { padding-right: 2rem !important; }
@@ -200,6 +200,7 @@ dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.mm_title {font-weight:500;}
 
 /* 项目侧栏 */
 .mm_side { position: relative; padding: 0.625rem 1rem; }
+.ll .mm_side { float: left; }
 .lr .mm_side { float: left; }
 .rl .mm_side { float: right; }
 
@@ -207,12 +208,19 @@ dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.mm_title {font-weight:500;}
 .mm_main { position: relative; z-index: 1; padding:  0.625rem 1rem; padding-left: 0; margin-left: 1rem; overflow: hidden; }
 .mm_item .mm_main { border-bottom: 1px solid rgba(0,0,0,0.1); }
 .mm_item:last-child .mm_main { border-bottom: none; }
-.mm_item:active .mm_main{ border-color: rgba(0,0,0,0); }
+.mm_list .mm_item:active .mm_main{ border-color: rgba(0,0,0,0); }
+.ll .mm_main { padding: 0.25rem 0; border: none; }
 
 /* 标题 */
+.ll .mm_title { float: left; width: 4.5rem; color: #888; }
 .lr .mm_title { float: left; }
 .rl .mm_title { float: left; margin-right: .5rem; }
 .lr .small .mm_title,.rl .small .mm_title { padding: 0.25rem 0; }
+.ll .small { font-size: 0.875rem; }
+
+/* 左布局 */
+.ll { padding: 1rem 0.5rem; }
+
 
 /* 徽章 */
 .mm_badge {display:inline-block;padding:.15em .4em;min-width:1.1rem;border-radius:1.125rem;background-color:#FA5151;color:#FFFFFF;line-height:1.2;text-align:center;font-size:0.75rem;vertical-align:middle;}
@@ -226,6 +234,7 @@ dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.mm_title {font-weight:500;}
 .mm_desc .dot { top: 0; }
 
 /* 摘要 */
+.ll .mm_desc { float: left; width: calc(100% - 5rem); color: #333; }
 .lr .mm_desc { float: right; }
 .lr .small .mm_desc { padding: .25rem 0; }
 .big .mm_desc { padding-top: 0.125rem; font-size: 0.875rem; color: #999; float: none; clear: left; }

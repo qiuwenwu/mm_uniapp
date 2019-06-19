@@ -30,7 +30,7 @@
 	.uni-icon-arrowright[data-v-29cd6af3]:before { content: none !important; } */
 	
 	/* 页面通用 */
-	#tabs { text-align: center;  }
+	#tabs { text-align: center; font-size: 0.875rem;  }
 	#tabs .active:after { position: absolute; bottom: 0; left: 0; right: 0; width: 100%; border-bottom: 2px solid #317EF3; }
 	.dbd .mm_icon {width:5.625rem;height:4.625rem;}
 	.introduce .mm_title {font-size:1.25rem;}
