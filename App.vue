@@ -41,9 +41,24 @@
 	.send_sms .mm_title {text-align:center;font-size:1.2rem;padding-bottom:.5rem;background:#FFFFFF;}
 	.send_sms .close {position:absolute;right:0.5rem;top:0.5rem;width:1.5rem;height:1.5rem;line-height:1.5rem;text-align:center;background:rgba(0,0,0,0.1);color:#fff;border-radius:0.125rem;cursor:pointer;}
 
-	.uni-page-wrapper { padding-bottom: 0.25rem; }
-	.mm_head {  }
-	.big .mm_icon { border-radius: 0.5rem; }
+
+	.big .mm_icon { border-radius: 0.125rem; }
 	.small .mm_icon { border-radius: 0.25rem; }
 	.mini .mm_icon { border-radius: 0.25rem; }
+	
+	.uni-page-head-btn .uni-btn-icon{ color: #FF5A6A !important; }
+	.uni-page-head { border-bottom:1px solid rgba(0,0,0,0.1); }
+	.uni-page-wrapper { padding-bottom: 0.25rem; }
+	
+	.font_default,.mm_btn_default-x { color: #FF5A6A; }
+	.mm_btn_default { background-color: #FF5A6A; }
+	.font_default { color: #FF5A6A !important; }
+	uni-checkbox .uni-checkbox-input.uni-checkbox-input-checked {
+		color: #FF5A6A !important;
+	}
+	#tabs .active:after { border-bottom-color: #FF5A6A; }
+	#tabs .active { color: #FF5A6A; }
+	
+	/* .mm_head { background: #fff0f1; } */
+	/* .mm_head { border-bottom: 1px solid rgba(255, 90, 106, 0.1); } */
 </style>

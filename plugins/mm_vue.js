@@ -71,9 +71,16 @@ let mm = {
 		/// num: 被转换的数值
 		/// 返回: 浮点数数值
 		Vue.prototype.$float = function(num) {
-			return num.toFloor(8);
+			return num.toFloor(8).toStr(8);
 		};
 
+		/// 引入双精度
+		/// num: 被转换的数值
+		/// 返回: 浮点数数值
+		Vue.prototype.$double = function(num) {
+			return num.toFloor(2).toStr(2);
+		};
+		
 		/// 引入截取字符串函数
 		/// str: 被截取的字符串
 		/// start: 起始字符串

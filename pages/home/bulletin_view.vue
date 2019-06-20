@@ -4,7 +4,7 @@
 		<!-- 外套 -->
 		<mm_warp>
 			<!-- 栅格 -->
-			<mm_grid col="1" class="space-x">
+			<mm_grid col="1" class="space">
 				<!-- 格子 -->
 				<mm_col>
 					<!-- 公告列表 -->

@@ -22,7 +22,7 @@
 						<!-- 热点文章 —— 图片轮播 -->
 						<mm_block class="lr">
 							<mm_side class="hot_icon">
-								<mm_div class="font_warning" url="./bulletin_list"><text class="fa fa-bullhorn"></text></mm_div>
+								<mm_div class="font_default" url="./bulletin_list"><text class="fa fa-bullhorn"></text></mm_div>
 							</mm_side>
 							<mm_main class="pn">
 								<mm_swiper_text :list="list_text" />
@@ -42,10 +42,10 @@
 						<mm_block class="dbd">
 							<mm_head class="lr">
 								<mm_item url="/pages/calculation/dbd_view" class="font_small">
-									<mm_main class="arrow">
+									<mm_div class="arrow">
 										<mm_title>为您推荐</mm_title>
 										<mm_desc>DBD说明</mm_desc>
-									</mm_main>
+									</mm_div>
 								</mm_item>
 							</mm_head>
 							<mm_body class="lr">
@@ -210,4 +210,6 @@
 		margin-bottom: 0.5rem;
 		text-align: center;
 	}
+	
+	.dbd .mm_head .mm_title { color: #FF5A6A; }
 </style>

@@ -14,8 +14,8 @@
 				<mm_grid col="2" class="jiugong">
 					<mm_col width="100" class="bb">
 						<mm_block>
-							<mm_head>
-								<mm_title class="font_small">我</mm_title>
+							<mm_head class="font_small">
+								<mm_title>我</mm_title>
 							</mm_head>
 							<mm_body>
 								<mm_div url="./level_desc">

@@ -18,23 +18,23 @@
 								<mm_list col="1" class="mini">
 									<mm_item url="./article_list">
 										<mm_side>
-											<mm_icon src="http://img.sccnn.com/bimg/334/0957.jpg"></mm_icon>
+											<mm_icon class="linear_red" src="<i class='fa fa-window-maximize'></i>"></mm_icon>
 										</mm_side>
 										<mm_main class="arrow">
 											<mm_title>培训课程</mm_title>
 										</mm_main>
 									</mm_item>
-									<mm_item url="./question_list">
+									<mm_item url="./news_list">
 										<mm_side>
-											<mm_icon src="http://img.sccnn.com/bimg/334/0957.jpg"></mm_icon>
+											<mm_icon class="linear_info" src="<i class='fa fa-send'></i>"></mm_icon>
 										</mm_side>
 										<mm_main class="arrow">
-											<mm_title>常见问题</mm_title>
+											<mm_title>新闻动态</mm_title>
 										</mm_main>
 									</mm_item>
 									<mm_item url="./bulletin_list">
 										<mm_side>
-											<mm_icon class="font_warning" src="<i class='fa fa-bullhorn'></i>"></mm_icon>
+											<mm_icon class="linear_yellow" src="<i class='fa fa-bullhorn'></i>"></mm_icon>
 										</mm_side>
 										<mm_main class="arrow">
 											<mm_title>站内公告</mm_title>

@@ -1,0 +1,208 @@
+<template>
+	<!-- 找回密码 -->
+	<view class="page_account" id="account_forgot">
+		<mm_bodyer>
+			<mm_warp>
+				<mm_grid col="1">
+					<mm_col>
+						<mm_block>
+							<mm_head class="login_head">
+								<mm_title>找回密码</mm_title>
+							</mm_head>
+							<mm_body v-if="step == 1">
+								<mm_div class="login_form">
+									<mm_div class="login_form_item">
+										<text class="required_tips">请输入手机号码</text>
+										<input type="text" v-model="form.phone" placeholder="请输入手机号码" class="form_input_warning" @input="phoneInput" />
+										<mm_icon src="/static/img/cancel.png" class="cancel_icon" v-show="!phoneEmpty" @click.native="clearPhone"></mm_icon>
+									</mm_div>
+									<mm_div class="login_form_item">
+										<text class="required_tips">请输入验证码</text>
+										<input type="text" v-model="form.password" placeholder="请输入验证码" class="form_input" @input="passwordInput" />
+										<mm_icon src="/static/img/cancel.png" class="cancel_icon_sms_code" v-show="!passwordEmpty" @click.native="clearPassword"></mm_icon>
+										<mm_div class="get_code"><text>获取验证码</text></mm_div>
+									</mm_div>
+								</mm_div>
+								<mm_div class="btn_div">
+									<mm_btn class="btn_enabled" type="default" :func="next">下一步</mm_btn>
+								</mm_div>
+							</mm_body>
+							<mm_body v-if="step == 2">
+								<mm_div class="login_form">
+									<mm_div class="login_form_item">
+										<text class="required_tips">请输入登录密码</text>
+										<input type="password" v-model="form.phone" placeholder="请输入登录密码" class="form_input_warning" @input="phoneInput" />
+										<mm_icon src="/static/img/cancel.png" class="cancel_icon" v-show="!phoneEmpty" @click.native="clearPhone"></mm_icon>
+									</mm_div>
+									<mm_div class="login_form_item">
+										<text class="required_tips">请再次输入登录密码</text>
+										<input type="password" v-model="form.password" placeholder="请再次输入登录密码" class="form_input" @input="passwordInput" />
+										<mm_icon src="/static/img/cancel.png" class="cancel_icon" v-show="!passwordEmpty" @click.native="clearPassword"></mm_icon>
+									</mm_div>
+								</mm_div>
+								<mm_div class="btn_div">
+									<mm_btn class="btn_enabled" type="default">确定</mm_btn>
+								</mm_div>
+							</mm_body>
+						</mm_block>
+					</mm_col>
+				</mm_grid>
+			</mm_warp>
+		</mm_bodyer>
+	</view>
+</template>
+
+<script>
+	import mixin from '@/mixins/page'
+
+	export default {
+		mixins: [mixin],
+		components: {},
+		data() {
+			return {
+				url_submit: "~/test",
+				form: {
+					phone: "",
+					password:""
+				},
+				phoneEmpty:true,
+				passwordEmpty:true,
+				step:1
+			}
+		},
+		methods: {
+			phoneInput() {
+				this.phoneEmpty = this.form.phone == ""
+			},
+			passwordInput(){
+				this.passwordEmpty = this.form.password == ""
+			},
+			clearPhone(){
+				this.form.phone = "";
+				this.phoneInput();
+			},
+			clearPassword(){
+				this.form.password = "";
+				this.passwordInput();
+			},
+			next(){
+				this.step = 2;
+			}
+		},
+	}
+</script>
+
+<style>
+	uni-page-body,#account_forgot,#account_forgot .mm_bodyer, #account_forgot .mm_warp, #account_forgot .mm_grid_1 {height: 100%;}
+	#account_forgot .login_head{
+		background-color: #FFFFFF;
+		font-size: 2.13rem;
+		display: flex;
+		align-items: center;
+		padding-left: 0.88rem;
+		height: 7rem;
+	}
+	#account_forgot .login_form{
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		font-size: .88rem;
+	}
+	#account_forgot .login_form_item{
+		display: flex;
+		flex-direction: column;
+		width: 80%;
+		height: 5rem;
+		position: relative;
+	}
+	#account_forgot .cancel_icon{
+		width: 1.13rem;
+		height: 1.13rem;
+		position: absolute;
+		left: 15rem;
+		top: 1.8rem;
+		z-index: 10;
+	}
+	#account_forgot .cancel_icon_sms_code{
+		width: 1.13rem;
+		height: 1.13rem;
+		position: absolute;
+		left: 10rem;
+		top: 1.8rem;
+		z-index: 10;
+	}
+	#account_forgot .required_tips{
+		font-size: .75rem;
+		color: #FF5A6A;
+	}
+	#account_forgot .form_input{
+		height: 2.5rem;
+		border-bottom: 1px solid #E7E7E7;
+		padding-right: 1rem;
+		font-size: 1rem;
+	}
+	#account_forgot .form_input_warning{
+		height: 2.5rem;
+		border-bottom: 2px solid #FF5A6A;
+		padding-right: 1rem;
+		font-size: 1rem;
+	}
+	#account_forgot .form_bottom{
+		width: 80%;
+		float: right;
+		color: #0B76C4;
+		margin-top: -1rem;
+	}
+	#account_forgot .form_bottom_link{
+		display: flex;
+		height: 100%;
+		align-items: center;
+		justify-content: flex-end;
+		padding: 0 1rem;
+	}
+	#account_forgot .btn_div{
+		margin-top: 4rem;
+	}
+	/*按钮置灰*/
+	#account_forgot .btn_disabled{
+		width: 80%; display: block; margin-left: auto; margin-right: auto;background-color: #FFDCD9;
+	}
+	/*按钮可点*/
+	#account_forgot .btn_enabled{
+		width: 80%; display: block; margin-left: auto; margin-right: auto;background-color: #FF5A6A;
+	}
+	#account_forgot .form_bottom_tips{
+		float: left;
+		display: flex;
+		align-items: center;
+		color: #FFE06E;
+	}
+	#account_forgot .baseline-error{
+		width: 1rem;
+		height: 1rem;
+		margin-right: .5rem;
+		margin-bottom: .2rem;
+	}
+	#account_forgot .foot_div{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #999999;
+		font-size: .88rem;
+		margin: 2rem 0;
+	}
+	#account_forgot .to_register{
+		color: #0B76C4;
+	}
+	#account_forgot .get_code{
+		position: absolute;
+		left: 11rem;
+		top: 1.8rem;
+		display: flex;
+		align-items: center;
+		padding: 0 .5rem;
+		width: 8rem;
+		color: #FF5A6A;
+	}
+</style>

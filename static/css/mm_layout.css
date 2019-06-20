@@ -241,7 +241,7 @@ dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.mm_title {font-weight:500;}
 
 /* 特殊块 */
 .mm_div { position: relative; }
-.mm_div.arrow, .mm_div.center { font-size: 0.75rem; color: #888888; }
+.mm_div.arrow, .mm_div.center { font-size: 0.75rem; padding: 0.25rem 1rem; }
 .mm_foot .mm_div { padding: 0.5rem 1rem; }
 
 /* 栅格间距 */

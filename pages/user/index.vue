@@ -31,7 +31,7 @@
 								<mm_list col="1" class="mini">
 									<mm_item url="/pages/assets/index">
 										<mm_side>
-											<mm_icon src="http://img.sccnn.com/bimg/334/0957.jpg"></mm_icon>
+											<mm_icon class="linear_green" src="<i class='fa fa-credit-card'></i>"></mm_icon>
 										</mm_side>
 										<mm_main class="arrow">
 											<mm_title>资产</mm_title>
@@ -39,7 +39,7 @@
 									</mm_item>
 									<mm_item url="/pages/mall/order_list">
 										<mm_side>
-											<mm_icon src="http://img.sccnn.com/bimg/334/0957.jpg"></mm_icon>
+											<mm_icon class="linear_yellow" src="<i class='fa fa-file-text-o'></i>"></mm_icon>
 										</mm_side>
 										<mm_main class="arrow">
 											<mm_title>订单</mm_title>
@@ -47,7 +47,7 @@
 									</mm_item>
 									<mm_item url="/pages/home/collect">
 										<mm_side>
-											<mm_icon src="http://img.sccnn.com/bimg/334/0957.jpg"></mm_icon>
+											<mm_icon class="linear_red" src="<i class='fa fa-heart'></i>"></mm_icon>
 										</mm_side>
 										<mm_main class="arrow">
 											<mm_title>收藏</mm_title>
@@ -63,18 +63,18 @@
 								<mm_list col="1" class="mini">
 									<mm_item url="/pages/home/question_list">
 										<mm_side>
-											<mm_icon src="http://img.sccnn.com/bimg/334/0957.jpg"></mm_icon>
+											<mm_icon class="linear_purple" src="<i class='fa fa-question-circle'></i>"></mm_icon>
 										</mm_side>
 										<mm_main class="arrow">
 											<mm_title>帮助</mm_title>
 										</mm_main>
 									</mm_item>
-									<mm_item url="/pages/agent/invitation_panel">
+									<mm_item url="/pages/home/contact">
 										<mm_side>
-											<mm_icon src="http://img.sccnn.com/bimg/334/0957.jpg"></mm_icon>
+											<mm_icon class="linear_blue" src="<i class='fa fa-phone'></i>"></mm_icon>
 										</mm_side>
 										<mm_main class="arrow">
-											<mm_title>邀请</mm_title>
+											<mm_title>客服</mm_title>
 										</mm_main>
 									</mm_item>
 								</mm_list>
@@ -83,7 +83,7 @@
 					</mm_col>
 					<mm_col>
 						<mm_div>
-							<mm_btn type="danger-x" class="full" url="./check_in"><mm_icon src="/static/img/check_in_b.png"></mm_icon><text class="check_in">签到</text></mm_btn>
+							<mm_btn type="default-x" class="full" url="./check_in"><mm_icon src="/static/img/check_in_b.png"></mm_icon><text class="check_in">签到</text></mm_btn>
 						</mm_div>
 					</mm_col>
 				</mm_grid>
@@ -127,7 +127,7 @@
 		padding: 0 0.25rem;
 		border-radius: 0.125rem;
 		color: #fff;
-		background: -webkit-linear-gradient(180deg, rgba(223, 190, 106, 0.8), rgba(146, 111, 52, 0.8), rgba(34, 34, 34, 0.3), rgba(34, 34, 34, 0.3));
-		background: linear-gradient(270deg, rgba(223, 190, 106, 0.8), rgba(146, 111, 52, 0.8), rgba(34, 34, 34, 0.3), rgba(34, 34, 34, 0.3));
+		background: -webkit-linear-gradient(180deg, #fccf31, #f55555, #fccf31);
+		background: linear-gradient(270deg, #fccf31, #f55555, #fccf31);
 	}
 </style>

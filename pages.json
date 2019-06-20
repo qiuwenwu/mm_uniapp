@@ -38,7 +38,7 @@
 		{
 			"path": "pages/home/channel",
 			"style": {
-				"navigationBarTitleText": "资讯频道"
+				"navigationBarTitleText": "资讯"
 			}
 		},
 		{
@@ -128,7 +128,7 @@
 		{
 			"path": "pages/agent/invitation_panel",
 			"style": {
-				"navigationBarTitleText": "邀请面板"
+				"navigationBarTitleText": "邀请"
 			}
 		},
 		{
@@ -453,12 +453,12 @@
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "比特中心",
-		"navigationBarBackgroundColor": "#eeeeee",
+		"navigationBarBackgroundColor": "#fefefe",
 		"backgroundColor": "#ededed"
 	},
 	"tabBar": {
 		"color": "#333333",
-		"selectedColor": "#3cc51f",
+		"selectedColor": "#FF5A6A",
 		"borderStyle": "black",
 		"backgroundColor": "#ffffff",
 		"list": [{
@@ -467,10 +467,10 @@
 			"selectedIconPath": "static/img/icon_home_b.svg",
 			"text": "首页"
 		}, {
-			"pagePath": "pages/home/contact",
-			"iconPath": "static/img/icon_contact_a.svg",
-			"selectedIconPath": "static/img/icon_contact_b.svg",
-			"text": "客服"
+			"pagePath": "pages/agent/invitation_panel",
+			"iconPath": "static/img/icon_share_a.svg",
+			"selectedIconPath": "static/img/icon_share_b.svg",
+			"text": "邀请"
 		}, {
 			"pagePath": "pages/home/channel",
 			"iconPath": "static/img/icon_info_a.svg",
