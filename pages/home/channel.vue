@@ -45,7 +45,7 @@
 						</mm_block>
 					</mm_col>
 					<!-- 格子 -->
-				<!-- 	<mm_col v-if="channel_sub.length > 0">
+					<!-- 	<mm_col v-if="channel_sub.length > 0">
 						<mm_block>
 							<mm_head>
 								<mm_title class="font_small">子频道</mm_title>
@@ -70,22 +70,22 @@
 						<!-- 频道相关热门文章 -->
 						<mm_block>
 							<mm_head>
+								<mm_title class="font_small">最新课程</mm_title>
+							</mm_head>
+							<mm_body class="lr">
+								<mm_list_article :list="list" class="big"></mm_list_article>
+							</mm_body>
+						</mm_block>
+					</mm_col>
+					<mm_col>
+						<!-- 频道相关热门文章 -->
+						<mm_block>
+							<mm_head>
 								<mm_title class="font_small">热门课程</mm_title>
 							</mm_head>
 							<mm_body class="lr">
-								<mm_list col="1" class="big">
-									<mm_item v-for="(o, k) in list" :key="k">
-										<mm_side>
-											<mm_icon src="http://img.sccnn.com/bimg/334/0957.jpg"></mm_icon>
-										</mm_side>
-										<mm_main>
-											<mm_title>菜单项</mm_title>
-											<mm_desc><text class="fa fa-heart-o"></text>&nbsp;<text class="collect"> {{ o.collect }}</text></mm_desc>
-										</mm_main>
-									</mm_item>
-								</mm_list>
+								<mm_list_article :list="list" class="big"></mm_list_article>
 							</mm_body>
-							<mm_foot></mm_foot>
 						</mm_block>
 					</mm_col>
 				</mm_grid>
@@ -106,23 +106,26 @@
 				channel: [],
 				channel_sub: [],
 				list: [{
+						aid: 3,
 						title: "这是一文章",
-						desc: "测试",
 						icon: "/static/img/banner3.jpg",
-						url: "/pages/mall/product_list",
+						url: "/pages/home/article_view?aid=3",
+						createTime: "今天 11:15",
 						collect: 680
 					},
 					{
+						aid: 2,
 						title: "这是一文章",
-						desc: "测试",
 						icon: "/static/img/banner3.jpg",
-						url: "/pages/mall/product_list",
+						url: "/pages/home/article_view?aid=2",
+						createTime: "2019-06-19",
 						collect: 936
 					}, {
+						aid: 1,
 						title: "这是一文章",
-						desc: "测试",
 						icon: "/static/img/banner3.jpg",
-						url: "/pages/mall/product_list",
+						url: "/pages/home/article_view?aid=1",
+						createTime: "2019-06-18",
 						collect: 50
 					}
 				]
@@ -132,8 +135,7 @@
 </script>
 
 <style>
-	.fa-heart { color: #F12F04; }
-	.fa-heart-o { color: #F12F04; }
-	.fa-bullhorn { color: #f12f04; }
-	.collect { margin-left: 0.5rem; }
+	.fa-bullhorn {
+		color: #f12f04;
+	}
 </style>

@@ -8,6 +8,7 @@
 
 /* 元素 */
 .unit { font-size: 75%; }
+.mm_item .time { position: absolute; top: 0.625rem; right: 1rem; font-size: 0.75rem; color: #999; }
 
 /* 二维码 */
 .mm_qrcode {
@@ -16,3 +17,4 @@
 .mm_qrcode .mm_btn, .mm_qrcode [class*=mm_btn_] {
 	font-size: 0.875rem;
 }
+

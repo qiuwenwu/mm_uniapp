@@ -14,12 +14,13 @@
 							</mm_head>
 							<mm_body>
 								<mm_input type="number" v-model="form.phone" desc="由11位数字组成"></mm_input>
+								<mm_code v-model="form.code" type="default-x" desc="请输入手机验证码"></mm_code>
 							</mm_body>
 						</mm_block>
 					</mm_col>
 					<mm_col>
 						<mm_div>
-							<mm_btn type="default" class="full">保存</mm_btn>
+							<mm_btn type="default" class="full">绑定</mm_btn>
 						</mm_div>
 					</mm_col>
 				</mm_grid>
@@ -36,7 +37,11 @@
 		components: {},
 		data() {
 			return {
-				oauth: false
+				oauth: false,
+				form: {
+					phone: "",
+					code: ""
+				}
 			}
 		}
 	}

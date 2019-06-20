@@ -5,11 +5,8 @@
 		<mm_warp>
 			<!-- 栅格 -->
 			<mm_grid col="1" class="space-x">
-				<mm_col>
-					<mm_search></mm_search>
-				</mm_col>
 				<!-- 格子 -->
-				<mm_col class="pn-tb">
+				<mm_col>
 					<!-- 热点文章 —— 图片轮播 -->
 					<mm_block>
 						<mm_body>

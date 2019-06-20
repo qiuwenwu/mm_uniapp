@@ -1,7 +1,6 @@
 <template>
 	<!-- 输入框 -->
 	<mm_item class="mm_input">
-		<mm_group><mm_btn :func="func" :type="type">发送验证码</mm_btn></mm_group>
 		<mm_side v-if="icon">
 			<mm_icon :icon="icon"></mm_icon>
 		</mm_side>

@@ -20,7 +20,7 @@ h5,.h5 {font-size:1.25rem;}
 h6,.h6 {font-size:1rem;}
 small,.font_small {font-size:80% !important;}
 big,.font_big {font-size:120% !important;}
-dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.mm_title {font-weight:500;}
+dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {font-weight:500;}
 
 /* ====== 通用布局 ====== */
 /* 对齐 */

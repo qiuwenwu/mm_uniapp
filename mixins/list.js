@@ -96,7 +96,9 @@ export default {
 					// 数量
 					num: 'num',
 					// 作者
-					author: 'author'
+					author: 'author',
+					// 收藏量
+					collect: 'collect'
 				}
 			}
 		},

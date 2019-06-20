@@ -11,13 +11,13 @@
 					<mm_col>
 						<mm_block class="account">
 							<mm_body class="lr">
-								<mm_list col="1" class="mini">
-									<mm_item class="big" url="/pages/info/index">
+								<mm_list col="1" class="big">
+									<mm_item url="/pages/info/index">
 										<mm_side class="headimg">
 											<mm_icon src="/static/img/headimg.jpg"></mm_icon>
 										</mm_side>
 										<mm_main class="arrow">
-											<mm_title>昵称<text class="vip">VIP4</text></mm_title>
+											<mm_title><text>昵称</text><text class="vip">VIP4</text></mm_title>
 											<mm_desc>账号:15817188815</mm_desc>
 										</mm_main>
 									</mm_item>
@@ -115,19 +115,8 @@
 	#user_index .headimg .mm_icon {
 		border-radius: 0.5rem;
 	}
-
-	.vip {
-		display: inline-block;
+	#user_index .vip {
 		margin-left: 0.5rem;
-		position: relative;
-		top: -1px;
-		font-size: 0.5rem;
-		height: 1.1rem;
-		line-height: 1.25rem;
-		padding: 0 0.25rem;
-		border-radius: 0.125rem;
-		color: #fff;
-		background: -webkit-linear-gradient(180deg, #fccf31, #f55555, #fccf31);
-		background: linear-gradient(270deg, #fccf31, #f55555, #fccf31);
 	}
+
 </style>

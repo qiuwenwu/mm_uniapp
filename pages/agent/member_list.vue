@@ -1,32 +1,35 @@
 <template>
-	<!-- 下级代理页面 -->
-	<view class="page_agent" id="agent_member_list">
-		<!-- 页主体 -->
+	<!-- 代理首页 -->
+	<view class="page_account" id="agent_index">
 		<mm_bodyer>
-			<!-- 外套 -->
 			<mm_warp>
-				<!-- 栅格 -->
 				<mm_grid col="1" class="space-x">
-					<!-- 格子 -->
 					<mm_col>
-						<!-- 下级代理汇总 -->
 						<mm_block>
-							<mm_head>
-								<mm_title class="font_small">简约</mm_title>
-							</mm_head>
-							<mm_body class="lr"></mm_body>
-							<mm_foot></mm_foot>
-						</mm_block>
-					</mm_col>
-					<!-- 格子 -->
-					<mm_col>
-						<!-- 下级代理列表  -->
-						<mm_block>
-							<mm_head>
-								<mm_title class="font_small">简约</mm_title>
-							</mm_head>
-							<mm_body class="lr"></mm_body>
-							<mm_foot></mm_foot>
+							<mm_body class="lr">
+								<mm_list col="1" class="big">
+									<mm_item url="/pages/info/index">
+										<mm_side class="headimg">
+											<mm_icon src="/static/img/headimg.jpg"></mm_icon>
+										</mm_side>
+										<mm_main>
+											<mm_title>昵称</mm_title>
+											<mm_desc><text class="vip">VIP4</text></mm_desc>
+											<mm_tip><view class="people">邀请人数 <text class="num">5</text></view><view class="count">持有DBD<text class="num">66</text></view></mm_tip>
+										</mm_main>
+									</mm_item>
+									<mm_item url="/pages/info/index">
+										<mm_side class="headimg">
+											<mm_icon src="/static/img/headimg.jpg"></mm_icon>
+										</mm_side>
+										<mm_main>
+											<mm_title>昵称</mm_title>
+											<mm_desc><text class="vip">VIP4</text></mm_desc>
+											<mm_tip><view class="people">邀请人数 <text class="num">5</text></view><view class="count">持有DBD<text class="num">66</text></view></mm_tip>
+										</mm_main>
+									</mm_item>
+								</mm_list>
+							</mm_body>
 						</mm_block>
 					</mm_col>
 				</mm_grid>
@@ -37,17 +40,19 @@
 
 <script>
 	import mixin from '@/mixins/page'
-
 	export default {
 		mixins: [mixin],
-		components: {},
 		data() {
 			return {
-				oauth: false
+				value: 8.888888888888,
+				value1: 0.123123123123,
 			}
 		}
 	}
 </script>
 
 <style>
+	.mm_tip { position: absolute; top:0.5rem; right: 1rem; color: #666; font-size: 0.875rem; }
+	.mm_tip>* { margin-top: 0.125rem; }
+	.num { float: right;  }
 </style>
