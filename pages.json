@@ -146,7 +146,13 @@
 		{
 			"path": "pages/agent/member_list",
 			"style": {
-				"navigationBarTitleText": "下级代理"
+				"navigationBarTitleText": "一级代理"
+			}
+		},
+		{
+			"path": "pages/agent/member_list_next",
+			"style": {
+				"navigationBarTitleText": "二级代理"
 			}
 		},
 		{

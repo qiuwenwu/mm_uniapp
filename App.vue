@@ -127,10 +127,6 @@
 		color: #FF5A6A !important;
 	}
 
-	.uni-page-head {
-		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-	}
-
 	.uni-page-wrapper {
 		padding-bottom: 0.25rem;
 	}
@@ -160,8 +156,8 @@
 		color: #FF5A6A;
 	}
 
-	.collect [class*=fa-heart] {
-		margin-right: 0.25rem;
+	.collect [class*=fa-heart] ~ text {
+		margin-left: 0.25rem;
 	}
 
 	.collect [class*=fa-heart] {

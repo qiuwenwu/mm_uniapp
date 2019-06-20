@@ -245,12 +245,12 @@ dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {font-weight:500;}
 .mm_foot .mm_div { padding: 0.5rem 1rem; }
 
 /* 栅格间距 */
-.space>* {padding:0.5rem;}
-.space_lg>* {padding:1rem;}
-.space-x {margin:-0.5rem;}
-.space-x>* {padding:0.5rem;}
-.space_lg-x {margin:-1rem;}
-.space_lg-x>* {padding:1rem;}
+.space>* {padding:0.25rem;}
+.space_big>* {padding:0.5rem;}
+.space-x {margin:-0.25rem;}
+.space-x>* {padding:0.25rem;}
+.space_big-x {margin:-0.5rem;}
+.space_big-x>* {padding:0.5rem;}
 
 
 /* 盒子 */

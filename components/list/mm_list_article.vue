@@ -7,7 +7,7 @@
 			</mm_side>
 			<mm_main>
 				<mm_title>{{ o[vm.title] }}</mm_title>
-				<mm_desc>{{ o[vm.desc] }}<view class="collect"><text class="fa fa-heart-o" v-if="o[vm.collect] > 0"></text>{{ o[vm.collect] }}</view></mm_desc>
+				<mm_desc>{{ o[vm.desc] }}<view class="collect"><text class="fa fa-heart-o" v-if="o[vm.collect] > 0"></text><text>{{ o[vm.collect] }}</text></view></mm_desc>
 				<text class="time">{{ o.createTime }}</text>
 			</mm_main>
 		</mm_item>

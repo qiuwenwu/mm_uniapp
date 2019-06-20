@@ -1,6 +1,6 @@
 <template>
 	<view class="mm_progress">
-		<view class="progress_desc font_default">
+		<view class="progress_desc">
 			<slot></slot>
 		</view>
 		<view class="progress_warp">

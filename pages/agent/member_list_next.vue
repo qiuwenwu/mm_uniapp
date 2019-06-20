@@ -1,6 +1,6 @@
 <template>
 	<!-- 代理首页 -->
-	<view class="page_agent" id="agent_member_list">
+	<view class="page_agent" id="member_list_next">
 		<mm_bodyer>
 			<mm_warp>
 				<mm_grid col="1" class="space-x">

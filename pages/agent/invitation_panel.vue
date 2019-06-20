@@ -64,7 +64,7 @@
 						</mm_block>
 					</mm_col>
 					<mm_col class="pn-t">
-						<mm_block class="bt">
+						<mm_block>
 							<mm_qrcode display="2" class="invitation_qrcode" value="http://www.baidu.com"></mm_qrcode>
 						</mm_block>
 					</mm_col>
@@ -108,7 +108,7 @@
 	}
 
 	.invitation_qrcode {
-		padding-top: 1.5rem;
+		padding-top: 1.25rem;
 		padding-bottom: 0.725rem;
 	}
 
@@ -116,6 +116,6 @@
 		text-align: center;
 		background: #fff;
 		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-		margin-bottom: 1rem;
+		margin-bottom: .5rem;
 	}
 </style>

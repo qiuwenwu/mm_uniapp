@@ -74,7 +74,7 @@
 
 <style>
 	.collect {  text-align: center; }
-	.collect .mm_icon { font-size: 1.2rem; }
+	.collect [class*=fa-heart] { font-size: 1.3rem; margin: 0; }
 	.article_title { font-size: 1rem; color: #333; font-weight: 600; }
 	#home_article_view .mm_desc { clear: both; }
 	#home_article_view .mm_body { overflow: hidden; }

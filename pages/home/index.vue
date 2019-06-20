@@ -13,7 +13,7 @@
 						<mm_swiper_img :list="list_img" />
 					</mm_col>
 					<mm_col class="pn-tb">
-						<mm_block class="bb">
+						<mm_block>
 							<!-- 菜单 -->
 							<list_menu />
 						</mm_block>
