@@ -45,37 +45,6 @@
 						</mm_block>
 					</mm_col>
 				</mm_grid>
-				<mm_grid col="1" id="dbd_list">
-					<mm_col>
-						<mm_block class="dbd">
-							<mm_head class="lr">
-								<mm_item url="/pages/calculation/dbd_view" class="font_small">
-									<mm_main class="arrow">
-										<mm_title>为您推荐</mm_title>
-										<mm_desc>DBD说明</mm_desc>
-									</mm_main>
-								</mm_item>
-							</mm_head>
-							<mm_body class="lr">
-								<mm_list col="1" class="dbd_item">
-									<mm_item class="big" url="/pages/calculation/dbd_view">
-										<mm_side>
-											<mm_icon src="http://img.sccnn.com/bimg/334/0957.jpg"></mm_icon>
-										</mm_side>
-										<mm_main class="introduce">
-											<mm_title>DBD礼包</mm_title>
-											<mm_desc><text class="price">298.00</text></mm_desc>
-											<mm_desc>
-												<text class="count">数量：10.33</text>
-												<text class="days">有效天数：289</text>
-											</mm_desc>
-										</mm_main>
-									</mm_item>
-								</mm_list>
-							</mm_body>
-						</mm_block>
-					</mm_col>
-				</mm_grid>
 			</mm_warp>
 		</mm_bodyer>
 	</view>
@@ -101,10 +70,6 @@
 </script>
 
 <style>
-	#dbd_list {
-		margin-top: 1rem;
-	}
-
 	#assets_index .unit {
 		margin-left: 0.25rem;
 		font-size: 1rem;

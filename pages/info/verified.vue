@@ -46,11 +46,16 @@
 						<mm_div>
 							<mm_btn type="default" class="full">提交</mm_btn>
 						</mm_div>
-						<checkbox-group>
-							<label>
-								<checkbox value="cb" checked="true" />同意《实名认证协议》
-							</label>
-						</checkbox-group>
+					</mm_col>
+					<mm_col>
+						<mm_div class="approve">
+							<checkbox-group>
+								<label>
+									<checkbox value="cb" checked="true" />同意
+								</label>
+								<navigator class="font_info" url="/pages/home/article_view?title=实名认证协议">《实名认证协议》</navigator>
+							</checkbox-group>
+						</mm_div>
 					</mm_col>
 				</mm_grid>
 			</mm_warp>
@@ -73,6 +78,15 @@
 </script>
 
 <style>
+	.approve {
+		text-align: center;
+		padding-bottom: 2rem;
+		font-size: 0.875rem;
+	}
+	.approve navigator {
+		display: inline-block;
+	}
+
 	.pic:active {
 		background: none;
 	}

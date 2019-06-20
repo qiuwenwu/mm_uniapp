@@ -16,9 +16,17 @@
 					<mm_col>
 						<!-- 文章列表 -->
 						<mm_block>
+							<mm_head class="font_small">
+								<mm_title>课程</mm_title>
+							</mm_head>
 							<mm_body class="lr">
 								<mm_list_article :list="list" class="big" id="mm_list_article"></mm_list_article>
 							</mm_body>
+							<mm_foot class="bt">
+								<mm_div class="center">
+									一共收藏15篇
+								</mm_div>
+							</mm_foot>
 						</mm_block>
 					</mm_col>
 				</mm_grid>
@@ -29,7 +37,6 @@
 		<!-- 新闻排序条件 -->
 
 		<!-- 新闻列表 -->
-
 	</view>
 </template>
 

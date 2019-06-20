@@ -19,7 +19,11 @@
 								<mm_title class="font_small">简约</mm_title>
 							</mm_head>
 							<mm_body v-html="obj.content"></mm_body>
-							<mm_foot></mm_foot>
+							<mm_foot class="bt">
+								<mm_div class="center">
+									622位联系人
+								</mm_div>
+							</mm_foot>
 						</mm_block>
 					</mm_col>
 				</mm_grid>

@@ -57,7 +57,7 @@
 					</mm_col>
 					<mm_col>
 						<mm_div>
-							<mm_btn type="warning-x" class="full">退出账号</mm_btn>
+							<mm_btn type="warning-x" class="full" url="/pages/account/signin">退出账号</mm_btn>
 						</mm_div>
 					</mm_col>
 				</mm_grid>

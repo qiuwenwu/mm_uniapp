@@ -5,6 +5,9 @@
 		<mm_warp>
 			<!-- 栅格 -->
 			<mm_grid col="1" class="space-x">
+				<mm_col>
+					<mm_search></mm_search>
+				</mm_col>
 				<!-- 格子 -->
 				<mm_col class="pn-tb">
 					<!-- 热点文章 —— 图片轮播 -->
@@ -14,24 +17,8 @@
 						</mm_body>
 					</mm_block>
 				</mm_col>
-				<!-- 格子 -->
-				<mm_col>
-					<!-- 文章筛选面板 -->
-					<mm_block>
-						<mm_col>
-							<mm_block>
-								<mm_body>
-
-								</mm_body>
-							</mm_block>
-						</mm_col>
-					</mm_block>
-				</mm_col>
-				<!-- 格子 -->
-				<mm_col>
-					<!-- 文章排序条件 -->
-					<mm_block></mm_block>
-				</mm_col>
+				<!-- 文章筛选面板 -->
+				<!-- 文章排序条件 -->
 				<!-- 格子 -->
 				<mm_col>
 					<!-- 文章列表 -->

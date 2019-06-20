@@ -34,12 +34,13 @@
 <style>
 	.menu {
 		text-align: center;
-		padding: 1rem 0.75rem .75rem 0.75rem;
+		padding: 0.75rem;
 		overflow: hidden;
 	}
 	
 	.menu_item {
 		float: left;
+		padding-top: 0.5rem;
 		width: 25%;
 	}
 	

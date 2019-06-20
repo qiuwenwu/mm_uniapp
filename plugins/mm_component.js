@@ -18,6 +18,7 @@ import mm_qrcode from '@/components/expand/mm_qrcode'
 import mm_uploader from '@/components/expand/mm_uploader'
 import mm_picker from '@/components/expand/mm_picker'
 import mm_progress from '@/components/expand/mm_progress'
+import mm_search from '@/components/expand/mm_search'
 
 // 表单组件
 import mm_checkbox from '@/components/form/mm_checkbox'
@@ -79,6 +80,7 @@ let mm_ui = {
 		Vue.component('mm_uploader', mm_uploader);
 		Vue.component('mm_picker', mm_picker);
 		Vue.component('mm_progress', mm_progress);
+		Vue.component('mm_search', mm_search);
 		
 		// 表单组件
 		Vue.component('mm_checkbox', mm_checkbox);

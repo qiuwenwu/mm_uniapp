@@ -18,7 +18,7 @@
 					<mm_col class="pn-t">
 						<mm_block>
 							<mm_head style="border-top: 1px solid rgba(0,0,0,0.1);">
-								<mm_title>DBD数量：88</mm_title>
+								<mm_title>订单数量：88</mm_title>
 							</mm_head>
 						</mm_block>
 					</mm_col>

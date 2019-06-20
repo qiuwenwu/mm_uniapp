@@ -25,6 +25,7 @@
 	.mm_swiper_text {
 		line-height: 2.5rem;
 		height: 2.5rem;
+		padding: 0 1rem;
 	}
 	
 	.mm_swiper_text .mm_div { color: #666; font-size: 0.875rem; }

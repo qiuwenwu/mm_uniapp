@@ -24,10 +24,6 @@
 	/* ===  每个页面公共css  === */
 	.uni-page-head-btn { top: 0.25rem }
 	.navigator-hover { background: #e5e5e5; z-index:2; }
-	/* .article_list .uni-list-item__container:after { left: 52px !important; } */
-	
-	/* .uni-list-item__container[data-v-1623cbff]:after { left: 52px !important; }
-	.uni-icon-arrowright[data-v-29cd6af3]:before { content: none !important; } */
 	
 	/* 页面通用 */
 	#tabs { text-align: center; font-size: 0.875rem;  }
@@ -45,6 +41,9 @@
 	.send_sms .mm_title {text-align:center;font-size:1.2rem;padding-bottom:.5rem;background:#FFFFFF;}
 	.send_sms .close {position:absolute;right:0.5rem;top:0.5rem;width:1.5rem;height:1.5rem;line-height:1.5rem;text-align:center;background:rgba(0,0,0,0.1);color:#fff;border-radius:0.125rem;cursor:pointer;}
 
-	/* 临时测试 */
-	/* .mm_col>*,[class*=mm_col_]>* { min-height: 200px; } */
+	.uni-page-wrapper { padding-bottom: 0.25rem; }
+	.mm_head {  }
+	.big .mm_icon { border-radius: 0.5rem; }
+	.small .mm_icon { border-radius: 0.25rem; }
+	.mini .mm_icon { border-radius: 0.25rem; }
 </style>
