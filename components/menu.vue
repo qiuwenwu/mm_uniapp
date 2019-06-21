@@ -6,7 +6,7 @@
 			</view>
 			<text class="menu_title">关于我们</text>
 		</navigator>
-		<navigator class="menu_item" url="/pages/mall/dbd_view">
+		<navigator class="menu_item" url="/pages/calculation/dbd_view">
 			<view class="menu_icon" style="background-image: linear-gradient(135deg, #FFF720 10%, #3CD500 100%);">
 				<text class="fa fa-cloud"></text>
 			</view>
@@ -56,6 +56,6 @@
 	
 	.menu_title {
 		color: #333;
-		font-size: 0.625rem;
+		font-size: 85%;
 	}
 </style>

@@ -11,7 +11,7 @@
 			<!-- 外套 -->
 			<mm_warp>
 				<!-- 栅格 -->
-				<mm_grid col="1" class="space">
+				<mm_grid col="1" class="space_big">
 					<!-- 格子 -->
 					<mm_col>
 						<!-- 文章详情 -->
@@ -24,7 +24,7 @@
 									</mm_side>
 									<mm_main>
 										<mm_title class="article_title">这是一篇很牛气的文章</mm_title>
-										<mm_desc>2019年06月20</mm_desc>
+										<mm_desc>2019-06-20</mm_desc>
 									</mm_main>
 								</mm_item>
 							</mm_head>
@@ -75,7 +75,7 @@
 <style>
 	.collect {  text-align: center; }
 	.collect [class*=fa-heart] { font-size: 1.3rem; margin: 0; }
-	.article_title { font-size: 1rem; color: #333; font-weight: 600; }
+	.article_title { font-size: 0.875rem; color: #333; font-weight: 600; }
 	#home_article_view .mm_desc { clear: both; }
 	#home_article_view .mm_body { overflow: hidden; }
 	#home_article_view image { max-width: 100%; }

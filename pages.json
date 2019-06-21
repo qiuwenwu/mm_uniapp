@@ -1,5 +1,6 @@
 {
-	"pages": [{
+	"pages": [
+		{
 			"path": "pages/home/index",
 			"style": {
 				"navigationBarTitleText": "比特中心"
@@ -179,20 +180,38 @@
 				"navigationBarTitleText": "我的资产"
 			}
 		},
-		{
-			"path": "pages/assets/withdraw_panel",
+			{
+			"path": "pages/assets/cny_panel",
 			"style": {
 				"navigationBarTitleText": "申请提现"
 			}
 		},
 		{
-			"path": "pages/assets/withdraw_record",
+			"path": "pages/assets/cny_record",
 			"style": {
 				"navigationBarTitleText": "提现记录"
 			}
 		},
 		{
-			"path": "pages/assets/withdraw_tip",
+			"path": "pages/assets/cny_tip",
+			"style": {
+				"navigationBarTitleText": "提现提示"
+			}
+		},
+		{
+			"path": "pages/assets/btc_panel",
+			"style": {
+				"navigationBarTitleText": "申请提币"
+			}
+		},
+		{
+			"path": "pages/assets/btc_record",
+			"style": {
+				"navigationBarTitleText": "提现记录"
+			}
+		},
+		{
+			"path": "pages/assets/btc_tip",
 			"style": {
 				"navigationBarTitleText": "提现提示"
 			}
@@ -218,7 +237,7 @@
 		{
 			"path": "pages/calculation/dbd_view",
 			"style": {
-				"navigationBarTitleText": "DBD详情"
+				"navigationBarTitleText": "DBD"
 			}
 		},
 		{

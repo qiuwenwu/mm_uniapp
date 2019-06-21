@@ -2,13 +2,13 @@
 /* ====== 布局 ====== */
 /* 卡片 */
 .card { border-radius: 0.5rem; overflow-x: hidden; min-height: 12.5rem; background: #fff; }
-.card .mm_head .mm_item { padding: 0.5rem 1rem; }
-.card .mm_body { padding: 0.5rem 1rem; }
+.card .mm_head .mm_item { padding: 0.5rem 0.875rem; }
+.card .mm_body { padding: 0.5rem 0.875rem; }
 .card .mm_body .mm_desc, .card .mm_body .mm_icon { margin-bottom: .5rem; }
 
 /* 元素 */
-.unit { font-size: 75%; }
-.mm_item .time { position: absolute; top: 0.625rem; right: 1rem; font-size: 0.75rem; color: #999; }
+.unit { font-size: 85%; }
+.mm_item .time { position: absolute; top: 0.625rem; right: 0.875rem; font-size: 85%; color: #999; }
 
 /* 二维码 */
 .mm_qrcode {

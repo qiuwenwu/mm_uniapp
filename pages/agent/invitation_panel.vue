@@ -19,7 +19,7 @@
 							</mm_head>
 							<mm_body>
 								<mm_div url="./level_desc">
-									<mm_progress :num="23">等级2</mm_progress>
+									<mm_progress :num="23">等级3</mm_progress>
 								</mm_div>
 							</mm_body>
 						</mm_block>

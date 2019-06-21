@@ -34,7 +34,7 @@
 											</mm_desc>
 										</mm_main>
 									</mm_item>
-									<mm_item url="http://www.elins.cn">
+									<mm_item url="./cny_panel">
 										<mm_side>
 											<mm_icon class="linear_success" src="<i class='fa fa-rmb'></i>"></mm_icon>
 										</mm_side>
@@ -44,7 +44,7 @@
 											</mm_desc>
 										</mm_main>
 									</mm_item>
-									<mm_item url="http://www.elins.cn">
+									<mm_item url="./btc_panel">
 										<mm_side>
 											<mm_icon class="linear_yellow" src="<i class='fa fa-btc'></i>"></mm_icon>
 										</mm_side>
@@ -88,7 +88,7 @@
 <style>
 	#assets_index .unit {
 		margin-left: 0.25rem;
-		font-size: 1rem;
+		font-size: 0.875rem;
 	}
 
 	.income {
@@ -101,7 +101,7 @@
 	}
 	
 	.income .mm_title { font-weight: 600; }
-	.income .mm_desc { font-size: 0.875rem; }
+	.income .mm_desc { font-size: 0.675rem; color: #f5f5f5; }
 
 	/* 	.val {
 		margin-right: 0.5rem;

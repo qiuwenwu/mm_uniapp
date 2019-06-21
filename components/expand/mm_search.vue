@@ -30,5 +30,5 @@
 		border-radius: 0.25rem;
 		padding: 0.125rem 0.5rem;
 	}
-	.mm_search { font-size: 0.75rem; }
+	.mm_search { font-size: 0.625rem; }
 </style>

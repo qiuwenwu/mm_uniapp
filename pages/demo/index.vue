@@ -44,7 +44,7 @@
 							</mm_body>
 							<mm_foot class="bt">
 								<mm_div class="center">
-									622位联系人
+									<mm_desc>622位联系人</mm_desc>
 								</mm_div>
 							</mm_foot>
 						</mm_block>

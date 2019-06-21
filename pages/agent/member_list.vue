@@ -8,24 +8,24 @@
 						<mm_block>
 							<mm_body class="lr">
 								<mm_list col="1" class="big">
-									<mm_item url="/pages/info/index">
+									<mm_item url="/pages/agent/member_list_next">
 										<mm_side class="headimg">
 											<mm_icon src="/static/img/headimg.jpg"></mm_icon>
 										</mm_side>
-										<mm_main>
-											<mm_title>昵称</mm_title>
-											<mm_desc><text class="vip">VIP4</text></mm_desc>
+										<mm_main class="arrow">
 											<mm_tip><view class="people">邀请人数 <text class="num">5</text></view><view class="count">持有DBD<text class="num">66</text></view></mm_tip>
+											<mm_title>昵称</mm_title>
+											<mm_desc><text class="vip">VIP3</text></mm_desc>
 										</mm_main>
 									</mm_item>
-									<mm_item url="/pages/info/index">
+									<mm_item url="/pages/agent/member_list_next">
 										<mm_side class="headimg">
 											<mm_icon src="/static/img/headimg.jpg"></mm_icon>
 										</mm_side>
-										<mm_main>
-											<mm_title>昵称</mm_title>
-											<mm_desc><text class="vip">VIP4</text></mm_desc>
+										<mm_main class="arrow">
 											<mm_tip><view class="people">邀请人数 <text class="num">5</text></view><view class="count">持有DBD<text class="num">66</text></view></mm_tip>
+											<mm_title>昵称</mm_title>
+											<mm_desc><text class="vip">VIP2</text></mm_desc>
 										</mm_main>
 									</mm_item>
 								</mm_list>
@@ -52,7 +52,8 @@
 </script>
 
 <style>
-	.mm_tip { position: absolute; top:0.5rem; right: 1rem; color: #666; font-size: 0.875rem; }
-	.mm_tip>* { margin-top: 0.125rem; }
-	.num { float: right;  }
+	.mm_tip { float: right; color: #999; font-size: 85%; }
+	.people { margin-bottom: 0.05rem; }
+	.count { margin-top: 0.4rem; }
+	.num { float: right; width: 1.5rem; text-align: right; color: #999; margin-right: 0.5rem; font-weight: 400;  }
 </style>

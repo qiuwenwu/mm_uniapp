@@ -44,13 +44,13 @@
 	}
 
 	.ad_title {
-		font-size: 0.75rem;
+		font-size: 0.625rem;
 		display: block;
 		margin-top: 0.25rem;
 	}
 
 	.ad_desc {
-		font-size: 0.625rem;
+		font-size: 0.5rem;
 		color: #999;
 	}
 

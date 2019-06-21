@@ -81,7 +81,7 @@
 	.approve {
 		text-align: center;
 		padding-bottom: 2rem;
-		font-size: 0.875rem;
+		font-size: 0.75rem;
 	}
 	.approve navigator {
 		display: inline-block;

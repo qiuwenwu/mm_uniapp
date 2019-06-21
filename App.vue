@@ -47,21 +47,13 @@
 	}
 
 	.dbd .mm_icon {
-		width: 5.625rem;
-		height: 4.625rem;
-	}
-
-	.introduce .mm_title {
-		font-size: 1.25rem;
-	}
-
-	.introduce .price {
-		font-size: 1rem;
+		width: 5rem;
+		height: 3.75rem;
 	}
 
 	.introduce .price:before {
 		content: "￥";
-		font-size: .75rem;
+		font-size: 80%;
 	}
 
 	.introduce .days {
@@ -162,6 +154,7 @@
 
 	.collect [class*=fa-heart] {
 		color: #F12F04;
+		padding: 2px;
 	}
 
 	.vip {
@@ -169,8 +162,8 @@
 		position: relative;
 		top: -1px;
 		font-size: 0.5rem;
-		height: 1.1rem;
-		line-height: 1.25rem;
+		height: 0.875rem;
+		line-height: 1rem;
 		padding: 0 0.25rem;
 		border-radius: 0.125rem;
 		color: #fff;
@@ -180,4 +173,10 @@
 
 	/* .mm_head { background: #fff0f1; } */
 	/* .mm_head { border-bottom: 1px solid rgba(255, 90, 106, 0.1); } */
+	.pn-tb .mm_block, .pn-t .mm_block { border-top: none; }
+	
+	.uni-input { font-size: 0.875rem !important; line-height: 1.5 !important; }
+	.dbd_item .price { font-size: 0.75rem; }
+	
+	text ~ .unit { margin-left: 0.25rem; }
 </style>

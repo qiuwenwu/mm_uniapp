@@ -6,17 +6,23 @@
 					<mm_col>
 						<mm_block>
 							<!-- 礼包展示 -->
-							<mm_body class="tb">
-								<mm_list col="1">
+							<mm_body class="lr">
+								<mm_list col="1" class="mini">
 									<mm_item>
 										<mm_side class="dbd_view">
-											<mm_icon src="/static/img/pay_qrcode_wechat.png"></mm_icon>
+											<mm_icon src="http://img.sccnn.com/bimg/334/0957.jpg"></mm_icon>
 										</mm_side>
 									</mm_item>
-									<mm_item class="mini">
+									<mm_item>
 										<mm_main class="bt">
-											<mm_title>余额</mm_title>
+											<mm_title>价格</mm_title>
 											<mm_desc class="price"><text class="unit">￥</text>389.65</mm_desc>
+										</mm_main>
+									</mm_item>
+									<mm_item>
+										<mm_main>
+											<mm_title>有效时长</mm_title>
+											<mm_desc><text>365</text><text class="unit">天</text></mm_desc>
 										</mm_main>
 									</mm_item>
 								</mm_list>

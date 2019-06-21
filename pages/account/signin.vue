@@ -99,7 +99,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		font-size: 0.875rem;
+		font-size: 0.75rem;
 	}
 
 	#account_signin .mm_input {
@@ -114,7 +114,7 @@
 		left: 0;
 		top: 0;
 		color: #FF5A6A;
-		font-size: 0.75rem;
+		font-size: 0.625rem;
 		transform: translate(0, 0);
 		transition: all 0.2s ease-in-out;
 		opacity: 1;
@@ -122,7 +122,7 @@
 
 	.actoin.hide {
 		transform: translate(0, 1rem);
-		font-size: 0.875rem;
+		font-size: 0.75rem;
 		opacity: 0;
 	}
 

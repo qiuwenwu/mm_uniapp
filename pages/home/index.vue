@@ -168,7 +168,7 @@
 
 	.copyright {
 		color: rgba(0, 0, 0, 0.3);
-		font-size: 18upx;
+		font-size: 0.625rem;
 	}
 
 	.footer {
@@ -178,13 +178,9 @@
 
 	.footer_link {
 		color: #576B95;
-		font-size: 24upx;
+		font-size: 85%;
 	}
 
-	.calculation_title {
-		padding: 16upx 32upx;
-		font-size: 28upx;
-	}
 
 	.hot_icon {
 		padding-top: 0;
@@ -211,5 +207,5 @@
 		text-align: center;
 	}
 	
-	.dbd .mm_head .mm_title { color: #FF5A6A; }
+	.dbd .mm_head .mm_title { color: #333; }
 </style>

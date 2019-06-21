@@ -52,7 +52,7 @@
 	}
 
 	.progress_warp {
-		padding-top: 1.75rem;
+		padding-top: 1.5rem;
 		overflow: hidden;
 		position: relative;
 	}
@@ -79,12 +79,12 @@
 	.progress_pointer:after {
 		content: "";
 		display: block;
-		margin: 0.25rem auto;
+		margin: 0.2rem auto;
 		width: 0;
 		height: 3;
-		border-right: .3rem solid transparent;
-		border-top: .5rem solid #999;
-		border-left: .3rem solid transparent;
+		border-right: .2rem solid transparent;
+		border-top: .4rem solid #999;
+		border-left: .2rem solid transparent;
 	}
 
 	.progress_value {

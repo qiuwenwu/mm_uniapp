@@ -6,7 +6,7 @@
 	<view class="mm_div" @click="openBrowser()" v-else-if="url.indexOf('//') !== -1">
 		<slot></slot>
 	</view>
-	<navigator class="mm_div" :url="url" hover-class="navigator-hover" v-else>
+	<navigator class="mm_div" :url="url" v-else>
 		<slot></slot>
 	</navigator>
 </template>

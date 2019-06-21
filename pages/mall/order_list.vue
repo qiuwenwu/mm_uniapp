@@ -17,7 +17,7 @@
 					</mm_col>
 					<mm_col class="pn-t">
 						<mm_block>
-							<mm_head style="border-top: 1px solid rgba(0,0,0,0.1);">
+							<mm_head>
 								<mm_title>订单数量：88</mm_title>
 							</mm_head>
 						</mm_block>
@@ -49,8 +49,8 @@
 							</mm_body>
 							<mm_foot class="bt">
 								<mm_group class="small">
-									<mm_btn type="default-x">取消订单</mm_btn>
-									<mm_btn type="warning-x">继续支付</mm_btn>
+									<mm_btn>取消订单</mm_btn>
+									<mm_btn type="default-x">继续支付</mm_btn>
 								</mm_group>
 							</mm_foot>
 						</mm_block>

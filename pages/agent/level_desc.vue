@@ -15,7 +15,7 @@
 					<mm_col>
 						<mm_block>
 							<mm_head class="font_small">
-								<mm_title>等级3 升级条件</mm_title>
+								<mm_title>等级4 升级条件</mm_title>
 							</mm_head>
 							<mm_body class="lr">
 								<mm_list col="1" class="mini">
@@ -127,7 +127,7 @@
 
 <style>
 	.ll {
-		font-size: 0.875rem;
+		font-size: 0.75rem;
 	}
 	.ll .mm_desc {
 		color: #333;

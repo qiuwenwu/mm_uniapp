@@ -98,6 +98,6 @@
 		right: 1rem;
 		top: 50%;
 		transform: translate(0, -50%);
-		font-size: 1rem;
+		font-size: 0.875rem;
 	}
 </style>

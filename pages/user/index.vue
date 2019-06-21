@@ -17,7 +17,7 @@
 											<mm_icon src="/static/img/headimg.jpg"></mm_icon>
 										</mm_side>
 										<mm_main class="arrow">
-											<mm_title><text>昵称</text><text class="vip">VIP4</text></mm_title>
+											<mm_title><text>昵称</text><text class="vip">VIP3</text></mm_title>
 											<mm_desc>账号:15817188815</mm_desc>
 										</mm_main>
 									</mm_item>

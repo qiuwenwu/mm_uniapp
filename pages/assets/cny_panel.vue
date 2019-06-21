@@ -20,16 +20,16 @@
 								<mm_title class="font_small"><text class="font_success">请确认提现的微信收款二维码</text></mm_title>
 							</mm_head>
 							<!-- 二维码展示 -->
-							<mm_body class="tb">
-								<mm_list col="1">
+							<mm_body class="lr">
+								<mm_list col="1" class="mini">
 									<mm_item>
 										<mm_side class="qrcode">
 											<mm_icon src="/static/img/pay_qrcode_wechat.png"></mm_icon>
 										</mm_side>
 									</mm_item>
-									<mm_item class="mini">
+									<mm_item>
 										<mm_main class="bt">
-											<mm_title>余额</mm_title>
+											<mm_title>CNY余额</mm_title>
 											<mm_desc class="price"><text class="unit">￥</text>389.65</mm_desc>
 										</mm_main>
 									</mm_item>

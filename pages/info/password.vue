@@ -7,13 +7,33 @@
 			<mm_warp>
 				<!-- 栅格 -->
 				<mm_grid col="1" class="space-x">
-					<mm_col>
+					<mm_col class="pn-b">
 						<mm_block>
 							<mm_head>
-								<mm_title class="font_small"><text>手机号码</text></mm_title>
+								<mm_title class="font_small"><text>原始密码</text></mm_title>
+							</mm_head>
+							<mm_body>
+								<mm_input type="number" v-model="form.password" desc="当前登录的密码"></mm_input>
+							</mm_body>
+						</mm_block>
+					</mm_col>
+					<mm_col class="pn-tb">
+						<mm_block>
+							<mm_head>
+								<mm_title class="font_small"><text>新的密码</text></mm_title>
 							</mm_head>
 							<mm_body>
 								<mm_input type="number" v-model="form.password" desc="由11位数字组成"></mm_input>
+							</mm_body>
+						</mm_block>
+					</mm_col>
+					<mm_col class="pn-t">
+						<mm_block>
+							<mm_head>
+								<mm_title class="font_small"><text>确认密码</text></mm_title>
+							</mm_head>
+							<mm_body>
+								<mm_input type="number" v-model="form.password" desc="请再输入一次新密码"></mm_input>
 							</mm_body>
 						</mm_block>
 					</mm_col>
@@ -46,5 +66,5 @@
 </script>
 
 <style>
-	
+
 </style>
