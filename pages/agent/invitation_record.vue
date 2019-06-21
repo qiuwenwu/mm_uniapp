@@ -17,8 +17,8 @@
 											<mm_desc>
 												5月20日 10:50
 											</mm_desc>
-											<mm_desc class="acount">
-												<text class="price">+40.00</text>
+											<mm_desc class="font_success">
+												<text>+10.00</text><text class="unit">元</text>
 											</mm_desc>
 										</mm_main>
 									</mm_item>
@@ -28,8 +28,8 @@
 											<mm_desc>
 												5月20日 10:50
 											</mm_desc>
-											<mm_desc class="acount">
-												<text class="price">+10.00</text>
+											<mm_desc class="font_success">
+												<text>+10.00</text><text class="unit">元</text>
 											</mm_desc>
 										</mm_main>
 									</mm_item>
@@ -44,14 +44,14 @@
 							</mm_head>
 							<mm_body class="lr">
 								<mm_list col="1">
-										<mm_item class="big">
+									<mm_item class="big">
 										<mm_main>
 											<mm_title>自己邀请</mm_title>
 											<mm_desc>
 												5月20日 10:50
 											</mm_desc>
-											<mm_desc class="acount">
-												<text class="price">+40.00</text>
+											<mm_desc class="font_success">
+												<text>+10.00</text><text class="unit">元</text>
 											</mm_desc>
 										</mm_main>
 									</mm_item>
@@ -61,8 +61,8 @@
 											<mm_desc>
 												5月20日 10:50
 											</mm_desc>
-											<mm_desc class="acount">
-												<text class="price">+10.00</text>
+											<mm_desc class="font_success">
+												<text>+10.00</text><text class="unit">元</text>
 											</mm_desc>
 										</mm_main>
 									</mm_item>
@@ -93,11 +93,12 @@
 </script>
 
 <style>
-	.acount {
+	.font_success {
 		position: absolute;
 		right: 1rem;
 		top: 50%;
 		transform: translate(0, -50%);
 		font-size: 0.875rem;
+		font-weight: 600;
 	}
 </style>

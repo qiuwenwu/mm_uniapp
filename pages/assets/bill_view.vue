@@ -6,33 +6,39 @@
 					<mm_col>
 						<mm_block>
 							<mm_head class='bill_title'>
-								<mm_title>爱奇艺VIP自动续费</mm_title>
-								<mm_desc>爱奇艺</mm_desc>
+								<mm_title>DBD礼包套餐</mm_title>
+								<mm_desc>比特中心</mm_desc>
 							</mm_head>
 							<mm_body class="ll">
 								<mm_list col="1" class="small">
 									<mm_item>
 										<mm_main>
-											<mm_title>当前状态</mm_title>
-											<mm_desc>生效中</mm_desc>
+											<mm_title>订单状态</mm_title>
+											<mm_desc class="font_dark">待付款</mm_desc>
 										</mm_main>
 									</mm_item>
 									<mm_item>
 										<mm_main>
-											<mm_title>签约时间</mm_title>
-											<mm_desc>2018-08-07 19:07</mm_desc>
+											<mm_title>下单时间</mm_title>
+											<mm_desc>2019-06-15 19:07</mm_desc>
 										</mm_main>
 									</mm_item>
 									<mm_item>
 										<mm_main>
-											<mm_title>签约账号</mm_title>
+											<mm_title>订单编号</mm_title>
 											<mm_desc>1600438706</mm_desc>
 										</mm_main>
 									</mm_item>
 									<mm_item>
 										<mm_main>
-											<mm_title>扣款方式</mm_title>
-											<mm_desc>零钱<text class="font_info">修改</text></mm_desc>
+											<mm_title>购买数量</mm_title>
+											<mm_desc>10</mm_desc>
+										</mm_main>
+									</mm_item>
+									<mm_item>
+										<mm_main>
+											<mm_title>付款方式</mm_title>
+											<mm_desc>btc余额<text class="font_info">修改</text></mm_desc>
 										</mm_main>
 									</mm_item>
 									<mm_item>
@@ -53,16 +59,16 @@
 					</mm_col>
 					<mm_col>
 						<mm_group>
-							<mm_btn type="warning-x" class="font_small">关闭服务</mm_btn>
+							<mm_btn type="warning-x" class="font_small">关闭</mm_btn>
 						</mm_group>
 					</mm_col>
-					<mm_col>
+					<!-- 	<mm_col>
 						<mm_div id="gb_btn">
 							<view class="agreement">
 								查看<view>《扣除授权确认书》</view>
 							</view>
 						</mm_div>
-					</mm_col>
+					</mm_col> -->
 				</mm_grid>
 			</mm_warp>
 		</mm_bodyer>
@@ -85,7 +91,7 @@
 <style>
 	.bill_title {
 		background: #fff;
-		border-bottom: 1px solid rgba(0,0,0,0.1);
+		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 		text-align: center;
 		padding: 1rem 0;
 	}
@@ -98,18 +104,23 @@
 		font-size: 0.75rem;
 		color: #333;
 	}
-	
-	#assets_bill_view .font_info { margin-left: 0.5rem; }
-	
-	
-	.agreement{
+
+	#assets_bill_view .font_info {
+		margin-left: 0.5rem;
+	}
+
+
+	.agreement {
 		margin-top: 1rem;
 		display: flex;
 		justify-content: center;
 		font-size: .6rem;
 		color: #999999;
 	}
-	.agreement view{
+
+	.agreement view {
 		color: #4c838a;
-	};
+	}
+
+	;
 </style>

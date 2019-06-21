@@ -11,6 +11,8 @@ button:focus {outline:none;}
 select {/*Chrome和Firefox里面的边框是不一样的，所以复写了一下*//*很关键：将默认的select选择框样式清除*/appearance:none;-moz-appearance:none;-webkit-appearance:none;/*为下拉小箭头留出一点位置，避免被文字覆盖*/padding-left:.5rem;padding-right:1.25rem;/*在选择框的最右侧中间显示小箭头图片*/background:url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll right center transparent;}
 select::-ms-expand {display:none;}
 
+image { width: 100%; }
+
 /* 字体大小 */
 body { font-size: 0.875rem; }
 h1,.h1 {font-size:2.5rem;}
@@ -125,14 +127,15 @@ dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {font-weight:500;}
 
 /* === 布局 === */
 /* 容器 */
+.mm_header { position: fixed; z-index: 10; left:0; right:0; top: 44px; width: 100%; }
 .mm_page {display:block;}
-.mm_footer { position: fixed; left:0; right:0; width: 100%; bottom: 0; }
+.mm_footer { position: fixed; z-index: 10; left:0; right:0; bottom: 0; width: 100%; }
 .mm_header:before,.mm_header:after {display:block;content:"";clear:both;float:none;}
 .mm_bodyer:before,.mm_bodyer:after {display:block;content:"";clear:both;float:none;}
 .mm_footer:before,.mm_footer:after {display:block;content:"";clear:both;float:none;}
 .mm_warp:before,.mm_warp:after {display:block;content:"";clear:both;float:none;}
 .mm_warp { display:block;width:100%;max-width:77rem;margin:0 auto;position:relative; }
-
+.html { padding: 0.875rem; }
 
 /* 模态窗 */
 .mm_modal {display:none;position:fixed;z-index:30;top:0;left:0;right:0;bottom:0;width:100%;height:100%;}
@@ -220,11 +223,9 @@ dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {font-weight:500;}
 .lr .small .mm_title,.rl .small .mm_title { padding: 0.25rem 0; }
 .ll .small { font-size: 0.75rem; }
 
-/* 提示 */
-
 
 /* 左布局 */
-.ll { padding: 1rem 0.5rem; }
+.ll { padding: 0.75rem 0; }
 
 
 /* 徽章 */
@@ -319,7 +320,12 @@ dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {font-weight:500;}
 .mm_code .mm_group { float: right; border-top: 1px solid #EDEDED; border-left: 1px solid #EDEDED; position: relative; z-index: 2; }
 
 /* == 适配环境 == */
-
+@media (max-width: 415px) {
+	.space-x {margin-left: 0; margin-right: 0;}
+	.space_big-x {margin-left: 0; margin-right: 0;}
+	.space-x.mm_grid_1 .mm_col { padding-left: 0; padding-right: 0; }
+	.space_big-x.mm_grid_1 .mm_col { padding-left: 0.5rem; padding-right: 0.5rem; }
+}
 
 @media (min-width: 415px) {
 	 html {font-size:16px !important;}
@@ -335,9 +341,9 @@ dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {font-weight:500;}
 }
 
 @media (device-height:667px) and (-webkit-min-device-pixel-ratio:2){/* 兼容iphone6 */
-  .class{}
+  .class{ }
 }
 
 @media (device-height:736px) and (-webkit-min-device-pixel-ratio:2){/* 兼容iphone6 Plus */
-  .class{}
+  .class{ }
 }

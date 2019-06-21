@@ -20,11 +20,29 @@
 								<mm_title>课程</mm_title>
 							</mm_head>
 							<mm_body class="lr">
-								<mm_list_article :list="list" class="big" id="mm_list_article"></mm_list_article>
+								<mm_list_article :list="list" class="big"></mm_list_article>
 							</mm_body>
 							<mm_foot class="bt">
 								<mm_div class="center">
-									一共收藏15篇
+									<mm_desc>已收藏15篇</mm_desc>
+								</mm_div>
+							</mm_foot>
+						</mm_block>
+					</mm_col>
+
+					<!-- 格子 -->
+					<mm_col v-if="list_news.length > 0">
+						<!-- 文章列表 -->
+						<mm_block>
+							<mm_head class="font_small">
+								<mm_title>新闻</mm_title>
+							</mm_head>
+							<mm_body class="rl">
+								<mm_list_news :list="list_news" class="big"></mm_list_news>
+							</mm_body>
+							<mm_foot class="bt">
+								<mm_div class="center">
+									<mm_desc>已收藏15篇</mm_desc>
 								</mm_div>
 							</mm_foot>
 						</mm_block>
@@ -53,20 +71,25 @@
 						title: "这是一文章",
 						desc: "测试",
 						icon: "/static/img/banner3.jpg",
-						url: "/pages/mall/product_list"
+						createTime: "2019-06-21",
+						url: "/pages/home/article_view?aid=3"
 					},
 					{
 						title: "这是一文章",
 						desc: "测试",
 						icon: "/static/img/banner3.jpg",
-						url: "/pages/mall/product_list"
-					}, {
+						createTime: "2019-06-21",
+						url: "/pages/home/article_view?aid=2"
+					},
+					{
 						title: "这是一文章",
 						desc: "测试",
 						icon: "/static/img/banner3.jpg",
-						url: "/pages/mall/product_list"
+						createTime: "2019-06-21",
+						url: "/pages/home/article_view?aid=1"
 					}
-				]
+				],
+				list_news: []
 			}
 		}
 	}

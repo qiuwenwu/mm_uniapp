@@ -116,14 +116,14 @@
 					{
 						aid: 2,
 						title: "这是一文章",
-						icon: "/static/img/banner3.jpg",
+						icon: "/static/img/banner2.jpg",
 						url: "/pages/home/article_view?aid=2",
 						createTime: "2019-06-19",
 						collect: 936
 					}, {
 						aid: 1,
 						title: "这是一文章",
-						icon: "/static/img/banner3.jpg",
+						icon: "/static/img/banner1.jpg",
 						url: "/pages/home/article_view?aid=1",
 						createTime: "2019-06-18",
 						collect: 50

@@ -1,11 +1,6 @@
 <template>
 	<!-- 文章详情页面 -->
 	<view class="page_home" id="home_article_view">
-		<!-- 页头 -->
-		<mm_header>
-			<!-- 外套 -->
-			<mm_warp></mm_warp>
-		</mm_header>
 		<!-- 页主体 -->
 		<mm_bodyer>
 			<!-- 外套 -->

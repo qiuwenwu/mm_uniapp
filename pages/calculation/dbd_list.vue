@@ -6,11 +6,11 @@
 					<mm_col class="pn-b">
 						<mm_block>
 							<mm_body>
-								<mm_list id="tabs" col="4" class="space">
-									<mm_item :class="{'active': query.state === '0' }" url="./dbd_list?state=0">未开启</mm_item>
-									<mm_item :class="{'active': query.state === '1' }" url="./dbd_list?state=1">已生效</mm_item>
-									<mm_item :class="{'active': query.state === '3' }" url="./dbd_list?state=3">待回购</mm_item>
-									<mm_item :class="{'active': query.state === '4' }" url="./dbd_list?state=4">已回购</mm_item>
+								<mm_list id="tabs" col="4" class="space_big">
+									<mm_item :class="{'active': query.state === '0' }" @click.native="query.state = '0'">未开启</mm_item>
+									<mm_item :class="{'active': query.state === '1' }" @click.native="query.state = '1'">已生效</mm_item>
+									<mm_item :class="{'active': query.state === '2' }" @click.native="query.state = '2'">待回购</mm_item>
+									<mm_item :class="{'active': query.state === '3' }" @click.native="query.state = '3'">已回购</mm_item>
 								</mm_list>
 							</mm_body>
 						</mm_block>
@@ -32,7 +32,7 @@
 											<mm_desc>未开启</mm_desc>
 										</mm_main>
 									</mm_item>
-									<mm_item class="big" url="./dbd_view?did=1">
+									<mm_item class="big" url="./dbd_panel?did=1">
 										<mm_side>
 											<mm_icon src="http://img.sccnn.com/bimg/334/0957.jpg"></mm_icon>
 										</mm_side>
@@ -59,7 +59,7 @@
 											<mm_desc>未开启</mm_desc>
 										</mm_main>
 									</mm_item>
-									<mm_item class="big" url="./dbd_view?did=1">
+									<mm_item class="big" url="./dbd_panel?did=1">
 										<mm_side>
 											<mm_icon src="http://img.sccnn.com/bimg/334/0957.jpg"></mm_icon>
 										</mm_side>

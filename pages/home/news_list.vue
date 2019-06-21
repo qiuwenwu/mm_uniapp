@@ -1,11 +1,6 @@
 <template>
 	<!-- 新闻列表页 -->
 	<view class="page_home" id="home_news_list">
-		<!-- 页头 -->
-		<mm_header>
-			<!-- 外套 -->
-			<mm_warp></mm_warp>
-		</mm_header>
 		<!-- 页主体 -->
 		<mm_bodyer>
 			<!-- 外套 -->
@@ -13,35 +8,11 @@
 				<!-- 栅格 -->
 				<mm_grid col="1" class="space-x">
 					<!-- 格子 -->
-					<mm_col class="pn-b">
-						<!-- 热点文章 —— 图片轮播 -->
-						<mm_block>
-							<mm_swiper_img :list="list_img" />
-						</mm_block>
-					</mm_col>
-					<!-- 格子 -->
-					<mm_col class="pn-t">
-						<!-- 热点文章 —— 图片轮播 -->
-						<mm_block>
-							<mm_swiper_text :list="list_text" />
-						</mm_block>
-					</mm_col>
-					<!-- 格子 -->
-					<mm_col>
-						<!-- 文章筛选面板 -->
-						<mm_block> </mm_block>
-					</mm_col>
-					<!-- 格子 -->
-					<mm_col>
-						<!-- 文章排序条件 -->
-						<mm_block></mm_block>
-					</mm_col>
-					<!-- 格子 -->
 					<mm_col>
 						<!-- 文章列表 -->
 						<mm_block>
-							<mm_body class="lr">
-								<mm_list_article :list="list" class="big" id="mm_list_article"></mm_list_article>
+							<mm_body class="rl">
+								<mm_list_news :list="list" class="big"></mm_list_news>
 							</mm_body>
 						</mm_block>
 					</mm_col>
@@ -65,7 +36,28 @@
 		components: {},
 		data() {
 			return {
-				oauth: false
+				oauth: false,
+				list: [{
+						title: "这是一文章",
+						desc: "测试",
+						icon: "/static/img/banner3.jpg",
+						createTime: "2019-05-19",
+						url: "/pages/home/news_view?aid=3"
+					},
+					{
+						title: "这是一文章",
+						desc: "测试",
+						icon: "/static/img/banner2.jpg",
+						createTime: "2019-04-01",
+						url: "/pages/home/news_view?aid=2"
+					}, {
+						title: "这是一文章",
+						desc: "测试",
+						icon: "/static/img/banner1.jpg",
+						createTime: "2019-03-26",
+						url: "/pages/home/news_view?aid=1"
+					}
+				]
 			}
 		}
 	}

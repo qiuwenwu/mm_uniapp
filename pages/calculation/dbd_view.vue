@@ -16,7 +16,7 @@
 									<mm_item>
 										<mm_main class="bt">
 											<mm_title>价格</mm_title>
-											<mm_desc class="price"><text class="unit">￥</text>389.65</mm_desc>
+											<mm_desc class="price"><text class="unit">￥</text>298.00</mm_desc>
 										</mm_main>
 									</mm_item>
 									<mm_item>
@@ -27,6 +27,49 @@
 									</mm_item>
 								</mm_list>
 							</mm_body>
+						</mm_block>
+					</mm_col>
+					<mm_col class="pn-b">
+						<mm_block>
+							<mm_body>
+								<mm_list id="tabs" col="2" class="space_big">
+									<mm_item :class="{'active': state == '0' }" @click.native="state = '0'">产品描述</mm_item>
+									<mm_item :class="{'active': state == '1' }" @click.native="state = '1'">法律声明</mm_item>
+								</mm_list>
+							</mm_body>
+						</mm_block>
+					</mm_col>
+					<!-- 格子 -->
+					<mm_col class="pn-t">
+						<!-- 公告列表 -->
+						<mm_block v-show="state == '0'">
+							<mm_div class="html">
+								<text>365天的0.5T算力（含所有费用），价值￥300元</text>
+								<image src="https://axure-file.lanhuapp.com/94d81de6-5cf3-438d-9714-a1fddaeef867__bec6cca7b4d8b79709eeda362fa8ed8d"></image>
+								<view>注：1.开启后即可进行挖矿，每天产生BTC；</view>
+								<view>2.算力稳步上升，一周调整一次。</view>
+							   <view>3.每天签到后即可获得当天的挖矿收益。</view>
+							</mm_div>
+						</mm_block>
+						<mm_block v-show="state == '1'">
+							<mm_div class="pa">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor
+								sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus
+								et
+								magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis
+								tellus mollis orci, sed rhoncus sapien nunc eget.
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor
+								sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus
+								et
+								magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis
+								tellus mollis orci, sed rhoncus sapien nunc eget.
+
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor
+								sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus
+								et
+								magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis
+								tellus mollis orci, sed rhoncus sapien nunc eget.
+							</mm_div>
 						</mm_block>
 					</mm_col>
 				</mm_grid>
@@ -54,7 +97,7 @@
 		mixins: [mixin],
 		data() {
 			return {
-				state: 0
+				state: '0'
 			}
 		},
 		methods: {
@@ -78,4 +121,5 @@
 		height: 8rem;
 		margin: auto !important;
 	}
+	.mm_bodyer { margin-bottom: 3rem; }
 </style>

@@ -45,37 +45,37 @@
 				},
 				list_img: [{
 						img: "/static/img/banner1.jpg",
-						url: "/pages/mall/product_list"
+						url: "/pages/home/article_view?aid=1"
 					},
 					{
 						img: "/static/img/banner2.jpg",
-						url: "/pages/mall/product_list"
+						url: "/pages/home/article_view?aid=2"
 					},
 					{
 						img: "/static/img/banner3.jpg",
-						url: "/pages/mall/product_list"
+						url: "/pages/home/article_view?aid=3"
 					},
 					{
 						img: "/static/img/banner4.jpg",
-						url: "/pages/mall/product_list"
+						url: "/pages/home/article_view?aid=4"
 					}
 				],
 				list: [{
 						title: "这是一文章",
 						desc: "测试",
 						icon: "/static/img/banner3.jpg",
-						url: "/pages/mall/product_list"
+						url: "/pages/home/article_view?aid=3"
 					},
 					{
 						title: "这是一文章",
 						desc: "测试",
-						icon: "/static/img/banner3.jpg",
-						url: "/pages/mall/product_list"
+						icon: "/static/img/banner2.jpg",
+						url: "/pages/home/article_view?aid=2"
 					}, {
 						title: "这是一文章",
 						desc: "测试",
-						icon: "/static/img/banner3.jpg",
-						url: "/pages/mall/product_list"
+						icon: "/static/img/banner1.jpg",
+						url: "/pages/home/article_view?aid=1"
 					}
 				]
 			}

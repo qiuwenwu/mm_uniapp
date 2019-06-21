@@ -17,7 +17,7 @@
 						<mm_block>
 							<!-- 提示 -->
 							<mm_head>
-								<mm_title class="font_small"><text class="font_warning">请确认收笔地址是否正确</text></mm_title>
+								<mm_title class="font_small"><text class="font_success">请确认收币地址是否正确</text></mm_title>
 							</mm_head>
 							<!-- 二维码展示 -->
 							<mm_body class="lr">
@@ -42,21 +42,21 @@
 					<mm_col>
 						<mm_block>
 							<mm_head>
-								<mm_title class="font_small">提现额度</mm_title>
+								<mm_title class="font_small">提币数量</mm_title>
 							</mm_head>
 							<mm_body>
-								<mm_input v-model="form.money" desc="请输入提现额度"></mm_input>
+								<mm_input v-model="form.money" desc="请输入提币数量"></mm_input>
 							</mm_body>
 						</mm_block>
 					</mm_col>
 					<mm_col>
 						<!-- 提交按钮 -->
 						<mm_div>
-							<mm_btn class="full" type="default" @click.native="show = true">提现</mm_btn>
+							<mm_btn class="full" type="default" @click.native="show = true">提币</mm_btn>
 						</mm_div>
 					</mm_col>
 					<mm_col class="pn-t">
-						<mm_div class="center" url="./withdraw_record"><text class="font_small font_info">提现记录</text></mm_div>
+						<mm_div class="center" url="./btc_record"><text class="font_small font_info">提币记录</text></mm_div>
 					</mm_col>
 				</mm_grid>
 			</mm_warp>

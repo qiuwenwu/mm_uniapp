@@ -8,7 +8,7 @@
 
 /* 元素 */
 .unit { font-size: 85%; }
-.mm_item .time { position: absolute; top: 0.625rem; right: 0.875rem; font-size: 85%; color: #999; }
+.mm_main>.time { position: absolute; top: 0.625rem; right: 0.875rem; font-size: 85%; color: #999; }
 
 /* 二维码 */
 .mm_qrcode {

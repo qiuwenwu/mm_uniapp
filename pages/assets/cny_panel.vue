@@ -55,7 +55,7 @@
 						</mm_div>
 					</mm_col>
 					<mm_col class="pn-t">
-						<mm_div class="center" url="./withdraw_record"><text class="font_small font_info">提现记录</text></mm_div>
+						<mm_div class="center" url="./cny_record"><text class="font_small font_info">提现记录</text></mm_div>
 					</mm_col>
 				</mm_grid>
 			</mm_warp>

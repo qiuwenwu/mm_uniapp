@@ -10,6 +10,9 @@
 		},
 		onShow: function() {
 			console.log('应用显示')
+			// var mo=function(e){e.preventDefault();};
+			// document.body.style.overflow = 'hidden';
+			// document.addEventListener("touchmove", mo, false); //禁止页面滑动
 		},
 		onHide: function() {
 			console.log('应用隐藏')
@@ -23,7 +26,11 @@
 <style>
 	/* ===  每个页面公共css  === */
 	.uni-page-head-btn {
-		top: 0.25rem
+		top: 50%;
+		left: 0.5rem;
+		line-height: 1;
+		margin: 0;
+		transform: translateY(-50%);
 	}
 
 	.navigator-hover {
@@ -148,7 +155,7 @@
 		color: #FF5A6A;
 	}
 
-	.collect [class*=fa-heart] ~ text {
+	.collect [class*=fa-heart]~text {
 		margin-left: 0.25rem;
 	}
 
@@ -173,10 +180,32 @@
 
 	/* .mm_head { background: #fff0f1; } */
 	/* .mm_head { border-bottom: 1px solid rgba(255, 90, 106, 0.1); } */
-	.pn-tb .mm_block, .pn-t .mm_block { border-top: none; }
+	.pn-tb .mm_block,
+	.pn-t .mm_block {
+		border-top: none;
+	}
+
+	.uni-input {
+		font-size: 0.875rem !important;
+		line-height: 1.5 !important;
+	}
+
+	.dbd_item .price {
+		font-size: 0.75rem;
+	}
+
+	text~.unit {
+		margin-left: 0.25rem;
+	}
+
+	uni-page {
+		height: initial;
+		overflow-y: hidden;
+		width: 100%;
+	}
 	
-	.uni-input { font-size: 0.875rem !important; line-height: 1.5 !important; }
-	.dbd_item .price { font-size: 0.75rem; }
-	
-	text ~ .unit { margin-left: 0.25rem; }
+	uni-page-head .uni-page-head {
+		padding-left: 0;
+		padding-right: 0;
+	}
 </style>

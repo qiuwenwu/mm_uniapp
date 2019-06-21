@@ -1,49 +1,126 @@
 <template>
 	<!-- 订单详情页面 -->
-	<view class="page" id="user_order_view">
-		<!-- 页头 -->
-		<mm_header>
-			<!-- 外套 -->
-			<mm_warp></mm_warp>
-		</mm_header>
-		<!-- 页主体 -->
+	<view class="page_mall" id="mall_order_view">
 		<mm_bodyer>
-			<!-- 外套 -->
 			<mm_warp>
-				<!-- 栅格 -->
 				<mm_grid col="1" class="space-x">
-					<!-- 格子 -->
 					<mm_col>
-						<!--  -->
 						<mm_block>
-							<mm_head>
-								<mm_title class="font_small">简约</mm_title>
+							<mm_head class='bill_title'>
+								<mm_title>DBD豪华礼包套餐</mm_title>
+								<mm_desc>比特中心</mm_desc>
 							</mm_head>
-							<mm_body class="lr"></mm_body>
-							<mm_foot></mm_foot>
+							<mm_body class="ll">
+								<mm_list col="1" class="small">
+									<mm_item>
+										<mm_main>
+											<mm_title>下单时间</mm_title>
+											<mm_desc>2019-06-15 19:07</mm_desc>
+										</mm_main>
+									</mm_item>
+									<mm_item>
+										<mm_main>
+											<mm_title>订单编号</mm_title>
+											<mm_desc>1600438706</mm_desc>
+										</mm_main>
+									</mm_item>
+									<mm_item>
+										<mm_main>
+											<mm_title>购买数量</mm_title>
+											<mm_desc><text>10</text><text class="unit">个</text></mm_desc>
+										</mm_main>
+									</mm_item>
+									<mm_item>
+										<mm_main>
+											<mm_title>付款方式</mm_title>
+											<mm_desc><text>btc余额</text><text class="font_info">修改</text></mm_desc>
+										</mm_main>
+									</mm_item>
+									<mm_item>
+										<mm_main>
+											<mm_title>支付金额</mm_title>
+											<mm_desc><text class="price">2980.00</text></mm_desc>
+										</mm_main>
+									</mm_item>
+									<mm_item>
+										<mm_main>
+											<mm_title>订单状态</mm_title>
+											<mm_desc class="font_dark">待付款</mm_desc>
+										</mm_main>
+									</mm_item>
+								</mm_list>
+							</mm_body>
+							<mm_foot class="bt">
+								<mm_div class="arrow" url="/pages/assets/bill_cny">
+									<mm_title>扣费记录</mm_title>
+								</mm_div>
+							</mm_foot>
 						</mm_block>
 					</mm_col>
+					<mm_col>
+						<mm_group>
+							<mm_btn type="warning-x" class="font_small" @click.native="$router.go(-1)">关闭</mm_btn>
+						</mm_group>
+					</mm_col>
+					<!-- 	<mm_col>
+						<mm_div id="gb_btn">
+							<view class="agreement">
+								查看<view>《扣除授权确认书》</view>
+							</view>
+						</mm_div>
+					</mm_col> -->
 				</mm_grid>
 			</mm_warp>
 		</mm_bodyer>
-		<!-- 订单详情 -->
-
 	</view>
 </template>
 
 <script>
 	import mixin from '@/mixins/page'
-
 	export default {
 		mixins: [mixin],
-		components: {},
 		data() {
 			return {
-				oauth: false
+				state: 0
 			}
-		}
+		},
+		methods: {}
 	}
 </script>
 
 <style>
+	.bill_title {
+		background: #fff;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+		text-align: center;
+		padding: 1rem 0;
+	}
+
+	.bill_title .mm_title {
+		font-weight: 600;
+	}
+
+	.bill_title .mm_desc {
+		font-size: 0.75rem;
+		color: #333;
+	}
+
+	#mall_order_view .font_info {
+		margin-left: 0.5rem;
+	}
+
+
+	.agreement {
+		margin-top: 1rem;
+		display: flex;
+		justify-content: center;
+		font-size: .6rem;
+		color: #999999;
+	}
+
+	.agreement view {
+		color: #4c838a;
+	}
+
+	;
 </style>

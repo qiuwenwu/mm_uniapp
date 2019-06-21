@@ -1,5 +1,5 @@
 {
-    "name" : "超级美眉",
+    "name" : "比特中心",
     "appid" : "__UNI__9BDB05C",
     "description" : "这是超级美眉uniapp框架",
     "versionName" : "1.0.0",
@@ -78,6 +78,6 @@
             "mode" : "history",
             "base" : "/"
         },
-        "title" : "超级美眉"
+        "title" : "比特中心"
     }
 }

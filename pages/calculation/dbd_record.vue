@@ -16,7 +16,7 @@
 											<mm_icon src="http://img.sccnn.com/bimg/334/0957.jpg"></mm_icon>
 										</mm_side>
 										<mm_main>
-											<mm_title>回购</mm_title>
+											<mm_title>回购失败-退回</mm_title>
 											<mm_desc>
 												5月20日 10:50
 											</mm_desc>
@@ -30,7 +30,7 @@
 											<mm_icon src="http://img.sccnn.com/bimg/334/0957.jpg"></mm_icon>
 										</mm_side>
 										<mm_main>
-											<mm_title>回购</mm_title>
+											<mm_title>申请回购</mm_title>
 											<mm_desc>
 												5月20日 10:50
 											</mm_desc>
@@ -55,7 +55,7 @@
 											<mm_icon src="http://img.sccnn.com/bimg/334/0957.jpg"></mm_icon>
 										</mm_side>
 										<mm_main>
-											<mm_title>回购</mm_title>
+											<mm_title>回购失败-退回</mm_title>
 											<mm_desc>
 												5月20日 10:50
 											</mm_desc>
@@ -69,7 +69,7 @@
 											<mm_icon src="http://img.sccnn.com/bimg/334/0957.jpg"></mm_icon>
 										</mm_side>
 										<mm_main>
-											<mm_title>回购</mm_title>
+											<mm_title>申请回购</mm_title>
 											<mm_desc>
 												5月20日 10:50
 											</mm_desc>
@@ -105,11 +105,5 @@
 </script>
 
 <style>
-	.num {
-		position: absolute;
-		right: 1rem;
-		top: 50%;
-		transform: translate(0, -50%);
-		font-size: 1.5rem;
-	}
+	.font_success, .font_warning { font-weight: 600; }
 </style>

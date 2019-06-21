@@ -14,22 +14,32 @@
 				<mm_grid col="1" class="space-x">
 					<!-- 格子 -->
 					<mm_col>
-						<!-- 筛选面板列表 -->
-						<mm_block>
-							<mm_body class="lr">
-								
-							</mm_body>
-						</mm_block>
-					</mm_col>
-					<!-- 格子 -->
-					<mm_col>
-						<!-- 每日产出列表 -->
 						<mm_block>
 							<mm_head>
-								<mm_title class="font_small">简约</mm_title>
+								<mm_main>
+									<mm_title><text>总产出：0.0381</text><text class="unit">btc</text></mm_title>
+								</mm_main>
 							</mm_head>
-							<mm_body class="lr"></mm_body>
-							<mm_foot></mm_foot>
+							<mm_body class="lr">
+								<mm_list col="1" class="mini">
+									<mm_item>
+										<mm_main>
+											<mm_title>2019年5月20日 10:50</mm_title>
+											<mm_desc>
+												<text class="font_success">+0.0123</text>
+											</mm_desc>
+										</mm_main>
+									</mm_item>
+									<mm_item>
+										<mm_main>
+											<mm_title>2019年5月20日 10:50</mm_title>
+											<mm_desc>
+												<text class="font_success">+0.0258</text>
+											</mm_desc>
+										</mm_main>
+									</mm_item>
+								</mm_list>
+							</mm_body>
 						</mm_block>
 					</mm_col>
 				</mm_grid>
@@ -46,11 +56,12 @@
 		components: {},
 		data() {
 			return {
-				oauth: true
+				oauth: false
 			}
 		}
 	}
 </script>
 
 <style>
+	.font_success { font-weight: 600; }
 </style>

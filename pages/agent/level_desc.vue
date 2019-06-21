@@ -53,7 +53,7 @@
 							</mm_body>
 							<mm_foot class="bt">
 								<mm_div class="center">
-									<mm_title><text class="font_info">已达成 50%</text></mm_title>
+									<mm_title><text class="font_danger">已达成 50%</text></mm_title>
 								</mm_div>
 							</mm_foot>
 						</mm_block>
@@ -126,13 +126,5 @@
 </script>
 
 <style>
-	.ll {
-		font-size: 0.75rem;
-	}
-	.ll .mm_desc {
-		color: #333;
-	}
-	.font_info { margin-left: 0.5rem; font-weight: 600; }
-	
-	#agent_level_desc .mm_desc .mm_icon { float: right; margin-left: 0.5rem; width: 1.5rem; height: 1.5rem; }
+	#agent_level_desc .mm_desc .mm_icon { float: right; margin-left: 0.5rem; width: 1.25rem; height: 1.25rem; }
 </style>

@@ -4,15 +4,15 @@
 			<mm_warp>
 				<mm_grid col="2" class="income">
 					<mm_col>
-						<mm_div>
+						<mm_div url="/pages/calculation/output_day">
 							<mm_title>{{$float(last_output)}}</mm_title>
 							<mm_desc>昨日挖矿收益(btc)</mm_desc>
 						</mm_div>
 					</mm_col>
 					<mm_col>
-						<mm_div class="bl">
+						<mm_div class="bl" url="/pages/agent/invitation_record">
 							<mm_title>{{$double(last_invite)}}</mm_title>
-							<mm_desc>昨日推荐收益(元)</mm_desc>
+							<mm_desc>昨日邀请收益(元)</mm_desc>
 						</mm_div>
 					</mm_col>
 				</mm_grid>
@@ -30,7 +30,7 @@
 										</mm_side>
 										<mm_main class="arrow">
 											<mm_title>DBD数量</mm_title>
-											<mm_desc><text class="val">{{$float(dbd)}}</text><text class="unit">个</text>
+											<mm_desc><text class="val">{{$double(dbd)}}</text><text class="unit">个</text>
 											</mm_desc>
 										</mm_main>
 									</mm_item>
@@ -40,7 +40,7 @@
 										</mm_side>
 										<mm_main class="arrow">
 											<mm_title>现金余额</mm_title>
-											<mm_desc><text class="val">{{$float(money)}}</text><text class="unit">元</text>
+											<mm_desc><text class="val">{{$double(money)}}</text><text class="unit">元</text>
 											</mm_desc>
 										</mm_main>
 									</mm_item>
@@ -76,11 +76,6 @@
 				last_output: 0.123123,
 				last_invite: 120.00,
 			}
-		},
-		methods: {
-			copy() {
-
-			}
 		}
 	}
 </script>
@@ -92,7 +87,7 @@
 	}
 
 	.income {
-		margin: 0.5rem;
+		margin: 0.5rem 0.875rem;
 		text-align: center;
 		color: #fff !important;
 		background-image: linear-gradient(0deg, #B3315F 0%, #FF5A6A 100%);

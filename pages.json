@@ -1,21 +1,24 @@
 {
-	"pages": [
-		{
+	"pages": [{
 			"path": "pages/home/index",
 			"style": {
-				"navigationBarTitleText": "比特中心"
+				"navigationBarTitleText": "首页"
+			},
+			"meta": {
+				"viewport": "width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no",
+				"apple-mobile-web-app-capable": "yes"
 			}
 		},
 		{
 			"path": "pages/home/article_list",
 			"style": {
-				"navigationBarTitleText": "文章列表"
+				"navigationBarTitleText": "培训课程"
 			}
 		},
 		{
 			"path": "pages/home/article_view",
 			"style": {
-				"navigationBarTitleText": "文章详情"
+				"navigationBarTitleText": "课程讲解"
 			}
 		},
 		{
@@ -57,7 +60,7 @@
 		{
 			"path": "pages/home/news_list",
 			"style": {
-				"navigationBarTitleText": "新闻列表"
+				"navigationBarTitleText": "新闻动态"
 			}
 		},
 		{
@@ -163,6 +166,18 @@
 			}
 		},
 		{
+			"path": "pages/assets/bill_btc",
+			"style": {
+				"navigationBarTitleText": "BTC流水账单"
+			}
+		},
+		{
+			"path": "pages/assets/bill_cny",
+			"style": {
+				"navigationBarTitleText": "现金流水账单"
+			}
+		},
+		{
 			"path": "pages/assets/bill_list",
 			"style": {
 				"navigationBarTitleText": "我的账单"
@@ -180,7 +195,7 @@
 				"navigationBarTitleText": "我的资产"
 			}
 		},
-			{
+		{
 			"path": "pages/assets/cny_panel",
 			"style": {
 				"navigationBarTitleText": "申请提现"
@@ -207,7 +222,7 @@
 		{
 			"path": "pages/assets/btc_record",
 			"style": {
-				"navigationBarTitleText": "提现记录"
+				"navigationBarTitleText": "提币记录"
 			}
 		},
 		{

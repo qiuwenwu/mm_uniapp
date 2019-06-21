@@ -45,8 +45,6 @@ input { color: #333; }
 
 /* 默认配置 */
 .mm_mask { background:rgba(0,0,0,0.3); }
-.mm_header { background-color: #373737; color: #FFF; }
-.mm_footer { background-color: #FDFDFD; color: #333; }
 .mm_head { background: #F5f6FA; color: #767676; }
 .mm_desc { color: #888888; }
 
@@ -80,7 +78,6 @@ input { color: #333; }
 
 .price { color: #ff9000; font-weight: 600; }
 .num { color: #38f; font-weight: 600; }
-.arrow:active { background: #E5E5E5; }
 
 
 .linear_red,.linear_warning{ background-image: linear-gradient(135deg, #FF5A6A 0%, #f12f04 100%); color: #fff; }

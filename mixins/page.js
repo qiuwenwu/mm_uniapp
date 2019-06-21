@@ -43,7 +43,7 @@ export default {
 			// 验证模型
 			check_model: {},
 			// 重定向
-			redirect: "/account/signin",
+			redirect: "/pages/account/signin",
 			// 主键字段
 			field: "id",
 			// 查询
