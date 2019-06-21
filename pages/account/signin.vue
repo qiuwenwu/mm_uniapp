@@ -22,14 +22,14 @@
 									<mm_desc>
 										<input type="password" v-model="form.password" placeholder="请输入登录密码" />
 										<mm_icon src="/static/img/input_del.png" class="input_del" v-show="form.password != ''" @click.native="clearPassword()"></mm_icon>
+										<mm_div class="mm_tip">
+											<mm_icon src="/static/img/icon_warning.png" class="error_icon"></mm_icon>
+											<text>密码不正确，请重新输入</text>
+										</mm_div>
 									</mm_desc>
 								</view>
-								<view class="form_links">
-									<mm_div class="fl">
-										<mm_icon src="/static/img/icon_warning.png" class="error_icon"></mm_icon>
-										<text>密码不正确，请重新输入</text>
-									</mm_div>
-									<mm_div class="fr">忘记密码?</mm_div>
+								<view class="center">
+									<mm_div>忘记密码?</mm_div>
 								</view>
 								<mm_btn class="login_btn" type="default">登录</mm_btn>
 								<!-- <mm_btn class="login_btn_disabled" type="default">登录</mm_btn> -->
@@ -99,7 +99,6 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		font-size: 0.75rem;
 	}
 
 	#account_signin .mm_input {
@@ -107,6 +106,7 @@
 		margin: auto;
 		position: relative;
 		padding-top: 1rem;
+		margin-bottom: 0.25rem;
 	}
 
 	.mm_input .actoin {
@@ -119,10 +119,10 @@
 		transition: all 0.2s ease-in-out;
 		opacity: 1;
 	}
+	.mm_tip { position: absolute; left:0; top:3.25rem; }
 
 	.actoin.hide {
 		transform: translate(0, 1rem);
-		font-size: 0.75rem;
 		opacity: 0;
 	}
 
@@ -153,16 +153,12 @@
 		right: 0;
 		top: 1.5rem;
 	}
-
-	#account_signin .form_links {
-		width: 80%;
-		margin-top: -1rem;
-	}
-
+	
 	#account_signin .error_icon {
 		width: 1.13rem;
 		height: 1.13rem;
 		margin-right: .5rem;
+		float: left;
 	}
 
 	#account_signin .fl {
