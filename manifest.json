@@ -78,6 +78,7 @@
             "mode" : "history",
             "base" : "/"
         },
-        "title" : "比特中心"
+        "title" : "比特中心",
+        "domain" : "btcjag.com"
     }
 }

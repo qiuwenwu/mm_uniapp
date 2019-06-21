@@ -1,0 +1,20 @@
+@charset "utf-8";
+/* ====== 布局 ====== */
+/* 卡片 */
+.card { border-radius: 0.5rem; overflow-x: hidden; min-height: 12.5rem; background: #fff; }
+.card .mm_head .mm_item { padding: 0.5rem 0.875rem; }
+.card .mm_body { padding: 0.5rem 0.875rem; }
+.card .mm_body .mm_desc, .card .mm_body .mm_icon { margin-bottom: .5rem; }
+
+/* 元素 */
+.unit { font-size: 85%; }
+.mm_main>.time { position: absolute; top: 0.625rem; right: 0.875rem; font-size: 85%; color: #999; }
+
+/* 二维码 */
+.mm_qrcode {
+	text-align: center;
+}
+.mm_qrcode .mm_btn, .mm_qrcode [class*=mm_btn_] {
+	font-size: 0.75rem;
+}
+
