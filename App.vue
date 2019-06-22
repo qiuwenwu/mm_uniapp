@@ -7,12 +7,11 @@
 	export default {
 		onLaunch: function() {
 			console.log('应用程序启动')
+			this.$get_user();
 		},
 		onShow: function() {
 			console.log('应用显示')
-			// var mo=function(e){e.preventDefault();};
-			// document.body.style.overflow = 'hidden';
-			// document.addEventListener("touchmove", mo, false); //禁止页面滑动
+			
 		},
 		onHide: function() {
 			console.log('应用隐藏')
@@ -59,8 +58,7 @@
 	}
 
 	.introduce .price:before {
-		content: "￥";
-		font-size: 80%;
+		font-size: 0.75rem;
 	}
 
 	.introduce .days {
@@ -76,7 +74,7 @@
 		width: 100%;
 		transform: translate(0, 100%);
 		transition: all 0.5s ease-in-out;
-		animation-delay: 2s;
+		animation-delay: 5s;
 	}
 
 	.send_sms .mm_block {
@@ -95,7 +93,7 @@
 		background: #FFFFFF;
 	}
 
-	.send_sms .close {
+	.mm_modal .close {
 		position: absolute;
 		right: 0.5rem;
 		top: 0.5rem;
@@ -208,4 +206,8 @@
 		padding-left: 0;
 		padding-right: 0;
 	}
+	
+	.mm_modal .mm_body { min-height: 3rem; }
+	
+	.desc_color { color: #ccc !important; }
 </style>

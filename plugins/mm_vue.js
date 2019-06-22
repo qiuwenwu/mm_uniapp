@@ -19,7 +19,7 @@ let mm = {
 		if (options) {
 			// 配置主机地址
 			if (options.host) {
-				host = options.host
+				host = options.host;
 			}
 		}
 
@@ -79,6 +79,13 @@ let mm = {
 		/// 返回: 浮点数数值
 		Vue.prototype.$double = function(num) {
 			return num.toFloor(2).toStr(2);
+		};
+		
+		/// 科学计数转浮点数
+		/// num: 被转换的数值
+		/// 返回: 数值
+		Vue.prototype.$num = function(num) {
+			return new Number(num);
 		};
 		
 		/// 引入截取字符串函数
@@ -151,9 +158,9 @@ Vue.mixin(Vue.extend({
 					if (json) {
 						if (json.data) {
 							json.data.isLoad = true;
-							_this.$store.dispatch('user/set', json.data);
+							_this.$store.dispatch('set_user', json.data);
 							if (p.indexOf('/sign') == 0 || p.indexOf('/forgot') == 0) {
-								_this.$router.push('/user/index');
+								uni.navigateTo({ url: '/pages/home/index'});
 								return;
 							}
 						}

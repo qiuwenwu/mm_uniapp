@@ -14,11 +14,11 @@
 								<mm_list col="1" class="big">
 									<mm_item url="/pages/info/index">
 										<mm_side class="headimg">
-											<mm_icon src="/static/img/headimg.jpg"></mm_icon>
+											<mm_icon :src="user.avatar"></mm_icon>
 										</mm_side>
 										<mm_main class="arrow">
-											<mm_title><text>昵称</text><text class="vip">VIP3</text></mm_title>
-											<mm_desc>账号:15817188815</mm_desc>
+											<mm_title><text>昵称</text><text class="vip">VIP{{obj.level}}</text></mm_title>
+											<mm_desc>账号:{{user.phone}}</mm_desc>
 										</mm_main>
 									</mm_item>
 								</mm_list>
@@ -100,7 +100,12 @@
 		components: {},
 		data() {
 			return {
-				oauth: false
+				user: this.$store.state.user,
+				url_get_obj: "~/user/proxy",
+				obj: {
+					level: 0
+				},
+				query:{}
 			}
 		}
 	}

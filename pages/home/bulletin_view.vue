@@ -9,22 +9,9 @@
 				<mm_col>
 					<!-- 公告列表 -->
 					<mm_block>
-						<mm_title>关于币价上涨，引起的矿机限购的公告</mm_title>
-						<mm_desc>2019年10月20日</mm_desc>
-						<mm_div>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor
-							sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et
-							magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis
-							tellus mollis orci, sed rhoncus sapien nunc eget.
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor
-							sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et
-							magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis
-							tellus mollis orci, sed rhoncus sapien nunc eget.
-
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor
-							sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et
-							magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis
-							tellus mollis orci, sed rhoncus sapien nunc eget.
+						<mm_title>{{ obj.title }}</mm_title>
+						<mm_desc>{{ timeStr }}</mm_desc>
+						<mm_div v-html="obj.content">
 						</mm_div>
 					</mm_block>
 				</mm_col>
@@ -42,13 +29,51 @@
 		data() {
 			return {
 				oauth: false,
-				url: "~/paper/all",
+				url_get_obj: "~/paper/id",
 				query: {
-					aid: ""
+					id: "",
+					title: ""
+				},
+				obj: {
+					author: "",
+					content: "",
+					description: "",
+					display: 0,
+					grouping: "",
+					id: 0,
+					keyWords: [],
+					state: 0,
+					time: "2019-06-14 15:01:16",
+					title: "",
+					users: []
 				}
 			}
 		},
+		computed: {
+			timeStr() {
+				return new Date(this.obj.time).format('yyyy年MM月dd日')
+			}
+		},
 		methods: {
+			get_obj_after(json, status) {
+				if (json.code) {
+					this.alert(json);
+				} else if (json.data) {
+					this.$obj.clear(this.obj);
+					if (this.url_get_obj.indexOf('id') != -1) {
+						this.$obj.push(this.obj, json.data);
+					}
+					else if(json.data.length > 0) {
+						this.$obj.push(this.obj, json.data[0]);
+					}
+				}
+			}
+		},
+		onLoad() {
+			if (this.$route.query.title) {
+				this.url_get_obj = this.url_get_obj.replace('id', 'title')
+			}
+			this.init();
 		}
 	}
 </script>
@@ -61,17 +86,21 @@
 		line-height: 2.5rem;
 		color: #C60A0A;
 	}
-	
-	#home_bulletin_list .mm_title{
+
+	#home_bulletin_list .mm_title {
 		text-align: center;
 		font-weight: 600;
 	}
+
 	#home_bulletin_list .mm_desc {
 		text-align: center;
 		padding-top: .25rem;
 		padding-bottom: .5rem;
-		border-bottom: 1px solid rgba(0,0,0,0.1);
+		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 		margin-bottom: 1rem;
 	}
-	#home_bulletin_list .mm_block { padding: 1.5rem 1rem; }
+
+	#home_bulletin_list .mm_block {
+		padding: 1.5rem 1rem;
+	}
 </style>

@@ -436,6 +436,12 @@
 			}
 		},
 		{
+			"path": "pages/pay/bank",
+			"style": {
+				"navigationBarTitleText": "银行卡支付"
+			}
+		},
+		{
 			"path": "pages/pay/balance_btc",
 			"style": {
 				"navigationBarTitleText": "BTC余额支付"

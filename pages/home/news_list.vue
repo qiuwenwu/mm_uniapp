@@ -37,27 +37,35 @@
 		data() {
 			return {
 				oauth: false,
-				list: [{
-						title: "这是一文章",
-						desc: "测试",
-						icon: "/static/img/banner3.jpg",
-						createTime: "2019-05-19",
-						url: "/pages/home/news_view?aid=3"
-					},
-					{
-						title: "这是一文章",
-						desc: "测试",
-						icon: "/static/img/banner2.jpg",
-						createTime: "2019-04-01",
-						url: "/pages/home/news_view?aid=2"
-					}, {
-						title: "这是一文章",
-						desc: "测试",
-						icon: "/static/img/banner1.jpg",
-						createTime: "2019-03-26",
-						url: "/pages/home/news_view?aid=1"
+				url_get_list: "~/paper/grouping/paper",
+				query: {
+					index: 0,
+					size: 10,
+					grouping: "新闻"
+				},
+				vm: {
+					title: "title",
+					desc: "description",
+					createTime: "time",
+					icon: "icon",
+					url: "url"
+				}
+			}
+		},
+		methods: {
+			get_list_after(json, status)
+			{
+				if(json){
+					var lt = json.content;
+					if(lt){
+						this.list.clear();
+						for(var i = 0; i < lt.length; i++){
+							var o = lt[i];
+							o.url = '/pages/home/news_view?id=' + o.id;
+							this.list.push(o);
+						}
 					}
-				]
+				}
 			}
 		}
 	}

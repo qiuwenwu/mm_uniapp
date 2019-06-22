@@ -16,13 +16,13 @@
 									<mm_item>
 										<mm_main class="bt">
 											<mm_title>价格</mm_title>
-											<mm_desc class="price"><text class="unit">￥</text>298.00</mm_desc>
+											<mm_desc><text class="price">{{ obj.price }}</text><text class="unit">元/个</text></mm_desc>
 										</mm_main>
 									</mm_item>
 									<mm_item>
 										<mm_main>
 											<mm_title>有效时长</mm_title>
-											<mm_desc><text>365</text><text class="unit">天</text></mm_desc>
+											<mm_desc><text class="days">365</text><text class="unit">天</text></mm_desc>
 										</mm_main>
 									</mm_item>
 								</mm_list>
@@ -33,43 +33,17 @@
 						<mm_block>
 							<mm_body>
 								<mm_list id="tabs" col="2" class="space_big">
-									<mm_item :class="{'active': state == '0' }" @click.native="state = '0'">产品描述</mm_item>
-									<mm_item :class="{'active': state == '1' }" @click.native="state = '1'">法律声明</mm_item>
+									<mm_item :class="{'active': state == '1' }" @click.native="state = '1'">产品描述</mm_item>
+									<mm_item :class="{'active': state == '2' }" @click.native="get_dbd_statement()">法律声明</mm_item>
 								</mm_list>
 							</mm_body>
 						</mm_block>
 					</mm_col>
 					<!-- 格子 -->
 					<mm_col class="pn-t">
-						<!-- 公告列表 -->
-						<mm_block v-show="state == '0'">
-							<mm_div class="html">
-								<text>365天的0.5T算力（含所有费用），价值￥300元</text>
-								<image src="https://axure-file.lanhuapp.com/94d81de6-5cf3-438d-9714-a1fddaeef867__bec6cca7b4d8b79709eeda362fa8ed8d"></image>
-								<view>注：1.开启后即可进行挖矿，每天产生BTC；</view>
-								<view>2.算力稳步上升，一周调整一次。</view>
-							   <view>3.每天签到后即可获得当天的挖矿收益。</view>
-							</mm_div>
-						</mm_block>
-						<mm_block v-show="state == '1'">
-							<mm_div class="pa">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor
-								sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus
-								et
-								magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis
-								tellus mollis orci, sed rhoncus sapien nunc eget.
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor
-								sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus
-								et
-								magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis
-								tellus mollis orci, sed rhoncus sapien nunc eget.
-
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor
-								sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus
-								et
-								magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis
-								tellus mollis orci, sed rhoncus sapien nunc eget.
-							</mm_div>
+						<mm_block>
+							<mm_div class="pa" v-show="state == '1'" v-html="dbd_desc"></mm_div>
+							<mm_div class="pa" v-show="state == '2'" v-html="dbd_statement"></mm_div>
 						</mm_block>
 					</mm_col>
 				</mm_grid>
@@ -80,7 +54,8 @@
 				<mm_grid>
 					<mm_col>
 						<mm_group>
-							<mm_btn type="default" @click.native="buy()">
+							<view class="buy_num"><input type="number" v-model="form.num" placeholder="请输入要购买的数量" placeholder-class="desc_color"></input></view>
+							<mm_btn type="default" @click.native="show = true">
 								立即购买
 							</mm_btn>
 						</mm_group>
@@ -88,6 +63,63 @@
 				</mm_grid>
 			</mm_warp>
 		</mm_footer>
+		<mm_modal v-model="show">
+			<mm_warp class="pay_warp">
+				<mm_grid>
+					<mm_col>
+						<mm_block class="b-a">
+							<mm_head class="font_small">
+								<mm_title>支付方式</mm_title>
+							</mm_head>
+							<mm_body class="lr">
+								<mm_list col="1" class="mini">
+									<mm_item url="/pages/pay/ali">
+										<mm_side>
+											<mm_icon class="linear_yellow" src="<i class='fa fa-btc'></i>"></mm_icon>
+										</mm_side>
+										<mm_main class="arrow">
+											<mm_title>支付宝</mm_title>
+										</mm_main>
+									</mm_item>
+									<mm_item url="/pages/pay/wechat">
+										<mm_side>
+											<mm_icon class="linear_yellow" src="<i class='fa fa-btc'></i>"></mm_icon>
+										</mm_side>
+										<mm_main class="arrow">
+											<mm_title>微信</mm_title>
+										</mm_main>
+									</mm_item>
+									<mm_item url="/pages/pay/bank">
+										<mm_side>
+											<mm_icon class="linear_yellow" src="<i class='fa fa-btc'></i>"></mm_icon>
+										</mm_side>
+										<mm_main class="arrow">
+											<mm_title>银行卡</mm_title>
+										</mm_main>
+									</mm_item>
+									<mm_item url="/pages/pay/balance_cny">
+										<mm_side>
+											<mm_icon class="linear_success" src="<i class='fa fa-rmb'></i>"></mm_icon>
+										</mm_side>
+										<mm_main class="arrow">
+											<mm_title>现金余额</mm_title>
+										</mm_main>
+									</mm_item>
+									<mm_item url="/pages/pay/balance_btc">
+										<mm_side>
+											<mm_icon class="linear_yellow" src="<i class='fa fa-btc'></i>"></mm_icon>
+										</mm_side>
+										<mm_main class="arrow">
+											<mm_title>btc余额</mm_title>
+										</mm_main>
+									</mm_item>
+								</mm_list>
+							</mm_body>
+						</mm_block>
+					</mm_col>
+				</mm_grid>
+			</mm_warp>
+		</mm_modal>
 	</mm_page>
 </template>
 
@@ -97,21 +129,73 @@
 		mixins: [mixin],
 		data() {
 			return {
-				state: '0'
+				state: "1",
+				url_get_obj: "~/dbd/",
+				obj: {
+					"amount": 0,
+					"price": "",
+					"cycle": 0
+				},
+				dbd_desc: "",
+				dbd_statement: "",
+				form: {
+					number: "",
+				}
 			}
 		},
 		methods: {
-			send_msg() {
-				console.log(0);
-			},
 			buy() {
-
+				uni.navigateTo({
+					url: '/pages/mall/shopping_cart?number=' + this.form.num
+				});
+			},
+			get_obj_after(json, status) {
+				this.$obj.clear();
+				this.$obj.push(this.obj, json.data);
+				var _this = this;
+				this.$get('~/paper/title?title=DBD描述', function(json, status) {
+					if (json) {
+						var lt = json.data;
+						if (lt.length > 0) {
+							_this.dbd_desc = lt[0].content;
+						}
+					}
+				});
+			},
+			get_dbd_statement() {
+				var _this = this;
+				this.state = '2';
+				if (this.dbd_statement) {
+					return;
+				}
+				this.$get('~/paper/title?title=DBD法律', function(json, status) {
+					if (json) {
+						var lt = json.data;
+						if (lt.length > 0) {
+							_this.dbd_statement = lt[0].content;
+						}
+					}
+				});
 			}
 		}
 	}
 </script>
 
 <style>
+	.buy_num {
+		padding: 0.625rem 0.875rem;
+		background: rgba(85, 85, 85, .8);
+
+	}
+
+	input {
+		color: #fff !important;
+	}
+
+	.days {
+		color: #38f;
+	}
+
 	.dbd_view {
 		float: none;
 	}
@@ -121,5 +205,156 @@
 		height: 8rem;
 		margin: auto !important;
 	}
-	.mm_bodyer { margin-bottom: 3rem; }
+
+	.mm_bodyer {
+		margin-bottom: 3rem;
+	}
+
+	#calculation_dbd_view .send_sms {
+		height: unset;
+	}
+
+	#calculation_dbd_view .number_block {
+		padding: 0;
+		height: unset;
+	}
+
+	#calculation_dbd_view .number_dialog {
+		position: fixed;
+		left: 0;
+		bottom: 0;
+	}
+
+	#calculation_dbd_view .number {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	#calculation_dbd_view .number_gray {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: #ECECEC;
+	}
+
+	#calculation_dbd_view .mm_col_33 {
+		height: 3rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-right: 1px solid #F3F3F3;
+		border-bottom: 1px solid #F3F3F3;
+	}
+
+	#calculation_dbd_view .mm_col_33:nth-child(3n) {
+		border-right: none;
+	}
+
+	#calculation_dbd_view .backspace {
+		height: 2rem;
+		width: 2rem;
+	}
+
+	#calculation_dbd_view .pay_warp {
+		width: 80%;
+		top: 36%
+	}
+
+	#calculation_dbd_view .pay_head {
+		position: relative;
+	}
+
+	#calculation_dbd_view .close {
+		position: absolute;
+		top: .4rem;
+		left: .5rem;
+		width: 1rem;
+		height: 1rem;
+		line-height: 1.1rem;
+	}
+
+	#calculation_dbd_view .pay_body {
+		padding: 1rem;
+	}
+
+	#calculation_dbd_view .password_input {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		height: 2.5rem;
+		border: 1px solid #AAAAAA;
+		box-sizing: border-box;
+	}
+
+	#calculation_dbd_view .password_input_word {
+		flex: 1;
+		height: 100%;
+		border-right: 1px solid #EDEDED;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	#calculation_dbd_view .password_input_word:last-child {
+		border-right: none
+	}
+
+	#calculation_dbd_view .password_dot {
+		height: 1rem;
+		width: 1rem;
+		background-color: #000000;
+		border-radius: 1rem;
+	}
+
+	#calculation_dbd_view .pay_type_div {
+		height: 2.5rem;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin: .5rem 0;
+		border-bottom: 1px solid #EAEAEA;
+		border-top: 1px solid #EAEAEA;
+	}
+
+	#calculation_dbd_view .pay_type_div_select {
+		height: 2.6rem;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		border-bottom: 1px solid #EAEAEA;
+	}
+
+	#calculation_dbd_view .pay_type_div_select:last-child {
+		border-bottom: none;
+	}
+
+	#calculation_dbd_view .balance_icon {
+		width: 1.3rem;
+		height: 1.3rem;
+	}
+
+	#calculation_dbd_view .arrow-right {
+		width: 1rem;
+		height: 1rem;
+	}
+
+	#calculation_dbd_view .balance_div {
+		width: 2rem;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	#calculation_dbd_view .balance_select_text {
+		height: 100%;
+		flex: 1;
+		display: flex;
+		align-items: center;
+	}
 </style>

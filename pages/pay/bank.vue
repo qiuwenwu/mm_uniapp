@@ -1,6 +1,6 @@
 <template>
-	<!-- 用户设置页面 -->
-	<view class="page" id="user_setting">
+	<!-- 支付宝付款页面 -->
+	<view class="page" id="pay_ali">
 		<!-- 页头 -->
 		<mm_header>
 			<!-- 外套 -->
@@ -14,6 +14,7 @@
 				<mm_grid col="1" class="space-x">
 					<!-- 格子 -->
 					<mm_col>
+						<!--  -->
 						<mm_block>
 							<mm_head>
 								<mm_title class="font_small">简约</mm_title>
@@ -25,7 +26,11 @@
 				</mm_grid>
 			</mm_warp>
 		</mm_bodyer>
-		<!-- 设置项表单 -->
+		<!-- 支付信息 -->
+
+		<!-- 支付表单 -->
+
+		<!-- 数字键盘 -->
 
 	</view>
 </template>

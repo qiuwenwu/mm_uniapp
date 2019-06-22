@@ -5,13 +5,13 @@
 				<mm_grid col="2" class="income">
 					<mm_col>
 						<mm_div url="/pages/calculation/output_day">
-							<mm_title>{{$float(last_output)}}</mm_title>
-							<mm_desc>昨日挖矿收益(btc)</mm_desc>
+							<mm_title>{{coin(check_in_output)}}</mm_title>
+							<mm_desc>今日签到收益(btc)</mm_desc>
 						</mm_div>
 					</mm_col>
 					<mm_col>
 						<mm_div class="bl" url="/pages/agent/invitation_record">
-							<mm_title>{{$double(last_invite)}}</mm_title>
+							<mm_title>{{money(last_invite)}}</mm_title>
 							<mm_desc>昨日邀请收益(元)</mm_desc>
 						</mm_div>
 					</mm_col>
@@ -30,7 +30,7 @@
 										</mm_side>
 										<mm_main class="arrow">
 											<mm_title>DBD数量</mm_title>
-											<mm_desc><text class="val">{{$double(dbd)}}</text><text class="unit">个</text>
+											<mm_desc><text class="val">{{money(user.assets.dbd)}}</text><text class="unit">个</text>
 											</mm_desc>
 										</mm_main>
 									</mm_item>
@@ -40,7 +40,7 @@
 										</mm_side>
 										<mm_main class="arrow">
 											<mm_title>现金余额</mm_title>
-											<mm_desc><text class="val">{{$double(money)}}</text><text class="unit">元</text>
+											<mm_desc><text class="val">{{money(user.achievement.canExtractMoney)}}</text><text class="unit">元</text>
 											</mm_desc>
 										</mm_main>
 									</mm_item>
@@ -50,7 +50,7 @@
 										</mm_side>
 										<mm_main class="arrow">
 											<mm_title>btc余额</mm_title>
-											<mm_desc><text class="val">{{$float(btc)}}</text>
+											<mm_desc><text class="val">{{coin(user.assets.bitBalance)}}</text>
 											</mm_desc>
 										</mm_main>
 									</mm_item>
@@ -70,11 +70,21 @@
 		mixins: [mixin],
 		data() {
 			return {
-				money: 8.88,
-				btc: 0.12312312,
-				dbd: 2.15,
-				last_output: 0.123123,
-				last_invite: 120.00,
+				user: this.$store.state.user,
+				check_in_output: 0.0130231,
+				last_invite: 20.00
+			}
+		},
+		methods:{
+			money(num){
+				return this.$double(this.$num(num));
+			},
+			coin(num){
+				return this.$float(this.$num(num));
+			},
+			get_obj_before(json,status) {
+				this.$obj.clear(this.obj);
+				this.$obj.push(this.obj, json.data)
 			}
 		}
 	}

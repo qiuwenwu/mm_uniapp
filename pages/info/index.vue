@@ -15,34 +15,34 @@
 										<mm_main class="arrow">
 											<mm_title>头像</mm_title>
 											<mm_desc>
-												<mm_icon src="/static/img/headimg.jpg"></mm_icon>
+												<mm_icon :src="user.avatar"></mm_icon>
 											</mm_desc>
 										</mm_main>
 									</mm_item>
-									<mm_item url="./verified">
+									<mm_item url="./nickname">
 										<mm_main class="arrow">
 											<mm_title>昵称</mm_title>
-											<mm_desc>A雷帝A</mm_desc>
+											<mm_desc>{{ user.nickname }}</mm_desc>
 										</mm_main>
 									</mm_item>
 									<mm_item url="./phone">
 										<mm_main class="arrow">
 											<mm_title>手机</mm_title>
-											<mm_desc>15817188815</mm_desc>
+											<mm_desc>{{ user.phone }}</mm_desc>
 										</mm_main>
 									</mm_item>
 									<mm_item url="./email">
 										<mm_main class="arrow">
 											<mm_title>邮箱</mm_title>
-											<mm_desc>573242395@qq.com</mm_desc>
+											<mm_desc v-if="user.email">{{ user.email }}</mm_desc>
+											<mm_desc v-else></mm_desc>
 										</mm_main>
 									</mm_item>
 									<mm_item url="./verified">
 										<mm_main class="arrow">
 											<mm_title>实名认证</mm_title>
-											<mm_desc>
-												<mm_desc class="font_danger">未认证</mm_desc>
-											</mm_desc>
+											<mm_desc v-if="user.state == 0">{{ user.name }}<text class="font_success">已认证</text></mm_desc>
+											<mm_desc v-else><text class="font_danger">未认证</text></mm_desc>
 										</mm_main>
 									</mm_item>
 									<mm_item url="./password">
@@ -57,7 +57,7 @@
 					</mm_col>
 					<mm_col>
 						<mm_div>
-							<mm_btn type="warning-x" class="full" url="/pages/account/signin">退出账号</mm_btn>
+							<mm_btn type="warning-x" class="full" @click.native="logout()">退出账号</mm_btn>
 						</mm_div>
 					</mm_col>
 				</mm_grid>
@@ -74,7 +74,17 @@
 		components: {},
 		data() {
 			return {
-				oauth: false
+				oauth: false,
+				user: this.$store.state.user
+			}
+		},
+		methods: {
+			logout() {
+				var _this = this;
+				this.$get('~/logout', function() {
+					_this.$store.dispatch('logout');
+					uni.navigateTo({ url: '/pages/account/signin'});
+				});
 			}
 		}
 	}

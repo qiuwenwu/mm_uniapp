@@ -97,7 +97,7 @@ export default {
 		/// 查
 		get(query) {
 			if (this.url_get_obj) {
-				this.get(query);
+				this.get_obj(query);
 			} else {
 				this.get_list(query);
 			}
@@ -213,7 +213,7 @@ export default {
 			return this.$obj.toUrl(obj, url);
 		},
 		/// 登录验证
-		login() {
+		check_oauth() {
 			if (this.oauth) {
 				var token = this.$store.state.user.token;
 				if (!token) {
@@ -227,7 +227,7 @@ export default {
 		/// 初始化
 		init() {
 			this.$obj.push(this.query, this.$route.query);
-			this.$get_user(this.login);
+			this.check_oauth();
 		},
 
 		/// 验证参数
@@ -315,11 +315,11 @@ export default {
 		/// status: 服务器状态码
 		/// 返回: 转换后的结果
 		get_obj_after(json, status) {
-			if (json.error) {
+			if (json.code) {
 				this.alert(json);
 			} else if (json.data) {
 				this.$obj.clear(this.obj);
-				this.$obj.push(this.obj, json.data.obj);
+				this.$obj.push(this.obj, json.data);
 			}
 			if (this.url_get_list || this.url) {
 				this.get_list();

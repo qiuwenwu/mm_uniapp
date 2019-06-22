@@ -12,15 +12,13 @@
 							<mm_body class="sign_in_body">
 								<view class="mm_input">
 									<mm_title><text class="actoin" v-bind:class="{ 'hide': form.phone == '' }">请输入手机号码</text></mm_title>
-									<mm_desc>
-										<input type="text" v-model="form.phone" placeholder="请输入手机号码" />
-										<mm_icon src="/static/img/input_del.png" class="input_del" v-show="form.phone != ''" @click.native="clearPhone()"></mm_icon>
-									</mm_desc>
+									<mm_input type="text" v-model="form.phone" :max="11" placeholder="请输入手机号码"></mm_input>
+									<mm_icon src="/static/img/input_del.png" class="input_del" v-show="form.phone != ''" @click.native="clearPhone()"></mm_icon>
 								</view>
 								<view class="mm_input">
 									<mm_title><text class="actoin" v-bind:class="{ 'hide': form.password == '' }">请输入登录密码</text></mm_title>
 									<mm_desc>
-										<input type="password" v-model="form.password" placeholder="请输入登录密码" />
+										<mm_input type="password" :max="12" v-model="form.password" placeholder="请输入登录密码"></mm_input>
 										<mm_icon src="/static/img/input_del.png" class="input_del" v-show="form.password != ''" @click.native="clearPassword()"></mm_icon>
 										<mm_div class="mm_tip">
 											<mm_icon src="/static/img/icon_warning.png" class="error_icon"></mm_icon>
@@ -28,21 +26,48 @@
 										</mm_div>
 									</mm_desc>
 								</view>
-								<view class="center">
-									<mm_div>忘记密码?</mm_div>
-								</view>
-								<mm_btn class="login_btn" type="default">登录</mm_btn>
-								<!-- <mm_btn class="login_btn_disabled" type="default">登录</mm_btn> -->
-								<mm_div class="login_foot">
-									<mm_desc>还没有账号? </mm_desc>
-									<mm_item class="link_text">立即注册</mm_item>
-								</mm_div>
 							</mm_body>
 						</mm_block>
+					</mm_col>
+					<mm_col>
+						<mm_div class="center">
+							<mm_div>忘记密码?</mm_div>
+						</mm_div>
+					</mm_col>
+					<mm_col>
+						<mm_div>
+							<mm_btn class="login_btn" type="default" @click.native="submit()">登录</mm_btn>
+						</mm_div>
+					</mm_col>
+					<mm_col>
+						<mm_div class="login_foot">
+							还没有账号?
+							<mm_div class="font_info" url="./signup">立即注册</mm_div>
+						</mm_div>
 					</mm_col>
 				</mm_grid>
 			</mm_warp>
 		</mm_bodyer>
+		<mm_modal v-model="show">
+			<mm_warp>
+				<mm_grid>
+					<mm_col>
+						<mm_block class="b-a">
+							<mm_head>
+								<mm_title>注册提示</mm_title>
+								<text class="close" @click="show = false">X</text>
+							</mm_head>
+							<mm_body v-html="msg"></mm_body>
+							<mm_foot>
+								<mm_group>
+									<mm_btn type="default-x" @click.native="show = false">确定</mm_btn>
+								</mm_group>
+							</mm_foot>
+						</mm_block>
+					</mm_col>
+				</mm_grid>
+			</mm_warp>
+		</mm_modal>
 	</view>
 </template>
 
@@ -54,36 +79,70 @@
 		components: {},
 		data() {
 			return {
-				url_submit: "~/test",
+				oauth: false,
+				url_submit: "~/login",
 				form: {
 					phone: "",
-					password: ""
+					code: "",
+					password: "",
+				},
+				msg: "",
+				show: false,
+				ret: false
+			}
+		},
+		computed: {
+			check_phone() {
+				var p = this.form.phone;
+				if (!p || p.length != 11) {
+					return false;
 				}
+				return true;
+			},
+			check_password() {
+				var p = this.form.password;
+				if (!p || p.length < 6 || p.length > 12) {
+					return false;
+				}
+				return true;
+			},
+			check_invitation_code() {
+				var p = this.query.invitation_code;
+				if (!p) {
+					return false;
+				}
+				return true;
 			}
 		},
 		methods: {
-			clearPhone() {
-				this.form.phone = '';
-			},
-			clearPassword() {
-				this.form.password = '';
+			submit() {
+				var _this = this;
+				if (this.check_phone && this.check_password) {
+					this.$post(this.url_submit, this.form, function(json, status) {
+						if (json) {
+							if (!json.code) {
+								_this.$get_user(function() {
+									var url = _this.$store.state.web.redirect_url;
+									if (url) {
+										uni.navigateTo({ url: url});
+									} else {
+										uni.navigateTo({ url: "/pages/home/index"});
+									}
+								});
+							}
+						}
+					});
+				} else {
+					this.show = true;
+					this.msg = "手机号码或密码错误！";
+				}
 			}
 		},
+		onLoad(){}
 	}
 </script>
 
 <style>
-	uni-page-body,
-	#account_signin {
-		height: 100%;
-	}
-
-	#account_signin .mm_bodyer,
-	#account_signin .mm_warp,
-	#account_signin .mm_grid_1 {
-		height: 100%;
-	}
-
 	#account_signin .sign_in_head {
 		width: 100%;
 		height: 7rem;
@@ -119,7 +178,12 @@
 		transition: all 0.2s ease-in-out;
 		opacity: 1;
 	}
-	.mm_tip { position: absolute; left:0; top:3.25rem; }
+
+	.mm_tip {
+		position: absolute;
+		left: 0;
+		top: 3.25rem;
+	}
 
 	.actoin.hide {
 		transform: translate(0, 1rem);
@@ -153,7 +217,7 @@
 		right: 0;
 		top: 1.5rem;
 	}
-	
+
 	#account_signin .error_icon {
 		width: 1.13rem;
 		height: 1.13rem;
@@ -168,7 +232,7 @@
 	}
 
 	#account_signin .fr,
-	.link_text {
+	.font_info {
 		color: #0B76C4;
 	}
 
@@ -177,6 +241,7 @@
 		background-color: #FF5A6A;
 		color: #FFFFFF;
 		margin-top: 5rem;
+		margin: auto;
 	}
 
 	#account_signin .login_btn_disabled {

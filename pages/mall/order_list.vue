@@ -37,10 +37,10 @@
 											<mm_icon src="http://img.sccnn.com/bimg/334/0957.jpg"></mm_icon>
 										</mm_side>
 										<mm_main class="introduce">
-											<mm_title>DBD礼包<text class="time">2019-06-15</text></mm_title>
-											<mm_desc><text class="price">298.00</text></mm_desc>
+											<mm_title>DBD礼包<text class="count">12</text></mm_title>
+											<mm_desc><text class="price"><text class="unit">￥</text>3576.00</text></mm_desc>
 											<mm_desc>
-												<text class="count">数量：12</text>
+												<text class="time">2019-06-15 15:16</text>
 											</mm_desc>
 										</mm_main>
 									</mm_item>
@@ -69,10 +69,10 @@
 											<mm_icon src="http://img.sccnn.com/bimg/334/0957.jpg"></mm_icon>
 										</mm_side>
 										<mm_main class="introduce">
-											<mm_title>DBD礼包<text class="time">2019-06-15</text></mm_title>
-											<mm_desc><text class="price">298.00</text></mm_desc>
+											<mm_title>DBD礼包<text class="count">10</text></mm_title>
+											<mm_desc><text class="price"><text class="unit">￥</text>2980.00</text></mm_desc>
 											<mm_desc>
-												<text class="count">数量：10</text>
+												<text class="time">2019-06-15 13:28</text>
 											</mm_desc>
 										</mm_main>
 									</mm_item>
@@ -108,4 +108,7 @@
 </script>
 
 <style>
+	.count { color: #888; }
+	.count:before { content: " × "; color: #999; }
+	.time:before { content: "下单时间 "; }
 </style>

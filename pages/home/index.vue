@@ -25,7 +25,7 @@
 								<mm_div class="font_default" url="./bulletin_list"><text class="fa fa-bullhorn"></text></mm_div>
 							</mm_side>
 							<mm_main class="pn">
-								<mm_swiper_text :list="list_text" />
+								<mm_swiper_text :list="list_text" v-if="list_text.length > 0" />
 							</mm_main>
 						</mm_block>
 					</mm_col>
@@ -34,7 +34,7 @@
 						<view class="banner">
 							<view class="banner_title">务实进取 诚信共赢</view>
 							<navigator url="../demo/index" hover-class="navigator-hover">
-								<image class="banner_image" src="/static/img/ad.jpg"></image>
+								<mm_icon src="/static/img/ad.jpg"></mm_icon>
 							</navigator>
 						</view>
 					</mm_col>
@@ -56,7 +56,7 @@
 										</mm_side>
 										<mm_main class="introduce">
 											<mm_title>DBD礼包</mm_title>
-											<mm_desc><text class="price">298.00</text></mm_desc>
+											<mm_desc><text class="price">{{ obj.price }}</text><text class="unit">元/个</text></mm_desc>
 											<mm_desc>
 												有效天数：365
 											</mm_desc>
@@ -119,6 +119,18 @@
 			return {
 				auto: false,
 				title: 'Hello',
+				url_get_obj: "~/dbd/",
+				obj: {
+					"amount": 0.5,
+					"price": "298",
+					"cycle": 7
+				},
+				url_get_list: "~/paper/grouping/paper",
+				query: {
+					index: 0,
+					size: 4,
+					grouping: "公告"
+				},
 				list_img: [{
 						img: "/static/img/banner1.jpg",
 						url: "/pages/home/article_view"
@@ -146,6 +158,22 @@
 					}
 				]
 			}
+		},
+		methods: {
+			get_list_after(json, status)
+			{
+				if(json){
+					var lt = json.content;
+					if(lt){
+						this.list_text.clear();
+						for(var i = 0; i < lt.length; i++){
+							var o = lt[i];
+							o.url = '/pages/home/bulletin_view?id=' + o.id;
+							this.list_text.push(o);
+						}
+					}
+				}
+			}
 		}
 	}
 </script>
@@ -153,6 +181,10 @@
 <style>
 	.banner {
 		text-align: center;
+	}
+
+	.banner .mm_icon {
+		height: 8.75rem;
 	}
 
 	.banner_title {
@@ -188,7 +220,7 @@
 		line-height: 2.5rem;
 		position: relative;
 	}
-	
+
 	.hot_icon:after {
 		display: block;
 		content: "";
@@ -197,7 +229,7 @@
 		top: 20%;
 		bottom: 0;
 		right: 0;
-		border-right: 1px solid rgba(0,0,0,0.1);
+		border-right: 1px solid rgba(0, 0, 0, 0.1);
 	}
 
 	.footer_info {
@@ -205,6 +237,8 @@
 		margin-bottom: 0.5rem;
 		text-align: center;
 	}
-	
-	.dbd .mm_head .mm_title { color: #333; }
+
+	.dbd .mm_head .mm_title {
+		color: #333;
+	}
 </style>
