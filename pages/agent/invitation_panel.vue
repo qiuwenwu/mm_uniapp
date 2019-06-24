@@ -46,8 +46,8 @@
 										<mm_main>
 											<mm_title>邀请码</mm_title>
 											<mm_desc>
-												<text class="code">123456</text>
-												<text class="font_success" @click="copy_code()">复制</text>
+												<text class="text_code code">{{ obj.code }}</text>
+												<text id="btn_copy" class="font_success" @click="$copy(obj.code)">复制</text>
 											</mm_desc>
 										</mm_main>
 									</mm_item>
@@ -55,7 +55,7 @@
 										<mm_main>
 											<mm_title>邀请链接</mm_title>
 											<mm_desc>
-												<text class="font_info" @click="copy">复制链接</text>
+												<text id="btn_url" class="font_info" @click="$copy(invitation_qrcode)">复制链接</text>
 											</mm_desc>
 										</mm_main>
 									</mm_item>
@@ -65,7 +65,7 @@
 					</mm_col>
 					<mm_col class="pn-t">
 						<mm_block>
-							<mm_qrcode display="2" class="invitation_qrcode" value="http://www.baidu.com"></mm_qrcode>
+							<mm_qrcode display="2" class="invitation_qrcode" :value="invitation_qrcode" v-if="invitation_qrcode"></mm_qrcode>
 						</mm_block>
 					</mm_col>
 				</mm_grid>
@@ -82,21 +82,30 @@
 		components: {},
 		data() {
 			return {
-				oauth: false
+				oauth: false,
+				url_get_obj: "~/spread/",
+				obj: {
+					code: ""
+				},
+				query: {}
+			}
+		},
+		computed: {
+			invitation_qrcode() {
+				return this.$url('/pages/account/signup?invitation_code=' + this.obj.code);
 			}
 		},
 		methods: {
-			copy_code() {
-
-			},
-			save_img() {
-
-			}
-		}
+		},
+		mounted() {}
 	}
 </script>
 
 <style>
+	#text_url {
+		display: none;
+	}
+
 	#agent_invitation_panel .code {
 		margin-right: 0.5rem;
 		padding-right: 0.5rem;

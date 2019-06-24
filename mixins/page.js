@@ -47,12 +47,7 @@ export default {
 			// 主键字段
 			field: "id",
 			// 查询
-			query: {
-				// 页数
-				page: 1,
-				// 大小
-				size: 10
-			},
+			query: {},
 			// 配置
 			config: {
 				// 唯一主键
@@ -218,7 +213,8 @@ export default {
 				var token = this.$store.state.user.token;
 				if (!token) {
 					this.$store.commit('set_redirect_url', this.$route.path + location.search);
-					this.$router.push(this.redirect);
+					// this.$router.push(this.redirect);
+					uni.navigateTo({ url: this.redirect});
 					return;
 				}
 			}

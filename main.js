@@ -6,6 +6,7 @@ import mm_vue from './plugins/mm_vue'
 import mm_ui from './plugins/mm_ui'
 import mm_component from './plugins/mm_component'
 
+
 Vue.config.productionTip = false
 Vue.prototype.$store = store
 

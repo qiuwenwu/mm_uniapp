@@ -73,7 +73,7 @@
 							</mm_head>
 							<mm_body class="lr">
 								<mm_list col="1" class="mini">
-									<mm_item url="/pages/pay/ali">
+									<mm_item :url="'/pages/pay/ali?num=' + this.form.num">
 										<mm_side>
 											<mm_icon class="linear_yellow" src="<i class='fa fa-btc'></i>"></mm_icon>
 										</mm_side>
@@ -81,7 +81,7 @@
 											<mm_title>支付宝</mm_title>
 										</mm_main>
 									</mm_item>
-									<mm_item url="/pages/pay/wechat">
+									<mm_item :url="'/pages/pay/wechat?num=' + this.form.num">
 										<mm_side>
 											<mm_icon class="linear_yellow" src="<i class='fa fa-btc'></i>"></mm_icon>
 										</mm_side>
@@ -89,7 +89,7 @@
 											<mm_title>微信</mm_title>
 										</mm_main>
 									</mm_item>
-									<mm_item url="/pages/pay/bank">
+									<mm_item :url="'/pages/pay/bank?num=' + this.form.num">
 										<mm_side>
 											<mm_icon class="linear_yellow" src="<i class='fa fa-btc'></i>"></mm_icon>
 										</mm_side>
@@ -97,7 +97,7 @@
 											<mm_title>银行卡</mm_title>
 										</mm_main>
 									</mm_item>
-									<mm_item url="/pages/pay/balance_cny">
+									<mm_item :url="'/pages/pay/balance_cny?num=' + this.form.num">
 										<mm_side>
 											<mm_icon class="linear_success" src="<i class='fa fa-rmb'></i>"></mm_icon>
 										</mm_side>
@@ -105,7 +105,7 @@
 											<mm_title>现金余额</mm_title>
 										</mm_main>
 									</mm_item>
-									<mm_item url="/pages/pay/balance_btc">
+									<mm_item :url="'/pages/pay/balance_btc?num=' + this.form.num">
 										<mm_side>
 											<mm_icon class="linear_yellow" src="<i class='fa fa-btc'></i>"></mm_icon>
 										</mm_side>
@@ -139,14 +139,14 @@
 				dbd_desc: "",
 				dbd_statement: "",
 				form: {
-					number: "",
+					num: "",
 				}
 			}
 		},
 		methods: {
 			buy() {
 				uni.navigateTo({
-					url: '/pages/mall/shopping_cart?number=' + this.form.num
+					url: '/pages/mall/shopping_cart?num=' + this.form.num
 				});
 			},
 			get_obj_after(json, status) {

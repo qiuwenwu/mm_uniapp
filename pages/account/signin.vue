@@ -124,9 +124,10 @@
 								_this.$get_user(function() {
 									var url = _this.$store.state.web.redirect_url;
 									if (url) {
-										uni.navigateTo({ url: url});
+										location.href = url;
 									} else {
-										uni.navigateTo({ url: "/pages/home/index"});
+										location.href = "/pages/user/index";
+										//_this.$router.push("/pages/user/index");
 									}
 								});
 							}
@@ -138,7 +139,7 @@
 				}
 			}
 		},
-		onLoad(){}
+		onLoad() {}
 	}
 </script>
 

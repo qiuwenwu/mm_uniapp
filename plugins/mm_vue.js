@@ -3,6 +3,8 @@ import Vue from 'vue'
 import ba from 'vue-ba'
 import echarts from 'echarts'
 
+import h5_api from './ican-H5Api'
+
 /* 加载组件 */
 // import { uniBadge, uniListItem, uniList } from '@dcloudio/uni-ui'
 
@@ -29,6 +31,23 @@ let mm = {
 		// });
 
 		/* === 注册全局函数 === */
+		Vue.prototype.$url = function(url) {
+			return window.location.protocol + '//' + window.location.host + url;
+		};
+
+		// 复制到粘贴板
+		Vue.prototype.$copy = function(text) {
+			uni.setClipboardData({
+				data: text,
+				success: function() {
+					uni.showToast({
+						title: '复制成功',
+						duration: 1500
+					});
+				}
+			});
+		};
+
 		// 引入echarts
 		Vue.prototype.$echarts = echarts;
 
@@ -80,14 +99,14 @@ let mm = {
 		Vue.prototype.$double = function(num) {
 			return num.toFloor(2).toStr(2);
 		};
-		
+
 		/// 科学计数转浮点数
 		/// num: 被转换的数值
 		/// 返回: 数值
 		Vue.prototype.$num = function(num) {
 			return new Number(num);
 		};
-		
+
 		/// 引入截取字符串函数
 		/// str: 被截取的字符串
 		/// start: 起始字符串
@@ -157,10 +176,11 @@ Vue.mixin(Vue.extend({
 				this.$get('~/user/', function(json, status) {
 					if (json) {
 						if (json.data) {
-							json.data.isLoad = true;
 							_this.$store.dispatch('set_user', json.data);
 							if (p.indexOf('/sign') == 0 || p.indexOf('/forgot') == 0) {
-								uni.navigateTo({ url: '/pages/home/index'});
+								uni.navigateTo({
+									url: '/pages/home/index'
+								});
 								return;
 							}
 						}

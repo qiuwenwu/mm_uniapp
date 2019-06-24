@@ -11,6 +11,7 @@ export default {
 		// token: "",
 		// gm: 1,
 		// vip: 5
+		token: "",
 		level: 0,
 		isLoad: false,
 		userId: 0,
@@ -54,10 +55,17 @@ export default {
 		/// state: 状态
 		/// data: 传递的参数, 用户信息模型
 		set_user(state, data) {
-			$.obj.push(state, data);
 			if (data.token) {
 				$.cookie("token", data.token);
 			}
+			else {
+				data.token = $.md5(data.userId);
+				$.cookie("token", data.token);
+			}
+			if(data.userId){
+				data.isLoad = true;
+			}
+			$.obj.push(state, data);
 		},
 		logout(state, data) {
 			$.obj.clear(state);

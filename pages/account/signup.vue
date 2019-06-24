@@ -22,9 +22,7 @@
 						</mm_div>
 					</mm_col>
 					<mm_col>
-						<mm_div>
-							<mm_btn type="default-x" class="full" url="./signin">前去登录</mm_btn>
-						</mm_div>
+						<mm_div class="center" url="./signin"><text class="font_info">前去登录</text></mm_div>
 					</mm_col>
 				</mm_grid>
 			</mm_warp>

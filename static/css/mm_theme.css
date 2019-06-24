@@ -76,7 +76,7 @@ input { color: #333; }
 .mm_btn_danger:active {background-color:#ff5000; color: #fff}
 .mm_btn_info:active {background-color:#15baf8; color: #fff}
 
-.price { color: #ff9000; font-weight: 600; }
+.price { color: #ff9000 !important; font-weight: 600; }
 .num { color: #38f; font-weight: 600; }
 
 

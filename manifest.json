@@ -16,7 +16,8 @@
         },
         "modules" : {
             "Payment" : {},
-            "OAuth" : {}
+            "OAuth" : {},
+            "Share" : {}
         },
         /* 模块配置 */
         "distribute" : {
