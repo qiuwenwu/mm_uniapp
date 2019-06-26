@@ -1,6 +1,7 @@
 <template>
 	<!-- 输入框 -->
 	<mm_item class="mm_input">
+		<slot></slot>
 		<mm_side v-if="icon">
 			<mm_icon :icon="icon"></mm_icon>
 		</mm_side>
@@ -12,7 +13,7 @@
 				<input type="password" :value="value" :maxlength="max" :placeholder="desc" v-else-if="type == 'password'" @input="$emit('input', $event.target.value)"></input>
 			</mm_desc>
 			<view class="mm_line"></view>
-			<mm_tip><slot></slot></mm_tip>
+			<mm_tip v-if="tip" v-html="tip"></mm_tip>
 		</mm_main>
 	</mm_item>
 </template>

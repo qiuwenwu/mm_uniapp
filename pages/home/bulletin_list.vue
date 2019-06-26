@@ -20,7 +20,7 @@
 </template>
 
 <script>
-	import mixin from '@/mixins/page'
+import mixin from '@/mixins/page'
 
 	export default {
 		mixins: [mixin],
@@ -28,34 +28,45 @@
 		data() {
 			return {
 				oauth: true,
-				url: "~/paper/all",
+				url_get_list: "~/paper/grouping/paper",
 				query: {
-					cid: ""
+					index: 0,
+					size: 10,
+					grouping: "公告"
 				},
-				list_text: [{
-						title: "这是一条公告，轮播公告",
-						desc: "2019年6月20日",
-						url: "/pages/home/bulletin_view"
-					},
-					{
-						title: "关于币价上涨，引起的矿机限购的公告",
-						desc: "2019年6月20日",
-						url: "/pages/home/bulletin_view"
-					}
-				]
+				vm: {
+					title: "title",
+					desc: "description",
+					createTime: "time",
+					icon: "icon",
+					url: "url"
+				}
 			}
 		},
 		methods: {
-			get_list_before(param) {
-				var pm = this.$obj.copy(param);
-				pm.index = (param.page - 1) + "";
-				delete pm.page;
-				return pm;
+			get_list_after(json, status) {
+				if (json) {
+					var lt = json.content;
+					if (lt) {
+						this.list.clear();
+						for (var i = 0; i < lt.length; i++) {
+							var o = lt[i];
+							o.url = '/pages/home/bulletin_view?id=' + o.id;
+							this.list.push(o);
+						}
+					}
+				}
 			}
 		}
 	}
 </script>
 
 <style>
-	.hot_icon { padding-top: 0; padding-bottom: 0; height: 2.5rem; line-height: 2.5rem; color: #C60A0A; }
+	.hot_icon {
+		padding-top: 0;
+		padding-bottom: 0;
+		height: 2.5rem;
+		line-height: 2.5rem;
+		color: #C60A0A;
+	}
 </style>

@@ -70,6 +70,7 @@
 		mixins: [mixin],
 		data() {
 			return {
+				oauth: true,
 				user: this.$store.state.user,
 				check_in_output: 0.0130231,
 				last_invite: 20.00

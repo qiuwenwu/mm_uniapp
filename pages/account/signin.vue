@@ -13,7 +13,7 @@
 							<mm_body class="sign_in_body">
 								<view class="sign" v-bind:class="{ 'active': form.phone != '' }">
 									<mm_title><text class="actoin" v-bind:class="{ 'hide': form.phone == '' }">请输入手机号码</text></mm_title>
-									<input class="mm_input" type="text" v-model="form.phone" maxlength="11" placeholder="请输入手机号码" @blur="phone_fun()"></input>
+									<input class="mm_input" type="number" v-model="form.phone" maxlength="11" placeholder="请输入手机号码" @blur="phone_fun()"></input>
 									<mm_icon src="/static/img/input_del.png" class="input_del" v-show="form.phone != ''" @click.native="form.phone = ''"></mm_icon>
 									<mm_div class="mm_tip" v-show="!tip_phone && form.phone">
 										<text>手机号码位数不够</text>
@@ -25,7 +25,7 @@
 										<input class="mm_input" type="password" maxlength="12" v-model="form.password" placeholder="请输入登录密码" @blur="password_fun()"></input>
 										<mm_icon src="/static/img/input_del.png" class="input_del" v-show="form.password != ''" @click.native="form.password = ''"></mm_icon>
 										<mm_div class="mm_tip" v-show="!tip_password && form.password">
-											<text>密码不正确，请重新输入</text>
+											<text>密码格式不正确，请重新输入</text>
 										</mm_div>
 									</mm_desc>
 								</view>
@@ -51,26 +51,6 @@
 				</mm_grid>
 			</mm_warp>
 		</mm_bodyer>
-		<mm_modal v-model="show">
-			<mm_warp>
-				<mm_grid>
-					<mm_col>
-						<mm_block class="b-a">
-							<mm_head>
-								<mm_title>注册提示</mm_title>
-								<text class="close" @click="show = false">X</text>
-							</mm_head>
-							<mm_body v-html="msg"></mm_body>
-							<mm_foot>
-								<mm_group class="font_small">
-									<mm_btn type="default-x" @click.native="show = false">确定</mm_btn>
-								</mm_group>
-							</mm_foot>
-						</mm_block>
-					</mm_col>
-				</mm_grid>
-			</mm_warp>
-		</mm_modal>
 	</view>
 </template>
 
@@ -141,21 +121,27 @@
 				if (this.check_phone && this.check_password) {
 					this.$post(this.url_submit, this.form, function(json, status) {
 						if (json) {
-							if (!json.code) {
-								_this.$get_user(function() {
+							if (json.data) {
+								_this.$db.set("token", json.data);
+								_this.$user_info(function() {
 									var url = _this.$store.state.web.redirect_url;
-									if (url) {
-										location.href = url;
+									if (url.indexOf('/signin') == -1) {
+										uni.reLaunch({
+											url: url
+										});
 									} else {
-										location.href = "/pages/user/index";
+										uni.reLaunch({
+											url: '/pages/user/index',
+										});
 									}
 								});
+								return;
 							}
+							_this.alert(json.msg);
 						}
 					});
 				} else {
-					this.show = true;
-					this.msg = "手机号码或密码错误！";
+					_this.alert('手机或密码错误');
 				}
 			}
 		},
@@ -204,7 +190,7 @@
 
 	#account_signin .sign_in_head {
 		width: 100%;
-		height: 7rem;
+		height: 6rem;
 		display: flex;
 		align-items: center;
 		font-size: 2.15rem;

@@ -32,60 +32,41 @@
 
 <script>
 	import mixin from '@/mixins/page'
-
+	
 	export default {
 		mixins: [mixin],
 		components: {},
 		data() {
 			return {
 				oauth: true,
-				url: "~/paper/all",
+				url_get_list: "~/paper/grouping/paper",
 				query: {
-					cid: ""
+					index: 0,
+					size: 10,
+					grouping: "培训"
 				},
-				list_img: [{
-						img: "/static/img/banner1.jpg",
-						url: "/pages/home/article_view?aid=1"
-					},
-					{
-						img: "/static/img/banner2.jpg",
-						url: "/pages/home/article_view?aid=2"
-					},
-					{
-						img: "/static/img/banner3.jpg",
-						url: "/pages/home/article_view?aid=3"
-					},
-					{
-						img: "/static/img/banner4.jpg",
-						url: "/pages/home/article_view?aid=4"
-					}
-				],
-				list: [{
-						title: "这是一文章",
-						desc: "测试",
-						icon: "/static/img/banner3.jpg",
-						url: "/pages/home/article_view?aid=3"
-					},
-					{
-						title: "这是一文章",
-						desc: "测试",
-						icon: "/static/img/banner2.jpg",
-						url: "/pages/home/article_view?aid=2"
-					}, {
-						title: "这是一文章",
-						desc: "测试",
-						icon: "/static/img/banner1.jpg",
-						url: "/pages/home/article_view?aid=1"
-					}
-				]
+				vm: {
+					title: "title",
+					desc: "description",
+					createTime: "time",
+					icon: "icon",
+					url: "url"
+				}
 			}
 		},
 		methods: {
-			get_list_before(param) {
-				var pm = this.$obj.copy(param);
-				pm.index = (param.page - 1) + "";
-				delete pm.page;
-				return pm;
+			get_list_after(json, status) {
+				if (json) {
+					var lt = json.content;
+					if (lt) {
+						this.list.clear();
+						for (var i = 0; i < lt.length; i++) {
+							var o = lt[i];
+							o.url = '/pages/home/article_view?id=' + o.id;
+							this.list.push(o);
+						}
+					}
+				}
 			}
 		}
 	}

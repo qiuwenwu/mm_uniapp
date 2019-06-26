@@ -17,7 +17,7 @@
 											<mm_icon :src="user.avatar"></mm_icon>
 										</mm_side>
 										<mm_main class="arrow">
-											<mm_title><text>昵称</text><text class="vip">VIP{{obj.level}}</text></mm_title>
+											<mm_title><text>昵称</text><text class="vip">VIP{{user.level}}</text></mm_title>
 											<mm_desc>账号:{{user.phone}}</mm_desc>
 										</mm_main>
 									</mm_item>
@@ -120,6 +120,15 @@
 						})
 					}
 				});
+			},
+			get_obj_after(json, status) {
+				if(json)
+				{
+					if(json.data)
+					{
+						this.$store.dispatch('set_user', { level: json.data.level });
+					}
+				}
 			}
 		}
 	}

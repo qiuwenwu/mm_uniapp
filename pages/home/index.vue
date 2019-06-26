@@ -117,7 +117,7 @@
 		},
 		data() {
 			return {
-				auto: false,
+				oauth: true,
 				title: 'Hello',
 				url_get_obj: "~/dbd/",
 				obj: {

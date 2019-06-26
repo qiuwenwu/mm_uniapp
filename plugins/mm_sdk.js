@@ -586,12 +586,36 @@ Array.prototype.toArr = function(key) {
 	return arr;
 };
 
+
 (function($) {
 	// 插件类
 	$.plugins = {
 		// 复制插件
 		clipboard: {}
 	};
+	
+	/* == 本地存储 == */
+	$.db = {
+		/// 设置值
+		/// key: 键
+		/// value: 值
+		set: function(key, value){
+			window.localStorage.setItem(key, value);
+		},
+		/// 获取值
+		/// key: 键
+		/// value: 值
+		get: function(key){
+			return window.localStorage.getItem(key);
+		},
+		/// 删除值
+		/// key: 键
+		/// value: 值
+		del: function(key){
+			window.localStorage.removeItem(key);
+		}
+	};
+	
 	/* == 对象 == */
 	$.obj = {
 		/// 是否浮点数

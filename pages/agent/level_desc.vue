@@ -22,31 +22,41 @@
 									<mm_item>
 										<mm_main>
 											<mm_title>自己DBD数量</mm_title>
-											<mm_desc><mm_icon src="/static/img/state_success.svg"></mm_icon>10/10</mm_desc>
+											<mm_desc>
+												<mm_icon src="/static/img/state_success.svg"></mm_icon>10/10
+											</mm_desc>
 										</mm_main>
 									</mm_item>
 									<mm_item>
 										<mm_main>
 											<mm_title>一级代理人数</mm_title>
-											<mm_desc><mm_icon src="/static/img/state_success.svg"></mm_icon>201/200</mm_desc>
+											<mm_desc>
+												<mm_icon src="/static/img/state_success.svg"></mm_icon>201/200
+											</mm_desc>
 										</mm_main>
 									</mm_item>
 									<mm_item>
 										<mm_main>
 											<mm_title>一级DBD总数</mm_title>
-											<mm_desc><mm_icon src="/static/img/state_warning.svg"></mm_icon>20/80</mm_desc>
+											<mm_desc>
+												<mm_icon src="/static/img/state_warning.svg"></mm_icon>20/80
+											</mm_desc>
 										</mm_main>
 									</mm_item>
 									<mm_item>
 										<mm_main>
 											<mm_title>二级代理人数</mm_title>
-											<mm_desc><mm_icon src="/static/img/state_warning.svg"></mm_icon>190/200</mm_desc>
+											<mm_desc>
+												<mm_icon src="/static/img/state_warning.svg"></mm_icon>190/200
+											</mm_desc>
 										</mm_main>
 									</mm_item>
 									<mm_item>
 										<mm_main>
 											<mm_title>二级DBD总数</mm_title>
-											<mm_desc><mm_icon src="/static/img/state_success.svg"></mm_icon>201/200</mm_desc>
+											<mm_desc>
+												<mm_icon src="/static/img/state_success.svg"></mm_icon>201/200
+											</mm_desc>
 										</mm_main>
 									</mm_item>
 								</mm_list>
@@ -123,8 +133,28 @@
 </template>
 
 <script>
+	import mixin from '@/mixins/page'
+	export default {
+		mixins: [mixin],
+		data() {
+			return {
+				oauth: true
+			}
+		},
+		onLoad() {
+
+		},
+		methods: {
+
+		}
+	}
 </script>
 
 <style>
-	#agent_level_desc .mm_desc .mm_icon { float: right; margin-left: 0.5rem; width: 1.25rem; height: 1.25rem; }
+	#agent_level_desc .mm_desc .mm_icon {
+		float: right;
+		margin-left: 0.5rem;
+		width: 1.25rem;
+		height: 1.25rem;
+	}
 </style>

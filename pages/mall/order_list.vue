@@ -97,6 +97,7 @@
 		mixins: [mixin],
 		data() {
 			return {
+				oauth: true,
 				url: "~/api/user/dbd_list",
 				query: {
 					state: ""

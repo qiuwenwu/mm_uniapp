@@ -79,6 +79,8 @@
 		mixins: [mixin],
 		data() {
 			return {
+				oauth: true,
+				user: this.$store.state.user,
 				value: 8.888888888888,
 				value1: 0.123123123123,
 			}

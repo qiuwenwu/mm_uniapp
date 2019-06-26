@@ -42,7 +42,25 @@
 		components: {},
 		data() {
 			return {
-				oauth: true
+				oauth: true,
+				url_get_obj: "~/paper/id",
+				query: {
+					id: "",
+					title: ""
+				},
+				obj: {
+					author: "",
+					content: "",
+					description: "",
+					display: 0,
+					grouping: "",
+					id: 0,
+					keyWords: [],
+					state: 0,
+					time: "2019-06-14 15:01:16",
+					title: "",
+					users: []
+				}
 			}
 		}
 	}

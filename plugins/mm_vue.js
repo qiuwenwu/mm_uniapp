@@ -31,6 +31,10 @@ let mm = {
 		// });
 
 		/* === 注册全局函数 === */
+		Vue.prototype.$toTime = function(timeStr, formatStr) {
+			return timeStr.toTime().format(formatStr);
+		};
+		
 		Vue.prototype.$url = function(url) {
 			return window.location.protocol + '//' + window.location.host + url;
 		};
@@ -57,6 +61,9 @@ let mm = {
 			});
 		};
 
+		// 引入数据库处理类
+		Vue.prototype.$db = $.db;
+
 		// 引入echarts
 		Vue.prototype.$echarts = echarts;
 
@@ -67,7 +74,7 @@ let mm = {
 		/// url: 请求地址
 		/// fun: 回调函数
 		Vue.prototype.$get = function(url, fun) {
-			var token = $.cookie("token");
+			var token = $.db.get("token");
 			$.http.get(url.replace('~/', host), fun, {
 				"x-auth-token": token
 			});
@@ -78,7 +85,7 @@ let mm = {
 		/// param: 请求参数
 		/// fun: 回调函数
 		Vue.prototype.$post = function(url, param, fun) {
-			var token = $.cookie("token");
+			var token = $.db.get("token");
 			$.http.postForm(url.replace('~/', host), param, fun, {
 				"x-auth-token": token
 			});
@@ -89,7 +96,7 @@ let mm = {
 		/// dict: 上传参数集合
 		/// fun: 回调函数
 		Vue.prototype.$upload = function(url, dict, fun) {
-			var token = $.cookie("token");
+			var token = $.db.get("token");
 			$.file.upload(url.replace('~/', host), dict, fun, {
 				"x-auth-token": token
 			});
@@ -133,7 +140,7 @@ let mm = {
 		};
 
 		// 引入cookie函数
-		Vue.prototype.$cookie = $.cookie;
+		Vue.prototype.$cookie = $.db.get;
 
 		/* === 注册过滤器, 备注：过滤器在uni-app中无法使用 === */
 		/// 转双精度小数字符串
@@ -201,12 +208,15 @@ Vue.mixin(Vue.extend({
 				fun();
 			}
 		},
-		$user_info: function() {
+		$user_info: function(fun) {
 			var _this = this;
 			this.$get('~/user/', function(json, status) {
 				if (json) {
 					if (json.data) {
 						_this.$store.dispatch('set_user', json.data);
+						if (fun) {
+							fun();
+						}
 					}
 				}
 			});

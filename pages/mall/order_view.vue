@@ -81,6 +81,7 @@
 		mixins: [mixin],
 		data() {
 			return {
+				oauth: true,
 				state: 0
 			}
 		},

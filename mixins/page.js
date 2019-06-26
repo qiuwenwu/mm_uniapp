@@ -218,7 +218,7 @@ export default {
 		/// 登录验证
 		check_oauth() {
 			if (this.oauth) {
-				var token = this.$store.state.user.token;
+				var token = this.$db.get("token");
 				if (!token) {
 					this.$store.commit('set_redirect_url', this.$route.path + location.search);
 					// this.$router.push(this.redirect);

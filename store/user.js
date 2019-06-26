@@ -8,11 +8,10 @@ export default {
 		// nickName: "命天子",
 		// group_user: [],
 		// group_admin: [],
-		// token: "",
+		token: "",
 		// gm: 1,
 		// vip: 5
 		name: "",
-		token: "",
 		level: 0,
 		isLoad: false,
 		userId: 0,
@@ -56,22 +55,14 @@ export default {
 		/// state: 状态
 		/// data: 传递的参数, 用户信息模型
 		set_user(state, data) {
-			if (data.token) {
-				$.cookie("token", data.token);
-			}
-			else {
-				data.token = $.md5(data.userId);
-				$.cookie("token", data.token);
-			}
-			if(data.userId){
+			if (data.userId) {
 				data.isLoad = true;
 			}
 			$.obj.push(state, data);
 		},
 		logout(state, data) {
 			$.obj.clear(state);
-			$.cookie("token", "");
-			$.cookie("token", "", "; domain=localhost");
+			$.db.del("token");
 		}
 	},
 	actions: {
@@ -79,7 +70,7 @@ export default {
 		set_user(context, user_info) {
 			context.commit('set_user', user_info)
 		},
-		logout(context){
+		logout(context) {
 			context.commit('logout')
 		}
 	},

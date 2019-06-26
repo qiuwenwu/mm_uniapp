@@ -31,14 +31,32 @@
 
 <script>
 	import mixin from '@/mixins/page'
-
+	
 	export default {
 		mixins: [mixin],
 		components: {},
 		data() {
 			return {
 				oauth: true,
-				url: "~/home/article?"
+				url_get_list: "~/paper/grouping/paper",
+				query: {
+					index: 0,
+					size: 10,
+					grouping: "公告"
+				},
+				list_text: []
+			}
+		},
+		methods: {
+			get_list_before(param) {
+				var pm = this.$obj.copy(param);
+				if(!param.page){
+					param.page = 1;
+				}
+				var index = param.page - 1;
+				pm.index =  + "";
+				delete pm.page;
+				return pm;
 			}
 		}
 	}

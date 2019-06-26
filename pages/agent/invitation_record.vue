@@ -81,7 +81,9 @@
 	export default {
 		mixins: [mixin],
 		data() {
-			return {}
+			return {
+				oauth: true
+			}
 		},
 		onLoad() {
 

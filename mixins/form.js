@@ -81,6 +81,10 @@ export default {
 			type: String,
 			default: ""
 		},
+		disabled: {
+			type: Boolean,
+			default: false
+		},
 		// 链接
 		url: {
 			type: String,
@@ -138,7 +142,9 @@ export default {
 			// 文本
 			txt: this.text,
 			// 值
-			val: this.value
+			val: this.value,
+			// 禁用
+			dd: this.disabled
 		}
 	},
 	methods: {

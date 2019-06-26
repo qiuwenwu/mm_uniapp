@@ -8,7 +8,7 @@
 						<!-- 注册表单 -->
 						<mm_block>
 							<mm_body>
-								<mm_input v-model="form.phone" :max="11" desc="请输入手机"></mm_input>
+								<mm_input type="number" v-model="form.phone" :max="11" desc="请输入手机"></mm_input>
 								<!-- <mm_input v-model="form.code" :max="6" desc="请输入验证码"></mm_input> -->
 								<mm_input v-model="form.password" :max="12" type="password" desc="请设置登录密码（6-12位）"></mm_input>
 								<mm_input v-model="query.invitation_code" desc="请输入邀请码"></mm_input>

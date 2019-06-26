@@ -19,7 +19,7 @@
 							</mm_head>
 							<mm_body>
 								<mm_div url="./level_desc">
-									<mm_progress :num="23">等级3</mm_progress>
+									<mm_progress :num="23">等级 {{ user.level }}</mm_progress>
 								</mm_div>
 							</mm_body>
 						</mm_block>
@@ -83,6 +83,7 @@
 		data() {
 			return {
 				oauth: true,
+				user: this.$store.state.user,
 				url_get_obj: "~/spread/",
 				obj: {
 					code: ""
@@ -96,6 +97,7 @@
 			}
 		},
 		methods: {
+			
 		},
 		mounted() {}
 	}

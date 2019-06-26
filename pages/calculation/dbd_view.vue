@@ -10,7 +10,7 @@
 								<mm_list col="1" class="mini">
 									<mm_item>
 										<mm_side class="dbd_view">
-											<mm_icon src="http://img.sccnn.com/bimg/334/0957.jpg"></mm_icon>
+											<mm_icon :src="obj.icon"></mm_icon>
 										</mm_side>
 									</mm_item>
 									<mm_item>
@@ -129,6 +129,7 @@
 		mixins: [mixin],
 		data() {
 			return {
+				oauth: true,
 				state: "1",
 				url_get_obj: "~/dbd/",
 				obj: {
@@ -136,7 +137,9 @@
 					"price": "",
 					"cycle": 0
 				},
-				dbd_desc: "",
+				dbd_desc: {
+					content: ""
+				},
 				dbd_statement: "",
 				form: {
 					num: "",
@@ -156,8 +159,8 @@
 				this.$get('~/paper/title?title=DBD描述', function(json, status) {
 					if (json) {
 						var lt = json.data;
-						if (lt.length > 0) {
-							_this.dbd_desc = lt[0].content;
+						if(lt && lt.length > 0) {
+							$.obj.push(_this.dbd_desc, lt[0]);
 						}
 					}
 				});

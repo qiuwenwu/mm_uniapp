@@ -44,17 +44,17 @@
 		font-size: 0.625rem;
 	}
 
-	.sign .mm_main:after {
+	.sign .mm_input:after {
 		content: "";
 		display: block;
 		border-bottom: 2px solid #FF5A6A;
 		bottom: 0;
 		position: absolute;
 		width: 0%;
-		transition: all .5s ease-in-out;
+		transition: all 1s ease-in-out;
 	}
 
-	.active .mm_main:after {
+	.active .mm_input:after {
 		width: 100%;
 	}
 

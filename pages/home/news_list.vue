@@ -53,13 +53,12 @@
 			}
 		},
 		methods: {
-			get_list_after(json, status)
-			{
-				if(json){
+			get_list_after(json, status) {
+				if (json) {
 					var lt = json.content;
-					if(lt){
+					if (lt) {
 						this.list.clear();
-						for(var i = 0; i < lt.length; i++){
+						for (var i = 0; i < lt.length; i++) {
 							var o = lt[i];
 							o.url = '/pages/home/news_view?id=' + o.id;
 							this.list.push(o);
