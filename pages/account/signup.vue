@@ -22,7 +22,7 @@
 						</mm_div>
 					</mm_col>
 					<mm_col>
-						<mm_div class="center" url="./signin"><text class="font_info">前去登录</text></mm_div>
+						<mm_div class="center" url="./signin"><text class="font_small font_info">前去登录</text></mm_div>
 					</mm_col>
 				</mm_grid>
 			</mm_warp>
@@ -106,14 +106,9 @@
 				if (this.check_phone && this.check_password) {
 					this.$post(this.url_submit + this.query.invitation_code, this.form, function(json, status) {
 						if (json) {
-							_this.ret = !json.code;
-							_this.show = true;
-							_this.msg = json.msg;
+							_this.alert(json.msg);
 						}
 					});
-				} else {
-					this.show = true;
-					this.msg = "手机号码或密码错误！";
 				}
 			}
 		}

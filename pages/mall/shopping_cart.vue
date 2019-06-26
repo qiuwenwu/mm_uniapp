@@ -192,7 +192,7 @@
 		components: {},
 		data() {
 			return {
-				oauth: false,
+				oauth: true,
 				passwordNum: 0,
 				numBlock: false,
 				payTypeBlock: true

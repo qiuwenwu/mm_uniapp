@@ -36,7 +36,7 @@
 		components: {},
 		data() {
 			return {
-				oauth: false,
+				oauth: true,
 				url_get_list: "~/paper/grouping/paper",
 				query: {
 					index: 0,

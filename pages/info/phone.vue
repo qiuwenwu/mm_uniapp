@@ -37,7 +37,7 @@
 		components: {},
 		data() {
 			return {
-				oauth: false,
+				oauth: true,
 				form: {
 					phone: "",
 					code: ""

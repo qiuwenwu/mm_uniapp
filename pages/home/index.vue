@@ -197,22 +197,6 @@
 		height: 8.75rem;
 	}
 
-	.copyright {
-		color: rgba(0, 0, 0, 0.3);
-		font-size: 0.625rem;
-	}
-
-	.footer {
-		text-align: center;
-		padding: 1.5rem;
-	}
-
-	.footer_link {
-		color: #576B95;
-		font-size: 85%;
-	}
-
-
 	.hot_icon {
 		padding-top: 0;
 		padding-bottom: 0;
@@ -230,12 +214,6 @@
 		bottom: 0;
 		right: 0;
 		border-right: 1px solid rgba(0, 0, 0, 0.1);
-	}
-
-	.footer_info {
-		padding: 1rem 0;
-		margin-bottom: 0.5rem;
-		text-align: center;
 	}
 
 	.dbd .mm_head .mm_title {

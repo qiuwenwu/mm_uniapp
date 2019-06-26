@@ -102,7 +102,7 @@
 		components: {},
 		data() {
 			return {
-				oauth: false,
+				oauth: true,
 				channel: [],
 				channel_sub: [],
 				list: [{

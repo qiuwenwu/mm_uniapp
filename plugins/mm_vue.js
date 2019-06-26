@@ -48,6 +48,15 @@ let mm = {
 			});
 		};
 
+		// 警告
+		Vue.prototype.$alert = function(text, icon) {
+			uni.showToast({
+				title: text,
+				icon: icon,
+				duration: 2000
+			});
+		};
+
 		// 引入echarts
 		Vue.prototype.$echarts = echarts;
 
@@ -126,7 +135,6 @@ let mm = {
 		// 引入cookie函数
 		Vue.prototype.$cookie = $.cookie;
 
-
 		/* === 注册过滤器, 备注：过滤器在uni-app中无法使用 === */
 		/// 转双精度小数字符串
 		/// value: 被转换的数值
@@ -192,6 +200,16 @@ Vue.mixin(Vue.extend({
 			} else if (fun) {
 				fun();
 			}
+		},
+		$user_info: function() {
+			var _this = this;
+			this.$get('~/user/', function(json, status) {
+				if (json) {
+					if (json.data) {
+						_this.$store.dispatch('set_user', json.data);
+					}
+				}
+			});
 		}
 	}
 }));

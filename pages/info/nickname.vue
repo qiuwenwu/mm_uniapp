@@ -13,13 +13,13 @@
 								<mm_title class="font_small"><text>昵称</text></mm_title>
 							</mm_head>
 							<mm_body>
-								<mm_input v-model="form.nickname" desc="由2-12个字符组成"></mm_input>
+								<mm_input v-model="form.nickName" desc="由2-12个字符组成"></mm_input>
 							</mm_body>
 						</mm_block>
 					</mm_col>
 					<mm_col>
 						<mm_div>
-							<mm_btn type="default" class="full">保存</mm_btn>
+							<mm_btn type="default" class="full" @click.native="submit()">保存</mm_btn>
 						</mm_div>
 					</mm_col>
 				</mm_grid>
@@ -36,7 +36,17 @@
 		components: {},
 		data() {
 			return {
-				oauth: false
+				oauth: true,
+				url_submit: "~/user/change_nick",
+				form: {
+					nickName: ""
+				}
+			}
+		},
+		methods: {
+			submit_after(json, status){
+				this.alert(json.msg);
+				this.$user_info();
 			}
 		}
 	}

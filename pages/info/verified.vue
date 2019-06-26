@@ -71,7 +71,7 @@
 		components: {},
 		data() {
 			return {
-				oauth: false
+				oauth: true
 			}
 		}
 	}

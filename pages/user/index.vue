@@ -83,7 +83,7 @@
 					</mm_col>
 					<mm_col>
 						<mm_div>
-							<mm_btn type="default-x" class="full" url="./check_in"><mm_icon src="/static/img/check_in_b.png"></mm_icon><text class="check_in">签到</text></mm_btn>
+							<mm_btn type="default-x" class="full" @click.native="sign()"><mm_icon src="/static/img/check_in_b.png"></mm_icon><text class="check_in">签到</text></mm_btn>
 						</mm_div>
 					</mm_col>
 				</mm_grid>
@@ -100,12 +100,26 @@
 		components: {},
 		data() {
 			return {
+				oauth: true,
 				user: this.$store.state.user,
 				url_get_obj: "~/user/proxy",
 				obj: {
 					level: 0
 				},
 				query:{}
+			}
+		},
+		methods:{
+			sign() {
+				var _this = this;
+				this.$get("~/user/sign", function(json, status) {
+					if(json.code === 0){
+						// _this.alert(json.msg);
+						uni.navigateTo({
+							url: './check_in'
+						})
+					}
+				});
 			}
 		}
 	}

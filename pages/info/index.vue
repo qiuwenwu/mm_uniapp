@@ -25,19 +25,19 @@
 											<mm_desc>{{ user.nickname }}</mm_desc>
 										</mm_main>
 									</mm_item>
-									<mm_item url="./phone">
+									<mm_item>
 										<mm_main class="arrow">
 											<mm_title>手机</mm_title>
 											<mm_desc>{{ user.phone }}</mm_desc>
 										</mm_main>
 									</mm_item>
-									<mm_item url="./email">
+	<!-- 								<mm_item url="./email">
 										<mm_main class="arrow">
 											<mm_title>邮箱</mm_title>
 											<mm_desc v-if="user.email">{{ user.email }}</mm_desc>
 											<mm_desc v-else></mm_desc>
 										</mm_main>
-									</mm_item>
+									</mm_item> -->
 									<mm_item url="./verified">
 										<mm_main class="arrow">
 											<mm_title>实名认证</mm_title>
@@ -74,7 +74,7 @@
 		components: {},
 		data() {
 			return {
-				oauth: false,
+				oauth: true,
 				user: this.$store.state.user
 			}
 		},
@@ -91,6 +91,9 @@
 </script>
 
 <style>
+	 .font_success {
+		margin-left: 0.5rem;
+	}
 	.headimg {
 		padding: 2rem;
 		float: none;

@@ -66,7 +66,7 @@
 		components: {},
 		data() {
 			return {
-				oauth: false,
+				oauth: true,
 				list: [{
 						title: "这是一文章",
 						desc: "测试",

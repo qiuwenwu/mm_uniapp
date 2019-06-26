@@ -6,14 +6,14 @@
 				<mm_grid col="1">
 					<mm_col>
 						<mm_block v-show="step == 1">
-							<mm_head>
+							<mm_head class="font_small">
 								<mm_title>身份验证</mm_title>
 							</mm_head>
 							<mm_body>
 								<mm_input v-model="form.phone" desc="请输入手机"></mm_input>
-								<mm_code v-model="form.code" desc="请输入验证码"></mm_code>
+								<mm_code type="success-x" v-model="form.code" desc="请输入验证码"></mm_code>
 								<mm_group>
-									<mm_btn type="info" :fun="step_last">下一步</mm_btn>
+									<mm_btn type="default" :fun="step_last">下一步</mm_btn>
 								</mm_group>
 							</mm_body>
 							<mm_foot></mm_foot>

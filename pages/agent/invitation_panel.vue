@@ -82,7 +82,7 @@
 		components: {},
 		data() {
 			return {
-				oauth: false,
+				oauth: true,
 				url_get_obj: "~/spread/",
 				obj: {
 					code: ""

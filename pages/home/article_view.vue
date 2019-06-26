@@ -58,7 +58,7 @@
 		components: {},
 		data() {
 			return {
-				oauth: false,
+				oauth: true,
 				url: "~/paper/all",
 				obj: {},
 				comment: []

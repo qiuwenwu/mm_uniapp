@@ -13,7 +13,7 @@
 								<mm_title class="font_small"><text>原始密码</text></mm_title>
 							</mm_head>
 							<mm_body>
-								<mm_input type="number" v-model="form.password" desc="当前登录的密码"></mm_input>
+								<mm_input type="password" v-model="form.oldPassword" desc="当前登录的密码"></mm_input>
 							</mm_body>
 						</mm_block>
 					</mm_col>
@@ -23,7 +23,7 @@
 								<mm_title class="font_small"><text>新的密码</text></mm_title>
 							</mm_head>
 							<mm_body>
-								<mm_input type="number" v-model="form.password" desc="由11位数字组成"></mm_input>
+								<mm_input type="password" v-model="form.password" desc="由6-12位英文或数字组成"></mm_input>
 							</mm_body>
 						</mm_block>
 					</mm_col>
@@ -33,13 +33,13 @@
 								<mm_title class="font_small"><text>确认密码</text></mm_title>
 							</mm_head>
 							<mm_body>
-								<mm_input type="number" v-model="form.password" desc="请再输入一次新密码"></mm_input>
+								<mm_input type="password" v-model="password_confirm" desc="请再输入一次新密码"></mm_input>
 							</mm_body>
 						</mm_block>
 					</mm_col>
 					<mm_col>
 						<mm_div>
-							<mm_btn type="default" class="full">保存</mm_btn>
+							<mm_btn type="default" class="full" @click.native="submit()">保存</mm_btn>
 						</mm_div>
 					</mm_col>
 				</mm_grid>
@@ -56,9 +56,27 @@
 		components: {},
 		data() {
 			return {
-				oauth: false,
+				oauth: true,
+				url_submit: "~/user/change_password",
 				form: {
+					oldPassword: "",
 					password: ""
+				},
+				password_confirm: ""
+			}
+		},
+		methods:{
+			submit_check(json) {
+				if(!json.password || !json.password)
+				{
+					this.alert('密码不能为空！');
+				}
+				else if(json.password != this.password_confirm)
+				{
+					this.alert('新密码和确认密码不一致！');
+				}
+				else {
+					return true;
 				}
 			}
 		}

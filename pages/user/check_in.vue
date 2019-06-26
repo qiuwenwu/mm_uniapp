@@ -66,11 +66,30 @@
 				</mm_grid>
 			</mm_warp>
 		</mm_bodyer>
+			{{ list }}
 	</mm_page>
 </template>
 
 <script>
+import mixin from '@/mixins/page'
 
+	export default {
+		mixins: [mixin],
+		components: {},
+		data() {
+			return {
+				oauth: true,
+				user: this.$store.state.user,
+				url_get_list: "~/user/sign_select",
+				obj: {
+					level: 0
+				},
+				query:{}
+			}
+		},
+		methods:{
+		}
+	}
 </script>
 
 <style>

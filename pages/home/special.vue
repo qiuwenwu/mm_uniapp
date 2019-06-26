@@ -36,7 +36,7 @@
 		components: {},
 		data() {
 			return {
-				oauth: false,
+				oauth: true,
 				url: "~/home/article?"
 			}
 		}

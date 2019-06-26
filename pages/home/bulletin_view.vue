@@ -28,7 +28,7 @@
 		components: {},
 		data() {
 			return {
-				oauth: false,
+				oauth: true,
 				url_get_obj: "~/paper/id",
 				query: {
 					id: "",

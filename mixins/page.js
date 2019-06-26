@@ -74,6 +74,14 @@ export default {
 		}
 	},
 	methods: {
+		// 提示
+		alert(text, icon){
+			if(!icon)
+			{
+				icon = "none";
+			}
+			this.$alert(text, icon);
+		},
 		/// 添加
 		add(val) {
 
@@ -231,10 +239,6 @@ export default {
 		check(param, dict) {
 			return true;
 		},
-		/// 警告
-		alert(res) {
-			console.log(res)
-		},
 		/// 事件管理, 用于管理函数
 		/// name: 事件名
 		/// param1: 参数1
@@ -298,7 +302,7 @@ export default {
 		/// status: 服务器状态码
 		/// 返回: 转换后的结果
 		submit_after(json, status) {
-			this.alert(json);
+			this.alert(json.msg);
 		},
 		/// 请求对象事件
 		/// req: 请求参数
@@ -312,7 +316,7 @@ export default {
 		/// 返回: 转换后的结果
 		get_obj_after(json, status) {
 			if (json.code) {
-				this.alert(json);
+				this.alert(json.msg);
 			} else if (json.data) {
 				this.$obj.clear(this.obj);
 				this.$obj.push(this.obj, json.data);
@@ -334,7 +338,7 @@ export default {
 		get_list_after(json, status) {
 			if (json) {
 				if (json.error) {
-					this.alert(json);
+					this.alert(json.msg);
 				} else if (json.data) {
 					this.list.eachPush(json.data.list);
 				}

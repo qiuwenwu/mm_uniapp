@@ -1,6 +1,7 @@
 <template>
 	<!-- 登录页面 -->
 	<view class="page_account" id="account_signin">
+		<mm_header></mm_header>
 		<mm_bodyer>
 			<mm_warp>
 				<mm_grid col="1">
@@ -10,18 +11,20 @@
 								<mm_title>登录</mm_title>
 							</mm_head>
 							<mm_body class="sign_in_body">
-								<view class="mm_input">
+								<view class="sign" v-bind:class="{ 'active': form.phone != '' }">
 									<mm_title><text class="actoin" v-bind:class="{ 'hide': form.phone == '' }">请输入手机号码</text></mm_title>
-									<mm_input type="text" v-model="form.phone" :max="11" placeholder="请输入手机号码"></mm_input>
-									<mm_icon src="/static/img/input_del.png" class="input_del" v-show="form.phone != ''" @click.native="clearPhone()"></mm_icon>
+									<input class="mm_input" type="text" v-model="form.phone" maxlength="11" placeholder="请输入手机号码" @blur="phone_fun()"></input>
+									<mm_icon src="/static/img/input_del.png" class="input_del" v-show="form.phone != ''" @click.native="form.phone = ''"></mm_icon>
+									<mm_div class="mm_tip" v-show="!tip_phone && form.phone">
+										<text>手机号码位数不够</text>
+									</mm_div>
 								</view>
-								<view class="mm_input">
+								<view class="sign" v-bind:class="{ 'active': form.password != '' }">
 									<mm_title><text class="actoin" v-bind:class="{ 'hide': form.password == '' }">请输入登录密码</text></mm_title>
 									<mm_desc>
-										<mm_input type="password" :max="12" v-model="form.password" placeholder="请输入登录密码"></mm_input>
-										<mm_icon src="/static/img/input_del.png" class="input_del" v-show="form.password != ''" @click.native="clearPassword()"></mm_icon>
-										<mm_div class="mm_tip">
-											<mm_icon src="/static/img/icon_warning.png" class="error_icon"></mm_icon>
+										<input class="mm_input" type="password" maxlength="12" v-model="form.password" placeholder="请输入登录密码" @blur="password_fun()"></input>
+										<mm_icon src="/static/img/input_del.png" class="input_del" v-show="form.password != ''" @click.native="form.password = ''"></mm_icon>
+										<mm_div class="mm_tip" v-show="!tip_password && form.password">
 											<text>密码不正确，请重新输入</text>
 										</mm_div>
 									</mm_desc>
@@ -30,8 +33,8 @@
 						</mm_block>
 					</mm_col>
 					<mm_col>
-						<mm_div class="center">
-							<mm_div>忘记密码?</mm_div>
+						<mm_div>
+							<navigator class="forgot" url="/pages/account/forgot">忘记密码?</navigator>
 						</mm_div>
 					</mm_col>
 					<mm_col>
@@ -39,10 +42,10 @@
 							<mm_btn class="login_btn" type="default" @click.native="submit()">登录</mm_btn>
 						</mm_div>
 					</mm_col>
-					<mm_col>
-						<mm_div class="login_foot">
-							还没有账号?
-							<mm_div class="font_info" url="./signup">立即注册</mm_div>
+					<mm_col class="login_foot">
+						<mm_div>
+							<text>还没有账号?</text>
+							<navigator class="font_info" url="./signup">立即注册</navigator>
 						</mm_div>
 					</mm_col>
 				</mm_grid>
@@ -59,7 +62,7 @@
 							</mm_head>
 							<mm_body v-html="msg"></mm_body>
 							<mm_foot>
-								<mm_group>
+								<mm_group class="font_small">
 									<mm_btn type="default-x" @click.native="show = false">确定</mm_btn>
 								</mm_group>
 							</mm_foot>
@@ -79,7 +82,7 @@
 		components: {},
 		data() {
 			return {
-				oauth: false,
+				oauth: true,
 				url_submit: "~/login",
 				form: {
 					phone: "",
@@ -88,13 +91,15 @@
 				},
 				msg: "",
 				show: false,
-				ret: false
+				ret: false,
+				tip_phone: true,
+				tip_password: true
 			}
 		},
 		computed: {
 			check_phone() {
 				var p = this.form.phone;
-				if (!p || p.length != 11) {
+				if (p.length != 11) {
 					return false;
 				}
 				return true;
@@ -115,6 +120,22 @@
 			}
 		},
 		methods: {
+			phone_fun() {
+				var p = this.form.phone;
+				if (p.length != 11) {
+					this.tip_phone = false;
+				} else {
+					this.tip_phone = true;
+				}
+			},
+			password_fun() {
+				var p = this.form.password;
+				if (p.length < 6 || p.length > 12) {
+					this.tip_password = false;
+				} else {
+					this.tip_password = true;
+				}
+			},
 			submit() {
 				var _this = this;
 				if (this.check_phone && this.check_password) {
@@ -127,7 +148,6 @@
 										location.href = url;
 									} else {
 										location.href = "/pages/user/index";
-										//_this.$router.push("/pages/user/index");
 									}
 								});
 							}
@@ -144,14 +164,56 @@
 </script>
 
 <style>
+	.mm_modal .mm_head {
+		padding: 0.625rem 0.875rem;
+	}
+
+	.mm_modal .mm_body {
+		padding: 0.625rem 0.875rem;
+	}
+
+	.mm_modal .mm_foot {
+		border-top: 1px solid rgba(0, 0, 0, 0.1);
+	}
+
+	.mm_bodyer {
+		height: calc(100vh - 44px);
+		background: #fff;
+	}
+
+	.mm_grid_1 {
+		padding: 0 1.75rem;
+	}
+
+	.forgot {
+		text-align: right;
+		margin: 0 auto;
+		width: 100%;
+		font-size: 0.75rem;
+		margin-top: 0.325rem;
+		margin-bottom: 2rem;
+		color: #0B76C4;
+	}
+
+	#account_signin .mm_header {
+		background: #fff;
+		height: 44px;
+		z-index: 9999;
+		top: 0;
+	}
+
 	#account_signin .sign_in_head {
 		width: 100%;
 		height: 7rem;
 		display: flex;
 		align-items: center;
-		padding-left: 0.88rem;
 		font-size: 2.15rem;
 		background-color: #FFFFFF;
+		color: #333;
+	}
+
+	#account_signin .mm_title {
+		padding: 0;
 	}
 
 	#account_signin .sign_in_body {
@@ -161,35 +223,6 @@
 		align-items: center;
 	}
 
-	#account_signin .mm_input {
-		width: calc(100% - 4rem);
-		margin: auto;
-		position: relative;
-		padding-top: 1rem;
-		margin-bottom: 0.25rem;
-	}
-
-	.mm_input .actoin {
-		position: absolute;
-		left: 0;
-		top: 0;
-		color: #FF5A6A;
-		font-size: 0.625rem;
-		transform: translate(0, 0);
-		transition: all 0.2s ease-in-out;
-		opacity: 1;
-	}
-
-	.mm_tip {
-		position: absolute;
-		left: 0;
-		top: 3.25rem;
-	}
-
-	.actoin.hide {
-		transform: translate(0, 1rem);
-		opacity: 0;
-	}
 
 	#account_signin input {
 		height: 2rem;
@@ -211,21 +244,6 @@
 		border-bottom: 2px solid #FF5A6A;
 	}
 
-	#account_signin .input_del {
-		width: 1rem;
-		height: 1rem;
-		position: absolute;
-		right: 0;
-		top: 1.5rem;
-	}
-
-	#account_signin .error_icon {
-		width: 1.13rem;
-		height: 1.13rem;
-		margin-right: .5rem;
-		float: left;
-	}
-
 	#account_signin .fl {
 		display: flex;
 		align-items: center;
@@ -234,11 +252,11 @@
 
 	#account_signin .fr,
 	.font_info {
-		color: #0B76C4;
+		color: #0B76C4 !important;
 	}
 
 	#account_signin .login_btn {
-		width: 80%;
+		width: 100%;
 		background-color: #FF5A6A;
 		color: #FFFFFF;
 		margin-top: 5rem;
@@ -254,8 +272,13 @@
 
 	#account_signin .login_foot {
 		height: 6rem;
-		display: flex;
-		align-items: center;
+		text-align: center;
 		color: #999999;
+		font-size: 0.75rem;
+		padding-top: 1rem;
+	}
+
+	.login_foot .font_info {
+		display: inline-block;
 	}
 </style>

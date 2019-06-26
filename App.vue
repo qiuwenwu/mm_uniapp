@@ -11,7 +11,6 @@
 		},
 		onShow: function() {
 			console.log('应用显示')
-			
 		},
 		onHide: function() {
 			console.log('应用隐藏')
@@ -24,6 +23,89 @@
 
 <style>
 	/* ===  每个页面公共css  === */
+	.footer {
+		text-align: center;
+		padding: 1.5rem;
+	}
+
+	.footer_link {
+		color: #576B95;
+		font-size: 85%;
+	}
+	
+	.footer_info {
+		padding: 1rem 0;
+		margin-bottom: 0.5rem;
+		text-align: center;
+	}
+	
+	.copyright {
+		color: rgba(0, 0, 0, 0.3);
+		font-size: 0.625rem;
+	}
+
+	.sign .mm_main:after {
+		content: "";
+		display: block;
+		border-bottom: 2px solid #FF5A6A;
+		bottom: 0;
+		position: absolute;
+		width: 0%;
+		transition: all .5s ease-in-out;
+	}
+
+	.active .mm_main:after {
+		width: 100%;
+	}
+
+	.sign {
+		width: 100%;
+		margin: 2rem auto 0 auto;
+		position: relative;
+		padding-top: 1rem;
+	}
+
+	.sign .mm_main {
+		margin: 0 !important;
+		padding: 0.25rem 0;
+	}
+
+	.sign .actoin {
+		position: absolute;
+		left: 0;
+		top: 0;
+		color: #FF5A6A;
+		font-size: 0.625rem;
+		transform: translate(0, 0);
+		transition: all 0.2s ease-in-out;
+		opacity: 1;
+	}
+
+	.sign .input_del {
+		width: 1rem;
+		height: 1rem;
+		position: absolute;
+		right: 0;
+		top: 1.45rem;
+		z-index: 2;
+	}
+
+	.sign .mm_tip {
+		position: absolute;
+		left: 0;
+		top: 3.25rem;
+		font-size: 0.75rem;
+		color: #FFE06E;
+	}
+
+	.actoin.hide {
+		transform: translate(0, 1rem);
+		font-size: 0.875rem;
+		/* color: #808080; */
+		opacity: 0;
+
+	}
+
 	.uni-page-head-btn {
 		top: 50%;
 		left: 0.5rem;
@@ -201,13 +283,17 @@
 		overflow-y: hidden;
 		width: 100%;
 	}
-	
+
 	uni-page-head .uni-page-head {
 		padding-left: 0;
 		padding-right: 0;
 	}
-	
-	.mm_modal .mm_body { min-height: 3rem; }
-	
-	.desc_color { color: #ccc !important; }
+
+	.mm_modal .mm_body {
+		min-height: 3rem;
+	}
+
+	.desc_color {
+		color: #ccc !important;
+	}
 </style>

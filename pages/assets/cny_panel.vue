@@ -94,7 +94,7 @@
 		components: {},
 		data() {
 			return {
-				oauth: false,
+				oauth: true,
 				form: {
 					money: '',
 					code: ''

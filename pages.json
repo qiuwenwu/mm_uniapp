@@ -466,6 +466,12 @@
 			}
 		},
 		{
+			"path": "pages/pay/tip",
+			"style": {
+				"navigationBarTitleText": "支付完成"
+			}
+		},
+		{
 			"path": "pages/user/check_in",
 			"style": {
 				"navigationBarTitleText": "签到"

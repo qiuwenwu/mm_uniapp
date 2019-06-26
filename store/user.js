@@ -11,6 +11,7 @@ export default {
 		// token: "",
 		// gm: 1,
 		// vip: 5
+		name: "",
 		token: "",
 		level: 0,
 		isLoad: false,
