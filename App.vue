@@ -7,7 +7,7 @@
 	export default {
 		onLaunch: function() {
 			console.log('应用程序启动')
-			this.$get_user();
+			//this.$get_user();
 		},
 		onShow: function() {
 			console.log('应用显示')

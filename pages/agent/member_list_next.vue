@@ -1,5 +1,5 @@
 <template>
-	<!-- 二级代理首页 -->
+	<!-- 代理首页 -->
 	<view class="page_agent" id="agent_member_list">
 		<mm_bodyer>
 			<mm_warp>
@@ -8,24 +8,14 @@
 						<mm_block>
 							<mm_body class="lr">
 								<mm_list col="1" class="big">
-									<mm_item>
+									<mm_item v-for="(o,k) in list" :key="k">
 										<mm_side class="headimg">
-											<mm_icon src="/static/img/headimg.jpg"></mm_icon>
+											<mm_icon :src="setImg(o.avatar)"></mm_icon>
 										</mm_side>
-										<mm_main>
-											<mm_tip><view class="people">邀请人数 <text class="num">5</text></view><view class="count">持有DBD<text class="num">66</text></view></mm_tip>
-											<mm_title>昵称</mm_title>
-											<mm_desc><text class="vip">VIP2</text></mm_desc>
-										</mm_main>
-									</mm_item>
-									<mm_item>
-										<mm_side class="headimg">
-											<mm_icon src="/static/img/headimg.jpg"></mm_icon>
-										</mm_side>
-										<mm_main>
-											<mm_tip><view class="people">邀请人数 <text class="num">5</text></view><view class="count">持有DBD<text class="num">66</text></view></mm_tip>
-											<mm_title>昵称</mm_title>
-											<mm_desc><text class="vip">VIP1</text></mm_desc>
+										<mm_main class="arrow">
+											<mm_tip><view class="people">邀请人数 <text class="num">{{ o.people }}</text></view><view class="count">持有DBD<text class="num">{{ o.dbd }}</text></view></mm_tip>
+											<mm_title>{{ o.name }}</mm_title>
+											<mm_desc><text class="vip">VIP{{ o.level }}</text></mm_desc>
 										</mm_main>
 									</mm_item>
 								</mm_list>
@@ -45,8 +35,15 @@
 		data() {
 			return {
 				oauth: true,
-				value: 8.888888888888,
-				value1: 0.123123123123,
+				url_get_list: "~/user/under",
+				query: {
+					userId: ""
+				}
+			}
+		},
+		methods:{
+			setImg(img){
+				return img ? img : '/static/img/headImg.png'
 			}
 		}
 	}
@@ -56,5 +53,6 @@
 	.mm_tip { float: right; color: #999; font-size: 85%; }
 	.people { margin-bottom: 0.05rem; }
 	.count { margin-top: 0.4rem; }
-	.num { float: right; width: 1.5rem; text-align: right; color: #999; font-weight: 400;  }
+	.num { float: right; width: 1.5rem; text-align: right; color: #999; margin-right: 0.5rem; font-weight: 400;  }
+	.arrow:before { display: none; }
 </style>

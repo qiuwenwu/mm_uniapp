@@ -11,16 +11,15 @@
 			<!-- 外套 -->
 			<mm_warp>
 				<!-- 栅格 -->
-				<mm_grid col="1" class="space-x">
+				<mm_grid col="1" class="space_big">
 					<!-- 格子 -->
 					<mm_col>
 						<!-- 问题详情 -->
 						<mm_block>
 							<mm_head>
-								<mm_title class="font_small">简约</mm_title>
+								<mm_title>{{ obj.title }}</mm_title>
 							</mm_head>
-							<mm_body>
-								<mm_div v-html="obj.content"></mm_div>
+							<mm_body class="pa" v-html="obj.content">
 							</mm_body>
 							<mm_foot>
 								<!-- 上下篇问题 -->
@@ -30,7 +29,6 @@
 				</mm_grid>
 			</mm_warp>
 		</mm_bodyer>
-
 	</view>
 </template>
 

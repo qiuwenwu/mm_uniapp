@@ -27,5 +27,5 @@
 </script>
 
 <style>
-
+   .mm_side ~ .mm_main { min-height: 3.5rem; }
 </style>

@@ -32,7 +32,7 @@
 
 <script>
 	import mixin from '@/mixins/page'
-	
+
 	export default {
 		mixins: [mixin],
 		components: {},
@@ -51,10 +51,35 @@
 					createTime: "time",
 					icon: "icon",
 					url: "url"
-				}
+				},
+				list_img: []
 			}
 		},
 		methods: {
+			/// 获取轮播广告
+			get_ad() {
+				var query = {
+					index: 0,
+					size: 1,
+					grouping: "轮播图"
+				}
+				var url = "~/image/grouping";
+				var _this = this;
+				this.$get(this.toUrl(query, url), function(json, status) {
+					if (json) {
+						var lt = json.data;
+						if (lt && lt.length > 0) {
+							_this.list_img.clear();
+							for (var i = 0; i < lt.length; i++) {
+								var o = lt[i];
+								o.img = o.address;
+								o.title = o.imageName;
+								_this.list_img.push(o);
+							}
+						}
+					}
+				});
+			},
 			get_list_after(json, status) {
 				if (json) {
 					var lt = json.content;
@@ -67,6 +92,7 @@
 						}
 					}
 				}
+				this.get_ad();
 			}
 		}
 	}

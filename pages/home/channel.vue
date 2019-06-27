@@ -77,17 +77,6 @@
 							</mm_body>
 						</mm_block>
 					</mm_col>
-					<mm_col>
-						<!-- 频道相关热门文章 -->
-						<mm_block>
-							<mm_head>
-								<mm_title class="font_small">热门课程</mm_title>
-							</mm_head>
-							<mm_body class="lr">
-								<mm_list_article :list="list" class="big"></mm_list_article>
-							</mm_body>
-						</mm_block>
-					</mm_col>
 				</mm_grid>
 			</mm_warp>
 		</mm_bodyer>
@@ -105,30 +94,58 @@
 				oauth: true,
 				channel: [],
 				channel_sub: [],
-				list: [{
-						aid: 3,
-						title: "这是一文章",
-						icon: "/static/img/banner3.jpg",
-						url: "/pages/home/article_view?aid=3",
-						createTime: "今天 11:15",
-						collect: 680
-					},
-					{
-						aid: 2,
-						title: "这是一文章",
-						icon: "/static/img/banner2.jpg",
-						url: "/pages/home/article_view?aid=2",
-						createTime: "2019-06-19",
-						collect: 936
-					}, {
-						aid: 1,
-						title: "这是一文章",
-						icon: "/static/img/banner1.jpg",
-						url: "/pages/home/article_view?aid=1",
-						createTime: "2019-06-18",
-						collect: 50
+				url_get_list: "~/paper/grouping/paper",
+				query: {
+					index: 0,
+					size: 10,
+					grouping: "培训"
+				},
+				vm: {
+					title: "title",
+					desc: "description",
+					createTime: "time",
+					icon: "icon",
+					url: "url"
+				}
+				// list: [{
+				// 		aid: 3,
+				// 		title: "这是一文章",
+				// 		icon: "/static/img/banner3.jpg",
+				// 		url: "/pages/home/article_view?aid=3",
+				// 		createTime: "今天 11:15",
+				// 		collect: 680
+				// 	},
+				// 	{
+				// 		aid: 2,
+				// 		title: "这是一文章",
+				// 		icon: "/static/img/banner2.jpg",
+				// 		url: "/pages/home/article_view?aid=2",
+				// 		createTime: "2019-06-19",
+				// 		collect: 936
+				// 	}, {
+				// 		aid: 1,
+				// 		title: "这是一文章",
+				// 		icon: "/static/img/banner1.jpg",
+				// 		url: "/pages/home/article_view?aid=1",
+				// 		createTime: "2019-06-18",
+				// 		collect: 50
+				// 	}
+				// ]
+			}
+		},
+		methods: {
+			get_list_after(json, status) {
+				if (json) {
+					var lt = json.content;
+					if (lt) {
+						this.list.clear();
+						for (var i = 0; i < lt.length; i++) {
+							var o = lt[i];
+							o.url = '/pages/home/article_view?id=' + o.id;
+							this.list.push(o);
+						}
 					}
-				]
+				}
 			}
 		}
 	}

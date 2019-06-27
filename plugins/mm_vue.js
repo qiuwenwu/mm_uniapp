@@ -188,8 +188,12 @@ Vue.mixin(Vue.extend({
 			var p = _this.$route.path;
 			var isLoad = this.$store.state.user.isLoad;
 			if (!isLoad) {
+				
 				this.$get('~/user/', function(json, status) {
 					if (json) {
+						if(json.code){
+							_this.$db.set("token", "");
+						}
 						if (json.data) {
 							_this.$store.dispatch('set_user', json.data);
 							if (p.indexOf('/sign') == 0 || p.indexOf('/forgot') == 0) {
@@ -220,6 +224,48 @@ Vue.mixin(Vue.extend({
 					}
 				}
 			});
+		},
+		$get_dbd(fun) {
+			if (!this.$store.state.dbd.title) {
+				var _this = this;
+				_this.$get("~/dbd/", function(json, status) {
+					if (json) {
+						if (json.data) {
+							_this.$store.dispatch('get_dbd', json.data);
+							_this.$get('~/paper/title?title=DBD描述', function(json, status) {
+								if (json) {
+									var lt = json.data;
+									if (lt && lt.length > 0) {
+										_this.$store.dispatch('get_dbd', lt[0]);
+									}
+								}
+								if (fun) {
+									fun();
+								}
+							});
+						}
+					}
+				});
+			} else if (fun) {
+				fun();
+			}
+		},
+		$get_agent(fun){
+			if (this.$store.state.user.level < 1) {
+				var _this = this;
+				_this.$get("~/user/proxy", function(json, status) {
+					if (json) {
+						if (json.data) {
+							_this.$store.dispatch('set_user', json.data);
+						}
+					}
+					if (fun) {
+						fun();
+					}
+				});
+			} else if (fun) {
+				fun();
+			}
 		}
 	}
 }));

@@ -51,7 +51,7 @@
 					<mm_col>
 						<!-- 提交按钮 -->
 						<mm_div>
-							<mm_btn class="full" type="default" @click.native="show = true">提现</mm_btn>
+							<mm_btn class="full" type="default" @click.native="submit()">提现</mm_btn>
 						</mm_div>
 					</mm_col>
 					<mm_col class="pn-t">
@@ -76,7 +76,7 @@
 								</mm_list>
 							</mm_body>
 							<mm_foot style="margin-top: 1.5rem;">
-								<mm_btn type="default" class="full" @click.native="show = false">确定</mm_btn>
+								<mm_btn type="default" class="full" @click.native="submit()">确定</mm_btn>
 							</mm_foot>
 						</mm_block>
 					</mm_col>

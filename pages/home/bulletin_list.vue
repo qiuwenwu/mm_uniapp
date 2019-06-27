@@ -10,7 +10,7 @@
 					<!-- 公告列表 -->
 					<mm_block>
 						<mm_body class="lr">
-							<mm_list_article :list="list_text" class="big" id="mm_list_article"></mm_list_article>
+							<mm_list_article :list="list" class="big" id="mm_list_article"></mm_list_article>
 						</mm_body>
 					</mm_block>
 				</mm_col>

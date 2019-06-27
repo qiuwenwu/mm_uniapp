@@ -10,13 +10,13 @@
 								<mm_list col="1" class="mini">
 									<mm_item>
 										<mm_side class="dbd_view">
-											<mm_icon :src="obj.icon"></mm_icon>
+											<mm_icon :src="dbd.icon"></mm_icon>
 										</mm_side>
 									</mm_item>
 									<mm_item>
 										<mm_main class="bt">
 											<mm_title>价格</mm_title>
-											<mm_desc><text class="price">{{ obj.price }}</text><text class="unit">元/个</text></mm_desc>
+											<mm_desc><text class="price">{{ dbd.price }}</text><text class="unit">元/个</text></mm_desc>
 										</mm_main>
 									</mm_item>
 									<mm_item>
@@ -42,7 +42,7 @@
 					<!-- 格子 -->
 					<mm_col class="pn-t">
 						<mm_block>
-							<mm_div class="pa" v-show="state == '1'" v-html="dbd_desc"></mm_div>
+							<mm_div class="pa" v-show="state == '1'" v-html="dbd.content"></mm_div>
 							<mm_div class="pa" v-show="state == '2'" v-html="dbd_statement"></mm_div>
 						</mm_block>
 					</mm_col>
@@ -55,7 +55,7 @@
 					<mm_col>
 						<mm_group>
 							<view class="buy_num"><input type="number" v-model="form.num" placeholder="请输入要购买的数量" placeholder-class="desc_color"></input></view>
-							<mm_btn type="default" @click.native="show = true">
+							<mm_btn type="default" @click.native="buy()">
 								立即购买
 							</mm_btn>
 						</mm_group>
@@ -132,38 +132,30 @@
 				oauth: true,
 				state: "1",
 				url_get_obj: "~/dbd/",
-				obj: {
-					"amount": 0,
-					"price": "",
-					"cycle": 0
-				},
-				dbd_desc: {
-					content: ""
-				},
 				dbd_statement: "",
 				form: {
 					num: "",
-				}
+				},
+				dbd: this.$store.state.dbd
 			}
 		},
 		methods: {
 			buy() {
-				uni.navigateTo({
-					url: '/pages/mall/shopping_cart?num=' + this.form.num
-				});
+				var n = this.form.num;
+				if (!n) {
+					this.alert('购买的数量不能为空');
+					return;
+				} else if (n > 1000) {
+					this.alert('单次购买的数量不能大于1000');
+					return;
+				}
+				this.show = true;
+				// uni.navigateTo({
+				// 	url: '/pages/mall/shopping_cart?num=' + this.form.num
+				// });
 			},
-			get_obj_after(json, status) {
-				this.$obj.clear();
-				this.$obj.push(this.obj, json.data);
-				var _this = this;
-				this.$get('~/paper/title?title=DBD描述', function(json, status) {
-					if (json) {
-						var lt = json.data;
-						if(lt && lt.length > 0) {
-							$.obj.push(_this.dbd_desc, lt[0]);
-						}
-					}
-				});
+			get() {
+				this.$get_dbd();
 			},
 			get_dbd_statement() {
 				var _this = this;

@@ -75,9 +75,8 @@ export default {
 	},
 	methods: {
 		// 提示
-		alert(text, icon){
-			if(!icon)
-			{
+		alert(text, icon) {
+			if (!icon) {
 				icon = "none";
 			}
 			this.$alert(text, icon);
@@ -218,15 +217,22 @@ export default {
 		/// 登录验证
 		check_oauth() {
 			if (this.oauth) {
-				var token = this.$db.get("token");
-				if (!token) {
-					this.$store.commit('set_redirect_url', this.$route.path + location.search);
-					// this.$router.push(this.redirect);
-					uni.navigateTo({ url: this.redirect});
-					return;
-				}
+				var _this = this;
+				this.$get_user(function() {
+					var token = _this.$db.get("token");
+					if (!token) {
+						_this.$store.commit('set_redirect_url', _this.$route.path + location.search);
+						// this.$router.push(this.redirect);
+						uni.navigateTo({
+							url: _this.redirect
+						});
+						return;
+					}
+					_this.get();
+				});
+			} else {
+				this.get();
 			}
-			this.get();
 		},
 		/// 初始化
 		init() {
@@ -340,7 +346,8 @@ export default {
 				if (json.error) {
 					this.alert(json.msg);
 				} else if (json.data) {
-					this.list.eachPush(json.data.list);
+					this.list.clear();
+					this.list.eachPush(json.data);
 				}
 			}
 		}

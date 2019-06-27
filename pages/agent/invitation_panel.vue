@@ -19,7 +19,7 @@
 							</mm_head>
 							<mm_body>
 								<mm_div url="./level_desc">
-									<mm_progress :num="23">等级 {{ user.level }}</mm_progress>
+									<mm_progress :num="progress">等级 {{ user.level }}</mm_progress>
 								</mm_div>
 							</mm_body>
 						</mm_block>
@@ -27,13 +27,13 @@
 					<mm_col>
 						<mm_div class="pa" url="./member_list">
 							<mm_title>邀请人数</mm_title>
-							<mm_desc class="num">80</mm_desc>
+							<mm_desc class="num">{{ user.sonCode.length }}</mm_desc>
 						</mm_div>
 					</mm_col>
 					<mm_col class="bl">
 						<mm_div class="pa" url="./invitation_record">
 							<mm_title>邀请奖励</mm_title>
-							<mm_desc class="price"><text class="unit">￥</text>8000</mm_desc>
+							<mm_desc class="price"><text class="unit">￥</text>{{ $num(user.achievement.canExtractMoney) }}</mm_desc>
 						</mm_div>
 					</mm_col>
 				</mm_grid>
@@ -46,8 +46,8 @@
 										<mm_main>
 											<mm_title>邀请码</mm_title>
 											<mm_desc>
-												<text class="text_code code">{{ obj.code }}</text>
-												<text id="btn_copy" class="font_success" @click="$copy(obj.code)">复制</text>
+												<text class="text_code code">{{ user.code }}</text>
+												<text id="btn_copy" class="font_success" @click="$copy(user.code)">复制</text>
 											</mm_desc>
 										</mm_main>
 									</mm_item>
@@ -85,21 +85,28 @@
 				oauth: true,
 				user: this.$store.state.user,
 				url_get_obj: "~/spread/",
-				obj: {
-					code: ""
-				},
-				query: {}
+				query: {},
+				progress: 0.00
 			}
 		},
 		computed: {
 			invitation_qrcode() {
-				return this.$url('/pages/account/signup?invitation_code=' + this.obj.code);
+				return this.$url('/pages/account/signup?invitation_code=' + this.user.code);
 			}
 		},
 		methods: {
-			
-		},
-		mounted() {}
+			get_obj_after(json, status){
+				if(json){
+					if(json.data){
+						this.$store.dispatch('set_user', json.data);
+					}
+				}
+				var _this = this;
+				this.$get_agent(function(){
+					_this.progress = Number(_this.$double(_this.user.percentage * 100))
+				});
+			}
+		}
 	}
 </script>
 

@@ -8,24 +8,14 @@
 						<mm_block>
 							<mm_body class="lr">
 								<mm_list col="1" class="big">
-									<mm_item url="/pages/agent/member_list_next">
+									<mm_item v-for="(o,k) in list" :key="k" @click.native="toPage(o.userId, o.people)">
 										<mm_side class="headimg">
-											<mm_icon src="/static/img/headimg.jpg"></mm_icon>
+											<mm_icon :src="setImg(o.avatar)"></mm_icon>
 										</mm_side>
 										<mm_main class="arrow">
-											<mm_tip><view class="people">邀请人数 <text class="num">5</text></view><view class="count">持有DBD<text class="num">66</text></view></mm_tip>
-											<mm_title>昵称</mm_title>
-											<mm_desc><text class="vip">VIP3</text></mm_desc>
-										</mm_main>
-									</mm_item>
-									<mm_item url="/pages/agent/member_list_next">
-										<mm_side class="headimg">
-											<mm_icon src="/static/img/headimg.jpg"></mm_icon>
-										</mm_side>
-										<mm_main class="arrow">
-											<mm_tip><view class="people">邀请人数 <text class="num">5</text></view><view class="count">持有DBD<text class="num">66</text></view></mm_tip>
-											<mm_title>昵称</mm_title>
-											<mm_desc><text class="vip">VIP2</text></mm_desc>
+											<mm_tip><view class="people">邀请人数 <text class="num">{{ o.people }}</text></view><view class="count">持有DBD<text class="num">{{ o.dbd }}</text></view></mm_tip>
+											<mm_title>{{ o.name }}</mm_title>
+											<mm_desc><text class="vip">VIP{{ o.level }}</text></mm_desc>
 										</mm_main>
 									</mm_item>
 								</mm_list>
@@ -45,8 +35,26 @@
 		data() {
 			return {
 				oauth: true,
-				value: 8.888888888888,
-				value1: 0.123123123123,
+				url_get_list: "~/user/under",
+				query: {
+					userId: this.$store.state.user.userId
+				}
+			}
+		},
+		methods:{
+			setImg(img){
+				return img ? img : '/static/img/headImg.png'
+			},
+			toPage(id, p){
+				if(p > 0){
+					var url = './member_list_next?userId=' + id;
+					uni.navigateTo({
+						url: url
+					});
+				}
+				else {
+					this.alert('该代理没有邀请他人');
+				}
 			}
 		}
 	}

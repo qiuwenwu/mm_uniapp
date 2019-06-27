@@ -15,7 +15,7 @@
 								<mm_item>
 									<mm_side class="collect">
 										<mm_icon class="font_red" src="<i class='fa fa-heart'></i>"></mm_icon>
-										<text>{{ users.length }}</text>
+										<text>{{ obj.users.length }}</text>
 									</mm_side>
 									<mm_main>
 										<mm_title class="article_title">{{ obj.title }}</mm_title>
@@ -61,12 +61,44 @@
 					id: 0,
 					keyWords: [],
 					state: 0,
-					time: "2019-06-14 15:01:16",
+					time: "1970-01-01 00:00:00",
 					title: "",
 					users: []
-				},
-				comment: []
+				}
 			}
+		},
+		computed: {
+			timeStr() {
+				return new Date(this.obj.time).format('yyyy年MM月dd日')
+			}
+		},
+		methods: {
+			get_obj_after(json, status) {
+				var d = json.data;
+				if (json.code) {
+					this.alert(json);
+				} else if (json.data) {
+					this.$obj.clear(this.obj);
+					if (this.url_get_obj.indexOf('id') != -1) {
+						if (!d.users) {
+							d.users = [];
+						}
+						this.$obj.push(this.obj, d);
+					} else if (json.data.length > 0) {
+						var o = d[0];
+						if (!o.users) {
+							o.users = [];
+						}
+						this.$obj.push(this.obj, o);
+					}
+				}
+			}
+		},
+		onLoad() {
+			if (this.$route.query.title) {
+				this.url_get_obj = this.url_get_obj.replace('id', 'title')
+			}
+			this.init();
 		}
 	}
 </script>

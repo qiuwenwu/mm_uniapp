@@ -52,7 +52,7 @@
 					<mm_col>
 						<!-- 提交按钮 -->
 						<mm_div>
-							<mm_btn class="full" type="default" @click.native="show = true">提币</mm_btn>
+							<mm_btn class="full" type="default" @click.native="submit()">提币</mm_btn>
 						</mm_div>
 					</mm_col>
 					<mm_col class="pn-t">
@@ -96,6 +96,7 @@
 		data() {
 			return {
 				oauth: true,
+				
 				form: {
 					money: '',
 					code: ''

@@ -17,7 +17,7 @@
 											<mm_icon :src="user.avatar"></mm_icon>
 										</mm_side>
 										<mm_main class="arrow">
-											<mm_title><text>昵称</text><text class="vip">VIP{{user.level}}</text></mm_title>
+											<mm_title><text>{{ user.nickname }}</text><text class="vip">VIP{{user.level}}</text></mm_title>
 											<mm_desc>账号:{{user.phone}}</mm_desc>
 										</mm_main>
 									</mm_item>
@@ -69,7 +69,7 @@
 											<mm_title>帮助</mm_title>
 										</mm_main>
 									</mm_item>
-									<mm_item url="/pages/home/contact">
+									<mm_item url="/pages/home/special?title=联系客服">
 										<mm_side>
 											<mm_icon class="linear_blue" src="<i class='fa fa-phone'></i>"></mm_icon>
 										</mm_side>
@@ -101,34 +101,26 @@
 		data() {
 			return {
 				oauth: true,
-				user: this.$store.state.user,
-				url_get_obj: "~/user/proxy",
-				obj: {
-					level: 0
-				},
-				query:{}
+				user: this.$store.state.user
 			}
 		},
 		methods:{
 			sign() {
 				var _this = this;
 				this.$get("~/user/sign", function(json, status) {
-					if(json.code === 0){
+					if(json.code == 0){
 						// _this.alert(json.msg);
 						uni.navigateTo({
 							url: './check_in'
 						})
 					}
+					else{
+						_this.alert(json.msg);
+					}
 				});
 			},
-			get_obj_after(json, status) {
-				if(json)
-				{
-					if(json.data)
-					{
-						this.$store.dispatch('set_user', { level: json.data.level });
-					}
-				}
+			get(){
+				this.$get_agent();
 			}
 		}
 	}

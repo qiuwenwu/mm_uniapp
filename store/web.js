@@ -1,4 +1,4 @@
-import $ from '@/plugins/mm_sdk'
+import $ from '@/plugins/mm_sdk';
 
 export default {
 	state: {

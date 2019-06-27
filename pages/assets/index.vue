@@ -5,13 +5,13 @@
 				<mm_grid col="2" class="income">
 					<mm_col>
 						<mm_div url="/pages/calculation/output_day">
-							<mm_title>{{coin(check_in_output)}}</mm_title>
+							<mm_title>{{coin(obj.num)}}</mm_title>
 							<mm_desc>今日签到收益(btc)</mm_desc>
 						</mm_div>
 					</mm_col>
 					<mm_col>
 						<mm_div class="bl" url="/pages/agent/invitation_record">
-							<mm_title>{{money(last_invite)}}</mm_title>
+							<mm_title>{{money(obj.last_invite)}}</mm_title>
 							<mm_desc>昨日邀请收益(元)</mm_desc>
 						</mm_div>
 					</mm_col>
@@ -72,20 +72,31 @@
 			return {
 				oauth: true,
 				user: this.$store.state.user,
-				check_in_output: 0.0130231,
-				last_invite: 20.00
+				obj: {
+					num: 0.0130231,
+					date: "",
+					last_invite: 20.00
+				},
+				url_get_obj: "~/user/sign_select"
 			}
 		},
-		methods:{
-			money(num){
+		methods: {
+			money(num) {
 				return this.$double(this.$num(num));
 			},
-			coin(num){
+			coin(num) {
 				return this.$float(this.$num(num));
 			},
-			get_obj_before(json,status) {
+			get_invite() {
+				var _this = this;
+				this.$get('~/achievement/zuo', function(json, status) {
+					_this.obj.last_invite = json.data;
+				});
+			},
+			get_obj_after(json, status) {
 				this.$obj.clear(this.obj);
-				this.$obj.push(this.obj, json.data)
+				this.$obj.push(this.obj, json.data);
+				this.get_invite();
 			}
 		}
 	}
@@ -105,9 +116,15 @@
 		border-radius: 0.5rem;
 		padding: 2.5rem 0;
 	}
-	
-	.income .mm_title { font-weight: 600; }
-	.income .mm_desc { font-size: 0.675rem; color: #f5f5f5; }
+
+	.income .mm_title {
+		font-weight: 600;
+	}
+
+	.income .mm_desc {
+		font-size: 0.675rem;
+		color: #f5f5f5;
+	}
 
 	/* 	.val {
 		margin-right: 0.5rem;

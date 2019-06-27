@@ -48,7 +48,17 @@ export default {
 		},
 		userPapers: [],
 		registerTime: "2019-06-22 15:08:37",
-		roles: []
+		roles: [],
+		hold: 0,
+		hold1: 0,
+		hold2: 0,
+		level: 0,
+		people: 0,
+		people2: 0,
+		percentage: 0,
+		code: "",
+		fatherCode: "",
+		sonCode: []
 	},
 	mutations: {
 		/// 设置用户信息
