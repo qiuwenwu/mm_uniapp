@@ -55,7 +55,7 @@
 											<mm_icon :src="dbd.icon"></mm_icon>
 										</mm_side>
 										<mm_main class="introduce">
-											<mm_title>DBD礼包</mm_title>
+											<mm_title>{{ dbd.title }}</mm_title>
 											<mm_desc><text class="price">{{ dbd.price }}</text><text class="unit">元/个</text></mm_desc>
 											<mm_desc>
 												有效天数：365

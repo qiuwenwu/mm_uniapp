@@ -23,7 +23,8 @@
 									</mm_main>
 								</mm_item>
 							</mm_head>
-							<mm_body class="pa" v-html="obj.content">
+							<mm_body class="pa">
+								<mm_div v-html="obj.content"></mm_div>
 							</mm_body>
 						</mm_block>
 					</mm_col>
@@ -123,7 +124,7 @@
 		clear: both;
 	}
 
-	#home_article_view .mm_body {
+	#home_article_view .mm_body .mm_div {
 		overflow: hidden;
 	}
 

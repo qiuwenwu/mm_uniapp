@@ -73,6 +73,7 @@
 		font-size: 0.625rem;
 		top: 0;
 		left: 0;
+		white-space: nowrap;
 		transform: translateX(-50%);
 	}
 

@@ -15,26 +15,18 @@
 					<!-- 格子 -->
 					<mm_col>
 						<mm_block>
-							<mm_head>
+						<!-- 	<mm_head>
 								<mm_main>
-									<mm_title><text>总产出：0.0381</text><text class="unit">btc</text></mm_title>
+									<mm_title><text>总产出：{{ user. }}</text><text class="unit">btc</text></mm_title>
 								</mm_main>
-							</mm_head>
+							</mm_head> -->
 							<mm_body class="lr">
 								<mm_list col="1" class="mini">
-									<mm_item>
+									<mm_item v-for="(o,k) in list" :key="k">
 										<mm_main>
-											<mm_title>2019年5月20日 10:50</mm_title>
+											<mm_title>{{ o.time }}</mm_title>
 											<mm_desc>
-												<text class="font_success">+0.0123</text>
-											</mm_desc>
-										</mm_main>
-									</mm_item>
-									<mm_item>
-										<mm_main>
-											<mm_title>2019年5月20日 10:50</mm_title>
-											<mm_desc>
-												<text class="font_success">+0.0258</text>
+												<text class="font_success">+{{o.amount}}</text>
 											</mm_desc>
 										</mm_main>
 									</mm_item>
@@ -56,7 +48,20 @@
 		components: {},
 		data() {
 			return {
-				oauth: true
+				oauth: true,
+				url_get_list: "~/user/flow",
+				query:{
+					index: "0",
+					size: 10,
+					type: 1
+				}
+			}
+		},
+		methods: {
+			get_list_after(json, status) {
+				if(json) {
+					
+				}
 			}
 		}
 	}

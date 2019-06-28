@@ -62,7 +62,6 @@
 		components: {},
 		data() {
 			return {
-				oauth: true,
 				url_submit: "~/login",
 				form: {
 					phone: "",
@@ -144,8 +143,7 @@
 					_this.alert('手机或密码错误');
 				}
 			}
-		},
-		onLoad() {}
+		}
 	}
 </script>
 
@@ -190,7 +188,8 @@
 
 	#account_signin .sign_in_head {
 		width: 100%;
-		height: 6rem;
+		padding-top: 0.5rem;
+		padding-bottom: 1.5rem;
 		display: flex;
 		align-items: center;
 		font-size: 2.15rem;

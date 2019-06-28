@@ -14,7 +14,7 @@ let mm = {
 	/// options: 配置参数
 	install(Vue, options) {
 		// 请求服务器地址
-		var host = 'http://192.168.18.100/';
+		var host = 'http://192.168.18.200/';
 		// var host = 'https://admin.btcjag.com/';
 
 		// 判断配置是否存在
@@ -188,7 +188,6 @@ Vue.mixin(Vue.extend({
 			var p = _this.$route.path;
 			var isLoad = this.$store.state.user.isLoad;
 			if (!isLoad) {
-				
 				this.$get('~/user/', function(json, status) {
 					if (json) {
 						if(json.code){

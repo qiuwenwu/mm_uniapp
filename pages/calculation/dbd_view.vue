@@ -73,7 +73,7 @@
 							</mm_head>
 							<mm_body class="lr">
 								<mm_list col="1" class="mini">
-									<mm_item :url="'/pages/pay/ali?num=' + this.form.num">
+									<mm_item @click.native="pay('ali')">
 										<mm_side>
 											<mm_icon class="linear_yellow" src="<i class='fa fa-btc'></i>"></mm_icon>
 										</mm_side>
@@ -81,7 +81,7 @@
 											<mm_title>支付宝</mm_title>
 										</mm_main>
 									</mm_item>
-									<mm_item :url="'/pages/pay/wechat?num=' + this.form.num">
+									<mm_item @click.native="pay('wechat')">
 										<mm_side>
 											<mm_icon class="linear_yellow" src="<i class='fa fa-btc'></i>"></mm_icon>
 										</mm_side>
@@ -89,7 +89,7 @@
 											<mm_title>微信</mm_title>
 										</mm_main>
 									</mm_item>
-									<mm_item :url="'/pages/pay/bank?num=' + this.form.num">
+									<mm_item @click.native="pay('bank')">
 										<mm_side>
 											<mm_icon class="linear_yellow" src="<i class='fa fa-btc'></i>"></mm_icon>
 										</mm_side>
@@ -97,7 +97,7 @@
 											<mm_title>银行卡</mm_title>
 										</mm_main>
 									</mm_item>
-									<mm_item :url="'/pages/pay/balance_cny?num=' + this.form.num">
+									<mm_item @click.native="pay('balance_cny')">
 										<mm_side>
 											<mm_icon class="linear_success" src="<i class='fa fa-rmb'></i>"></mm_icon>
 										</mm_side>
@@ -105,7 +105,7 @@
 											<mm_title>现金余额</mm_title>
 										</mm_main>
 									</mm_item>
-									<mm_item :url="'/pages/pay/balance_btc?num=' + this.form.num">
+									<mm_item @click.native="pay('balance_btc')">
 										<mm_side>
 											<mm_icon class="linear_yellow" src="<i class='fa fa-btc'></i>"></mm_icon>
 										</mm_side>
@@ -132,14 +132,46 @@
 				oauth: true,
 				state: "1",
 				url_get_obj: "~/dbd/",
+				url_submit: "~/dbd/buy",
 				dbd_statement: "",
 				form: {
 					num: "",
+					payType: ""
 				},
-				dbd: this.$store.state.dbd
+				dbd: this.$store.state.dbd,
+				way: ""
 			}
 		},
 		methods: {
+			pay(way) {
+				var payType = "";
+				switch (way) {
+					case "ali":
+						payType = "AliPay"
+						break;
+					case "bank":
+						payType = "Transfer"
+						break;
+					case "balance_cny":
+						payType = "CashPay"
+						break;
+					case "balance_btc":
+						payType = "BitCoinPay"
+						break;
+					default:
+						payType = "Wechat"
+						break;
+				}
+				this.form.payType = payType;
+				this.way = way;
+			},
+			submit_after(json, status) {
+				if(json){
+					if(!json.state){
+						
+					}
+				}
+			},
 			buy() {
 				var n = this.form.num;
 				if (!n) {

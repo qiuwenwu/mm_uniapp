@@ -15,7 +15,7 @@
 										<mm_main class="arrow">
 											<mm_tip><view class="people">邀请人数 <text class="num">{{ o.people }}</text></view><view class="count">持有DBD<text class="num">{{ o.dbd }}</text></view></mm_tip>
 											<mm_title>{{ o.name }}</mm_title>
-											<mm_desc><text class="vip">VIP{{ o.level }}</text></mm_desc>
+											<mm_desc><text class="vip" v-if="o.level > 0">VIP{{ o.level }}</text></mm_desc>
 										</mm_main>
 									</mm_item>
 								</mm_list>

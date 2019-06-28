@@ -12,7 +12,7 @@
 											<mm_icon :src="dbd.icon"></mm_icon>
 										</mm_side>
 										<mm_main class="introduce">
-											<mm_title>DBD礼包</mm_title>
+											<mm_title>{{ dbd.title }}</mm_title>
 											<mm_desc><text class="price">{{ dbd.price }}</text><text class="unit">元/个</text></mm_desc>
 											<mm_desc>
 												有效天数：365
@@ -35,9 +35,9 @@
 						<mm_block>
 							<mm_body>
 								<mm_list id="tabs" col="3" class="space_big">
-									<mm_item :class="{'active': query.state === '1' }" @click.native="query.state = '1'">已生效</mm_item>
-									<mm_item :class="{'active': query.state === '2' }" @click.native="query.state = '2'">待回购</mm_item>
-									<mm_item :class="{'active': query.state === '3' }" @click.native="query.state = '3'">已回购</mm_item>
+									<mm_item :class="{'active': seleted === 1 }" @click.native="selete_fun(1)">已生效</mm_item>
+									<mm_item :class="{'active': seleted === 2 }" @click.native="selete_fun(2)">待回购</mm_item>
+									<mm_item :class="{'active': seleted === 3 }" @click.native="selete_fun(3)">已回购</mm_item>
 								</mm_list>
 							</mm_body>
 						</mm_block>
@@ -45,7 +45,7 @@
 					<mm_col class="pn-tb">
 						<mm_block>
 							<mm_head>
-								<mm_title>DBD数量：88</mm_title>
+								<mm_title>DBD数量：{{ count_1 }}</mm_title>
 							</mm_head>
 						</mm_block>
 					</mm_col>
@@ -53,16 +53,13 @@
 						<mm_block>
 							<mm_body class="lr">
 								<mm_list col="1" class="mini">
-									<mm_item url="./dbd_panel?did=1">
+									<mm_item v-for="(o,k) in list" :key="k">
 										<mm_main>
-											<mm_title>DBD礼包</mm_title>
-											<mm_desc><text class="price">298.00</text></mm_desc>
-										</mm_main>
-									</mm_item>
-									<mm_item url="./dbd_panel?did=1">
-										<mm_main>
-											<mm_title>DBD礼包</mm_title>
-											<mm_desc><text class="price">298.00</text></mm_desc>
+											<mm_title>{{ o.time }}</mm_title>
+											<mm_desc><text class="num" v-if="o.num">{{ o.num }}</text><text class="unit" v-if="o.num">个</text>
+												<text class="equal" v-if="o.money">=</text>
+												<text class="price" v-if="o.money"><text class="unit" v-if="o.money">￥</text>{{ $double($num(o.money)) }}</text>
+											</mm_desc>
 										</mm_main>
 									</mm_item>
 								</mm_list>
@@ -150,8 +147,9 @@
 				oauth: true,
 				url_get_list: "~/dbd/record",
 				url_submit: "~/dbd/open",
+				seleted: 1,
 				query: {
-					state: ""
+					state: "0"
 				},
 				form: {
 					num: ""
@@ -163,9 +161,44 @@
 				dbd: this.$store.state.dbd
 			}
 		},
+		computed: {
+			count_1() {
+				var n = 0;
+				for (var i = 0; i < this.list.length; i++) {
+					n += this.list[i].num;
+				}
+				return n;
+			}
+		},
 		methods: {
-			send_msg() {
-				console.log(0);
+			get_recover(type, state) {
+				var _this = this;
+				this.$get(this.toUrl({
+					type: type,
+					state: state
+				}, '~/assets/flow'), function(json, status) {
+					_this.list.clear();
+					if (json) {
+						var lt = json.data.content;
+						for (var i = 0; i < lt.length; i++) {
+							var o = lt[i];
+							if (o.cause.indexOf('回购') != -1) {
+								o.num = o.amount;
+								_this.list.push(o);
+							}
+						}
+					}
+				});
+			},
+			selete_fun(i) {
+				this.seleted = i;
+				if (i == 1) {
+					this.get_list();
+				} else if (i == 2) {
+					this.get_recover(2, "7")
+				} else {
+					this.get_recover(2, "0")
+				}
 			},
 			submit_check(params) {
 				if (!params.num) {
@@ -196,7 +229,7 @@
 				if (json) {
 					var lt = json.data;
 					if (lt) {
-						this.list.push(lt);
+						this.list.eachPush(lt);
 					}
 				}
 				this.$get_dbd();
@@ -206,7 +239,7 @@
 				this.$post('~/assets/repo', this.form2, function(json, status) {
 					if (json) {
 						if (!json.code) {
-							_this.alert('申请成功, 等待回购中!');
+							_this.alert('申请' + this.form2.num +'个DBD成功, 等待回购中!');
 							_this.show2 = false;
 							return;
 						}
@@ -220,5 +253,8 @@
 <style>
 	#dbd_list {
 		margin-bottom: 0.5rem;
+	}
+	.equal {
+		margin: 0 0.5rem;
 	}
 </style>

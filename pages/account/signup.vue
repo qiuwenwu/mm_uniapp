@@ -106,7 +106,16 @@
 				if (this.check_phone && this.check_password) {
 					this.$post(this.url_submit + this.query.invitation_code, this.form, function(json, status) {
 						if (json) {
-							_this.alert(json.msg);
+							if (json.code == 0) {
+								_this.alert('注册成功!');
+								setTimeout(function() {
+									uni.navigateTo({
+										url: './signin'
+									});
+								}, 2000)
+							} else {
+								_this.alert(json.msg);
+							}
 						}
 					});
 				}

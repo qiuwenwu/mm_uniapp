@@ -320,12 +320,12 @@ dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {font-weight:500;}
 .mm_code .mm_group { float: right; border-top: 1px solid #EDEDED; border-left: 1px solid #EDEDED; position: relative; z-index: 2; }
 
 /* == 适配环境 == */
-@media (max-width: 415px) {
+/* @media (max-width: 415px) {
 	.space-x {margin-left: 0; margin-right: 0;}
 	.space_big-x {margin-left: 0; margin-right: 0;}
 	.space-x.mm_grid_1 .mm_col { padding-left: 0; padding-right: 0; }
 	.space_big-x.mm_grid_1 .mm_col { padding-left: 0.5rem; padding-right: 0.5rem; }
-}
+} */
 
 @media (min-width: 415px) {
 	 html {font-size:16px !important;}
