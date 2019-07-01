@@ -167,7 +167,7 @@
 			},
 			submit_after(json, status) {
 				if(json){
-					if(!json.state){
+					if(!json.state) {
 						
 					}
 				}
