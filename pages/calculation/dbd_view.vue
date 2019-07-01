@@ -164,11 +164,15 @@
 				}
 				this.form.payType = payType;
 				this.way = way;
+				this.submit();
 			},
 			submit_after(json, status) {
-				if(json){
-					if(!json.state) {
-						
+				if (json) {
+					if (json.data) {
+						var url = '/pages/pay/' + this.way + '?order_id=' + json.data.id;
+						uni.navigateTo({
+							url: url
+						});
 					}
 				}
 			},
@@ -285,11 +289,6 @@
 	#calculation_dbd_view .backspace {
 		height: 2rem;
 		width: 2rem;
-	}
-
-	#calculation_dbd_view .pay_warp {
-		width: 80%;
-		top: 36%
 	}
 
 	#calculation_dbd_view .pay_head {

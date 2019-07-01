@@ -119,6 +119,6 @@ let mm_ui = {
 		Vue.component('mm_swiper_box', mm_swiper_box);
 		Vue.component('mm_swiper_card', mm_swiper_card);
 	}
-}
+};
 
 export default mm_ui;

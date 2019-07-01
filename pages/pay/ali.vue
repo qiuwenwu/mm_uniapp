@@ -1,11 +1,6 @@
 <template>
 	<!-- 支付宝付款页面 -->
 	<view class="page" id="pay_ali">
-		<!-- 页头 -->
-		<mm_header>
-			<!-- 外套 -->
-			<mm_warp></mm_warp>
-		</mm_header>
 		<!-- 页主体 -->
 		<mm_bodyer>
 			<!-- 外套 -->
@@ -71,23 +66,23 @@
 			return {
 				oauth: true,
 				text: "",
-				url_get_obj: "~/dbd/buy",
+				url_get_obj: "~/order/" + this.$route.query.id,
 				query: {
-					num: "",
-					// Transfer AliPay CashPay BitCoinPay
-					payType: "AliPay"
+					id: "",
 				},
 				obj: {
-					"id": "",
-					"userId": 0,
-					"type": 0,
-					"commodityId": "0",
-					"amount": 0,
-					"money": "0",
-					"payReason": "0",
-					"time": "1970-01-01 00:00:00",
-					"state": 0
-				}
+					"id": "", // 订单ID
+					"type": 1, // 订单类型
+					"amount": 0, // 购买数量
+					"money": "0.00", // 付款金额
+					"payType": "", // 购买方式
+					"payReason": "", // 购买理由
+					"time": "", // 时间
+					"courierCompany": "", // 物流公司
+					"shipmentNumber": "", // 发货方式
+					"state": 0 // 订单状态
+				},
+				
 			}
 		},
 		methods: {

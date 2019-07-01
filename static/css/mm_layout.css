@@ -253,11 +253,17 @@ dt,th,h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {font-weight:500;}
 /* 栅格间距 */
 .space>* {padding:0.25rem;}
 .space_big>* {padding:0.5rem;}
-.space-x {margin:-0.25rem;}
 .space-x>* {padding:0.25rem;}
 .space_big-x {margin:-0.5rem;}
 .space_big-x>* {padding:0.5rem;}
-
+@media (max-width:768px) {
+	.space-x.mm_grid_1 .mm_col{padding-left: 0; padding-right: 0;}
+	.space-x.mm_grid_1 .mm_col:first-child { padding-top: 0; }
+	.space-x.mm_grid_1 .mm_col:last-child { padding-bottom: 0; }
+	.space_big-x.mm_grid_1 .mm_col{padding-left: 0; padding-right: 0;}
+	.space_big-x.mm_grid_1 .mm_col:first-child { padding-top: 0; }
+	.space_big-x.mm_grid_1 .mm_col:last-child { padding-bottom: 0; }
+}
 
 /* 盒子 */
 .mm_box { display: none; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.3); }

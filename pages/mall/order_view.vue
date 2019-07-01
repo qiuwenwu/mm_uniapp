@@ -52,7 +52,7 @@
 									</mm_item>
 								</mm_list>
 							</mm_body>
-					<!--  <mm_foot class="bt">
+					<!-- <mm_foot class="bt">
 								<mm_div class="arrow" url="/pages/assets/bill_cny">
 									<mm_title>扣费记录</mm_title>
 								</mm_div>

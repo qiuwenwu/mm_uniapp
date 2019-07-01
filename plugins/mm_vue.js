@@ -14,7 +14,7 @@ let mm = {
 	/// options: 配置参数
 	install(Vue, options) {
 		// 请求服务器地址
-		var host = 'http://192.168.18.200/';
+		var host = 'http://192.168.18.100/';
 		// var host = 'https://admin.btcjag.com/';
 
 		// 判断配置是否存在
